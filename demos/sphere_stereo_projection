@@ -1,0 +1,33 @@
+filever 100.0 env {function $rot1(a,x,y)=cos(a)*x + sin(a)*y$ function 
+$sy(s,t)=sin(s)*cos(t)$ function $P2(x,y,u)=( 2*x/(1-u) , 2*y/(1-u) , -1 )$ 
+function $rot2(a,x,y)=-sin(a)*x + cos(a)*y$ function $sx(s,t)=cos(s)*cos(t)$ 
+function $P1(x,y,u)=( x/(1-u), y/(1-u), 0 )$ function 
+$sphere(s,t)=( cos(s)*cos(t) , sin(s)*cos(t) , sin(t) )$ function 
+$su(s,t)=sin(t)$ variable $a= 0, 2*pi, 20$ 0.0 variable $b= -pi/4, pi/4, 10$ 
+-0.15707963267948966 interval $t= -pi/4, pi/4, 10$ interval $s= 0,2*pi, 20$ 
+function $rotxz(x,y,z)=( cos(a)*x + sin(a)*z , y , -sin(a)*x + cos(a)*z )$} 
+objects [{frame.3d obj0 {canvas {canvas.3d obj5 {tool 100.0 points true graph 
+{graph.3d obj6 {light true graph {plots [{plot.curve obj3 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj7 {colors 
+[{coloring.constant obj8 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $rotxz(sphere(s,b))$} thick true}} {plot.curve obj1 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj9 {colors 
+[{coloring.constant obj10 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $P2(rotxz(sphere(s,b)))$} thick true}} {plot.surface obj4 {intrpl 
+true super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj11 {colors [{coloring.constant obj12 {color [1.0 1.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $P2(rotxz(sphere(s,t)))$} vrtnml true}} {plot.axes 
+obj13 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}} 
+{plot.surface obj2 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.constant obj14 {color [0.0 1.0 0.0 1.0]}} expr 
+$rotxz(sphere(s,t))$} vrtnml true}}]} alpha true scale 100.01271474132783 
+surfacemode 2.0 drawmode 1.0 transf [0.8309190439498886 -0.5524667995016808 
+-0.06598467890174717 0.0 0.3370764473058176 0.4054853303598686 
+0.8496829500081932 0.0 -0.44266580065901245 -0.7282596256221505 
+0.5231490290687681 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 1.0}} 
+graph {id obj6} frame {visible true plots [{id obj1} {id obj2} {id obj3} {id 
+obj4}] title $3D Graph$ labels [$ Curve: P2(rotxz(sphere(s,b)))$ 
+$ Surface: rotxz(sphere(s,t))$ $ Curve: rotxz(sphere(s,b))$ 
+$ Surface: P2(rotxz(sphere(s,t)))$]}}} {controls obj15 {constants [] intervals 
+[t s] objects [] readouts [] functions [$P1$ rotxz sphere sy sx $rot2$ su 
+$rot1$ $P2$] variables [b a]}}] 

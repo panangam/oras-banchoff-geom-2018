@@ -1,0 +1,32 @@
+filever 100.0 env {constant $h=0.0001$ constant $a=1$ constant $b=2$ variable 
+$maxr= 0, 5, 20$ 4.25 interval $t= 0, 2*pi,20$ function $x(t)=a*cos(t)$ function 
+$y(t)=b*sin(t)$ variable $jj= 0,maxr, 20$ 0.0 interval $r= 0,maxr,5*maxr$ 
+function $dx(t)=(x(t+h) - x(t))/h$ function $X(t)=(x(t), y(t), 0)$ function 
+$dy(t)=(y(t+h)-y(t))/h$ function $dX(t)=(X(t+h) - X(t)) / h$ function 
+$s(t)=sqrt(dx(t)^2 + dy(t)^2)$ function $T(t)=dX(t)/s(t)$ function 
+$U(t)=(-dy(t)/s(t), dx(t)/s(t), 0)$} objects [{controls obj0 {constants [b a h] 
+intervals [t r] objects [] readouts [] functions [X U T dX y x dy s dx] 
+variables [maxr jj]}} {frame.2d obj1 {canvas {canvas.3d obj3 {tool 0.0 points 
+true graph {graph.3d obj4 {light false graph {plots [{plot.axes obj5 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj2 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj6 
+{color [0.0 1.0 0.0 1.0]}} expr null} thick false}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj4} frame {visible true plots [{id obj2}] title $2D Graph$ labels 
+[$ Curve: unspecified$]}}} {frame.3d obj7 {canvas {canvas.3d obj10 {tool 100.0 
+points true graph {graph.3d obj11 {light true graph {plots [{plot.axes obj12 
+{super {transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj8 
+{intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj13 {colors [{coloring.expression obj14 {expr $t/2/pi$}}] 
+opacities [0.47] mixings [0.0]}} expr $U(t)*r + X(t) + (0,0,r)$} vrtnml true}} 
+{plot.curve obj9 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj15 {colors [{coloring.constant obj16 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(t)+jj*U(t)+(0,0,jj)$} thick 
+true}}]} alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[-0.1659766146951951 0.8282781730012644 0.05817779225702687 0.0 
+-0.6929558982662916 -0.1708626815565522 0.455626701497126 0.0 
+0.45742924091073167 0.04169935477776683 0.7113348560128616 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj11} frame {visible 
+true plots [{id obj8} {id obj9}] title $3D Graph$ labels 
+[$ Surface: U(t)*r + X(t) + (0,0,r)$ $ Curve: X(t)+jj*U(t)+(0,0,jj)$]}}}] 

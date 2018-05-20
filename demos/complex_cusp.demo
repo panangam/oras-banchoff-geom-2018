@@ -1,0 +1,36 @@
+filever 100.0 env {constant $xmin=-1$ constant 
+$proj341=((0,0,1),(0,0,0),(1,0,0),(0,1,0))$ constant 
+$proj234=((0,0,0),(1,0,0),(0,1,0),(0,0,1))$ constant $xmax=1$ constant 
+$proj412=((0,1,0),(0,0,1),(0,0,0),(1,0,0))$ constant 
+$proj123=((1,0,0),(0,1,0),(0,0,1),(0,0,0))$ variable $c= -1, 1, 20$ 0.0 interval 
+$r= 0,1,20$ interval $t=0,2*pi,40$ interval $y=xmin,xmax, 20$ interval 
+$x=xmin,xmax, 20$ function 
+$X(x,y)=(x^2-y^2, 2*x*y, x^3-3*x*y^2+c*x, 3*x^2*y-y^3+c*y)$ function 
+$XP(r,t)=(r^2*cos(2*t), r^2*sin(2*t), r^3*cos(3*t)+c*cos(t), r^3*sin(3*t)+c*sin(t))$} 
+objects [{controls obj0 {constants [xmax $proj234$ $proj412$ $proj341$ xmin 
+$proj123$] intervals [x t r y] objects [] readouts [] functions [XP X] variables 
+[c]}} {frame.3d obj1 {canvas {canvas.3d obj3 {tool 100.0 points true graph 
+{graph.3d obj4 {light true graph {plots [{plot.axes obj5 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y z]}} {plot.surface obj2 {intrpl true super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj6 {colors 
+[{coloring.expression obj7 {expr $(x-xmin)/(xmax-xmin)$}}] opacities [1.0] 
+mixings [0.0]}} expr $proj123*X(x,y)$} vrtnml true}}]} alpha true scale 
+100.01271474132783 surfacemode 2.0 drawmode 1.0 transf [-0.2749875591266903 
+0.5178466850996364 -0.010104830122206792 0.0 -0.3394216670970083 
+-0.17152978869313434 0.44638091136484864 0.0 0.39122912566112356 
+0.21516922841601427 0.380167632646739 0.0 0.0 0.0 0.0 1.0]}} group {group obj8 
+{graphs [{id obj4} {id obj9}] canvases [{id obj3} {id obj10}] rotonly false}} 
+hotspots [] drawmode 1.0}} graph {id obj4} frame {visible true plots [{id obj2}] 
+title $3D Graph$ labels [$ Surface: proj123*X(x,y)$]}}} {frame.3d obj11 {canvas 
+{canvas.3d obj10 {tool 100.0 points true graph {graph.3d obj9 {light true graph 
+{plots [{plot.surface obj12 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj13 {colors [{coloring.expression obj14 
+{expr $t/2/pi$}}] opacities [1.0] mixings [0.0]}} expr $proj123*XP(r,t)$} vrtnml 
+true}} {plot.axes obj15 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}}]} alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[-0.27498755912669076 0.5178466850996364 -0.01010483012220674 0.0 
+-0.33942166709700844 -0.17152978869313434 0.4463809113648483 0.0 
+0.39122912566112367 0.21516922841601427 0.38016763264673886 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj8} hotspots [] drawmode 1.0}} graph {id obj9} frame {visible 
+true plots [{id obj12}] title $3D Graph$ labels 
+[$ Surface: proj123*XP(r,t)$]}}}] 

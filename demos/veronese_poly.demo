@@ -1,0 +1,17 @@
+filever 100.0 env {constant $p4=(0,1/2,1/2,1/sqrt(2),0,0)$ constant 
+$p6=(1/2,1/2,0,0,0,1/sqrt(2))$ constant $p2=(0,1,0,0,0,0,0)$ constant 
+$p1=(1,0,0,0,0,0)$ constant $p5=(1/2,0,1/2,0,1/sqrt(2),0)$ constant 
+$p3=(0,0,1,0,0,0,0)$} objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 
+100.0 points true graph {graph.3d obj3 {light true graph {plots 
+[{plot.polyhedron obj1 {faces [[0.0 1.0 2.0]] super {transpt $0$ visible true 
+addedz 0.0} colors [{coloring.constant obj4 {color [0.0 1.0 0.0 1.0]}}] vertices 
+[$0,0,0$ $0,0,1$ $0,1,0$] title Polyhedron}} {plot.axes obj5 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y z]}}]} alpha true scale 
+100.01271474132783 surfacemode 2.0 drawmode 1.0 transf [-0.06450664056526952 
+0.9976686383598508 -0.022275128645724396 0.0 -0.33527616921672493 
+-6.432019774362106E-4 0.9421196721471075 0.0 0.9399089230762411 
+0.06824129486181119 0.33453601001572614 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 1.0}} graph {id obj3} frame {visible true plots [{id obj1}] 
+title $3D Graph$ labels [$ Polyhedron$]}}} {controls obj6 {constants [$p6$ $p5$ 
+$p4$ $p3$ $p2$ $p1$] intervals [] objects [] readouts [] functions [] variables 
+[]}}] 

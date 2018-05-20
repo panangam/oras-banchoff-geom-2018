@@ -1,0 +1,36 @@
+filever 100.0 env {function $gx(c,s,t)=cos(c)*cos(s)$ function 
+$gv(c,s,t)=sin(c)*sin(t)$ function $gy(c,s,t)=cos(c)*sin(s)$ function 
+$gu(c,s,t)=sin(c)*cos(t)$ function $mix(a,f,g)=cos(a)*f + sin(a)*g$ constant 
+$d=(pi/2)-(pi/100)$ constant $c=pi/4$ variable $a= 0, 2*pi,40$ 4.71238898038469 
+interval $s= 0, 2*pi, 20$ variable $b= 0, pi,100$ 0.7225663103256524 interval 
+$t= 0, 2*pi, 20$ function 
+$P2(a,c,s,t)=(gx(c, s, t), mix(a, gy(c, s, t), gv(c, s, t)), gu(c, s, t)) / (1 - mix(a, gv(c, s, t), -gy(c, s, t)))$ 
+function $fy(s,t)=cos(c)*sin(s)$ function $fx(s,t)=cos(c)*cos(s)$ function 
+$fu(s,t)=sin(c)*cos(t)$ function $fv(s,t)=sin(c)*sin(t)$ function 
+$rx(s,t)=fx(s, t)$ function $ru(s,t)=fu(s, t)$ function 
+$ry(s,t)=cos(a)*fy(s, t) + sin(a)*fv(s, t)$ function 
+$rv(s,t)=-sin(a)*fy(s, t) + cos(a)*fv(s, t)$ function 
+$P1(s,t)=( rx(s, t), ry(s, t), ru(s, t) ) / (1 - rv(s, t))$ constant 
+$e= P1(1, 2)$} objects [{controls obj0 {constants [e d c] intervals [t s] 
+objects [] readouts [] functions [gv $P1$ gu ry rx rv fy ru fx fv fu gy gx mix 
+$P2$] variables [b a]}} {frame.3d obj1 {canvas {canvas.3d obj6 {tool 100.0 
+points true graph {graph.3d obj7 {light true graph {plots [{plot.surface obj2 
+{intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj8 {colors [{coloring.constant obj9 {color [0.0 1.0 0.0 
+1.0]}}] opacities [0.43] mixings [0.0]}} expr $P1(s, t)$} vrtnml true}} 
+{plot.surface obj4 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj10 {colors [{coloring.constant obj11 {color [1.0 
+0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $P2(a, d, s, t)$} vrtnml 
+true}} {plot.surface obj3 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj12 {color [0.0 1.0 0.0 1.0]}} expr null} 
+vrtnml true}} {plot.surface obj5 {intrpl true super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj13 {color [0.0 1.0 0.0 1.0]}} expr 
+null} vrtnml true}} {plot.axes obj14 {super {transpt $0$ visible true addedz 
+0.0} labels [x y z]}}]} alpha true scale 100.01271474132781 surfacemode 2.0 
+drawmode 1.0 transf [0.16101710280836376 0.7313611173466056 -0.26844497689819324 
+0.0 0.49067102435169613 0.11771940160319895 0.6150303938286203 0.0 
+0.6051394347173225 -0.29005405617722047 -0.42726245567600146 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj7} frame {visible true 
+plots [{id obj2} {id obj3} {id obj4} {id obj5}] title $3D Graph$ labels 
+[$ Surface: P1(s, t)$ $ Surface: unspecified$ $ Surface: P2(a, d, s, t)$ 
+$ Surface: unspecified$]}}}] 

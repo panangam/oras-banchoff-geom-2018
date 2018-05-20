@@ -1,0 +1,18 @@
+filever 100.0 env {function $X(u,v)=(4*cos(u)*cos(v), 2*sin(u)*cos(v), sin(v))$ 
+interval $r= -6, 6, 24$ function $X2(u,v)=u, v, u^2-v^2$ function 
+$k1(X)=H(X) + sqrt((H(X))^2 - K(X))$ function 
+$k2(X)=H(X) - sqrt((H(X))^2 - K(X))$ interval $v= -pi/2, pi/2, 40$ interval 
+$u= -pi, pi, 40$ function $e1(X)=X + 1/k1(X)*N(X)$ function 
+$e2(X)=X + 1/k2(X)*N(X)$} objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 
+100.0 points true graph {graph.3d obj3 {light true graph {plots [{plot.surface 
+obj1 {intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj4 {color [0.0 1.0 0.0 1.0]}} expr $e1(X)(u,v)$} vrtnml 
+true}} {plot.axes obj5 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[0.0034362264636496518 0.0785341306845071 -0.15158450993041636 0.0 
+0.16972492832045585 -0.017921101137659504 -0.005437262744707857 0.0 
+-0.018409835410229326 -0.15056063707745015 -0.07842100170570214 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj3} frame {visible true 
+plots [{id obj1}] title $3D Graph$ labels [$ Surface: e1(X)(u,v)$]}}} {controls 
+obj6 {constants [] intervals [v u r] objects [] readouts [] functions [$X2$ 
+$e2$ $e1$ $k2$ $k1$ X] variables []}}] 
