@@ -1,17 +1,39 @@
-filever 100.0 env {constant $p4=(0,1/2,1/2,1/sqrt(2),0,0)$ constant 
-$p6=(1/2,1/2,0,0,0,1/sqrt(2))$ constant $p2=(0,1,0,0,0,0,0)$ constant 
-$p1=(1,0,0,0,0,0)$ constant $p5=(1/2,0,1/2,0,1/sqrt(2),0)$ constant 
-$p3=(0,0,1,0,0,0,0)$} objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 
-100.0 points true graph {graph.3d obj3 {light true graph {plots 
-[{plot.polyhedron obj1 {faces [[0.0 1.0 2.0]] super {transpt $0$ visible true 
-addedz 0.0} colors [{coloring.constant obj4 {color [0.0 1.0 0.0 1.0]}}] vertices 
-[$0,0,0$ $0,0,1$ $0,1,0$] title Polyhedron}} {plot.axes obj5 {super {transpt 
-$0$ visible true addedz 0.0} labels [x y z]}}]} alpha true scale 
-100.01271474132783 surfacemode 2.0 drawmode 1.0 transf [-0.06450664056526952 
-0.9976686383598508 -0.022275128645724396 0.0 -0.33527616921672493 
--6.432019774362106E-4 0.9421196721471075 0.0 0.9399089230762411 
-0.06824129486181119 0.33453601001572614 0.0 0.0 0.0 0.0 1.0]}} group null 
-hotspots [] drawmode 1.0}} graph {id obj3} frame {visible true plots [{id obj1}] 
-title $3D Graph$ labels [$ Polyhedron$]}}} {controls obj6 {constants [$p6$ $p5$ 
-$p4$ $p3$ $p2$ $p1$] intervals [] objects [] readouts [] functions [] variables 
-[]}}] 
+filever 100.0 env {constant $u5=(2,-1,-1,0,0,0)$ constant $u1= (0,1,-1,0,0,0)$ 
+constant $proj341= ((0,0,1),(0,0,0),(1,0,0),(0,1,0))$ function $Sz(u,v)=sin(v)$ 
+constant $P4=(0,1/2,1/2,1/sqrt(2),0,0)$ constant $P6=(1/2,1/2,0,0,0,1/sqrt(2))$ 
+function $SP(S,P,X)=S + (((P-S)*(P-S))/((X-S)*(P-S)))*(X-S)$ constant 
+$u2=(0,0,0,1,0,0)$ constant $proj123= ((1,0,0),(0,1,0),(0,0,1),(0,0,0))$ 
+constant $P=(1/3,1/3,1/3,0,0,0)$ constant $P2=(0,1,0,0,0,0)$ constant 
+$P3=(0,0,1,0,0,0)$ constant $proj412=((0,1,0),(0,0,1),(0,0,0),(1,0,0))$ constant 
+$u6=(1,1,1,0,0,0)$ function $Sy(u,v)=sin(u)*cos(v)$ constant 
+$P5=(1/2,0,1/2,0,1/sqrt(2),0)$ function $Sx(u,v)=cos(u)*cos(v)$ constant 
+$u4=(0,0,0,0,0,1)$ variable $c= -1,1,20$ 0.0 constant $u3=(0,0,0,0,1,0)$ 
+constant $proj234= ((0,0,0),(1,0,0),(0,1,0),(0,0,1))$ interval 
+$v= -pi/2+0.0001, pi/2-0.0001,20*2$ interval $u= -pi+0.0001, pi-0.0001,40*2$ 
+constant $e5=u5/length(u5)$ constant $e1=u1/length(u1)$ constant 
+$e2=u2/length(u2)$ constant $e6=u6/length(u6)$ constant 
+$Veronese= (Sx^2, Sy^2, Sz^2, sqrt(2)*Sy*Sz, sqrt(2)*Sz*Sx, sqrt(2)*Sx*Sy)$ 
+constant $e4=u4/length(u4)$ constant $S= ((1,0,0,0,0,0)-P)*c+(1,0,0,0,0,0)$ 
+constant $e3=u3/length(u3)$ constant $X= Veronese(u, v)$ function 
+$SPto4(S,P,X)=(SP(S,P,X)*e1,SP(S,P,X)*e2,SP(S,P,X)*e3,SP(S,P,X)*e4)$ constant 
+$q2=(SP(S, P, X) - P) * e2$ constant $q4=(SP(S, P, X) - P) * e4$ constant 
+$q1=(SP(S, P, X) - P) * e1$ constant $q3=(SP(S, P, X) - P) * e3$} objects 
+[{controls obj0 {constants [$P6$ $proj123$ $P5$ $P4$ X $P3$ Veronese $P2$ $e6$ S 
+$e5$ $e4$ $e3$ P $e2$ $e1$ $proj412$ $proj341$ $proj234$] intervals [v u] 
+objects [] readouts [{readout obj1 $SP(S, P, P6)$}] functions [Sy Sx $SPto4$ SP 
+Sz] variables [c]}} {frame.3d obj2 {canvas {canvas.3d obj4 {tool 100.0 points 
+true graph {graph.3d obj5 {light true graph {plots [{plot.axes obj6 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.polyhedron obj3 
+{faces [[0.0 2.0 4.0] [0.0 1.0 3.0] [1.0 2.0 3.0] [2.0 3.0 4.0] [0.0 1.0 4.0]] 
+super {transpt $0$ visible true addedz 0.0} colors [{coloring.constant obj7 
+{color [1.0 0.8 0.0 1.0]}} {coloring.constant obj8 {color [1.0 0.0 0.0 1.0]}} 
+{coloring.constant obj9 {color [0.0 1.0 0.0 1.0]}} {coloring.constant obj10 
+{color [0.0 1.0 0.0 1.0]}} {coloring.constant obj11 {color [0.0 1.0 0.0 1.0]}}] 
+vertices [$SPto4(S,P,P2)*proj234$ $SPto4(S,P,P3)*proj234$ 
+$SPto4(S,P,P4)*proj234$ $SPto4(S,P,P5)*proj234$ $SPto4(S,P,P6)*proj234$] title 
+Polyhedron}}]} alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 
+transf [-0.20725277615486645 0.34709944822849154 -0.6660823537769981 0.0 
+0.6351836439826644 -0.28777402286750453 -0.34759932735418647 0.0 
+-0.40085591849257596 -0.6354569434663948 -0.2064132936788265 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj5} frame {visible true 
+plots [{id obj3}] title $3D Graph$ labels [$ Polyhedron$]}}}] 

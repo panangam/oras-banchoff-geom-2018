@@ -1,0 +1,38 @@
+filever 100.0 env {function 
+$Sphere(theta,phi)=(cos(theta)*sin(phi), sin(theta)*sin(phi), cos(phi))$ 
+function 
+$Z(alpha,beta,gamma)=(cos(alpha)*sin(gamma), sin(alpha)*sin(gamma), cos(beta)*cos(gamma), sin(beta)*cos(gamma))$ 
+function $SP(x,y,u,v)=(x,y,u)/(1-v)$ interval $psi= 0,2*pi,40$ function 
+$phiFunc(theta)=sin(theta)/2+pi/2$ interval $phi=0,pi,10$ interval 
+$theta=0,2*pi,120$ function $ReverseHopf(theta,phi,psi)=Z(theta+psi,psi,phi/2)$} 
+objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 100.0 points true graph 
+{graph.3d obj3 {light true graph {plots [{plot.field obj1 {super {transpt $0$ 
+visible true addedz 0.0} intervals [theta] plots [{plot.curve obj4 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj5 {colors 
+[{coloring.expression obj6 {expr $theta/2/pi$}}] opacities [1.0] mixings [0.0]}} 
+expr $SP(ReverseHopf(theta,phiFunc(theta),psi))$} thick true}}]}} {plot.axes 
+obj7 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} alpha true 
+scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.047421604420160884 0.5946212933447581 -0.48443063450816204 
+2.5151856210949793E-17 0.4400087445873065 0.3764477342397772 0.5051492242765456 
+-8.200685865315317E-16 0.6282036507659499 -0.30855947822340657 
+-0.3172499838890178 -1.6443983869029176E-15 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 1.0}} graph {id obj3} frame {visible true plots [{id obj1}] 
+title $3D Graph$ labels [$ Field of Curve: SP(ReverseHopf(theta,p...$]}}} 
+{frame.3d obj8 {canvas {canvas.3d obj11 {tool 100.0 points true graph {graph.3d 
+obj12 {light true graph {plots [{plot.surface obj10 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj13 {color [0.0 
+1.0 0.0 1.0]}} expr $Sphere(theta, phi)$} vrtnml true}} {plot.curve obj9 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj14 {colors 
+[{coloring.constant obj15 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $Sphere(theta, phiFunc(theta))*1$} thick true}} {plot.axes obj16 
+{super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} alpha true scale 
+100.01271474132783 surfacemode 2.0 drawmode 1.0 transf [0.04394072604264173 
+1.0423233396200233 0.30434179750361423 0.0 -0.5057057727241516 
+-0.24989740076991085 0.92887330780437 0.0 0.9608972606152212 
+-0.17918148956108051 0.47493484792164276 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 1.0}} graph {id obj12} frame {visible true plots [{id obj9} 
+{id obj10}] title $3D Graph$ labels [$ Curve: Sphere(theta, phiFunc(theta))*1$ 
+$ Surface: Sphere(theta, phi)$]}}} {controls obj17 {constants [] intervals 
+[theta psi phi] objects [] readouts [] functions [phiFunc Sphere ReverseHopf SP 
+Z] variables []}}] 
