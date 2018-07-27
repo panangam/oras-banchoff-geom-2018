@@ -1,38 +1,52 @@
 filever 100.0 env {function 
 $Sphere(theta,phi)=(cos(theta)*sin(phi), sin(theta)*sin(phi), cos(phi))$ 
-function 
+function $SP(x,y,u,v)=(x,y,u)/(1-v)$ function 
 $Z(alpha,beta,gamma)=(cos(alpha)*sin(gamma), sin(alpha)*sin(gamma), cos(beta)*cos(gamma), sin(beta)*cos(gamma))$ 
-function $SP(x,y,u,v)=(x,y,u)/(1-v)$ interval $psi= 0,2*pi,40$ function 
-$phiFunc(theta)=sin(theta)/2+pi/2$ interval $phi=0,pi,10$ interval 
-$theta=0,2*pi,120$ function $ReverseHopf(theta,phi,psi)=Z(theta+psi,psi,phi/2)$} 
-objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 100.0 points true graph 
-{graph.3d obj3 {light true graph {plots [{plot.field obj1 {super {transpt $0$ 
-visible true addedz 0.0} intervals [theta] plots [{plot.curve obj4 {super {super 
-{transpt $0$ visible true addedz 0.0} color {coloring.group obj5 {colors 
-[{coloring.expression obj6 {expr $theta/2/pi$}}] opacities [1.0] mixings [0.0]}} 
-expr $SP(ReverseHopf(theta,phiFunc(theta),psi))$} thick true}}]}} {plot.axes 
-obj7 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} alpha true 
-scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
-[0.047421604420160884 0.5946212933447581 -0.48443063450816204 
-2.5151856210949793E-17 0.4400087445873065 0.3764477342397772 0.5051492242765456 
--8.200685865315317E-16 0.6282036507659499 -0.30855947822340657 
--0.3172499838890178 -1.6443983869029176E-15 0.0 0.0 0.0 1.0]}} group null 
+interval $psi= 0,2*pi,40$ function $phiFunc(theta)=sin(theta*4)/2+pi/2$ variable 
+$a= 0, 2*pi, 20$ 0.0 interval $phi=0,pi,10$ interval $theta=0,2*pi,120$ function 
+$ReverseHopf(theta,phi,psi)=Z(theta+psi,psi,phi/2)$ function 
+$rotate3xv(x,y,u,v)=(sin(a)*x+cos(a)*v, y, u, -sin(a)*v+cos(a)*x)$ function 
+$HopfTorus(theta,phi)=SP(rotate3xv(Z(theta+psi,psi,phi/2)))$} objects [{frame.3d 
+obj0 {canvas {canvas.3d obj2 {tool 100.0 points true graph {graph.3d obj3 {light 
+true graph {plots [{plot.axes obj4 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}} {plot.field obj1 {super {transpt $0$ visible true addedz 0.0} 
+intervals [theta] plots [{plot.curve obj5 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj6 {colors [{coloring.expression obj7 
+{expr $theta/2/pi$}}] opacities [1.0] mixings [0.0]}} expr 
+$HopfTorus(theta, phiFunc(theta))$} thick true}}]}}]} alpha true scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [-0.3819648246991821 
+-0.07638906538746122 0.08054289309454024 0.0 0.016052871587248885 
+0.24756350928563828 0.31092473113322444 0.0 -0.10983966611662462 
+0.30182212279038667 -0.2346448980650947 0.0 0.0 0.0 0.0 1.0]}} group {group obj8 
+{graphs [{id obj3} {id obj9}] canvases [{id obj2} {id obj10}] rotonly false}} 
 hotspots [] drawmode 1.0}} graph {id obj3} frame {visible true plots [{id obj1}] 
-title $3D Graph$ labels [$ Field of Curve: SP(ReverseHopf(theta,p...$]}}} 
-{frame.3d obj8 {canvas {canvas.3d obj11 {tool 100.0 points true graph {graph.3d 
-obj12 {light true graph {plots [{plot.surface obj10 {intrpl true super {super 
-{transpt $0$ visible true addedz 0.0} color {coloring.constant obj13 {color [0.0 
-1.0 0.0 1.0]}} expr $Sphere(theta, phi)$} vrtnml true}} {plot.curve obj9 {super 
-{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj14 {colors 
-[{coloring.constant obj15 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
-[0.0]}} expr $Sphere(theta, phiFunc(theta))*1$} thick true}} {plot.axes obj16 
-{super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} alpha true scale 
-100.01271474132783 surfacemode 2.0 drawmode 1.0 transf [0.04394072604264173 
-1.0423233396200233 0.30434179750361423 0.0 -0.5057057727241516 
--0.24989740076991085 0.92887330780437 0.0 0.9608972606152212 
--0.17918148956108051 0.47493484792164276 0.0 0.0 0.0 0.0 1.0]}} group null 
-hotspots [] drawmode 1.0}} graph {id obj12} frame {visible true plots [{id obj9} 
-{id obj10}] title $3D Graph$ labels [$ Curve: Sphere(theta, phiFunc(theta))*1$ 
-$ Surface: Sphere(theta, phi)$]}}} {controls obj17 {constants [] intervals 
-[theta psi phi] objects [] readouts [] functions [phiFunc Sphere ReverseHopf SP 
-Z] variables []}}] 
+title Circles labels [$ Field of Curve: HopfTorus(theta, phiFu...$]}}} {frame.3d 
+obj11 {canvas {canvas.3d obj14 {tool 100.0 points true graph {graph.3d obj15 
+{light true graph {plots [{plot.curve obj12 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj16 {colors [{coloring.constant obj17 
+{color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$Sphere(theta, phiFunc(theta))*1$} thick true}} {plot.axes obj18 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj13 {intrpl true 
+super {super {transpt $0$ visible true addedz 0.0} color {coloring.constant 
+obj19 {color [0.0 1.0 0.0 1.0]}} expr $Sphere(theta, phi)$} vrtnml true}}]} 
+alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.9893425826206372 -0.13411240475421585 0.05670200265045562 0.0 
+0.06806615173294311 -0.08172516531792005 0.9943279118791891 0.0 
+-0.12871772683589064 0.9875904314263084 0.08998270141200004 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj15} frame {visible 
+true plots [{id obj12} {id obj13}] title $2Sphere$ labels 
+[$ Curve: Sphere(theta, phiFunc(theta))*1$ $ Surface: Sphere(theta, phi)$]}}} 
+{frame.3d obj20 {canvas {canvas.3d obj10 {tool 100.0 points true graph {graph.3d 
+obj9 {light true graph {plots [{plot.axes obj22 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}} {plot.surface obj21 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj23 {colors 
+[{coloring.expression obj24 {expr $theta/2/pi$}}] opacities [1.0] mixings 
+[0.0]}} expr $HopfTorus(theta, phiFunc(theta))$} vrtnml true}}]} alpha true 
+scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.38196482469918197 -0.07638906538746092 0.08054289309454042 0.0 
+0.01605287158724895 0.2475635092856384 0.31092473113322483 0.0 
+-0.10983966611662482 0.3018221227903863 -0.23464489806509398 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj8} hotspots [] drawmode 1.0}} graph {id obj9} frame {visible 
+true plots [{id obj21}] title Surface labels 
+[$ Surface: HopfTorus(theta, phiFunc(theta))$]}}} {controls obj25 {constants [] 
+intervals [] objects [] readouts [] functions [phiFunc] variables [a]}}] 
