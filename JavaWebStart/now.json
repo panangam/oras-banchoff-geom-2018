@@ -1,0 +1,6 @@
+{
+  "name": "javawebstart",
+  "alias": "deigen-demo-jws",
+  "public": true,
+  "type": "static"
+}

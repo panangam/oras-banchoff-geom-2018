@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="https://deigen-demo-jws.now.sh/" href="Demo.jnlp">    
+	<information>
+		<title>Geometry Demo Maker - DEigen</title>
+		<vendor>Oras Phongpanangam</vendor>
+		<homepage href="http://java.com/" />
+		<description>For Tom Banchoff</description>
+		<offline-allowed/>
+	</information>
+	<security>
+		<all-permissions/>
+	</security>
+	<resources>
+		<j2se version="1.6+" />
+		<jar href="Demo.jar" />
+	</resources>    
+	<application-desc main-class="demo.Demo">
+		<argument>SP.demo</argument>
+	</application-desc>
+</jnlp>

@@ -1,0 +1,4 @@
+Permissions: sandbox
+Manifest-Version: 1.1
+Created-By: 1.4.2_07 (Apple Computer, Inc.)
+Main-Class: demo/Demo
