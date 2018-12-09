@@ -1,0 +1,131 @@
+filever 100.0 env {function $Sz(u,v)=cos(v)$ function 
+$VeroneseCartesian(x,y,z)=(x^2,y^2,z^2,sqrt(2)*y*z,sqrt(2)*x*z,sqrt(2)*x*y)$ 
+constant $P=(1/3,1/3,1/3,0,0,0)$ function $Sy(u,v)=sin(u)*sin(v)$ constant 
+$e3=unit(0,0,0,0,1,0)$ constant $e4=unit(0,0,0,0,0,1)$ constant 
+$e2=unit(0,0,0,1,0,0)$ constant $e1=unit(0,1,-1,0,0,0)$ function 
+$Sx(u,v)=cos(u)*sin(v)$ constant $e6=unit(1,1,1,0,0,0)$ constant 
+$e5=unit(2,-1,-1,0,0,0)$ function 
+$SP(S,P,X)=S + (((P-S)*(P-S))/((X-S)*(P-S)))*(X-S)$ interval $i= 1,6,5$ constant 
+$GR= (1+sqrt(5))/2$ variable $c= -1,1,20$ 0.0 variable $slice=-5,5,10/0.05$ 5.0 
+interval $v=0+0.0001,pi/2-0.0001,20$ interval $u= -pi+0.0001, pi-0.0001,40$ 
+constant 
+$Veronese=(Sx^2, Sy^2, Sz^2, sqrt(2)*Sy*Sz, sqrt(2)*Sz*Sx, sqrt(2)*Sx*Sy)$ 
+constant 
+$icosahedronVertices= (0,1, GR) | (1, GR, 0) | (GR, 0, 1) | (0, -1, GR) | (-1, GR, 0) | (GR, 0, -1) |  (0,1, -GR) | (1, -GR, 0) | (-GR, 0, 1) |  (0,-1, -GR) | (-1, -GR, 0) | (-GR, 0, -1) $ 
+constant $S= ((1,0,0,0,0,0)-P)*c+(1,0,0,0,0,0)$ constant 
+$sliceDelta=abs(slice)/5+0.01$ constant $X=Veronese(u, v)$ function 
+$P6to4(x)=map((e1,e2,e3,e4), func(e){e*(SP(S,P,x)-P)})$ constant 
+$q4=(SP(S, P, X) - P) * e4$ constant $q2=(SP(S, P, X) - P) * e2$ constant 
+$q1=(SP(S, P, X) - P) * e1$ constant $q3=(SP(S, P, X) - P) * e3$} objects 
+[{frame.3d obj0 {canvas {canvas.3d obj3 {tool 100.0 points true graph {graph.3d 
+obj4 {light true graph {plots [{plot.axes obj5 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}} {plot.surface obj2 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj6 {colors 
+[{coloring.constant obj7 {color [0.0 1.0 0.0 1.0]}}] opacities [0.5] mixings 
+[0.0]}} expr $(Sx,Sy,Sz)(u,v)$} vrtnml true}} {plot.field obj1 {super {transpt 
+$0$ visible true addedz 0.0} intervals [i] plots [{plot.point obj8 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj9 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 3.0 expr 
+$unit(icosahedronVertices@i)$}}]}}]} alpha true scale 100.01271474132783 
+surfacemode 2.0 drawmode 1.0 transf [0.27086242361923113 0.30169647202850935 
+-0.2866547790636083 0.0 -0.27706827100685644 0.38593435725834646 
+0.14438151270920385 0.0 0.3105235849266961 0.08119166691525258 
+0.37886830502317714 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 1.0}} 
+graph {id obj4} frame {visible true plots [{id obj1} {id obj2}] title 
+$3D Graph$ labels [$ Field of Point: unit(icosahedronVertic...$ 
+$ Surface: (Sx,Sy,Sz)(u,v)$]}}} {frame.3d obj10 {canvas {canvas.3d obj13 {tool 
+100.0 points true graph {graph.3d obj14 {light true graph {plots [{plot.surface 
+obj12 {intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj15 {colors [{coloring.constant obj16 {color [0.0 1.0 0.0 
+1.0]}}] opacities [0.5] mixings [0.0]}} expr $(q3, q4, q1)$} vrtnml true}} 
+{plot.axes obj17 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}} 
+{plot.field obj11 {super {transpt $0$ visible true addedz 0.0} intervals [i] 
+plots [{plot.point obj18 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj19 {colors [{coloring.expression obj20 {expr 
+$scale(i)*5/6$}}] opacities [1.0] mixings [0.0]}} label $$ size 10.0 style 0.0 
+showlabel false dim 3.0 expr 
+$ map(((0,0,1,0),(0,0,0,1),(1,0,0,0)), func(e){e*P6to4(VeroneseCartesian(unit(icosahedronVertices@i)))})$}}]}}]} 
+alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[0.47098432531159 0.18485284611540395 0.5220270212111897 0.0 0.5468428473535043 
+-0.26344342857277175 -0.4000868412244293 0.0 0.08743961281881665 
+0.6518711571358475 -0.3097213729874706 0.0 0.0 0.0 0.0 1.0]}} group {group obj21 
+{graphs [{id obj22} {id obj23} {id obj14} {id obj24}] canvases [{id obj25} {id 
+obj26} {id obj13} {id obj27}] rotonly false}} hotspots [] drawmode 1.0}} graph 
+{id obj14} frame {visible true plots [{id obj11} {id obj12}] title $341$ labels 
+[$ Field of Point:  map(((0,0,1,0),(0,0,0...$ $ Surface: (q3, q4, q1)$]}}} 
+{frame.3d obj28 {canvas {canvas.3d obj26 {tool 100.0 points true graph {graph.3d 
+obj23 {light true graph {plots [{plot.surface obj30 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj31 {colors 
+[{coloring.constant obj32 {color [0.0 1.0 0.0 1.0]}}] opacities [0.5] mixings 
+[0.0]}} expr $(q1,q2,q3)$} vrtnml true}} {plot.axes obj33 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y z]}} {plot.field obj29 {super {transpt $0$ 
+visible true addedz 0.0} intervals [i] plots [{plot.point obj34 {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj35 {colors 
+[{coloring.expression obj36 {expr $scale(i)*5/6$}}] opacities [1.0] mixings 
+[0.0]}} label $$ size 10.0 style 0.0 showlabel false dim 3.0 expr 
+$ map(((1,0,0,0),(0,1,0,0),(0,0,1,0)), func(e){e*P6to4(VeroneseCartesian(unit(icosahedronVertices@i)))})$}}]}}]} 
+alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[0.47098432531159135 0.1848528461154091 0.5220270212111799 0.0 
+0.5468428473535087 -0.2634434285727799 -0.4000868412244253 0.0 
+0.08743961281881184 0.6518711571358565 -0.3097213729874724 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj21} hotspots [] drawmode 1.0}} graph {id obj23} frame 
+{visible true plots [{id obj29} {id obj30}] title $123$ labels 
+[$ Field of Point:  map(((1,0,0,0),(0,1,0...$ $ Surface: (q1,q2,q3)$]}}} 
+{frame.3d obj37 {canvas {canvas.3d obj25 {tool 100.0 points true graph {graph.3d 
+obj22 {light true graph {plots [{plot.field obj39 {super {transpt $0$ visible 
+true addedz 0.0} intervals [i] plots [{plot.point obj40 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj41 {colors 
+[{coloring.expression obj42 {expr $scale(i)*5/6$}}] opacities [1.0] mixings 
+[0.0]}} label $$ size 10.0 style 0.0 showlabel false dim 3.0 expr 
+$ map(((0,1,0,0),(0,0,1,0),(0,0,0,1)), func(e){e*P6to4(VeroneseCartesian(unit(icosahedronVertices@i)))})$}}]}} 
+{plot.axes obj43 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}} 
+{plot.surface obj38 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj44 {colors [{coloring.expression obj45 {expr 
+$q4$}}] opacities [0.5] mixings [0.0]}} expr $(q2,q3,q4)$} vrtnml true}}]} alpha 
+true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[0.47098432531158924 0.18485284611540648 0.5220270212111855 0.0 
+0.5468428473535064 -0.26344342857277825 -0.4000868412244234 0.0 
+0.08743961281881209 0.651871157135859 -0.3097213729874684 0.0 0.0 0.0 0.0 1.0]}} 
+group {id obj21} hotspots [] drawmode 1.0}} graph {id obj22} frame {visible true 
+plots [{id obj38} {id obj39}] title $234$ labels [$ Surface: (q2,q3,q4)$ 
+$ Field of Point:  map(((0,1,0,0),(0,0,1...$]}}} {frame.3d obj46 {canvas 
+{canvas.3d obj27 {tool 100.0 points true graph {graph.3d obj24 {light true graph 
+{plots [{plot.surface obj47 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj49 {colors [{coloring.expression obj50 
+{expr $q3/20$}}] opacities [1.0] mixings [0.0]}} expr $(q4, q1, q2)$} vrtnml 
+true}} {plot.field obj48 {super {transpt $0$ visible true addedz 0.0} intervals 
+[i] plots [{plot.point obj51 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj52 {colors [{coloring.expression obj53 {expr 
+$scale(i)*5/6$}}] opacities [1.0] mixings [0.0]}} label $$ size 10.0 style 0.0 
+showlabel false dim 3.0 expr 
+$ map(((0,0,0,1),(1,0,0,0),(0,1,0,0)), func(e){e*P6to4(VeroneseCartesian(unit(icosahedronVertices@i)))})$}}]}} 
+{plot.axes obj54 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} 
+alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[0.47098432531158935 0.18485284611540648 0.5220270212111874 0.0 
+0.546842847353506 -0.26344342857277825 -0.4000868412244248 0.0 
+0.08743961281881663 0.651871157135859 -0.30972137298746893 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj21} hotspots [] drawmode 1.0}} graph {id obj24} frame 
+{visible true plots [{id obj47} {id obj48}] title $412$ labels 
+[$ Surface: (q4, q1, q2)$ $ Field of Point:  map(((0,0,0,1),(1,0,0...$]}}} 
+{controls obj55 {constants [icosahedronVertices X S P sliceDelta $q1$ Veronese 
+$e1$ GR] intervals [v u i] objects [] readouts [{readout obj56 $q1$}] functions 
+[Sy Sx $P6to4$ SP VeroneseCartesian Sz] variables [slice c]}} {frame.3d obj57 
+{canvas {canvas.3d obj60 {tool 100.0 points true graph {graph.3d obj61 {light 
+true graph {plots [{plot.field obj59 {super {transpt $0$ visible true addedz 
+0.0} intervals [u v] plots [{plot.point obj62 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj63 {color [1.0 1.0 1.0 1.0]}} label $$ 
+size 5.0 style 0.0 showlabel false dim 3.0 expr 
+$if (abs((SP(S, P, Veronese(u,v)) - P)*e3 - slice) < sliceDelta) then {map((e1,e2,e4), func(e){(SP(S, P, Veronese(u,v)) - P)*e})} else {(10,10,10)}$}} 
+{plot.curve obj64 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj65 {color [0.0 1.0 0.0 1.0]}} expr null} thick false}}]}} 
+{plot.wireframe obj58 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj66 {color [0.0 1.0 0.0 1.0]}} expr null} connect [] 
+intervals [] thick false}} {plot.axes obj67 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}}]} alpha true scale 100.01271474132783 surfacemode 
+2.0 drawmode 1.0 transf [-0.24631835952258996 -0.5227286925318283 
+-0.14012626577244486 0.0 -0.06733062923884066 0.18236185455885498 
+-0.561928937643744 0.0 0.536979741444374 -0.21691532587414172 
+-0.13473636952401727 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 
+1.0}} graph {id obj61} frame {visible true plots [{id obj58} {id obj59}] title 
+$3D Graph$ labels [$ Wireframe: unspecified$ 
+$ Field of Point: if (abs((SP(S, P, Vero..., Curve: unspecified$]}}}] 

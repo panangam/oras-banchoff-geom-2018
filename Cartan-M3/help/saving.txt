@@ -1,0 +1,12 @@
+The "Save" button allows you to create a file that contains the settings of all the type-ins, checkboxes, menus and sliders for later use.  The file name should end in ".data" (otherwise it will not be listed in the Load dialog box). 
+
+If you have already saved the data (or have loaded it from a file), CenterStage will remember the name of the file and will save to it automatically when you press "Save".  To save the data under a new name, use "Save As".  (Note that "Save" will overwrite any data previously saved in the file, even if you have made significant changes; be sure to use "Save As" if you want to keep your previous version of the file.)  If you want to be sure that a file is not overwritten, press "New" to indicate that you are starting to work on new data that should be saved under a new file.
+
+The "Load" button can be used to read the values from a saved data file.  The display is updated and resized automatically when a data file is loaded.  Loading a sample brings up its documentation page, if one exists.  (Press the "Done" button to close this window.)
+
+
+Note that there are sample objects stored in the "Samples" directory.  You can save your own data files in the "data" subdirectory.
+
+Pressing the "Samples" button brings up a dialog box that lists the predefined samples, with documentation, if it exists.  You can select and load a sample from this page.
+
+The "Info" button displays the information page for the currently loaded object, if there is one.  You can edit (or create) the text here, and it will be saved with the data when you use the "Save" button.  Whatever appears here will be the text that is used in the Samples window when you scroll through the samples.  If you save a data file in the samples directory, it will appear in the sample list automatically the next time you load this demo, or when you press the "Update List" button in the Samples window.

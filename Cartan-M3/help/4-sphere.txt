@@ -1,0 +1,14 @@
+Each vertex in D+ can be paired with the remaining 5 vertices in the D- to form a 5-simplex that lies between D+ and D-.  This is sliced by the hyperplane, cutting off the vertex in D+, and the slice forms a 4-simplex that is part of the equitorial 4-sphere.  There are six such simplices that correspond to the 6 vertices in D+.
+
+The top panel of the control window allows you to show any or all of these simplices.  Each is colored a different color (as indicated by the color of the numeric label for its checkbox).  Together, these simplices have 6 x 5 = 30 vertices, which accounts for all the vertices in the 4-sphere.  They also have 6 x 10 = 60 edges, half of the edges of the 4-sphere.
+
+In a similar way, the 6 vertices in D- can be joined to the 5 opposite vertices in D+, forming 6 more 4-simplices.  These share the same 30 vertices as the original set, and account for the missing 60 edges of the 4-sphere.  You can select to show any or all of these simplices using the second row of checkboxes (labeled "-") in the top panel of the controls window.
+
+Selecting all 12 vertices potentially would show you all 120 edges, provided you had a generic enough projection (see the next help topic for more on how to change the projection).  This is pretty complicated, however, so by default, several of the simplices are not shown.
+
+The spaces between the various 4-simplices in the 4-sphere are filled by tetrahedral prisms.  Between any two 4-simplices formed by vertices in D+, there is a tetrahedral prism that starts at a tetrahedral face of one of the 4-simplices and and ends at a tetrahedral face of the other.  (See the sample files for an example of this.)  Similarly for the vertices in D-.
+
+(Technically, the 4-sphere is still not complete even after adding these prisms, as there are gaps between them as well.  The 4-simplices come from slicing the 5-simplices with one vertex in D+ and 5 in D-, or vise versa, and the tetrahedral prisms come from slicing the 5-simplices that come from having an edge in one set and a tetrahedron in the other.  The gaps are filled by the slices of 5-simplices having a triangle in each of D+ and D-.  These produce a triangle cross a triangle, the boundary of which is formed by two interlinked triangular tori, each formed by three triangular prisms joined end-to-end.  One of these tori lies within the prisms that join the 4-simplices formed from vertices in D+, while the other lies in the complimentary set from D-.)
+
+
+

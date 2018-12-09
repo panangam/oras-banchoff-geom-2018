@@ -1,0 +1,32 @@
+catch {::object::Cartan-M3/6D TypeIn MM Set {} 0}
+catch {::object::Cartan-M3/6D Slider s Set {0.00} 0}
+catch {::object::Cartan-M3/6D CheckBox schematic Set {1} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn FV Set {{234 156} /* red    */
+#{123 456} /* green  */
+#{245 136} /* blue   */
+#{346 125} /* purple */} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn outline Set {1/2} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox colored Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox light Set {0} 0}
+catch {::object::Cartan-M3/Panels/Info TypeIn Info Set {This is one of the "towers" of three triangular prisms that we looked at in Ashtabula, but with the two ends connected, forming a torus with triangular cross section.
+
+In this case, it is the one for triangle 156 rather than 456 because it embeds in the schematic layout.  (Press the "Standard" button to turn on the tetrahedra for the layout.  Uncheck "Schematic layout" for a projection instead.)} 0}
+after idle {catch {
+  ::cs::GUI Display Cartan-M3
+  ::object::Cartan-M3 Update
+}}

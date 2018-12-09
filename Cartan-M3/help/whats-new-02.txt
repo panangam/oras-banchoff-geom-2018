@@ -1,0 +1,7 @@
+Version 2 includes one new feature:  the ability to create only a single square face.  You do so by using a pair of edges in the "Show Faces Formed by" type-in area.  For example:
+
+    {12 34}
+
+will generate a single square.  Note that these squares are always drawn in grey (unless "multi-colored" is selected), since it is not possible to tell if it is part of an RP2 or not.
+
+In addition to this new feature, typos were corrected in several of the help files.

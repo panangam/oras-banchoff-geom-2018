@@ -1,0 +1,3 @@
+You can apply permutations to the vertices you have selected in the "Show Faces" type-in using the "Apply Action of" checkboxes just below the type-in area.  The three symmetries of RP2 can be applied individually or in combination to obtain multiple copies of the prisms that you have specified.
+
+If "multi-colored" is checked, then each copy will gets its own color (if there were three prisms originally, all three will be the same color, a different color for each element of the group).  Otherwise, the copies are the same color as the originals.

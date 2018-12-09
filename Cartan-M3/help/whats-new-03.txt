@@ -1,0 +1,13 @@
+Version 3 fixes a problem with the SAVE button (it always saved to the directory containing Cartan-M3-02.cs, rather than the data or other directory, even if that was where you saved the file originally).
+
+It also includes one new feature:  the ability to apply an arbitrary permutation to faces in the "Show Faces Formed by" type-in area.  This is still in development, but the idea is that you can say
+
+    Permute("(15)",{{123 456} {124 356}})
+
+and the result will be equivalent to
+
+   {235 146} {245 136}
+
+You can use any permutation, such as "(123)(56)", but each number should only appear once (permutation multiplication isn't performed).
+
+One problem currently is that the list of faces passed to Permute() needs to include at least two pairs.

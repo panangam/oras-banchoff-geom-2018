@@ -1,0 +1,43 @@
+catch {::object::Cartan-M3/6D TypeIn MM Set {} 0}
+catch {::object::Cartan-M3/6D Slider s Set {0.00} 0}
+catch {::object::Cartan-M3/6D CheckBox schematic Set {1} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn FV Set {#
+#  Original Torus
+#
+{234 156} /* red    */
+
+#
+#  Neighbor torus
+#
+{245 136} /* green  */
+
+#
+# "Horizontal" pieces in keyhole
+#
+{235 16}  /* blue   */
+{345 16}  /* purple */} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn outline Set {1/3} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox colored Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox light Set {0} 0}
+catch {::object::Cartan-M3/Panels/Info TypeIn Info Set {This shows the two neighbor torus "towers" (red and green) from the previous example, together with the two prisms that fit in the "keyhole" (blue and purple).  Note that their direction is "turned 90 degrees from the direction of the prisms forming the tori.
+
+In this view, our sense of these prisms fitting into a "hole" between the two towsers may have been misleading.} 0}
+after idle {catch {
+  ::cs::GUI Display Cartan-M3
+  ::object::Cartan-M3 Update
+}}

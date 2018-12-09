@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Differential Geometry</title>
+  <link href="dgstyles.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+<!--
+function openwindow(lnk, nme)
+{
+if (! window.focus)return true;
+var href;
+if (typeof(lnk) == 'string')
+href=lnk;
+else
+href=lnk.href;
+window.open(href, nme, 'width=300,height=300,scrollbars=yes');
+return false;
+}
+//-->
+  </script>
+</head>
+<body>
+<p><br><br><br>
+<center>
+<h1>Chapter 9 &bull; Curves and Surfaces in <i>n</i>-dimensional Euclidean Space</h1>
+</center>
+<br>
+<br>
+<center>
+<table width=95% border=0 cellpadding="0" cellspacing="0">
+<tr><td>
+
+<h2>9.1: Curves in n-dimensional Euclidean Space</h2>
+<br>
+<h3>Problem 9.1.1: The Twisted Quartic</h3>
+<br>
+<div style="text-align: center;">
+<img style="height: 300px;" alt="figure9-1" src="images/figure9-1.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Twisted Quartic in 4-Space"> <param name="DATA" value="
+filever 100.0 env {value $P=(1.6197940473768324 , 0.5499300778131222)$ function 
+$x2(t)=t^2$ interval $t= -1.5,1.5,48$ function $x4(t)=t^4$ function $x1(t)=t$ 
+function $x3(t)=t^3$ variable $t0= -2,2,48$ 2.0 function 
+$X124(t)=(x1(t), x2(t), x4(t))$ function $X123(t)=(x1(t),x2(t), x3(t))$ function 
+$X234(t)=(x2(t), x3(t), x4(t))$ function $X134(t)=(x1(t), x3(t), x4(t))$} 
+objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 100.0 points true graph 
+{graph.3d obj3 {light true graph {plots [{plot.curve obj1 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj4 {colors 
+[{coloring.expression obj5 {expr $(t+1.5)/3$}}] opacities [1.0] mixings [0.0]}} 
+expr $X234(t)  $} thick true}} {plot.axes obj6 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}}]} alpha true scale 100.01271474132783 surfacemode 
+2.0 drawmode 1.0 transf [-0.5230128397519063 0.8455842824437676 
+-0.10698032877359803 0.0 -0.4859716267487949 -0.19273435107026035 
+0.8524582382213468 0.0 0.7002065034329461 0.4978360083416932 0.5117325095633836 
+0.0 0.0 0.0 0.0 1.0]}} group {group obj7 {graphs [{id obj8} {id obj9} {id obj3} 
+{id obj10}] canvases [{id obj11} {id obj12} {id obj2} {id obj13}]}} hotspots [] 
+drawmode 1.0}} graph {id obj3} frame {visible true plots [{id obj1}] title 
+$234 projection$ labels [$ Curve: X234(t)  $]}}} {frame.3d obj14 {canvas 
+{canvas.3d obj13 {tool 100.0 points true graph {graph.3d obj10 {light true graph 
+{plots [{plot.curve obj15 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj16 {colors [{coloring.expression obj17 {expr 
+$(t+1.5)/3$}}] opacities [1.0] mixings [0.0]}} expr $X124(t)$} thick true}} 
+{plot.axes obj18 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} 
+alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[-0.5230128397519204 0.8455842824404834 -0.10698032877363334 0.0 
+-0.48597162674879535 -0.19273435107341313 0.8524582382213223 0.0 
+0.7002065034329299 0.4978360083460618 0.5117325095634259 0.0 0.0 0.0 0.0 1.0]}} 
+group {id obj7} hotspots [] drawmode 1.0}} graph {id obj10} frame {visible true 
+plots [{id obj15}] title $124 projection$ labels [$ Curve: X124(t)$]}}} 
+{controls obj19 {constants [] intervals [t] objects [] readouts [{readout obj20 
+$X124(t0)*X124(t0)$} {readout obj21 $x1(t0)^2$}] functions [$x4$ $x3$ $x2$ 
+$X234$ $x1$ $X124$ $X123$ $X134$] variables [$t0$]}} {frame.3d obj22 {canvas 
+{canvas.3d obj11 {tool 100.0 points true graph {graph.3d obj8 {light true graph 
+{plots [{plot.curve obj23 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj24 {colors [{coloring.expression obj25 {expr 
+$(t+1.5)/3$}}] opacities [1.0] mixings [0.0]}} expr $X123(t)$} thick true}} 
+{plot.axes obj26 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} 
+alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[-0.5230128397519066 0.8455842824403329 -0.10698032877362348 0.0 
+-0.4859716267488011 -0.19273435107344408 0.8524582382213329 0.0 
+0.7002065034329291 0.4978360083462868 0.5117325095634111 0.0 0.0 0.0 0.0 1.0]}} 
+group {id obj7} hotspots [] drawmode 1.0}} graph {id obj8} frame {visible true 
+plots [{id obj23}] title $3D Graph$ labels [$ Curve: X123(t)$]}}} {frame.3d 
+obj27 {canvas {canvas.3d obj12 {tool 100.0 points true graph {graph.3d obj9 
+{light true graph {plots [{plot.axes obj29 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}} {plot.curve obj28 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj30 {colors 
+[{coloring.expression obj31 {expr $(t+1.5)/3$}}] opacities [1.0] mixings [0.0]}} 
+expr $X134(t)$} thick true}}]} alpha true scale 100.01271474132783 surfacemode 
+2.0 drawmode 1.0 transf [-0.5230128397519088 0.84558428244346 
+-0.10698032877362186 0.0 -0.48597162674879263 -0.1927343510705866 
+0.8524582382213285 0.0 0.7002065034329445 0.49783600834208935 0.5117325095634093 
+0.0 0.0 0.0 0.0 1.0]}} group {id obj7} hotspots [] drawmode 1.0}} graph {id 
+obj9} frame {visible true plots [{id obj28}] title $134 projection$ labels 
+[$ Curve: X134(t)$]}}}] 
+"></applet>
+<br>
+</div>
+<br>
+
+
+<h3>Problem 9.1.4</h3>
+<br>
+<div style="text-align: center;">
+<img style="height: 300px;" alt="figure9-14" src="images/figure9-14a.png"> &nbsp; &nbsp; 
+<img style="height: 300px;" alt="figure9-14" src="images/figure9-14b.png">
+<br>
+<img style="height: 300px;" alt="figure9-14" src="images/figure9-14c.png"> &nbsp; &nbsp; 
+<img style="height: 300px;" alt="figure9-14" src="images/figure9-14d.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Trig Curves in 4-Space"> <param name="DATA" value="
+filever 100.0 env {value $P=(1.6197940473768324 , 0.5499300778131222)$ function 
+$X(t)=(t, t^2)$ variable $m= 1,3,2$ 1.0 variable $n= 1,4,3$ 1.0 variable 
+$t0=-pi,pi,48$ 0.9375 interval $t=-pi,pi,48$ function $x2(t)=sin(m*t)$ function 
+$x1(t)=cos(m*t)$ function $x4(t)=sin(n*t)$ function $x3(t)=cos(n*t)$ function 
+$X124(t)=(x1(t), x2(t), x4(t))$ function $X123(t)=(x1(t),x2(t), x3(t))$ function 
+$X234(t)=(x2(t), x3(t), x4(t))$ function $X134(t)=(x1(t), x3(t), x4(t))$} 
+objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 100.0 points true graph 
+{graph.3d obj3 {light true graph {plots [{plot.curve obj1 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj4 {colors 
+[{coloring.expression obj5 {expr $(t+1.5)/3$}}] opacities [1.0] mixings [0.0]}} 
+expr $X123(t)$} thick true}} {plot.axes obj6 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}}]} alpha true scale 100.01271474132783 surfacemode 
+2.0 drawmode 1.0 transf [-0.05476278034859938 0.9976962968703772 
+-0.04003919454159617 0.0 -0.2937949018325336 0.02222403027510124 
+0.9556100921064156 0.0 0.9542984824182291 0.06409517680327027 0.2919010359091034 
+0.0 0.0 0.0 0.0 1.0]}} group {group obj7 {graphs [{id obj8} {id obj9} {id obj3} 
+{id obj10}] canvases [{id obj11} {id obj12} {id obj2} {id obj13}]}} hotspots [] 
+drawmode 1.0}} graph {id obj3} frame {visible true plots [{id obj1}] title 
+$123 projection$ labels [$ Curve: X123(t)$]}}} {frame.3d obj14 {canvas 
+{canvas.3d obj11 {tool 100.0 points true graph {graph.3d obj8 {light true graph 
+{plots [{plot.axes obj16 {super {transpt $0$ visible true addedz 0.0} labels [x 
+y z]}} {plot.curve obj15 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj17 {colors [{coloring.expression obj18 {expr 
+$(t+1.5)/3$}}] opacities [1.0] mixings [0.0]}} expr $X134(t)$} thick true}}]} 
+alpha true scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[-0.054762780348606016 0.9976962968704198 -0.04003919454157713 0.0 
+-0.29379490183253126 0.02222403027524366 0.9556100921063663 0.0 
+0.9542984824182106 0.06409517680272879 0.2919010359093014 0.0 0.0 0.0 0.0 1.0]}} 
+group {id obj7} hotspots [] drawmode 1.0}} graph {id obj8} frame {visible true 
+plots [{id obj15}] title $134 projection$ labels [$ Curve: X134(t)$]}}} 
+{frame.3d obj19 {canvas {canvas.3d obj13 {tool 100.0 points true graph {graph.3d 
+obj10 {light true graph {plots [{plot.curve obj20 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj21 {colors 
+[{coloring.expression obj22 {expr $(t+1.5)/3$}}] opacities [1.0] mixings [0.0]}} 
+expr $X124(t)$} thick true}} {plot.axes obj23 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}}]} alpha true scale 100.01271474132783 surfacemode 
+2.0 drawmode 1.0 transf [-0.054762780348615925 0.9976962968704489 
+-0.04003919454152344 0.0 -0.2937949018325272 0.022224030275270142 
+0.9556100921062992 0.0 0.9542984824181966 0.06409517680274716 
+0.29190103590953026 0.0 0.0 0.0 0.0 1.0]}} group {id obj7} hotspots [] drawmode 
+1.0}} graph {id obj10} frame {visible true plots [{id obj20}] title 
+$124 projection$ labels [$ Curve: X124(t)$]}}} {controls obj24 {constants [] 
+intervals [t] objects [] readouts [] functions [$X124$ $x3$ $X123$ $x2$ $x1$ X 
+$X134$ $X234$ $x4$] variables [m $t0$ n]}} {frame.3d obj25 {canvas {canvas.3d 
+obj12 {tool 100.0 points true graph {graph.3d obj9 {light true graph {plots 
+[{plot.axes obj27 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}} 
+{plot.curve obj26 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj28 {colors [{coloring.expression obj29 {expr $(t+1.5)/3$}}] 
+opacities [1.0] mixings [0.0]}} expr $X234(t)  $} thick true}}]} alpha true 
+scale 100.01271474132783 surfacemode 2.0 drawmode 1.0 transf 
+[-0.054762780348605766 0.9976962968704172 -0.04003919454148275 0.0 
+-0.2937949018325299 0.02222403027524967 0.9556100921062811 0.0 
+0.9542984824182171 0.06409517680278909 0.29190103590958477 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj7} hotspots [] drawmode 1.0}} graph {id obj9} frame {visible 
+true plots [{id obj26}] title $234 projection$ labels [$ Curve: X234(t)  $]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett9d14.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<br><hr width="50%"><br>
+<h2>9.2: Surfaces in n-dimensional Euclidean Space</h2>
+<br>
+<h3>Example 9.2.3: The Flat Torus</h3>
+<br>
+<div style="text-align: center;">
+<img style="height: 300px;" alt="figure9-23a" src="images/figure9-23a.png"> &nbsp; &nbsp; 
+<img style="height: 300px;" alt="figure9-23b" src="images/figure9-23b.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Flat Torus Stereo"> <param name="DATA" value="
+filever 100.0 env {function $X(t)=(e^(t/5))*(cos(t),sin(t))$ interval 
+$v= -pi,pi,24$ variable $t0= -pi,pi,24$ 0.33333333333333326 interval 
+$t= -pi,pi,96$ variable $a= 0,pi/2,20$ 1.5707963267948966 interval 
+$u= -pi,pi,24$ function 
+$Y(u,v)=((cos(u)*cos(a) + sin(v)*sin(a)), sin(u), cos(v))/(1.41 - (-sin(a)*cos(u) + cos(a)*sin(v) ))$} 
+objects [{controls obj0 {constants [] intervals [v u t] objects [] readouts [] 
+functions [Y] variables [a $t0$]}} {frame.3d obj1 {canvas {canvas.3d obj3 {tool 
+100.0 points true graph {graph.3d obj4 {light true graph {plots [{plot.surface 
+obj2 {intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj5 {colors [{coloring.expression obj6 {expr 
+$(u +pi)/(2*pi)$}}] opacities [1.0] mixings [0.0]}} expr $Y(u,v)$} vrtnml true}} 
+{plot.axes obj7 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} 
+alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[0.7553176615293689 0.45783121978464963 -0.4689198272330832 0.0 
+-0.6475148024636181 0.6317191282080823 -0.426210656420649 0.0 0.1010930797448868 
+0.6255569656286462 0.7736011065020353 0.0 0.0 0.0 0.0 1.0]}} group null hotspots 
+[] drawmode 1.0}} graph {id obj4} frame {visible true plots [{id obj2}] title 
+$3D Graph$ labels [$ Surface: Y(u,v)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett9d23.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Example 9.2.6: The Klein Bottle</h3>
+<br>
+<div style="text-align: center;">
+<img style="height: 500px;" alt="figure9-26" src="images/figure9-26.png"> <br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Klein Bottle in 4-Space"> <param name="DATA" value="
+filever 100.0 env {function $f(u,v)=u^2 - v^2$ variable $b=  2,5,3$ 2.0 variable 
+$v0= -1,1,20$ 0.5 variable $a= 1,4,3$ 1.0 variable $u0= -1,1,20$ -0.5 interval 
+$v= -pi,pi,20$ interval $u= -pi,pi,20$ function $x3(u,v)=b*sin(v)*cos(u/2)$ 
+function $x4(u,v)=b*sin(v)*sin(u/2)$ constant $v1= v0$ function 
+$x2(u,v)=((b + a*cos(v))*sin(u))$ function $x1(u,v)=((b + a*cos(v))*cos(u))$ 
+constant $u1= u0$ function $X234(u,v)=(x2(u,v), x3(u,v),x4(u,v))$ function 
+$X123(u,v)=(x1(u,v), x2(u,v),x3(u,v))$ function 
+$X124(u,v)=(x1(u,v), x2(u,v),x4(u,v))$ function 
+$X134(u,v)=(x1(u,v), x3(u,v),x4(u,v))$} objects [{frame.3d obj0 {canvas 
+{canvas.3d obj2 {tool 1.0 points true graph {graph.3d obj3 {light true graph 
+{plots [{plot.surface obj1 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj4 {colors [{coloring.expression obj5 {expr 
+$(u+pi)/(2*pi)$}}] opacities [1.0] mixings [0.0]}} expr $X124(u,v)$} vrtnml 
+true}} {plot.axes obj6 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.38691619909155994 0.1019099338988909 -0.11938667658946622 0.0 
+0.14697691703680643 0.12372479402084242 -0.3707194619879356 0.0 
+-0.055105344864961686 -0.3855509032683444 -0.15052195936174384 0.0 0.0 0.0 0.0 
+1.0]}} group {group obj7 {graphs [{id obj3} {id obj8} {id obj9} {id obj10} {id 
+obj11}] canvases [{id obj2} {id obj12} {id obj13} {id obj14} {id obj15}]}} 
+hotspots [] drawmode 1.0}} graph {id obj3} frame {visible true plots [{id obj1}] 
+title $Projection 124$ labels [$ Surface: X124(u,v)$]}}} {frame.3d obj16 {canvas 
+{canvas.3d obj15 {tool 100.0 points true graph {graph.3d obj11 {light true graph 
+{plots [{plot.surface obj17 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj18 {colors [{coloring.expression obj19 
+{expr $(u+pi)/(2*pi)$}}] opacities [1.0] mixings [0.0]}} expr 
+$(u,v,(b+a*cos(v))*sin(u))$} vrtnml true}} {plot.axes obj20 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y z]}}]} alpha true scale 100.01271474132783 
+surfacemode 3.0 drawmode 1.0 transf [-0.486358837077236 0.12810214990748964 
+-0.15007064921263827 0.0 0.18475195046126752 0.15552372084417052 
+-0.46599932191440385 0.0 -0.06926815550294371 -0.4846426419672616 
+-0.18920811607687643 0.0 0.0 0.0 0.0 1.0]}} group {id obj7} hotspots [] drawmode 
+1.0}} graph {id obj11} frame {visible true plots [{id obj17}] title $3D Graph$ 
+labels [$ Surface: (u,v,(b+a*cos(v))*sin(u))$]}}} {frame.3d obj21 {canvas 
+{canvas.3d obj13 {tool 100.0 points true graph {graph.3d obj9 {light true graph 
+{plots [{plot.surface obj22 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj23 {colors [{coloring.expression obj24 
+{expr $(u+pi)/(2*pi)$}}] opacities [1.0] mixings [0.0]}} expr $X234(u,v)$} 
+vrtnml true}} {plot.axes obj25 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 
+1.0 transf [-0.4118220654212473 0.10846989493773372 -0.12707161874400238 0.0 
+0.1564378480029154 0.13168898158598158 -0.3945827413951367 0.0 
+-0.05865248596811303 -0.41036888525677795 -0.16021108534903458 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj7} hotspots [] drawmode 1.0}} graph {id obj9} frame {visible 
+true plots [{id obj22}] title $Projection 234$ labels [$ Surface: X234(u,v)$]}}} 
+{frame.3d obj26 {canvas {canvas.3d obj12 {tool 100.0 points true graph {graph.3d 
+obj8 {light true graph {plots [{plot.axes obj28 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}} {plot.surface obj27 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj29 {colors 
+[{coloring.expression obj30 {expr $(u+pi)/(2*pi)$}}] opacities [1.0] mixings 
+[0.0]}} expr $X123(u,v)$} vrtnml true}}]} alpha true scale 100.01271474132783 
+surfacemode 3.0 drawmode 1.0 transf [-0.4263449391945216 0.11229507752185079 
+-0.1315527897013764 0.0 0.16195461679863066 0.13633298349233797 
+-0.40849767171959755 0.0 -0.060720861418851656 -0.42484051274223117 
+-0.16586091707235284 0.0 0.0 0.0 0.0 1.0]}} group {id obj7} hotspots [] drawmode 
+1.0}} graph {id obj8} frame {visible true plots [{id obj27}] title 
+$Projection 123$ labels [$ Surface: X123(u,v)$]}}} {controls obj31 {constants [] 
+intervals [v u] objects [] readouts [] functions [$x4$ $x3$ $x2$ $x1$ $X124$ 
+$X123$ $X134$] variables [$v0$ b a $u0$]}} {frame.3d obj32 {canvas {canvas.3d 
+obj14 {tool 100.0 points true graph {graph.3d obj10 {light true graph {plots 
+[{plot.axes obj34 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}} 
+{plot.surface obj33 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj35 {colors [{coloring.expression obj36 {expr 
+$(u+pi)/(2*pi)$}}] opacities [1.0] mixings [0.0]}} expr $X134(u,v)$} vrtnml 
+true}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.3896074140820983 0.10261877354535674 -0.12021707659457626 0.0 
+0.1479992223404548 0.12458536801892114 -0.37329801976281035 0.0 
+-0.05548863284961611 -0.38823262187543367 -0.15156892238467182 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj7} hotspots [] drawmode 1.0}} graph {id obj10} frame 
+{visible true plots [{id obj33}] title $Projection 134$ labels 
+[$ Surface: X134(u,v)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett9d26.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Problem 9.2.5: Veronese Surface in R<sup>5</sup></h3>
+<br>
+<div style="text-align: center;">
+<img style="height: 300px;" alt="figure9-25" src="images/figure9-25.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Veronese in 5-Space"> <param name="DATA" value="
+filever 100.0 env {variable $v0= -1,1,20$ 0.6000000000000001 interval 
+$u= -1,1,20$ variable $a= -1,2,6$ 2.0 variable $c= -1,3,6$ -1.0 interval 
+$v= -1,1,20$ variable $u0= -1,1,20$ 0.20000000000000018 variable $b= -1,3,6$ 
+-1.0 variable $theta= 0, pi/2,10$ 0.3141592653589793 constant $v1= v0$ constant 
+$u1= u0$ function $f(u,v)=a*u^2 + b*u*v + c* v^2$ function 
+$Y(u,v)=(cos(theta)*u + sin(theta)*v, a*u^2 + c*v^2, b*u*v)$ function 
+$X(u,v)=(u,v,f(u,v))$} objects [{controls obj0 {constants [] intervals [v u] 
+objects [] readouts [] functions [f Y X] variables [$v0$ b a theta $u0$ c]}} 
+{frame.2d obj1 {canvas {canvas.3d obj6 {tool 0.0 points true graph {graph.3d 
+obj7 {light false graph {plots [{plot.wireframe obj5 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj8 {colors [{coloring.constant 
+obj9 {color [0.75 0.75 0.75 1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v$} 
+connect [true true] intervals [u v] thick false}} {plot.curve obj3 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj10 {colors 
+[{coloring.constant obj11 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $u1,v$} thick true}} {plot.point obj4 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj12 {color [1.0 1.0 1.0 1.0]}} label 
+$(u0,v0)$ size 10.0 style 0.0 showlabel true dim 2.0 expr $(u1,v1)$}} {plot.axes 
+obj13 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve 
+obj2 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj14 {color [0.0 1.0 0.0 1.0]}} expr $u,v1$} thick true}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 
+0.0 0.0 -5.0 0.0 1.0 0.0 10.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj7} frame {visible true plots [{id obj2} 
+{id obj3} {id obj4} {id obj5}] title Domain labels [$ Curve: u,v1$ 
+$ Curve: u1,v$ $ Point: (u1,v1)$ $ Wireframe: u,v$]}}} {frame.3d obj15 {canvas 
+{canvas.3d obj19 {tool 100.0 points true graph {graph.3d obj20 {light true graph 
+{plots [{plot.axes obj21 {super {transpt $0$ visible true addedz 0.0} labels [x 
+y z]}} {plot.curve obj18 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj22 {colors [{coloring.constant obj23 {color [0.25 0.25 
+0.25 1.0]}}] opacities [1.0] mixings [0.0]}} expr $Y(u,v0)$} thick true}} 
+{plot.curve obj16 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj24 {colors [{coloring.constant obj25 {color [1.0 0.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $Y(u0,v)$} thick true}} 
+{plot.surface obj17 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj26 {colors [{coloring.expression obj27 {expr 
+$(u+1)/2$}}] opacities [1.0] mixings [0.0]}} expr $Y(u,v)$} vrtnml true}}]} 
+alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.253589919187953 0.22225053922659752 0.9414334021584939 0.0 
+-0.1783884848577367 -0.9672991384466618 0.1803050893083571 0.0 
+0.9507206221369112 -0.12221732517863602 0.28494424730071327 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj20} frame {visible 
+true plots [{id obj16} {id obj17} {id obj18}] title $Surface Y(u,v)$ labels 
+[$ Curve: Y(u0,v)$ $ Surface: Y(u,v)$ $ Curve: Y(u,v0)$]}}} {frame.3d obj28 
+{canvas {canvas.3d obj33 {tool 100.0 points true graph {graph.3d obj34 {light 
+true graph {plots [{plot.point obj30 {super {transpt $0$ visible true addedz 
+0.0} color {coloring.constant obj35 {color [1.0 1.0 1.0 1.0]}} label $X(u0,v0)$ 
+size 10.0 style 2.0 showlabel true dim 3.0 expr $X(u1,v1)$}} {plot.curve obj32 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.constant 
+obj36 {color [0.0 1.0 0.0 1.0]}} expr $X(u,v1)$} thick true}} {plot.surface 
+obj31 {intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj37 {colors [{coloring.constant obj38 {color [0.75 0.75 0.75 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(u,v)$} vrtnml true}} {plot.axes 
+obj39 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.curve 
+obj29 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj40 {colors [{coloring.constant obj41 {color [1.0 0.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $X(u1,v)$} thick true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [-0.6468684960579069 
+0.7619615463398637 -0.031237008613811654 0.0 -0.6239101762814646 
+-0.5052270961861488 0.5962228385526164 0.0 0.43851709287119833 
+0.4051668584406585 0.8022110545742419 0.0 0.0 0.0 0.0 1.0]}} group null hotspots 
+[] drawmode 1.0}} graph {id obj34} frame {visible true plots [{id obj29} {id 
+obj30} {id obj31} {id obj32}] title $Surface X(u,v)$ labels [$ Curve: X(u1,v)$ 
+$ Point: X(u1,v1)$ $ Surface: X(u,v)$ $ Curve: X(u,v1)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett9d25.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+
+
+<h3>Problem 9.2.7: Surfaces in R<sup>4</sup></h3>
+<br>
+<div style="text-align: center;">
+<img style="height: 500px;" alt="figure9-27" src="images/figure9-27.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Function Graphs in 4-Space"> <param name="DATA" value="
+filever 100.0 env {function $x3(u,v)=u^2 - v^2$ function $x1(u,v)=u$ function 
+$x2(u,v)=v$ function $x4(u,v)=2*u*v$ interval $v= -1,1,20$ variable 
+$v0= -1,1,20$ 0.5 variable $u0= -1,1,20$ -0.5 interval $u= -1,1,20$ function 
+$X123(u,v)=(x1(u,v), x2(u,v),x3(u,v))$ function 
+$X234(u,v)=(x2(u,v), x3(u,v),x4(u,v))$ function 
+$X124(u,v)=(x1(u,v), x2(u,v),x4(u,v))$ function 
+$X134(u,v)=(x1(u,v), x3(u,v),x4(u,v))$ constant $v1= v0$ constant $u1= u0$} 
+objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 100.0 points true graph 
+{graph.3d obj3 {light true graph {plots [{plot.axes obj4 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y z]}} {plot.surface obj1 {intrpl true super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj5 {colors 
+[{coloring.expression obj6 {expr $(u+1)/2$}}] opacities [1.0] mixings [0.0]}} 
+expr $X123(u,v)$} vrtnml true}}]} alpha true scale 100.01271474132783 
+surfacemode 3.0 drawmode 1.0 transf [0.3351608247889004 0.8098311167483803 
+-0.481498477539696 0.0 -0.6602278733852126 0.566466537404426 0.4931681429360133 
+0.0 0.6721356832753858 0.15260807431808054 0.7245304679031667 0.0 0.0 0.0 0.0 
+1.0]}} group {group obj7 {graphs [{id obj8} {id obj9} {id obj3} {id obj10}] 
+canvases [{id obj11} {id obj12} {id obj2} {id obj13}]}} hotspots [] drawmode 
+1.0}} graph {id obj3} frame {visible true plots [{id obj1}] title 
+$Projection 123$ labels [$ Surface: X123(u,v)$]}}} {frame.3d obj14 {canvas 
+{canvas.3d obj13 {tool 100.0 points true graph {graph.3d obj10 {light true graph 
+{plots [{plot.surface obj15 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj16 {colors [{coloring.expression obj17 
+{expr $(u+1)/(2)$}}] opacities [1.0] mixings [0.0]}} expr $X134(u,v)$} vrtnml 
+true}} {plot.axes obj18 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[0.3351608247889135 0.8098311167484296 -0.4814984775394428 0.0 
+-0.6602278733852178 0.5664665374043458 0.49316814293541217 0.0 
+0.6721356832753692 0.1526080743182381 0.7245304679037514 0.0 0.0 0.0 0.0 1.0]}} 
+group {id obj7} hotspots [] drawmode 1.0}} graph {id obj10} frame {visible true 
+plots [{id obj15}] title $Projection 134$ labels [$ Surface: X134(u,v)$]}}} 
+{controls obj19 {constants [] intervals [v u] objects [] readouts [] functions 
+[$x4$ $x3$ $x2$ $x1$ $X234$ $X124$ $X123$ $X134$] variables [$v0$ $u0$]}} 
+{frame.3d obj20 {canvas {canvas.3d obj11 {tool 100.0 points true graph {graph.3d 
+obj8 {light true graph {plots [{plot.axes obj22 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}} {plot.surface obj21 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj23 {colors 
+[{coloring.expression obj24 {expr $(u+1)/2$}}] opacities [1.0] mixings [0.0]}} 
+expr $X234(u,v)$} vrtnml true}}]} alpha true scale 100.01271474132783 
+surfacemode 3.0 drawmode 1.0 transf [0.3351608247888811 0.8098311167486154 
+-0.4814984775391854 0.0 -0.6602278733852327 0.5664665374039781 
+0.49316814293471356 0.0 0.6721356832753722 0.15260807431840928 0.724530467904384 
+0.0 0.0 0.0 0.0 1.0]}} group {id obj7} hotspots [] drawmode 1.0}} graph {id 
+obj8} frame {visible true plots [{id obj21}] title $Projection 234$ labels 
+[$ Surface: X234(u,v)$]}}} {frame.3d obj25 {canvas {canvas.3d obj12 {tool 100.0 
+points true graph {graph.3d obj9 {light true graph {plots [{plot.axes obj27 
+{super {transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.surface 
+obj26 {intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj28 {colors [{coloring.expression obj29 {expr $(u+1)/2$}}] 
+opacities [1.0] mixings [0.0]}} expr $X124(u,v)$} vrtnml true}}]} alpha true 
+scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[0.33516082478893194 0.8098311167483841 -0.4814984775397714 0.0 
+-0.6602278733851844 0.5664665374044464 0.4931681429360157 0.0 0.6721356832753786 
+0.15260807431817633 0.7245304679031307 0.0 0.0 0.0 0.0 1.0]}} group {id obj7} 
+hotspots [] drawmode 1.0}} graph {id obj9} frame {visible true plots [{id 
+obj26}] title $Projection 124$ labels [$ Surface: X124(u,v)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett9d27.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+</td></tr>
+</table>
+</center>
+
+<BR><P><BR>
+Return to <a href="index.html">home page</a> <br>
+</body>
+</html>

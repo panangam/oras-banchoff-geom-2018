@@ -1,0 +1,7 @@
+This demonstration is more sophisticated that most in its initialization.  When the demo is loaded, you will notice several unusual changes.
+
+First, the CenterStage window will disappear (it has only been iconified, so it can be openned again by double-clicking the iconified window).  Normally, you do not need to adjust anything in the CenterStage window, so there is no need to have it take up space on screen.
+
+After a few moments, the Controls window will open, and then the display will be updated to reflect the initial settings.  As the demo is initializing its data, you may see informational messages in the Geomview output window to let you know what the demo is doing.
+
+When you are done using the demonstration, the "Quit" button will cause CenterStage to exit (leaving Geomview running).  If you want to load a different demo instead, you can deiconify the CenterStage window and use the FILE/OPEN menu instead.

@@ -1,0 +1,48 @@
+catch {::object::Cartan-M3/6D TypeIn MM Set {} 0}
+catch {::object::Cartan-M3/6D Slider s Set {0.00} 0}
+catch {::object::Cartan-M3/6D CheckBox schematic Set {1} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn FV Set {#
+# Star of 1
+#
+{{136 156 125} 4}
+{{124 134} 5}
+{{12 13} 45}
+
+#
+# Mobius Band (completement of 1)
+#
+{{456 246 236 235 345} 1}
+
+#
+# Squares joining the two
+#
+{{36 56 25} 14}
+{{24 34} 15}
+
+#
+# Triangles at the corners
+#
+{{3 2} 145}} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn outline Set {2/3} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox colored Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p1 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p2 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p3 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p4 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p5 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m1 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m4 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m5 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox light Set {0} 0}
+catch {::object::Cartan-M3/Panels/Info TypeIn Info Set {This shows the RP2 at the top of the model we developed in Ashtabula. It is not generic, however, as some of the blue faces in the small blue tetrahedron lie in the same plane (and overlap) the grey rectangles faces} 0}
+after idle {catch {
+  ::cs::GUI Display Cartan-M3
+  ::object::Cartan-M3 Update
+}}

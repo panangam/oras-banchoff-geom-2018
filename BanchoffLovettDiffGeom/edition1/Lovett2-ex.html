@@ -1,0 +1,914 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Differential Geometry</title>
+  <link href="dgstyles.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+<!--
+function openwindow(lnk, nme)
+{
+if (! window.focus)return true;
+var href;
+if (typeof(lnk) == 'string')
+href=lnk;
+else
+href=lnk.href;
+window.open(href, nme, 'width=300,height=300,scrollbars=yes');
+return false;
+}
+//-->
+  </script>
+</head>
+
+<body>
+<p><br><br><br>
+<center>
+<h1>Chapter 2 &bull; Plane Curves: Global Properties</h1>
+</center>
+<br>
+<br>
+<center>
+<table width=95% border=0 cellpadding="0" cellspacing="0">
+<tr><td>
+
+<h2>2.1: Basic Properties</h2>
+<br>
+<h3>Definition 2.1.1: Closed Curve</h3>
+<br>
+Circle<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 249px; height: 220px;" alt="figure2-2" src="figure1-2.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Circles (type-in)"> <param name="DATA"
+ value="filever 100.0 env {variable $R= 0,1,20$ 1.0 constant $A= (0,0)$ interval 
+$t= 0,2*pi, 240$ variable $t0= 0,2*pi, 100$ 0.0 function 
+$X(t)=A + (R*cos(t), R*sin(t))$ interval $t1= 0, t0, 240$} objects [{controls 
+obj0 {constants [A] intervals [] objects [{plotcheckbox obj1 {values [true] 
+label $Show entire curve$ plots [{id obj2}]}} {plotcheckbox obj3 {values [true] 
+label $Show position vector X(t0)$ plots [{id obj4}]}}] readouts [] functions 
+[X] variables [R $t0$]}} {frame.2d obj5 {canvas {canvas.3d obj9 {tool 0.0 points 
+true graph {graph.3d obj10 {light false graph {plots [{plot.curve obj2 {super 
+{super {transpt $0$ visible false addedz 0.0} color {coloring.constant obj11 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.axes obj12 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj8 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj13 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj14 {color [1.0 
+1.0 1.0 1.0]}} label A size 10.0 style 0.0 showlabel true dim 2.0 expr $A$}} 
+{plot.vector obj4 {base $0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group 
+obj15 {colors [{coloring.constant obj16 {color [0.0 1.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 10.0}} 
+{plot.point obj6 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 10.0 
+style 0.0 showlabel true dim 2.0 expr $X(t0)$}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj10} frame {visible true plots [{id obj6} {id obj2} {id obj7} {id 
+obj8} {id obj4}] title 
+$The counterclockwise circle of radius R centered at A in the plane$ labels 
+[$ Point: X(t0)$ $ Curve: X(t)$ $ Point: A$ $ Curve: X(t1)$ 
+$ Vector: X(t0)  starting at 0,0$]}}}] "></applet>
+<big><a href="Lovett2d1.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+Ellipse<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 262px; height: 193px;" alt="figure1-6" src="figure1-6.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Ellipses"> <param name="DATA"
+ value="filever 100.0 env {variable $q= 0,1,20$ 0.6000000000000001 variable $p= 0,1,20$ 
+1.0 interval $t=0,2*pi,240$ variable $t0=0,2*pi,50$ 0.0 function 
+$X(t)=(p*cos(t), q*sin(t))$ interval $t1=0, t0,240$} objects [{controls obj0 
+{constants [] intervals [] objects [{plotcheckbox obj1 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj2}]}} {plotcheckbox obj3 {values 
+[true] label $Show entire curve$ plots [{id obj4}]}}] readouts [] functions [X] 
+variables [q $t0$ p]}} {frame.2d obj5 {canvas {canvas.3d obj8 {tool 0.0 points 
+true graph {graph.3d obj9 {light false graph {plots [{plot.vector obj2 {base 
+$0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group obj10 {colors 
+[{coloring.constant obj11 {color [0.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible false addedz 0.0} endsize 10.0}} {plot.axes obj12 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj6 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj13 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj14 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 10.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}} {plot.curve obj4 {super {super {transpt $0$ visible false addedz 0.0} 
+color {coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick 
+true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [] drawmode 0.0}} graph {id obj9} frame {visible true plots [{id 
+obj2} {id obj4} {id obj6} {id obj7}] title Ellipse labels 
+[$ Vector: X(t0)  starting at 0,0$ $ Curve: X(t)$ $ Curve: X(t1)$ 
+$ Point: X(t0)$]}}}] "></applet>
+<big><a href="Lovett2d2.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+Lissajous Figure<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 250px; height: 226px;" alt="figure1-7" src="figure1-7.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lissajous Figures"> <param name="DATA"
+ value="filever 100.0 env {variable $n= 0,5,5$ 3.0 variable $m= 0,5,5$ 2.0 interval 
+$t=0,2*pi,240$ variable $t0=0,2*pi,50$ 0.0 function $X(t)=(cos(n*t), sin(m*t))$ 
+interval $t1=0, t0,240$} objects [{controls obj0 {constants [] intervals [] 
+objects [{plotcheckbox obj1 {values [true] label $Show entire curve$ plots [{id 
+obj2}]}} {plotcheckbox obj3 {values [true] label $Show position vector X(t0)$ 
+plots [{id obj4}]}}] readouts [] functions [X] variables [m $t0$ n]}} {frame.2d 
+obj5 {canvas {canvas.3d obj8 {tool 0.0 points true graph {graph.3d obj9 {light 
+false graph {plots [{plot.vector obj4 {base $0,0$ endstyle 1.0 dir $X(t0)$ color 
+{coloring.group obj10 {colors [{coloring.constant obj11 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 
+10.0}} {plot.curve obj2 {super {super {transpt $0$ visible false addedz 0.0} 
+color {coloring.constant obj12 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick 
+true}} {plot.point obj7 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj13 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 10.0 
+style 0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.axes obj14 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj6 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj15 {color [0.0 
+1.0 0.0 1.0]}} expr $X(t1)$} thick true}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj9} 
+frame {visible true plots [{id obj2} {id obj6} {id obj7} {id obj4}] title 
+$Lissajous figure$ labels [$ Curve: X(t)$ $ Curve: X(t1)$ $ Point: X(t0)$ 
+$ Vector: X(t0)  starting at 0,0$]}}}] "></applet>
+<big><a href="Lovett2d3.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+Flower<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 198px; height: 195px;" alt="figure1-12" src="figure1-12.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Flower"> <param name="DATA"
+ value="filever 100.0 env {variable $n= 1, 6,5$ 3.0 variable $t0=0,2*pi,50$ 0.0 interval 
+$t=0,pi,240$ function $r(t)=sin(n*t)$ interval $t1=0, t0,240$ function 
+$X(t)=(r(t)*cos(t), r(t)*sin(t))$} objects [{controls obj0 {constants [] 
+intervals [] objects [{plotcheckbox obj1 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj2}]}} {plotcheckbox obj3 {values 
+[true] label $Show entire curve$ plots [{id obj4}]}}] readouts [] functions [r 
+X] variables [$t0$ n]}} {frame.2d obj5 {canvas {canvas.3d obj8 {tool 1.0 points 
+true graph {graph.3d obj9 {light false graph {plots [{plot.curve obj6 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj10 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.vector obj2 {base 
+$0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group obj11 {colors 
+[{coloring.constant obj12 {color [0.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible false addedz 0.0} endsize 10.0}} {plot.curve obj4 {super 
+{super {transpt $0$ visible false addedz 0.0} color {coloring.constant obj13 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj14 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 10.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}} {plot.axes obj15 {super {transpt $0$ visible true addedz 0.0} labels 
+[x y]}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.8293195458144568 0.0 0.0 0.0 0.0 0.8293195458144568 0.0 0.0 0.0 0.0 
+0.8293195458144568 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj9} frame {visible true plots [{id obj6} {id obj4} {id obj2} {id 
+obj7}] title Flower labels [$ Curve: X(t1)$ $ Curve: X(t)$ 
+$ Vector: X(t0)  starting at 0,0$ $ Point: X(t0)$]}}}] "></applet>
+<big><a href="Lovett2d4.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+Cardioid<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 178px; height: 165px;" alt="figure1-13" src="figure1-13.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Cardioid"> <param name="DATA"
+ value="filever 100.0 env {variable $k=-2.5,2.5,100$ 1.0 interval $t=0,2*pi,240$ 
+variable $t0=0,2*pi,50$ 0.0 function $r(t)=k + cos(t)$ interval $t1=0, t0,240$ 
+function $X(t)=(r(t)*cos(t), r(t)*sin(t))$} objects [{controls obj0 {constants 
+[] intervals [] objects [{plotcheckbox obj1 {values [true] label 
+$Show entire curve$ plots [{id obj2}]}} {plotcheckbox obj3 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj4}]}}] readouts [] functions [r X] 
+variables [k $t0$]}} {frame.2d obj5 {canvas {canvas.3d obj8 {tool 1.0 points 
+true graph {graph.3d obj9 {light false graph {plots [{plot.curve obj6 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj10 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.axes obj11 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj12 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 10.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}} {plot.vector obj4 {base $0,0$ endstyle 1.0 dir $X(t0)$ color 
+{coloring.group obj13 {colors [{coloring.constant obj14 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 
+10.0}} {plot.curve obj2 {super {super {transpt $0$ visible false addedz 0.0} 
+color {coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick 
+true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.3895822898302572 0.0 0.0 0.0 0.0 0.3895822898302572 0.0 0.0 0.0 0.0 
+0.3895822898302572 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj9} frame {visible true plots [{id obj2} {id obj6} {id obj7} {id 
+obj4}] title Cardioid labels [$ Curve: X(t)$ $ Curve: X(t1)$ $ Point: X(t0)$ 
+$ Vector: X(t0)  starting at 0,0$]}}}] "></applet>
+<big><a href="Lovett2d5.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Definition 2.1.1: Simple Curve</h3>
+<br>
+Circle<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 249px; height: 220px;" alt="figure2-2" src="figure1-2.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Circles (type-in)"> <param name="DATA"
+ value="filever 100.0 env {variable $R= 0,1,20$ 1.0 constant $A= (0,0)$ interval 
+$t= 0,2*pi, 240$ variable $t0= 0,2*pi, 100$ 0.0 function 
+$X(t)=A + (R*cos(t), R*sin(t))$ interval $t1= 0, t0, 240$} objects [{controls 
+obj0 {constants [A] intervals [] objects [{plotcheckbox obj1 {values [true] 
+label $Show entire curve$ plots [{id obj2}]}} {plotcheckbox obj3 {values [true] 
+label $Show position vector X(t0)$ plots [{id obj4}]}}] readouts [] functions 
+[X] variables [R $t0$]}} {frame.2d obj5 {canvas {canvas.3d obj9 {tool 0.0 points 
+true graph {graph.3d obj10 {light false graph {plots [{plot.curve obj2 {super 
+{super {transpt $0$ visible false addedz 0.0} color {coloring.constant obj11 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.axes obj12 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj8 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj13 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj14 {color [1.0 
+1.0 1.0 1.0]}} label A size 10.0 style 0.0 showlabel true dim 2.0 expr $A$}} 
+{plot.vector obj4 {base $0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group 
+obj15 {colors [{coloring.constant obj16 {color [0.0 1.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 10.0}} 
+{plot.point obj6 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 10.0 
+style 0.0 showlabel true dim 2.0 expr $X(t0)$}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj10} frame {visible true plots [{id obj6} {id obj2} {id obj7} {id 
+obj8} {id obj4}] title 
+$The counterclockwise circle of radius R centered at A in the plane$ labels 
+[$ Point: X(t0)$ $ Curve: X(t)$ $ Point: A$ $ Curve: X(t1)$ 
+$ Vector: X(t0)  starting at 0,0$]}}}] "></applet>
+<big><a href="Lovett2d6.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+Ellipse<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 262px; height: 193px;" alt="figure1-6" src="figure1-6.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Ellipses"> <param name="DATA"
+ value="filever 100.0 env {variable $q= 0,1,20$ 0.6000000000000001 variable $p= 0,1,20$ 
+1.0 interval $t=0,2*pi,240$ variable $t0=0,2*pi,50$ 0.0 function 
+$X(t)=(p*cos(t), q*sin(t))$ interval $t1=0, t0,240$} objects [{controls obj0 
+{constants [] intervals [] objects [{plotcheckbox obj1 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj2}]}} {plotcheckbox obj3 {values 
+[true] label $Show entire curve$ plots [{id obj4}]}}] readouts [] functions [X] 
+variables [q $t0$ p]}} {frame.2d obj5 {canvas {canvas.3d obj8 {tool 0.0 points 
+true graph {graph.3d obj9 {light false graph {plots [{plot.vector obj2 {base 
+$0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group obj10 {colors 
+[{coloring.constant obj11 {color [0.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible false addedz 0.0} endsize 10.0}} {plot.axes obj12 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj6 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj13 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj14 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 10.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}} {plot.curve obj4 {super {super {transpt $0$ visible false addedz 0.0} 
+color {coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick 
+true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [] drawmode 0.0}} graph {id obj9} frame {visible true plots [{id 
+obj2} {id obj4} {id obj6} {id obj7}] title Ellipse labels 
+[$ Vector: X(t0)  starting at 0,0$ $ Curve: X(t)$ $ Curve: X(t1)$ 
+$ Point: X(t0)$]}}}] "></applet>
+<big><a href="Lovett2d7.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+Cardioid (Simple for <tt>k</tt> &ge; 1 or <tt>k</tt> &le; &#8211;1. For &#8211;1 &lt; <tt>k</tt> &lt; 1, the
+cardioid is not simple.)<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 178px; height: 165px;" alt="figure1-13" src="figure1-13.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Cardioid"> <param name="DATA"
+ value="filever 100.0 env {variable $k=-2.5,2.5,100$ 1.0 interval $t=0,2*pi,240$ 
+variable $t0=0,2*pi,50$ 0.0 function $r(t)=k + cos(t)$ interval $t1=0, t0,240$ 
+function $X(t)=(r(t)*cos(t), r(t)*sin(t))$} objects [{controls obj0 {constants 
+[] intervals [] objects [{plotcheckbox obj1 {values [true] label 
+$Show entire curve$ plots [{id obj2}]}} {plotcheckbox obj3 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj4}]}}] readouts [] functions [r X] 
+variables [k $t0$]}} {frame.2d obj5 {canvas {canvas.3d obj8 {tool 1.0 points 
+true graph {graph.3d obj9 {light false graph {plots [{plot.curve obj6 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj10 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.axes obj11 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj12 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 10.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}} {plot.vector obj4 {base $0,0$ endstyle 1.0 dir $X(t0)$ color 
+{coloring.group obj13 {colors [{coloring.constant obj14 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 
+10.0}} {plot.curve obj2 {super {super {transpt $0$ visible false addedz 0.0} 
+color {coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick 
+true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.3895822898302572 0.0 0.0 0.0 0.0 0.3895822898302572 0.0 0.0 0.0 0.0 
+0.3895822898302572 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj9} frame {visible true plots [{id obj2} {id obj6} {id obj7} {id 
+obj4}] title Cardioid labels [$ Curve: X(t)$ $ Curve: X(t1)$ $ Point: X(t0)$ 
+$ Vector: X(t0)  starting at 0,0$]}}}] "></applet>
+<big><a href="Lovett2d8.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<br><hr width="50%"><br>
+<h2>2.2: Rotation Index</h2>
+<br>
+<h3>Proposition 2.2.1: Rotation Index of a Curve</h3>
+<br>
+<div style="text-align: center;">
+<img style="width: 201px; height: 195px;" alt="figure28" src="figure2-28.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img style="width: 233px; height: 250px;" alt="figure29" src="figure2-29.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Rotation Index of a Curve"> <param name="DATA"
+ value="filever 100.0 env {variable $k= -2.5,2.5,100$ 1.0 variable $q= 0,1,20$ 
+0.6000000000000001 variable $u= 0,0.1,10$ 0.05 variable $n= 1,5,4$ 3.0 variable 
+$R= 0,1,20$ 1.0 variable $p= 0,1,20$ 1.0 variable $t0=0,2*pi,100$ 0.0 function 
+$cardioid(t)=(k + cos(t))*(cos(t), sin(t))$ function 
+$flower(t)=sin(n*t)*(cos(t), sin(t))$ function $circle(t)=R*(cos(t), sin(t))$ 
+function $ellipse(t)=(p*cos(t), q*sin(t))$ interval 
+$t= t0_min,t0,(t0-t0_min)/(t0_max-t0_min)*t0_res$ function $X(t)=circle(t)$} 
+objects [{controls obj0 {constants [] intervals [] objects [] readouts [] 
+functions [flower ellipse cardioid circle X] variables [k u R $t0$ q p n]}} 
+{frame.2d obj1 {canvas {canvas.3d obj4 {tool 0.0 points true graph {graph.3d 
+obj5 {light false graph {plots [{plot.vector obj3 {base $0,0$ endstyle 1.0 dir 
+$(1+u*t0)*T(X)(t0)$ color {coloring.constant obj6 {color [1.0 1.0 1.0 1.0]}} dim 
+2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt 
+$0$ visible true addedz 0.0} endsize 7.0}} {plot.curve obj2 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj7 {colors 
+[{coloring.expression obj8 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] 
+mixings [0.0]}} expr $(1+u*t)*T(X)(t)$} thick true}} {plot.axes obj9 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.8705505632961241 0.0 
+0.0 0.7766966202232526 0.0 0.8705505632961241 0.0 -18.482202253184496 0.0 0.0 
+0.8705505632961241 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj5} frame {visible true plots [{id obj2} {id obj3}] title 
+$Perturbed Tangential Image$ labels [$ Curve: (1+u*t)*T(X)(t)$ 
+$ Vector: (1+u*t0)*T(X)(t0)  starting at 0,0$]}}} {frame.2d obj10 {canvas 
+{canvas.3d obj14 {tool 0.0 points true graph {graph.3d obj15 {light false graph 
+{plots [{plot.vector obj12 {base $X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.constant obj16 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 6.0}} {plot.curve obj13 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj17 {colors [{coloring.expression obj18 
+{expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$X(t)$} thick true}} {plot.point obj11 {super {transpt $0$ visible true addedz 
+3.0} color {coloring.constant obj19 {color [1.0 1.0 1.0 1.0]}} label $$ size 8.0 
+style 0.0 showlabel false dim 2.0 expr $X(t0)$}} {plot.axes obj20 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.8350879194283725 0.0 
+0.0 -3.2537254078592817 0.0 0.8350879194283725 0.0 -15.143573898694237 0.0 0.0 
+0.8350879194283725 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj15} frame {visible true plots [{id obj11} {id obj12} {id obj13}] 
+title $Curve: X(t)$ labels [$ Point: X(t0)$ 
+$ Vector: T(X)(t0)  starting at X(t0)$ $ Curve: X(t)$]}}}] "></applet>
+<big><a href="Lovett2d15.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Example 2.2.2: Figure-Eight Curve</h3>
+<br>
+<div style="text-align: center;">
+<img style="width: 222px; height: 162px;" alt="figure30" src="figure2-30.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img style="width: 227px; height: 195px;" alt="figure31" src="figure2-31.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Figure-Eight Curve"> <param name="DATA"
+ value="filever 100.0 env {function $X(t)=(cos(t),sin(t)*cos(t))$ variable 
+$u= 0,0.1,10$ 0.05 variable $t0= -pi,pi,100$ 3.141592653589794 interval 
+$t= t0_min,t0,(t0-t0_min)/(t0_max-t0_min)*t0_res$} objects [{controls obj0 
+{constants [] intervals [] objects [] readouts [] functions [X] variables [u 
+$t0$]}} {frame.2d obj1 {canvas {canvas.3d obj5 {tool 0.0 points true graph 
+{graph.3d obj6 {light false graph {plots [{plot.vector obj2 {base $X(t0)$ 
+endstyle 1.0 dir $T(X)(t0)$ color {coloring.constant obj7 {color [1.0 1.0 1.0 
+1.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 6.0}} {plot.point obj3 {super 
+{transpt $0$ visible true addedz 3.0} color {coloring.constant obj8 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 8.0 style 0.0 showlabel false dim 2.0 expr 
+$X(t0)$}} {plot.curve obj4 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj9 {colors [{coloring.expression obj10 {expr 
+$(t-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t)$} 
+thick true}} {plot.axes obj11 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y]}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 
+1.0 transf [0.8350879194283725 0.0 0.0 -3.2537254078592817 0.0 
+0.8350879194283725 0.0 -15.143573898694237 0.0 0.0 0.8350879194283725 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj6} frame 
+{visible true plots [{id obj2} {id obj3} {id obj4}] title $Curve: X(t)$ labels 
+[$ Vector: T(X)(t0)  starting at X(t0)$ $ Point: X(t0)$ $ Curve: X(t)$]}}} 
+{frame.2d obj12 {canvas {canvas.3d obj15 {tool 0.0 points true graph {graph.3d 
+obj16 {light false graph {plots [{plot.curve obj14 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj17 {colors 
+[{coloring.expression obj18 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $(1+u*t)*T(X)(t)$} thick true}} {plot.axes obj19 
+{super {transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.vector obj13 
+{base $0,0$ endstyle 1.0 dir $(1+u*t0)*T(X)(t0)$ color {coloring.constant obj20 
+{color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 7.0}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.8705505632961241 0.0 0.0 0.7766966202232526 0.0 0.8705505632961241 0.0 
+-18.482202253184496 0.0 0.0 0.8705505632961241 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj16} frame {visible true plots [{id 
+obj13} {id obj14}] title $Perturbed Tangential Image$ labels 
+[$ Vector: (1+u*t0)*T(X)(t0)  starting at 0,0$ $ Curve: (1+u*t)*T(X)(t)$]}}}] "></applet>
+<big><a href="Lovett2d16.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Definition 2.2.3: Degree of a Mapping</h3>
+<br>
+<div style="text-align: center;">
+<img style="width: 211px; height: 198px;" alt="figure32" src="figure2-32.png">&nbsp;&nbsp;&nbsp;&nbsp
+<img style="width: 218px; height: 216px;" alt="figure33" src="figure2-33.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Twice Covered Circle (Counterclockwise)"> <param
+ name="DATA"
+ value="filever 100.0 env {function $X(t)=(cos(2*t), sin(2*t))$ variable $u= 0,0.1,10$ 
+0.05 variable $t0= -pi,pi,100$ -3.141592653589793 interval 
+$t= t0_min,t0,(t0-t0_min)/(t0_max-t0_min)*t0_res$} objects [{frame.2d obj0 
+{canvas {canvas.3d obj4 {tool 0.0 points true graph {graph.3d obj5 {light false 
+graph {plots [{plot.point obj1 {super {transpt $0$ visible true addedz 3.0} 
+color {coloring.constant obj6 {color [1.0 1.0 1.0 1.0]}} label $$ size 8.0 style 
+0.0 showlabel false dim 2.0 expr $X(t0)$}} {plot.axes obj7 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.vector obj2 {base $X(t0)$ endstyle 
+1.0 dir $T(X)(t0)$ color {coloring.constant obj8 {color [1.0 1.0 1.0 1.0]}} dim 
+2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt 
+$0$ visible true addedz 0.0} endsize 6.0}} {plot.curve obj3 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj9 {colors 
+[{coloring.expression obj10 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t)$} thick true}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.8350879194283725 0.0 
+0.0 -3.2537254078592817 0.0 0.8350879194283725 0.0 -15.143573898694237 0.0 0.0 
+0.8350879194283725 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj5} frame {visible true plots [{id obj1} {id obj2} {id obj3}] title 
+$Curve: X(t)$ labels [$ Point: X(t0)$ $ Vector: T(X)(t0)  starting at X(t0)$ 
+$ Curve: X(t)$]}}} {frame.2d obj11 {canvas {canvas.3d obj14 {tool 0.0 points 
+true graph {graph.3d obj15 {light false graph {plots [{plot.vector obj12 {base 
+$0,0$ endstyle 1.0 dir $(1+u*t0)*T(X)(t0)$ color {coloring.constant obj16 {color 
+[1.0 1.0 1.0 1.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 7.0}} 
+{plot.axes obj17 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.curve obj13 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj18 {colors [{coloring.expression obj19 {expr 
+$(t-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$(1+u*t)*T(X)(t)$} thick true}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.8705505632961241 0.0 0.0 
+0.7766966202232526 0.0 0.8705505632961241 0.0 -18.482202253184496 0.0 0.0 
+0.8705505632961241 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj15} frame {visible true plots [{id obj12} {id obj13}] title 
+$Perturbed Tangential Image$ labels 
+[$ Vector: (1+u*t0)*T(X)(t0)  starting at 0,0$ $ Curve: (1+u*t)*T(X)(t)$]}}} 
+{controls obj20 {constants [] intervals [] objects [] readouts [] functions [X] 
+variables [u $t0$]}}] "></applet>
+<big><a href="Lovett2d17.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+<br>
+<img style="width: 206px; height: 195px;" alt="figure34" src="figure2-34.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img style="width: 220px; height: 219px;" alt="figure35" src="figure2-35.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Twice Covered Circle (Clockwise)"> <param
+ name="DATA"
+ value="filever 100.0 env {function $X(t)=(cos(2*t), -sin(2*t))$ variable $u= 0,0.1,10$ 
+0.05 variable $t0= -pi,pi,100$ -3.141592653589793 interval 
+$t= t0_min,t0,(t0-t0_min)/(t0_max-t0_min)*t0_res$} objects [{frame.2d obj0 
+{canvas {canvas.3d obj3 {tool 0.0 points true graph {graph.3d obj4 {light false 
+graph {plots [{plot.axes obj5 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y]}} {plot.vector obj2 {base $0,0$ endstyle 1.0 dir 
+$(1+u*t0)*T(X)(t0)$ color {coloring.constant obj6 {color [1.0 1.0 1.0 1.0]}} dim 
+2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt 
+$0$ visible true addedz 0.0} endsize 7.0}} {plot.curve obj1 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj7 {colors 
+[{coloring.expression obj8 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] 
+mixings [0.0]}} expr $(1+u*t)*T(X)(t)$} thick true}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.8705505632961241 0.0 
+0.0 0.7766966202232526 0.0 0.8705505632961241 0.0 -18.482202253184496 0.0 0.0 
+0.8705505632961241 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj4} frame {visible true plots [{id obj1} {id obj2}] title 
+$Perturbed Tangential Image$ labels [$ Curve: (1+u*t)*T(X)(t)$ 
+$ Vector: (1+u*t0)*T(X)(t0)  starting at 0,0$]}}} {controls obj9 {constants [] 
+intervals [] objects [] readouts [] functions [X] variables [u $t0$]}} {frame.2d 
+obj10 {canvas {canvas.3d obj14 {tool 0.0 points true graph {graph.3d obj15 
+{light false graph {plots [{plot.vector obj12 {base $X(t0)$ endstyle 1.0 dir 
+$T(X)(t0)$ color {coloring.constant obj16 {color [1.0 1.0 1.0 1.0]}} dim 2.0 
+thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ 
+visible true addedz 0.0} endsize 6.0}} {plot.axes obj17 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.curve obj11 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj18 {colors 
+[{coloring.expression obj19 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t)$} thick true}} {plot.point obj13 {super 
+{transpt $0$ visible true addedz 3.0} color {coloring.constant obj20 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 8.0 style 0.0 showlabel false dim 2.0 expr 
+$X(t0)$}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.8350879194283725 0.0 0.0 -3.2537254078592817 0.0 0.8350879194283725 
+0.0 -15.143573898694237 0.0 0.0 0.8350879194283725 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [] drawmode 0.0}} graph {id obj15} frame {visible true plots [{id 
+obj11} {id obj12} {id obj13}] title $Curve: X(t)$ labels [$ Curve: X(t)$ 
+$ Vector: T(X)(t0)  starting at X(t0)$ $ Point: X(t0)$]}}}] "></applet>
+<big><a href="Lovett2d18.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+<br>
+<img style="width: 212px; height: 166px;" alt="figure36" src="figure2-36.png">&nbsp;&nbsp;&nbsp;&nbsp; 
+<img style="width: 218px; height: 219px;" alt="figure37" src="figure2-37.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Twice Covered Ellipse (Counterclockwise)"> <param
+ name="DATA"
+ value="filever 100.0 env {variable $a= 0,1,20$ 1.0 variable $b= 0,1,20$ 
+0.6000000000000001 variable $u= 0,0.1,10$ 0.05 variable $t0= -pi,pi,100$ 
+-3.141592653589793 function $X(t)=(a*cos(2*t), b*sin(2*t))$ interval 
+$t= t0_min,t0,(t0-t0_min)/(t0_max-t0_min)*t0_res$} objects [{controls obj0 
+{constants [] intervals [] objects [] readouts [] functions [X] variables [b a u 
+$t0$]}} {frame.2d obj1 {canvas {canvas.3d obj5 {tool 0.0 points true graph 
+{graph.3d obj6 {light false graph {plots [{plot.axes obj7 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.curve obj3 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj8 {colors 
+[{coloring.expression obj9 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] 
+mixings [0.0]}} expr $X(t)$} thick true}} {plot.point obj2 {super {transpt $0$ 
+visible true addedz 3.0} color {coloring.constant obj10 {color [1.0 1.0 1.0 
+1.0]}} label $$ size 8.0 style 0.0 showlabel false dim 2.0 expr $X(t0)$}} 
+{plot.vector obj4 {base $X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.constant obj11 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 6.0}}]} alpha false scale 100.01271474132783 surfacemode 1.0 
+drawmode 1.0 transf [0.8350879194283725 0.0 0.0 -3.2537254078592817 0.0 
+0.8350879194283725 0.0 -15.143573898694237 0.0 0.0 0.8350879194283725 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj6} frame 
+{visible true plots [{id obj2} {id obj3} {id obj4}] title $Curve: X(t)$ labels 
+[$ Point: X(t0)$ $ Curve: X(t)$ $ Vector: T(X)(t0)  starting at X(t0)$]}}} 
+{frame.2d obj12 {canvas {canvas.3d obj15 {tool 0.0 points true graph {graph.3d 
+obj16 {light false graph {plots [{plot.vector obj14 {base $0,0$ endstyle 1.0 dir 
+$(1+u*t0)*T(X)(t0)$ color {coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}} 
+dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 7.0}} {plot.axes obj18 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj13 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj19 {colors 
+[{coloring.expression obj20 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $(1+u*t)*T(X)(t)$} thick true}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.8705505632961241 0.0 
+0.0 0.7766966202232526 0.0 0.8705505632961241 0.0 -18.482202253184496 0.0 0.0 
+0.8705505632961241 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj16} frame {visible true plots [{id obj13} {id obj14}] title 
+$Perturbed Tangential Image$ labels [$ Curve: (1+u*t)*T(X)(t)$ 
+$ Vector: (1+u*t0)*T(X)(t0)  starting at 0,0$]}}}] "></applet>
+<big><a href="Lovett2d19.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+<br>
+<img style="width: 199px; height: 191px;" alt="figure38" src="figure2-38.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img style="width: 217px; height: 220px;" alt="figure39" src="figure2-39.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Twice Covered Ellipse (Clockwise)"> <param
+ name="DATA"
+ value="filever 100.0 env {variable $a= 0,1,20$ 1.0 variable $b= 0,1,20$ 
+0.6000000000000001 variable $u= 0,0.1,10$ 0.05 variable $t0= -pi,pi,100$ 
+-3.141592653589793 function $X(t)=(a*cos(2*t), -b*sin(2*t))$ interval 
+$t= t0_min,t0,(t0-t0_min)/(t0_max-t0_min)*t0_res$} objects [{controls obj0 
+{constants [] intervals [] objects [] readouts [] functions [X] variables [b a u 
+$t0$]}} {frame.2d obj1 {canvas {canvas.3d obj5 {tool 0.0 points true graph 
+{graph.3d obj6 {light false graph {plots [{plot.vector obj2 {base $X(t0)$ 
+endstyle 1.0 dir $T(X)(t0)$ color {coloring.constant obj7 {color [1.0 1.0 1.0 
+1.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 6.0}} {plot.curve obj3 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj8 {colors 
+[{coloring.expression obj9 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] 
+mixings [0.0]}} expr $X(t)$} thick true}} {plot.axes obj10 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.point obj4 {super {transpt $0$ 
+visible true addedz 3.0} color {coloring.constant obj11 {color [1.0 1.0 1.0 
+1.0]}} label $$ size 8.0 style 0.0 showlabel false dim 2.0 expr $X(t0)$}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.8350879194283725 0.0 0.0 -3.2537254078592817 0.0 0.8350879194283725 0.0 
+-15.143573898694237 0.0 0.0 0.8350879194283725 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj6} frame {visible true plots [{id obj2} 
+{id obj3} {id obj4}] title $Curve: X(t)$ labels 
+[$ Vector: T(X)(t0)  starting at X(t0)$ $ Curve: X(t)$ $ Point: X(t0)$]}}} 
+{frame.2d obj12 {canvas {canvas.3d obj15 {tool 0.0 points true graph {graph.3d 
+obj16 {light false graph {plots [{plot.vector obj14 {base $0,0$ endstyle 1.0 dir 
+$(1+u*t0)*T(X)(t0)$ color {coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}} 
+dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 7.0}} {plot.curve obj13 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj18 {colors 
+[{coloring.expression obj19 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $(1+u*t)*T(X)(t)$} thick true}} {plot.axes obj20 
+{super {transpt $0$ visible true addedz 0.0} labels [x y]}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.8705505632961241 0.0 
+0.0 0.7766966202232526 0.0 0.8705505632961241 0.0 -18.482202253184496 0.0 0.0 
+0.8705505632961241 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj16} frame {visible true plots [{id obj13} {id obj14}] title 
+$Perturbed Tangential Image$ labels [$ Curve: (1+u*t)*T(X)(t)$ 
+$ Vector: (1+u*t0)*T(X)(t0)  starting at 0,0$]}}}] "></applet>
+<big><a href="Lovett2d20.html"
+ onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<br><hr width="50%"><br>
+<h2>2.3: Isoperimetric Inequality</h2>
+<br>
+<h3>Theorem 2.3.1: Isoperimetric Inequality</h3>
+<br>
+<div style="text-align: center;">
+<img style="width: 202px; height: 194px;" alt="figure42" src="figure2-42.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img style="width: 536px; height: 122px;" alt="figure43" src="figure2-43.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Isoperimetric Inequality"> <param name="DATA"
+ value="filever 100.0 env {variable $p= 0,1,20$ 1.0 variable $R= 0,1,20$ 1.0 variable 
+$n= 1,5,4$ 3.0 variable $q= 0,1,20$ 0.6000000000000001 variable 
+$k= -2.5,2.5,100$ 1.0 variable $t0=0,2*pi,100$ 6.283185307179587 function 
+$circle(t)=R*(cos(t), sin(t))$ function $flower(t)=sin(n*t)*(cos(t), sin(t))$ 
+function $ellipse(t)=(p*cos(t), q*cos(t))$ value 
+$C=(0.36223586176018024 , 0.3609169885864249)$ function 
+$cardioid(t)=(k + cos(t))*(cos(t), sin(t))$ interval 
+$t= t0_min,t0,(t0-t0_min)/(t0_max-t0_min)*t0_res$ function $X(t)=circle(t)$ 
+function $arclength(t)=integral(length(X'(x)), x, t0_min, t)$ function 
+$area(t)=integral((0,X_1(x)) * X'(x), x, t0_min, t)$ function 
+$ratio(t)=arclength(t)^2/(4*pi*area(t))$} objects [{frame.2d obj0 {canvas 
+{canvas.3d obj3 {tool 0.0 points true graph {graph.3d obj4 {light false graph 
+{plots [{plot.curve obj1 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj5 {colors [{coloring.constant obj6 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(t)$} thick true}} {plot.axes 
+obj7 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.point 
+obj2 {super {transpt $0$ visible true addedz 3.0} color {coloring.constant obj8 
+{color [1.0 1.0 1.0 1.0]}} label $$ size 8.0 style 0.0 showlabel false dim 2.0 
+expr $X(t0)$}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 
+1.0 transf [0.8350879194283725 0.0 0.0 -3.2537254078592817 0.0 
+0.8350879194283725 0.0 -15.143573898694237 0.0 0.0 0.8350879194283725 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [{hotspot obj9 {origin $0, 0$ entry C 
+constraint $Point$ cmode 0.0 cobjs []}}] drawmode 0.0}} graph {id obj4} frame 
+{visible true plots [{id obj1} {id obj2}] title $Curve: X(t)$ labels 
+[$ Curve: X(t)$ $ Point: X(t0)$]}}} {controls obj10 {constants [] intervals [t] 
+objects [] readouts [{readout obj11 $arclength(t0_max)$} {readout obj12 
+$ratio(t0_max)$} {readout obj13 $area(t0_max)$}] functions [flower ellipse 
+circle cardioid X] variables [k R q $t0$ p n]}}] "></applet>
+<big><a href="Lovett2d22.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<br><hr width="50%"><br>
+<h2>2.4: Curvature, Convexity, and the Four-Vertex Theorem</h2>
+<br>
+<h3>Definition 2.4.2: Convex</h3>
+<br>
+Circle<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 249px; height: 220px;" alt="figure2-2" src="figure1-2.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Circles (type-in)"> <param name="DATA"
+ value="filever 100.0 env {variable $R= 0,1,20$ 1.0 constant $A= (0,0)$ interval 
+$t= 0,2*pi, 240$ variable $t0= 0,2*pi, 100$ 0.0 function 
+$X(t)=A + (R*cos(t), R*sin(t))$ interval $t1= 0, t0, 240$} objects [{controls 
+obj0 {constants [A] intervals [] objects [{plotcheckbox obj1 {values [true] 
+label $Show entire curve$ plots [{id obj2}]}} {plotcheckbox obj3 {values [true] 
+label $Show position vector X(t0)$ plots [{id obj4}]}}] readouts [] functions 
+[X] variables [R $t0$]}} {frame.2d obj5 {canvas {canvas.3d obj9 {tool 0.0 points 
+true graph {graph.3d obj10 {light false graph {plots [{plot.curve obj2 {super 
+{super {transpt $0$ visible false addedz 0.0} color {coloring.constant obj11 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.axes obj12 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj8 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj13 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj14 {color [1.0 
+1.0 1.0 1.0]}} label A size 10.0 style 0.0 showlabel true dim 2.0 expr $A$}} 
+{plot.vector obj4 {base $0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group 
+obj15 {colors [{coloring.constant obj16 {color [0.0 1.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 10.0}} 
+{plot.point obj6 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 10.0 
+style 0.0 showlabel true dim 2.0 expr $X(t0)$}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj10} frame {visible true plots [{id obj6} {id obj2} {id obj7} {id 
+obj8} {id obj4}] title 
+$The counterclockwise circle of radius R centered at A in the plane$ labels 
+[$ Point: X(t0)$ $ Curve: X(t)$ $ Point: A$ $ Curve: X(t1)$ 
+$ Vector: X(t0)  starting at 0,0$]}}}] "></applet>
+<big><a href="Lovett2d8a.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+Ellipse<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 262px; height: 193px;" alt="figure1-6" src="figure1-6.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Ellipses"> <param name="DATA"
+ value="filever 100.0 env {variable $q= 0,1,20$ 0.6000000000000001 variable $p= 0,1,20$ 
+1.0 interval $t=0,2*pi,240$ variable $t0=0,2*pi,50$ 0.0 function 
+$X(t)=(p*cos(t), q*sin(t))$ interval $t1=0, t0,240$} objects [{controls obj0 
+{constants [] intervals [] objects [{plotcheckbox obj1 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj2}]}} {plotcheckbox obj3 {values 
+[true] label $Show entire curve$ plots [{id obj4}]}}] readouts [] functions [X] 
+variables [q $t0$ p]}} {frame.2d obj5 {canvas {canvas.3d obj8 {tool 0.0 points 
+true graph {graph.3d obj9 {light false graph {plots [{plot.vector obj2 {base 
+$0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group obj10 {colors 
+[{coloring.constant obj11 {color [0.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible false addedz 0.0} endsize 10.0}} {plot.axes obj12 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj6 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj13 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.point obj7 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj14 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 10.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}} {plot.curve obj4 {super {super {transpt $0$ visible false addedz 0.0} 
+color {coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick 
+true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [] drawmode 0.0}} graph {id obj9} frame {visible true plots [{id 
+obj2} {id obj4} {id obj6} {id obj7}] title Ellipse labels 
+[$ Vector: X(t0)  starting at 0,0$ $ Curve: X(t)$ $ Curve: X(t1)$ 
+$ Point: X(t0)$]}}}] "></applet>
+<big><a href="Lovett2d8b.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+Cardioid (Convex for <tt>k</tt> &ge; 2 or <tt>k</tt> &le; &#8211;2. For &#8211;2 &lt; <tt>k</tt> &lt; 2, the
+cardioid is not convex.)<br>
+<br>
+<div style="text-align: center;">
+<img style="width: 214px; height: 199px;" alt="figure11" src="figure2-11.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Cardioid"> <param name="DATA"
+ value="filever 100.0 env {variable $k=2,2.5,10$ 2.0 variable $t0=0,2*pi,50$ 
+6.283185307179587 interval $t=0,2*pi,240$ function $r(t)=k + cos(t)$ interval 
+$t1=0, t0,240$ function $X(t)=(r(t)*cos(t), r(t)*sin(t))$} objects [{frame.2d 
+obj0 {canvas {canvas.3d obj5 {tool 1.0 points true graph {graph.3d obj6 {light 
+false graph {plots [{plot.vector obj3 {base $0,0$ endstyle 1.0 dir $X(t0)$ color 
+{coloring.group obj7 {colors [{coloring.constant obj8 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 
+10.0}} {plot.axes obj9 {super {transpt $0$ visible true addedz 0.0} labels [x 
+y]}} {plot.curve obj4 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj10 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} 
+{plot.curve obj2 {super {super {transpt $0$ visible false addedz 0.0} color 
+{coloring.constant obj11 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} 
+{plot.point obj1 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj12 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 10.0 
+style 0.0 showlabel true dim 2.0 expr $X(t0)$}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.3895822898302572 0.0 
+0.0 0.0 0.0 0.3895822898302572 0.0 0.0 0.0 0.0 0.3895822898302572 0.0 0.0 0.0 
+0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj6} frame {visible 
+true plots [{id obj1} {id obj2} {id obj3} {id obj4}] title Cardioid labels 
+[$ Point: X(t0)$ $ Curve: X(t)$ $ Vector: X(t0)  starting at 0,0$ 
+$ Curve: X(t1)$]}}} {controls obj13 {constants [] intervals [] objects 
+[{plotcheckbox obj14 {values [true] label $Show entire curve$ plots [{id 
+obj2}]}} {plotcheckbox obj15 {values [true] label $Show position vector X(t0)$ 
+plots [{id obj3}]}}] readouts [] functions [r X] variables [k $t0$]}}] "></applet>
+<big><a href="Lovett2d8c.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Page 54 and Figure 2.6: Height Function</h3><br>
+<div style="text-align: center;">
+<img style="width: 229px; height: 212px;" alt="figure46" src="figure2-46.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img style="width: 389px; height: 148px;" alt="figure47" src="figure2-47.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Height Function"> <param name="DATA"
+ value="filever 100.0 env {variable $p= 0,1,20$ 1.0 variable $R= 0,1,20$ 1.0 variable 
+$n= 1,5,4$ 3.0 variable $q= 0,1,20$ 0.6000000000000001 variable 
+$k= -2.5,2.5,100$ 1.0 interval $t=0,2*pi,480$ interval $u= 0,2*pi, 240$ variable 
+$t0=0,2*pi,50$ 0.0 function $circle(t)=R*(cos(t), sin(t))$ function 
+$flower(t)=sin(n*t)*(cos(t), sin(t))$ function 
+$ellipse(t)=(p*cos(t), q*sin(t))$ function 
+$cardioid(t)=(k + cos(t))*(cos(t), sin(t))$ function $X(t)=ellipse(t)$ value 
+$P=(1.0 , 0.0)$ function $h(t)=X(t)*P$} objects [{controls obj0 {constants [] 
+intervals [t] objects [] readouts [] functions [flower ellipse circle cardioid 
+X] variables [k R q $t0$ p n]}} {frame.2d obj1 {canvas {canvas.3d obj7 {tool 0.0 
+points true graph {graph.3d obj8 {light false graph {plots [{plot.curve obj4 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj9 
+{colors [{coloring.constant obj10 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $(cos(u), sin(u))$} thick false}} {plot.vector obj5 {base 
+$0,0$ endstyle 1.0 dir $P$ color {coloring.group obj11 {colors 
+[{coloring.constant obj12 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.point obj3 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj13 {colors 
+[{coloring.constant obj14 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} label V size 10.0 style 0.0 showlabel true dim 2.0 expr $P$}} 
+{plot.point obj2 {super {transpt $0$ visible true addedz 3.0} color 
+{coloring.constant obj15 {color [1.0 1.0 1.0 1.0]}} label $$ size 8.0 style 0.0 
+showlabel false dim 2.0 expr $X(t0)$}} {plot.axes obj16 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.curve obj6 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj17 {colors 
+[{coloring.constant obj18 {color [0.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $X(t)$} thick true}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.8350879194283725 0.0 0.0 
+-3.2537254078592817 0.0 0.8350879194283725 0.0 -15.143573898694237 0.0 0.0 
+0.8350879194283725 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj19 
+{origin $0, 0$ entry P constraint $Point$ cmode 2.0 cobjs [{id obj4}]}}] 
+drawmode 0.0}} graph {id obj8} frame {visible true plots [{id obj2} {id obj3} 
+{id obj4} {id obj5} {id obj6}] title $Curve: X(t)$ labels [$ Point: X(t0)$ 
+$ Point: P$ $ Curve: (cos(u), sin(u))$ $ Vector: P  starting at 0,0$ 
+$ Curve: X(t)$]}}} {frame.2d obj20 {canvas {canvas.3d obj24 {tool 0.0 points 
+true graph {graph.3d obj25 {light false graph {plots [{plot.axes obj21 {super 
+{transpt $0$ visible true addedz 0.0} labels [t $h(t)$]}} {plot.point obj23 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj26 
+{color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 2.0 
+expr $t0,h(t0)$}} {plot.curve obj22 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj27 {colors [{coloring.constant obj28 {color 
+[1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $(t, h(t))$} thick 
+true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [] drawmode 0.0}} graph {id obj25} frame {visible true plots [{id 
+obj21} {id obj22} {id obj23}] title $h(t)$ labels [$ Axes: t, h(t)$ 
+$ Curve: (t, h(t))$ $ Point: t0,h(t0)$]}}}] "></applet>
+<big><a href="Lovett2d24.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Theorem 2.4.5: Four-Vertex Theorem</h3>
+<br>
+<div style="text-align: center;">
+<img style="width: 216px; height: 158px;" alt="figure48" src="figure2-48.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img style="width: 290px; height: 161px;" alt="figure49" src="figure2-49.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Four-Vertex Theorem"> <param name="DATA"
+ value="filever 100.0 env {variable $p= 0,1,20$ 1.0 variable $R= 0,1,20$ 1.0 variable 
+$k=2,2.5,20$ 2.0 variable $q= 0,1,20$ 0.6000000000000001 variable $n= 1,5,4$ 3.0 
+interval $t=0,2*pi,480$ variable $t0=0,2*pi,50$ 0.0 value 
+$C=(0.36223586176018024 , 0.3609169885864249)$ function 
+$circle(t)=R*(cos(t), sin(t))$ function 
+$cardioid(t)=(k + cos(t))*(cos(t), sin(t))$ function 
+$ellipse(t)=(p*cos(t), q*sin(t))$ function $X(t)=ellipse(t)$ function 
+$kg(t)=T(X)'(t)*U(X)(t)/length(X'(t))$} objects [{controls obj0 {constants [] 
+intervals [t] objects [] readouts [] functions [ellipse circle cardioid X] 
+variables [k R q $t0$ p n]}} {frame.2d obj1 {canvas {canvas.3d obj4 {tool 1.0 
+points true graph {graph.3d obj5 {light false graph {plots [{plot.point obj2 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj6 
+{color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 2.0 
+expr $t0,kg(t0)$}} {plot.axes obj7 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y]}} {plot.curve obj3 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj8 {colors [{coloring.constant obj9 {color [1.0 0.8 
+0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,kg(t)$} thick true}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.6783021637238368 0.0 0.0 0.0 0.0 0.6783021637238368 0.0 0.0 0.0 0.0 
+0.6783021637238368 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj5} frame {visible true plots [{id obj2} {id obj3}] title $kg(t)$ 
+labels [$ Point: t0,kg(t0)$ $ Curve: t,kg(t)$]}}} {frame.2d obj10 {canvas 
+{canvas.3d obj13 {tool 0.0 points true graph {graph.3d obj14 {light false graph 
+{plots [{plot.curve obj11 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj15 {colors [{coloring.constant obj16 {color [0.0 1.0 
+0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(t)$} thick true}} 
+{plot.point obj12 {super {transpt $0$ visible true addedz 3.0} color 
+{coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}} label $$ size 8.0 style 0.0 
+showlabel false dim 2.0 expr $X(t0)$}} {plot.axes obj18 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.8350879194283725 0.0 0.0 
+-3.2537254078592817 0.0 0.8350879194283725 0.0 -15.143573898694237 0.0 0.0 
+0.8350879194283725 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj19 
+{origin $0, 0$ entry C constraint $Point$ cmode 0.0 cobjs []}}] drawmode 0.0}} 
+graph {id obj14} frame {visible true plots [{id obj11} {id obj12}] title 
+$Curve: X(t)$ labels [$ Curve: X(t)$ $ Point: X(t0)$]}}}] "></applet>
+<big><a href="Lovett2d25.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+</td></tr>
+</table>
+</center>
+
+<BR><P><BR>
+Return to <a href="index1.html">home page</a> <br>
+Continue to <a href="Lovett3-ex.html">Chapter 3</a> <br><br>
+</body>
+</html>

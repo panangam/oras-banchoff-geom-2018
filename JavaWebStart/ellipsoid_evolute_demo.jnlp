@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="https://deigen-demo-jws.now.sh">
+	<information>
+		<title>Geometry Demo Maker - DEigen</title>
+		<vendor>Oras Phongpanangam</vendor>
+		<homepage href="http://java.com/" />
+		<description>For Tom Banchoff</description>
+		<offline-allowed/>
+	</information>
+	<security>
+		<all-permissions/>
+	</security>
+	<resources>
+		<j2se version="1.6+" />
+		<jar href="Demo.jar" />
+	</resources>    
+	<application-desc main-class="DemoRunner">
+		<argument>
+		filever 100.0 env {function $X(u,v)=(4*cos(u)*cos(v), 2*sin(u)*cos(v), sin(v))$ 
+		function $X2(u,v)=u, v, u^2-v^2$ interval $r= -6, 6, 24$ interval 
+		$v=-pi/2, pi/2,20$ interval $u=-pi, pi,40$ function 
+		$k2(X)=H(X) - sqrt((H(X))^2 - K(X))$ function 
+		$k1(X)=H(X) + sqrt((H(X))^2 - K(X))$ function $e2(X)=X + 1/k2(X)*N(X)$ function 
+		$e1(X)=X + 1/k1(X)*N(X)$} objects [{controls obj0 {constants [] intervals [v u 
+		r] objects [] readouts [] functions [$X2$ $e2$ $k2$ $e1$ X $k1$] variables []}} 
+		{frame.3d obj1 {canvas {canvas.3d obj4 {tool 100.0 points true graph {graph.3d 
+		obj5 {light true graph {plots [{plot.axes obj6 {super {transpt $0$ visible true 
+		addedz 0.0} labels [x y z]}} {plot.surface obj2 {intrpl true super {super 
+		{transpt $0$ visible true addedz 0.0} color {coloring.group obj7 {colors 
+		[{coloring.constant obj8 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+		[0.0]}} expr $e2(X)(u,v)$} vrtnml true}} {plot.surface obj3 {intrpl true super 
+		{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj9 
+		{color [0.0 1.0 0.0 1.0]}} expr $e1(X)(u,v)$} vrtnml true}}]} alpha true scale 
+		100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [-0.003630740096466206 
+		-0.13661534761218058 0.0558205545465041 -1.978441366333563E-15 
+		-0.13308476454415819 0.027163118620989572 0.05782283476043096 
+		1.718569953907331E-14 -0.06378191718114122 -0.04890073179727895 
+		-0.12382832978407136 -8.877745166590436E-17 0.0 0.0 0.0 1.0]}} group null 
+		hotspots [] drawmode 1.0}} graph {id obj5} frame {visible true plots [{id obj2} 
+		{id obj3}] title $3D Graph$ labels [$ Surface: e2(X)(u,v)$ 
+		$ Surface: e1(X)(u,v)$]}}}] 
+		</argument>
+	</application-desc>
+</jnlp>

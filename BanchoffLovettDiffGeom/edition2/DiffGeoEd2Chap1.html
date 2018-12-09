@@ -1,0 +1,2019 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Differential Geometry</title>
+  <link href="dgstyles.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+<!--
+function openwindow(lnk, nme)
+{
+if (! window.focus)return true;
+var href;
+if (typeof(lnk) == 'string')
+href=lnk;
+else
+href=lnk.href;
+window.open(href, nme, 'width=500,height=400,scrollbars=yes');
+return false;
+}
+//-->
+  </script>
+</head>
+
+<body>
+<p><br><br><br>
+
+<center>
+<h1>Chapter 1 &bull; Plane Curves: Local Properties</h1>
+</center>
+<br>
+<br>
+<center>
+<table width=95% border=0 cellpadding="0" cellspacing="0">
+<tr><td>
+
+<h2>1.1: Parametrizations</h2>
+<br>
+<h3>Example 1.1.1: Lines</h3>
+
+<br>
+<div style="text-align: center;"><img alt="figure1-1" src="images/figure1-1.png"><br></div>
+<div style="text-align: center;">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Straight Lines (with hotspots)">
+<param name="DATA" value="filever 100.0 env {function 
+$round(P)=(ipart(P_1*(10^3))/(10^3),ipart(P_2*(10^3))/(10^3))$ variable 
+$t0= -1,1,20$ 1.0 value $C=(0.8074039812685855 , 1.3456733021143092)$ value 
+$A=(-1.4284839668598048 , -0.14491866330461792)$ interval 
+$t=t0_min,t0_max,t0_res$ interval 
+$t1=t0_min,t0,t0_res*(t0-t0_min)/(t0_max-t0_min)$ function $X(t)=A + t*C$} 
+objects [{controls obj0 {constants [] intervals [] objects [{plotcheckbox obj3 
+{values [true] label $Show position vector X(t0)$ plots [{id obj4}]}} 
+{plotcheckbox obj5 {values [true] label $Show entire curve$ plots [{id obj6}]}} 
+{plotcheckbox obj7 {values [true] label $Show Color Spectrum$ plots [{id 
+obj8}]}}] readouts [{readout obj1 $round(A)$} {readout obj2 $round(C)$}] 
+functions [X] variables [$t0$]}} {frame.2d obj9 {canvas {canvas.3d obj16 {tool 
+1.0 points true graph {graph.3d obj17 {light false graph {plots [{plot.vector 
+obj4 {base $0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group obj18 {colors 
+[{coloring.constant obj19 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible false addedz 0.0} endsize 10.0}} {plot.vector obj11 {base 
+$0,0$ endstyle 1.0 dir $C$ color {coloring.constant obj20 {color [1.0 1.0 1.0 
+1.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.vector obj14 {base 
+$0,0$ endstyle 1.0 dir $A$ color {coloring.group obj21 {colors 
+[{coloring.constant obj22 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 
+super {transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.point obj12 
+{super {transpt $0$ visible true addedz 2.0} color {coloring.constant obj23 
+{color [1.0 1.0 1.0 1.0]}} label C size 10.0 style 0.0 showlabel true dim 2.0 
+expr $C$}} {plot.axes obj24 {super {transpt $0$ visible true addedz 0.0} labels 
+[x y]}} {plot.point obj15 {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.constant obj25 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 6.0 style 
+0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.curve obj8 {super {super 
+{transpt $0$ visible true addedz 1.0} color {coloring.group obj26 {colors 
+[{coloring.expression obj27 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t1)$} thick true}} {plot.point obj10 {super 
+{transpt $0$ visible true addedz 2.0} color {coloring.group obj28 {colors 
+[{coloring.constant obj29 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} label A size 10.0 style 0.0 showlabel true dim 2.0 expr $A$}} 
+{plot.curve obj6 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj30 {colors [{coloring.constant obj31 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(6*t)$} thick true}} {plot.curve 
+obj13 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj32 {color [0.0 1.0 0.0 1.0]}} expr $A+t1*C$} thick 
+true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.4829681644624228 0.0 0.0 0.0 0.0 0.4829681644624228 0.0 0.0 0.0 0.0 
+0.4829681644624228 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj33 
+{origin $0, 0$ entry A constraint $Point$ cmode 0.0 cobjs []}} {hotspot obj34 
+{origin $0, 0$ entry C constraint $Point$ cmode 0.0 cobjs []}}] drawmode 0.0}} 
+graph {id obj17} frame {visible true plots [{id obj10} {id obj11} {id obj4} {id 
+obj12} {id obj13} {id obj6} {id obj14} {id obj15}] title $Straight line$ labels 
+[$ Point: A$ $ Vector: C  starting at 0,0$ $ Vector: X(t0)  starting at 0,0$ 
+$ Point: C$ $ Curve: A+t1*C$ $ Curve: X(6*t)$ $ Vector: A  starting at 0,0$ 
+$ Point: X(t0)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d1.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank" TARGET="_blank">[Help]</a></big>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Straight Lines (type-in)">
+<param name="DATA" value="filever 100.0 env {constant $C= (.5,1)$ constant $A= (-1,-.2)$ variable 
+$t0= -1,1,20$ 1.0 function $X(t)=A + t*C$ interval $t=t0_min,t0_max,t0_res$ 
+interval $t1=t0_min,t0,t0_res*(t0-t0_min)/(t0_max-t0_min)$} objects [{frame.2d 
+obj0 {canvas {canvas.3d obj9 {tool 1.0 points true graph {graph.3d obj10 {light 
+false graph {plots [{plot.point obj6 {super {transpt $0$ visible true addedz 
+2.0} color {coloring.constant obj11 {color [1.0 1.0 1.0 1.0]}} label C size 6.0 
+style 0.0 showlabel true dim 2.0 expr $C$}} {plot.curve obj12 {super {super 
+{transpt $0$ visible true addedz 1.0} color {coloring.group obj13 {colors 
+[{coloring.expression obj14 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t1)$} thick true}} {plot.point obj8 {super 
+{transpt $0$ visible true addedz 2.0} color {coloring.constant obj15 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}} {plot.vector obj7 {base $0,0$ endstyle 1.0 dir $X(t0)$ color 
+{coloring.group obj16 {colors [{coloring.constant obj17 {color [0.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 
+10.0}} {plot.vector obj4 {base $0,0$ endstyle 1.0 dir $C$ color 
+{coloring.constant obj18 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 10.0}} {plot.axes obj19 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y]}} {plot.curve obj1 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj20 {color [0.0 1.0 0.0 1.0]}} expr 
+$X(6*t)$} thick true}} {plot.point obj3 {super {transpt $0$ visible true addedz 
+2.0} color {coloring.group obj21 {colors [{coloring.constant obj22 {color [1.0 
+0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} label A size 6.0 style 0.0 
+showlabel true dim 2.0 expr $A$}} {plot.curve obj2 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj23 {color [0.0 1.0 0.0 
+1.0]}} expr $X(t1)$} thick true}} {plot.vector obj5 {base $0,0$ endstyle 1.0 dir 
+$A$ color {coloring.group obj24 {colors [{coloring.constant obj25 {color [1.0 
+0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick false basestyle 
+0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 
+0.0} endsize 10.0}}]} alpha false scale 100.01271474132783 surfacemode 1.0 
+drawmode 1.0 transf [0.6736167884328467 0.0 0.0 0.0 0.0 0.6736167884328467 0.0 
+0.6736167884328467 0.0 0.0 0.6736167884328467 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj10} frame {visible true plots [{id obj1} 
+{id obj2} {id obj3} {id obj4} {id obj5} {id obj6} {id obj7} {id obj8}] title 
+$Straight line$ labels [$ Curve: X(6*t)$ $ Curve: X(t1)$ $ Point: A$ 
+$ Vector: C  starting at 0,0$ $ Vector: A  starting at 0,0$ $ Point: C$ 
+$ Vector: X(t0)  starting at 0,0$ $ Point: X(t0)$]}}} {controls obj26 {constants 
+[A C] intervals [] objects [{plotcheckbox obj27 {values [true] label 
+$Show Color Spectrum$ plots [{id obj12}]}} {plotcheckbox obj28 {values [true] 
+label $Show entire curve$ plots [{id obj1}]}} {plotcheckbox obj29 {values [true] 
+label $Show position vector X(t0)$ plots [{id obj7}]}}] readouts [] functions 
+[X] variables [$t0$]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d2.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+
+<br>
+
+<h3>Example 1.1.2: Circles</h3>
+<br>
+<div style="text-align: center;"><img alt="figure2-2" src="images/figure1-2.png"><br></div>
+<br>
+<div style="text-align: center;">
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Circles (with hotspots)">
+<param name="DATA" value="
+filever 100.0 env {function $round(x)=ipart(x*10^3)/10^3$ variable 
+$t0= 0,2*pi, 100$ 6.283185307179587 value 
+$A=(-0.3399567753753846 , 0.46994024831303166)$ interval $t= 0,2*pi,t0_res$ 
+interval $t1= 0, t0,t0_res*t0/(2*pi)$ constant $b=round(A_2)$ constant 
+$a=round(A_1)$ value $RHS=(0.8698893958134841 , 0.0)$ constant $R=round(RHS_1)$ 
+function $X(t)=(a,b) + R*(cos(t), sin(t))$} objects [{controls obj0 {constants 
+[] intervals [] objects [{plotcheckbox obj3 {values [true] label 
+$Show entire curve$ plots [{id obj4}]}} {plotcheckbox obj5 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj6}]}} {plotcheckbox obj7 {values 
+[true] label $Show Spectrum Color$ plots [{id obj8}]}}] readouts [{readout obj1 
+$(a,b)$} {readout obj2 $R$}] functions [X] variables [$t0$]}} {frame.2d obj9 
+{canvas {canvas.3d obj14 {tool 0.0 points true graph {graph.3d obj15 {light 
+false graph {plots [{plot.axes obj16 {super {transpt $0$ visible true addedz 
+0.0} labels [x y]}} {plot.point obj11 {super {transpt $0$ visible true addedz 
+2.0} color {coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}} label R size 10.0 
+style 0.0 showlabel false dim 2.0 expr $(a,b)+(R,0)$}} {plot.point obj10 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj18 {color [1.0 
+1.0 1.0 1.0]}} label $(a,b)$ size 10.0 style 0.0 showlabel true dim 2.0 expr 
+$(a,b)$}} {plot.curve obj8 {super {super {transpt $0$ visible true addedz 1.0} 
+color {coloring.group obj19 {colors [{coloring.expression obj20 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} 
+thick true}} {plot.curve obj13 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.constant obj21 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} 
+thick true}} {plot.point obj12 {super {transpt $0$ visible true addedz 2.0} 
+color {coloring.constant obj22 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 6.0 
+style 0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.point obj23 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj24 {color [1.0 
+1.0 1.0 1.0]}} label R size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$(a,b)+RHS+(-.2,0.1)$}} {plot.vector obj6 {base $(0,0)$ endstyle 1.0 dir 
+$X(t0)$ color {coloring.group obj25 {colors [{coloring.constant obj26 {color 
+[0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false 
+addedz 0.0} endsize 10.0}} {plot.curve obj4 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj27 {color [0.0 1.0 0.0 1.0]}} expr 
+$X(t)$} thick true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 
+drawmode 1.0 transf [1.0 0.0 0.0 14.0 0.0 1.0 0.0 -22.0 0.0 0.0 1.0 0.0 0.0 0.0 
+0.0 1.0]}} group null hotspots [{hotspot obj28 {origin $A$ entry RHS constraint 
+$abs(Point_1),0$ cmode 1.0 cobjs []}} {hotspot obj29 {origin $0, 0$ entry A 
+constraint $Point$ cmode 0.0 cobjs []}}] drawmode 0.0}} graph {id obj15} frame 
+{visible true plots [{id obj10} {id obj11} {id obj12} {id obj4} {id obj13} {id 
+obj6}] title $Circle with radius R, center (a,b)$ labels [$ Point: (a,b)$ 
+$ Point: (a,b)+(R,0)$ $ Point: X(t0)$ $ Curve: X(t)$ $ Curve: X(t1)$ 
+$ Vector: X(t0)  starting at (0,0)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d3.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank" TARGET="_blank">[Help]</a></big>
+<br>
+
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Circles (type-in)">
+
+<param name="DATA" value="filever 100.0 env {variable $R= 0,1,20$ 1.0 constant $b=.2$ constant $a=-.5$ 
+variable $t0= 0,2*pi, 100$ 6.283185307179587 function 
+$X(t)=(a,b) + (R*cos(t), R*sin(t))$ interval $t1= 0, t0,t0*t0_res/(2*pi)$ 
+interval $t= 0,2*pi,t0_res$} objects [{frame.2d obj0 {canvas {canvas.3d obj6 
+{tool 0.0 points true graph {graph.3d obj7 {light false graph {plots 
+[{plot.curve obj1 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj8 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} 
+{plot.curve obj4 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj9 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} 
+{plot.point obj2 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj10 {color [1.0 1.0 1.0 1.0]}} label $(a,b)$ size 6.0 style 
+0.0 showlabel true dim 2.0 expr $(a,b)$}} {plot.vector obj3 {base $0,0$ endstyle 
+1.0 dir $X(t0)$ color {coloring.group obj11 {colors [{coloring.constant obj12 
+{color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false 
+addedz 0.0} endsize 10.0}} {plot.point obj5 {super {transpt $0$ visible true 
+addedz 1.0} color {coloring.constant obj13 {color [1.0 1.0 1.0 1.0]}} label 
+$X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.curve 
+obj14 {super {super {transpt $0$ visible true addedz 1.0} color {coloring.group 
+obj15 {colors [{coloring.expression obj16 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] 
+opacities [1.0] mixings [0.0]}} expr $X(t1)$} thick true}} {plot.axes obj17 
+{super {transpt $0$ visible true addedz 0.0} labels [x y]}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 8.0 0.0 1.0 
+0.0 -21.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 
+0.0}} graph {id obj7} frame {visible true plots [{id obj1} {id obj2} {id obj3} 
+{id obj4} {id obj5}] title $Circle with radius R, center (a,b)$ labels 
+[$ Curve: X(t1)$ $ Point: (a,b)$ $ Vector: X(t0)  starting at 0,0$ 
+$ Curve: X(t)$ $ Point: X(t0)$]}}} {controls obj18 {constants [b a] intervals [] 
+objects [{plotcheckbox obj19 {values [true] label $Show position vector X(t0)$ 
+plots [{id obj3}]}} {plotcheckbox obj20 {values [true] label 
+$Show Spectrum Color$ plots [{id obj14}]}} {plotcheckbox obj21 {values [true] 
+label $Show entire curve$ plots [{id obj4}]}}] readouts [] functions [X] 
+variables [R $t0$]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d4.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Definition 1.1.3: Length</h3>
+<br>
+<div style="text-align: center;"><img alt="figure1-3" src="images/figure1-3.png"><br></div>
+<br>
+<div style="text-align: center;">
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Length">
+<param name="DATA" value="filever 100.0 env {function 
+$round(value,place)=if(fpart(value*(10^place)) < .5) then((ipart(value*(10^place)))/(10^place)) else((ipart(value*(10^place))+1)/(10^place))$ 
+constant $place=3$ value $A=(1.349828372814027 , 0.6799135507507692)$ function 
+$vector(A,B)=round((A - B)_1,place),round((A - B)_2,place)$ function 
+$distance(A,B)=round(length(B - A),place)$ value 
+$C=(0.7898995663133936 , 1.6497902334393664)$} objects [{controls obj0 
+{constants [place] intervals [] objects [] readouts [{readout obj1 {expr 
+$distance(C,A)$ smart false}} {readout obj2 {expr $distance((0,0),C)$ smart 
+false}} {readout obj3 {expr $vector(A,(0,0))$ smart false}} {readout obj4 {expr 
+$vector(C,(0,0))$ smart false}} {readout obj5 {expr $vector(C,A)$ smart false}} 
+{readout obj6 {expr $distance((0,0),A)$ smart false}}] functions [] variables 
+[]}} {frame.2d obj7 {canvas {canvas.3d obj14 {tool 0.0 points true graph 
+{graph.3d obj15 {light false graph {plots [{plot.vector obj8 {base $0,0$ 
+endstyle 1.0 dir $A$ color {coloring.group obj16 {colors [{coloring.constant 
+obj17 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 0.0} endsize 10.0}} {plot.axes obj18 {super {transpt $0$ visible 
+true addedz 0.0} labels [x y]}} {plot.point obj9 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj19 {color [1.0 1.0 1.0 1.0]}} label 
+C size 10.0 style 0.0 showlabel true dim 2.0 expr $C$}} {plot.point obj10 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj20 {colors 
+[{coloring.constant obj21 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} label A size 10.0 style 0.0 showlabel true dim 2.0 expr $A$}} 
+{plot.vector obj11 {base $A$ endstyle 1.0 dir $C - A$ color {coloring.group 
+obj22 {colors [{coloring.constant obj23 {color [0.0 1.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}} 
+{plot.point obj13 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj24 {colors [{coloring.constant obj25 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} label $C - A$ size 10.0 style 3.0 
+showlabel true dim 2.0 expr $(A + C)/2$}} {plot.vector obj12 {base $0,0$ 
+endstyle 1.0 dir $C$ color {coloring.constant obj26 {color [1.0 1.0 1.0 1.0]}} 
+dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 -77.0 0.0 
+1.0 0.0 -62.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot 
+obj27 {origin $0, 0$ entry C constraint $Point$ cmode 0.0 cobjs []}} {hotspot 
+obj28 {origin $0, 0$ entry A constraint $Point$ cmode 0.0 cobjs []}}] drawmode 
+0.0}} graph {id obj15} frame {visible true plots [{id obj8} {id obj9} {id obj10} 
+{id obj11} {id obj12} {id obj13}] title Length labels 
+[$ Vector: A  starting at 0,0$ $ Point: C$ $ Point: A$ 
+$ Vector: C - A  starting at A$ $ Vector: C  starting at 0,0$ 
+$ Point: (A + C)/2$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d5.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+
+<br>
+</div>
+<br>
+
+<h3>Example 1.1.9: Graphs of Functions</h3>
+<br>
+<div style="text-align: center;"><img alt="figure1-4" src="images/figure1-4.png"><br></div>
+<br>
+<div style="text-align: center;">
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Graphs of Function">
+<param name="DATA" value="filever 100.0 env {variable $t0= -1,1,100$ 1.0 function $f(t)=t^3 - t$ interval 
+$t1=t0_min,t0,t0_res*scale(t0)$ interval $t=t0_min,t0_max,t0_res$ function 
+$X(t)=(t, f(t))$} objects [{controls obj0 {constants [] intervals [] objects 
+[{plotcheckbox obj1 {values [true] label $Show Color Spectrum$ plots [{id 
+obj2}]}} {plotcheckbox obj3 {values [true] label $Show position vector X(t0)$ 
+plots [{id obj4}]}} {plotcheckbox obj5 {values [true] label $Show entire curve$ 
+plots [{id obj6}]}}] readouts [] functions [f X] variables [$t0$]}} {frame.2d 
+obj7 {canvas {canvas.3d obj10 {tool 0.0 points true graph {graph.3d obj11 {light 
+false graph {plots [{plot.axes obj12 {super {transpt $0$ visible true addedz 
+0.0} labels [x y]}} {plot.point obj9 {super {transpt $0$ visible true addedz 
+2.0} color {coloring.constant obj13 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ 
+size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.curve obj8 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj14 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.curve obj2 {super 
+{super {transpt $0$ visible true addedz 1.0} color {coloring.group obj15 {colors 
+[{coloring.expression obj16 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t1)$} thick true}} {plot.curve obj6 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj17 {color [0.0 
+1.0 0.0 1.0]}} expr $X(5*t)$} thick true}} {plot.vector obj4 {base $0,0$ 
+endstyle 1.0 dir $X(t0)$ color {coloring.group obj18 {colors [{coloring.constant 
+obj19 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+false addedz 0.0} endsize 10.0}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj11} 
+frame {visible true plots [{id obj8} {id obj9} {id obj6} {id obj4}] title 
+$The function graph of f$ labels [$ Curve: X(t1)$ $ Point: X(t0)$ 
+$ Curve: X(5*t)$ $ Vector: X(t0)  starting at 0,0$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d6.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+
+<br>
+
+<h3>Example 1.1.10: Circles Revisited</h3>
+<br>
+<div style="text-align: center;"><img alt="figure1-5" src="images/figure1-5.png"><br></div>
+<br>
+<div style="text-align: center;">
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Rational Parametrization of the Circle">
+<param name="DATA" value="filever 100.0 env {function $X(t)=((1 - t^2)/(1 + t^2), 2*t/(1 + t^2))$ variable 
+$t0=-5,5,100$ 5.0 interval $t=-100,100,2000$ interval $u= 0, atan(t0),100$ 
+interval $t1=t0_min, t0,t0_res*scale(t0)$} objects [{controls obj0 {constants [] 
+intervals [] objects [{plotcheckbox obj1 {values [true true true true true true 
+true] label $Angle parameter$ plots [{id obj2} {id obj3} {id obj4} {id obj5} {id 
+obj6} {id obj7} {id obj8}]}} {plotcheckbox obj9 {values [true] label 
+$Show entire curve$ plots [{id obj10}]}} {plotcheckbox obj11 {values [true] 
+label $Show Color Spectrum$ plots [{id obj12}]}} {plotcheckbox obj13 {values 
+[true] label $Show position vector X(t0)$ plots [{id obj14}]}}] readouts [] 
+functions [X] variables [$t0$]}} {frame.2d obj15 {canvas {canvas.3d obj18 {tool 
+0.0 points true graph {graph.3d obj19 {light false graph {plots [{plot.curve 
+obj7 {super {super {transpt $0$ visible false addedz 0.0} color {coloring.group 
+obj20 {colors [{coloring.constant obj21 {color [0.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $0.15*(cos(2*u),sin(2*u))$} thick false}} {plot.curve 
+obj5 {super {super {transpt $0$ visible false addedz 0.0} color {coloring.group 
+obj22 {colors [{coloring.constant obj23 {color [0.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $0.2*(cos(2*u),sin(2*u))$} thick false}} {plot.vector 
+obj8 {base $(1,0)$ endstyle 0.0 dir $(1, 2*t0) - (1,0)$ color {coloring.constant 
+obj24 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 
+len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 
+10.0}} {plot.vector obj4 {base $-1,0$ endstyle 0.0 dir $2,0$ color 
+{coloring.constant obj25 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false 
+addedz 0.0} endsize 10.0}} {plot.curve obj16 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj26 {color [0.0 1.0 0.0 1.0]}} expr 
+$X(t1)$} thick true}} {plot.vector obj14 {base $0,0$ endstyle 1.0 dir $X(t0)$ 
+color {coloring.group obj27 {colors [{coloring.constant obj28 {color [0.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 
+subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} 
+endsize 10.0}} {plot.vector obj3 {base $(-1,0)$ endstyle 0.0 dir 
+$(1,2*t0) - (-1,0)$ color {coloring.constant obj29 {color [1.0 1.0 1.0 1.0]}} 
+dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible false addedz 0.0} endsize 10.0}} {plot.curve obj10 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj30 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.curve obj6 {super 
+{super {transpt $0$ visible false addedz 0.0} color {coloring.group obj31 
+{colors [{coloring.constant obj32 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $(-1,0) + 0.2*(cos(u),sin(u))$} thick false}} {plot.point 
+obj17 {super {transpt $0$ visible true addedz 2.0} color {coloring.constant 
+obj33 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true 
+dim 2.0 expr $X(t0)$}} {plot.curve obj12 {super {super {transpt $0$ visible true 
+addedz 1.0} color {coloring.group obj34 {colors [{coloring.expression obj35 
+{expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$X(t1)$} thick true}} {plot.axes obj36 {super {transpt $0$ visible true addedz 
+0.0} labels [x y]}} {plot.vector obj2 {base $0,0$ endstyle 0.0 dir $X(t0)$ color 
+{coloring.constant obj37 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false 
+addedz 0.0} endsize 10.0}}]} alpha false scale 100.01271474132783 surfacemode 
+1.0 drawmode 1.0 transf [1.0 0.0 0.0 11.0 0.0 1.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj19} frame 
+{visible true plots [{id obj10} {id obj16} {id obj2} {id obj17} {id obj14}] 
+title $Rational Circle Parametrization$ labels [$ Curve: X(t)$ $ Curve: X(t1)$ 
+$ Vector: X(t0)  starting at 0,0$ $ Point: X(t0)$ 
+$ Vector: X(t0)  starting at 0,0$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d7.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Examples 1.1.11, 1.1.12, 1.1.14, 1.1.15, and 1.1.16</h3>
+<br>
+<div style="text-align: center;"><img  alt="figure1-6" src="images/figure1-6.png"><br></div>
+<br>
+<div style="text-align: center;">
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Further Examples">
+<param name="DATA" value="filever 100.0 env {variable $q= 0,1,20$ 0.6 variable $p= 0,1,20$ 1.0 function 
+$heart(t)=((1 - cos(t)^2)*sin(t), (1 - cos(t)^3)*cos(t))$ variable $m=1,5,2$ 3.0 
+variable $n= 1,5,4$ 2.0 variable $t0=0,2*pi,100$ 6.283185307179587 function 
+$spiral(t)=e^(q*t)*(cos(t),sin(t))$ function $circle(t)=p*(cos(t), sin(t))$ 
+function $cardioid(t)=(p + cos(t))*(cos(t), sin(t))$ function 
+$ellipse(t)=(p*cos(t), q*sin(t))$ function 
+$flower(t)=sin(n*t)*(cos(t), sin(t))$ function 
+$lissajous(t)=(cos(m*t), sin(n*t))$ interval 
+$t= t0_min,t0,(t0-t0_min)/(t0_max-t0_min)*t0_res$ interval 
+$t1=t0_min,t0_max,t0_res$ function $X(t)=ellipse(t)$} objects [{controls obj0 
+{constants [] intervals [] objects [{plotcheckbox obj1 {values [true] label 
+$Show Color Spectrum$ plots [{id obj2}]}} {plotcheckbox obj3 {values [true] 
+label $Show Entire Curve$ plots [{id obj4}]}}] readouts [] functions [heart 
+flower lissajous spiral ellipse cardioid circle X] variables [m $t0$ q p n]}} 
+{frame.2d obj5 {canvas {canvas.3d obj8 {tool 0.0 points true graph {graph.3d 
+obj9 {light false graph {plots [{plot.curve obj2 {super {super {transpt $0$ 
+visible true addedz 1.0} color {coloring.group obj10 {colors 
+[{coloring.expression obj11 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t)$} thick true}} {plot.point obj7 {super {transpt 
+$0$ visible true addedz 2.0} color {coloring.constant obj12 {color [1.0 1.0 1.0 
+1.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}} 
+{plot.axes obj13 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.curve obj4 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj14 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} 
+{plot.curve obj6 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.8350879194283725 0.0 0.0 -3.2537254078592817 0.0 0.8350879194283725 0.0 
+-15.143573898694237 0.0 0.0 0.8350879194283725 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj9} frame {visible true plots [{id obj6} 
+{id obj7} {id obj4}] title $Curve: X(t)$ labels [$ Curve: X(t)$ $ Point: X(t0)$ 
+$ Curve: X(t1)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d8.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Example 1.1.13: Cycloids</h3>
+<br>
+<div style="text-align: center;"><img alt="figure1-8" src="images/figure1-8.png"><br></div>
+<br>
+<div style="text-align: center;"><applet archive="Demo.jar"
+ code="DemoApplet" height="50" width="400"><param name="NAME"
+ value="Cycloids"> <param name="DATA"
+ value="filever 100.0 env {variable $r= 0,2,20$ 1.0 variable $R= 0,1,20$ 1.0 variable 
+$t0=-2*pi,2*pi,50$ 6.283185307179588 function 
+$X(t)=(R*t - r*sin(t), R - r*cos(t))$ interval $t=t0_min,t0_max,t0_res$ interval 
+$t1=t0_min, t0,t0_res*scale(t0)$} objects [{frame.2d obj0 {canvas {canvas.3d 
+obj6 {tool 1.0 points true graph {graph.3d obj7 {light false graph {plots 
+[{plot.curve obj5 {super {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.group obj8 {colors [{coloring.constant obj9 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $(R*t0, R) + R*(cos(t), sin(t))$} 
+thick true}} {plot.curve obj1 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj10 {colors [{coloring.constant obj11 {color [0.0 
+1.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(t)$} thick true}} 
+{plot.curve obj4 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj12 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} 
+{plot.axes obj13 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.vector obj14 {base $(-2*pi,0)$ endstyle 0.0 dir $5*pi,0$ color 
+{coloring.group obj15 {colors [{coloring.constant obj16 {color [0.75 0.75 0.75 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick false basestyle 0.0 
+subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} 
+endsize 10.0}} {plot.curve obj17 {super {super {transpt $0$ visible true addedz 
+1.0} color {coloring.group obj18 {colors [{coloring.expression obj19 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} 
+thick true}} {plot.curve obj3 {super {super {transpt $0$ visible true addedz 
+2.0} color {coloring.group obj20 {colors [{coloring.constant obj21 {color [1.0 
+0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(R*t0, R) + r*(cos(t), sin(t))$} thick false}} {plot.point obj2 {super {transpt 
+$0$ visible true addedz 3.0} color {coloring.constant obj22 {color [1.0 1.0 1.0 
+1.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.1517743605493812 0.0 0.0 0.0 0.0 0.1517743605493812 0.0 0.0 0.0 0.0 
+0.1517743605493812 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj7} frame {visible true plots [{id obj1} {id obj2} {id obj3} {id 
+obj4} {id obj5}] title Cycloid labels [$ Curve: X(t)$ $ Point: X(t0)$ 
+$ Curve: (R*t0, R) + r*(cos(t), sin(t))$ $ Curve: X(t1)$ 
+$ Curve: (R*t0, R) + R*(cos(t), sin(t))$]}}} {controls obj23 {constants [] 
+intervals [] objects [{plotcheckbox obj24 {values [true] label 
+$Show Entire Curve$ plots [{id obj1}]}} {plotcheckbox obj25 {values [true] label 
+$Show Color Spectrum$ plots [{id obj17}]}}] readouts [] functions [X] variables 
+[R r $t0$]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d10.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+<br>
+<div style="text-align: center;"><img alt="figure1-9" src="images/figure1-9.png"><br></div>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Cycloids (generalized)"> <param name="DATA"
+ value="filever 100.0 env {function 
+$R(P,theta)=(cos(theta)*P_1 - sin(theta)*P_2, sin(theta)*P_1 + cos(theta)*P_2)$ 
+function $X(t)=(2*cos(t), sin(t))$ constant $Q=(0,0)$ variable $t0=0,2*pi, 48$ 
+6.283185307179586 constant $P=(-Q_2,Q_1)$ function 
+$s(t)=integral(length(X'(t1)),t1,t0_min,t)$ function 
+$Y(t)=R(X(t) - X(t0), -arg(T(X)(t0)))$ interval $t=t0_min,t0_max, 48$ interval 
+$t1=t0_min,t0,t0_res*scale(t0)$ variable $tr=t0_min,t0_max,t0_res$ 
+0.7853981633974483 function $PY(t)=R(P - X(t), -arg(T(X)(t)))$ function 
+$Y1(t)=if(t0=0) then (R(Y(t) - Y(t0),0)) else(R(Y(t) - Y(t0), -arg(T(Y)(t0))) + (s(t0),0))$ 
+function $Yr(t)=R(X(t) - X(tr), -arg(T(X)(tr)))$ function 
+$PY1(t)=if (t0 = t0_min) then (PY(t0)) else (R(PY(t) - Y(t0), -arg(T(Y)(t0))) + (s(t0), 0))$ 
+function 
+$PY2(t,t0)=if (t0 = t0_min) then (PY(t0)) else (R(PY(t) - Y(t0), -arg(T(Y)(t0))) + (s(t0), 0))$ 
+function 
+$PY2r(t,t0)=if (t0 = t0_min) then (PY(t0)) else (R(PY(t) - Yr(t0), -arg(T(Yr)(t0))) + (s(t0), 0))$} 
+objects [{controls obj0 {constants [Q] intervals [] objects [{plotcheckbox obj1 
+{values [true] label $Show Entire Curve$ plots [{id obj2}]}} {plotcheckbox obj3 
+{values [true] label $Show Color Spectrum$ plots [{id obj4}]}}] readouts [] 
+functions [X] variables [$t0$]}} {frame.2d obj5 {canvas {canvas.3d obj9 {tool 
+0.0 points true graph {graph.3d obj10 {light false graph {plots [{plot.vector 
+obj11 {base $t0_min,0$ endstyle 0.0 dir $s(t0_max),0$ color {coloring.constant 
+obj12 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 
+len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}} 
+{plot.curve obj4 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj13 {colors [{coloring.expression obj14 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$PY2(t0,t1)+(t0_min,0)$} thick true}} {plot.curve obj8 {super {super {transpt 
+$0$ visible true addedz 2.0} color {coloring.group obj15 {colors 
+[{coloring.constant obj16 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $Y1(t)+(t0_min,0)$} thick true}} {plot.curve obj2 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj17 {colors 
+[{coloring.constant obj18 {color [0.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $PY2r(tr,t)+(t0_min,0)$} thick true}} {plot.point obj6 {super 
+{transpt $0$ visible true addedz 2.0} color {coloring.constant obj19 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 6.0 style 0.0 showlabel false dim 2.0 expr 
+$PY1(t0)+(t0_min,0)$}} {plot.axes obj20 {super {transpt $0$ visible true addedz 
+0.0} labels [x y]}} {plot.curve obj7 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj21 {color [0.0 1.0 0.0 1.0]}} expr 
+$PY2(t0,t1)+(t0_min,0)$} thick true}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.17677669529663784 0.0 0.0 -77.0 0.0 
+0.17677669529663784 0.0 -8.176776695296638 0.0 0.0 0.17677669529663784 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj10} frame 
+{visible true plots [{id obj6} {id obj7} {id obj8} {id obj2}] title Cycloid 
+labels [$ Point: PY1(t0)+(t0_min,0)$ $ Curve: PY2(t0,t1)+(t0_min,0)$ 
+$ Curve: Y1(t)+(t0_min,0)$ $ Curve: PY2r(tr,t)+(t0_min,0)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d11.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Problem 1.1.1: Distance from a Point to a Line</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure13b" src="images/figure1-13b.png">&nbsp;&nbsp;&nbsp;&nbsp; 
+<img alt="figure13c" src="images/figure1-13c.png">
+<br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Distance from a Point to a Line"> <param name="DATA"
+ value="filever 100.0 env {function $X(t)=(t, t/2 + 1/2)$ variable $t0=-1,1,50$ 1.0 
+value $P=(0.5599288065006335 , -0.2699656745628054)$ interval 
+$t1=t0_min,t0,t0_res*scale(t0)$ interval $t=t0_min,t0_max,t0_res$ function 
+$fd(t)=length(X(t) - P)$} objects [{frame.2d obj0 {canvas {canvas.3d obj4 {tool 
+1.0 points true graph {graph.3d obj5 {light false graph {plots [{plot.curve obj1 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj6 
+{colors [{coloring.constant obj7 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $(5*t, fd(5*t))$} thick true}} {plot.curve obj3 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj8 {colors 
+[{coloring.constant obj9 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t1,fd(t1)$} thick true}} {plot.point obj2 {super {transpt $0$ 
+visible true addedz 2.0} color {coloring.constant obj10 {color [1.0 1.0 1.0 
+1.0]}} label $(t0, fd(t0))$ size 6.0 style 0.0 showlabel true dim 2.0 expr 
+$(t0, fd(t0))$}} {plot.axes obj11 {super {transpt $0$ visible true addedz 0.0} 
+labels [t $fd(t)$]}} {plot.curve obj12 {super {super {transpt $0$ visible true 
+addedz 1.0} color {coloring.group obj13 {colors [{coloring.expression obj14 
+{expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$(t1, fd(t1))$} thick true}}]} alpha false scale 100.01271474132783 surfacemode 
+1.0 drawmode 1.0 transf [0.5625292423444053 0.0 0.0 0.0 0.0 0.5625292423444053 
+0.0 0.0 0.0 0.0 0.5625292423444053 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] 
+drawmode 0.0}} graph {id obj5} frame {visible true plots [{id obj1} {id obj2} 
+{id obj3}] title $Graph of Distance from P to X(t)$ labels 
+[$ Curve: (5*t, fd(5*t))$ $ Point: (t0, fd(t0))$ $ Curve: t1,fd(t1)$]}}} 
+{frame.2d obj15 {canvas {canvas.3d obj22 {tool 0.0 points true graph {graph.3d 
+obj23 {light false graph {plots [{plot.curve obj16 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj24 {color [0.0 1.0 0.0 
+1.0]}} expr $X(5*t)$} thick true}} {plot.vector obj25 {base $X(t0)$ endstyle 0.0 
+dir $(P - X(t0))$ color {coloring.group obj26 {colors [{coloring.expression 
+obj27 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 
+2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt 
+$0$ visible true addedz 1.0} endsize 10.0}} {plot.curve obj21 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj28 {color [0.0 
+1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.axes obj29 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.point obj18 {super {transpt $0$ 
+visible true addedz 2.0} color {coloring.constant obj30 {color [1.0 1.0 1.0 
+1.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}} 
+{plot.curve obj31 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj32 {colors [{coloring.expression obj33 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} 
+thick true}} {plot.vector obj17 {base $X(t0)$ endstyle 0.0 dir $P-X(t0)$ color 
+{coloring.group obj34 {colors [{coloring.constant obj35 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 
+10.0}} {plot.vector obj20 {base $0,0$ endstyle 1.0 dir $X(t0)$ color 
+{coloring.group obj36 {colors [{coloring.constant obj37 {color [0.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 
+10.0}} {plot.point obj19 {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.constant obj38 {color [1.0 1.0 1.0 1.0]}} label $(x0, y0)$ size 10.0 
+style 0.0 showlabel true dim 2.0 expr $P$}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 3.0 0.0 1.0 
+0.0 -27.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj39 
+{origin $0, 0$ entry P constraint $Point$ cmode 0.0 cobjs []}}] drawmode 0.0}} 
+graph {id obj23} frame {visible true plots [{id obj16} {id obj17} {id obj18} {id 
+obj19} {id obj20} {id obj21}] title $Distance to a Line$ labels 
+[$ Curve: X(5*t)$ $ Vector: P-X(t0)  starting at X(t0)$ $ Point: X(t0)$ 
+$ Point: P$ $ Vector: X(t0)  starting at 0,0$ $ Curve: X(t1)$]}}} {controls 
+obj40 {constants [] intervals [] objects [{plotcheckbox obj41 {values [true 
+true] label $Show entire curve$ plots [{id obj16} {id obj1}]}} {plotcheckbox 
+obj42 {values [true] label $Show position vector X(t0)$ plots [{id obj20}]}} 
+{plotcheckbox obj43 {values [true true true] label $Show Color Spectrum$ plots 
+[{id obj31} {id obj25} {id obj12}]}}] readouts [] functions [X] variables 
+[$t0$]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d16.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Problem 1.1.4</h3>
+<div style="text-align: center;">
+
+<img alt="problem1_1_4" src="images/problem1_1_4.png">
+<br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Problem 1.1.4">
+<param name="DATA" value="
+filever 100.0 env {function 
+$X(t)=(3*sin(t)/(1 + cos(t)), 2 - 3*cos(t)/(1+cos(t)))$ interval 
+$t= -pi/2,pi/2,40$ variable $t0= -pi/2,pi/2,40$ -1.5707963267948966} objects 
+[{controls obj0 {constants [] intervals [t] objects [] readouts [{readout obj1 
+$abs(X(t0)_2) - length(X(t0) - (0,2)) +1$}] functions [X] variables [$t0$]}} 
+{frame.2d obj2 {canvas {canvas.3d obj9 {tool 110.0 points true graph {graph.3d 
+obj10 {light false graph {plots [{plot.point obj4 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj11 {color [1.0 1.0 1.0 1.0]}} label 
+$$ size 10.0 style 0.0 showlabel false dim 2.0 expr 
+$unit(X(t0) - (0,2)) + (0,2)$}} {plot.point obj8 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj12 {color [1.0 1.0 1.0 1.0]}} label 
+$$ size 10.0 style 0.0 showlabel false dim 2.0 expr $X(t0)$}} {plot.axes obj13 
+{super {transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj7 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.constant 
+obj14 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.curve obj5 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj15 
+{colors [{coloring.constant obj16 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $(cos(2*t), 2 + sin(2*t))$} thick true}} {plot.polygon obj3 
+{super {transpt $0$ visible true addedz 0.0} subdivs 1.0 color {coloring.group 
+obj17 {colors [{coloring.constant obj18 {color [1.0 0.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} vertices [$0,2$ $X(t0)$ $(X(t0)_1,0)$] dim 2.0 title 
+Polygon thick false}} {plot.point obj6 {super {transpt $0$ visible true addedz 
+0.0} color {coloring.constant obj19 {color [1.0 1.0 1.0 1.0]}} label $$ size 
+10.0 style 0.0 showlabel false dim 2.0 expr $(X(t0)_1,0)$}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 -18.0 0.0 
+1.0 0.0 4.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 
+0.0}} graph {id obj10} frame {visible true plots [{id obj3} {id obj4} {id obj5} 
+{id obj6} {id obj7} {id obj8}] title $2D Graph$ labels [$ Polygon$ 
+$ Point: unit(X(t0) - (0,2)) + (0,2)$ $ Curve: (cos(2*t), 2 + sin(2*t))$ 
+$ Point: (X(t0)_1,0)$ $ Curve: X(t)$ $ Point: X(t0)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d30.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Problem 1.1.5: Distance from a Point to a Curve</h3>
+<div style="text-align: center;">
+
+<img alt="figure13d" src="images/figure1-13d.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img alt="figure13e" src="images/figure1-13e.png">
+<br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Distance from a Point to a Curve"> <param name="DATA" value="
+filever 100.0 env {function $X(t)=(t, t^2)$ variable $t0= -1.5,1.5,48$ 0.9375 
+interval $t= -1.5,1.5,48$ value $P=(1.6197940473768324 , 0.5499300778131222)$} 
+objects [{controls obj0 {constants [] intervals [t] objects [] readouts 
+[{readout obj1 $length(X(t0)-P)$} {readout obj2 $P$}] functions [X] variables 
+[$t0$]}} {frame.2d obj3 {canvas {canvas.3d obj9 {tool 0.0 points true graph 
+{graph.3d obj10 {light false graph {plots [{plot.axes obj11 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.curve obj4 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj12 {colors 
+[{coloring.expression obj13 {expr $(t + 1.5)/3$}}] opacities [1.0] mixings 
+[0.0]}} expr $X(t) $} thick true}} {plot.point obj5 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj14 {color [1.0 1.0 1.0 1.0]}} label 
+$$ size 10.0 style 0.0 showlabel false dim 2.0 expr $X(t0)$}} {plot.point obj6 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj15 
+{color [1.0 1.0 1.0 1.0]}} label P size 10.0 style 0.0 showlabel true dim 2.0 
+expr $P$}} {plot.polygon obj7 {super {transpt $0$ visible true addedz 0.0} 
+subdivs 1.0 color {coloring.constant obj16 {color [0.0 1.0 0.0 1.0]}} vertices 
+[$P$ $X(t0)$] dim 2.0 title Polygon thick true}} {plot.point obj8 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj17 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 10.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [{hotspot obj18 {origin $0, 0$ entry P constraint $Point$ cmode 
+0.0 cobjs []}}] drawmode 0.0}} graph {id obj10} frame {visible true plots [{id 
+obj4} {id obj5} {id obj6} {id obj7} {id obj8}] title $2D Graph$ labels 
+[$ Curve: X(t) $ $ Point: X(t0)$ $ Point: P$ $ Polygon$ $ Point: X(t0)$]}}} 
+{frame.2d obj19 {canvas {canvas.3d obj21 {tool 0.0 points true graph {graph.3d 
+obj22 {light false graph {plots [{plot.curve obj20 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj23 {colors 
+[{coloring.expression obj24 {expr $(t+1.5)/3$}}] opacities [1.0] mixings [0.0]}} 
+expr $(t, length(X(t) - P)/2)$} thick true}} {plot.axes obj25 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y]}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj22} frame {visible true plots [{id obj20}] title $2D Graph$ labels 
+[$ Curve: (t, length(X(t) - P)/2)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d17.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Problem 1.1.6: Epicycloid</h3>
+<br>
+<div style="text-align: center;"><img alt="figure13a" src="images/figure1-13a.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Epicycloid"> <param name="DATA"
+ value="filever 100.0 env {variable $a= 1,5,4$ 2.0 variable $b=1,5,4$ 3.0 variable 
+$t0=0,6*pi,100$ 18.84955592153876 function 
+$X(t)=((a + b)*cos(t) - b*cos(((a + b)/b)*t), (a + b)*sin(t) - b*sin(((a + b)/b)*t))$ 
+interval $t=t0_min,t0_max,t0_res$ interval $t1=t0_min, t0,t0_res*scale(t0)$} 
+objects [{frame.2d obj0 {canvas {canvas.3d obj5 {tool 1.0 points true graph 
+{graph.3d obj6 {light false graph {plots [{plot.curve obj2 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj7 {color [0.0 
+1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.axes obj8 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.vector obj4 {base $0,0$ endstyle 
+1.0 dir $X(t0)$ color {coloring.group obj9 {colors [{coloring.constant obj10 
+{color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false 
+addedz 0.0} endsize 10.0}} {plot.point obj3 {super {transpt $0$ visible true 
+addedz 2.0} color {coloring.constant obj11 {color [1.0 1.0 1.0 1.0]}} label 
+$X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.curve 
+obj1 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj12 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} 
+{plot.curve obj13 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj14 {colors [{coloring.expression obj15 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} 
+thick true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.13584185781575725 0.0 0.0 0.0 0.0 0.13584185781575725 0.0 0.0 0.0 0.0 
+0.13584185781575725 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj6} frame {visible true plots [{id obj1} {id obj2} {id obj3} {id 
+obj4}] title Epicycloid labels [$ Curve: X(t)$ $ Curve: X(t1)$ $ Point: X(t0)$ 
+$ Vector: X(t0)  starting at 0,0$]}}} {controls obj16 {constants [] intervals [] 
+objects [{plotcheckbox obj17 {values [true] label $Show Color Spectrum$ plots 
+[{id obj13}]}} {plotcheckbox obj18 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj4}]}} {plotcheckbox obj19 {values 
+[true] label $Show entire curve$ plots [{id obj1}]}}] readouts [] functions [X] 
+variables [b a $t0$]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d15.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Problem 1.1.7: Hypocycloid</h3>
+<br>
+<div style="text-align: center;"><img alt="Problem1_1_7" src="images/problem1_1_7.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Hypocycloid"> 
+<param name="DATA" value="
+filever 100.0 env {variable $a= 1,5,4$ 5.0 variable $b=1,5,4$ 2.0 variable 
+$t0=0,6*pi,100$ 18.84955592153876 function 
+$X(t)=((a + b)*cos(t) - b*cos(((a + b)/b)*t), (a + b)*sin(t) + b*sin(((a + b)/b)*t))$ 
+interval $t=t0_min,t0_max,t0_res$ interval $t1=t0_min, t0,t0_res*scale(t0)$} 
+objects [{frame.2d obj0 {canvas {canvas.3d obj5 {tool 1.0 points true graph 
+{graph.3d obj6 {light false graph {plots [{plot.axes obj7 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}} {plot.curve obj8 {super {super {transpt 
+$0$ visible true addedz 1.0} color {coloring.group obj9 {colors 
+[{coloring.expression obj10 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t1)$} thick true}} {plot.curve obj4 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj11 {color [0.0 
+1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.vector obj1 {base $0,0$ endstyle 
+1.0 dir $X(t0)$ color {coloring.group obj12 {colors [{coloring.constant obj13 
+{color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false 
+addedz 0.0} endsize 10.0}} {plot.point obj2 {super {transpt $0$ visible true 
+addedz 2.0} color {coloring.constant obj14 {color [1.0 1.0 1.0 1.0]}} label 
+$X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.curve 
+obj3 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.16154410382968654 0.0 0.0 0.0 0.0 0.16154410382968654 0.0 0.0 0.0 0.0 
+0.16154410382968654 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj6} frame {visible true plots [{id obj1} {id obj2} {id obj3} {id 
+obj4}] title Hypocycloid labels [$ Vector: X(t0)  starting at 0,0$ 
+$ Point: X(t0)$ $ Curve: X(t1)$ $ Curve: X(t)$]}}} {controls obj16 {constants [] 
+intervals [] objects [{plotcheckbox obj17 {values [true] label 
+$Show entire curve$ plots [{id obj4}]}} {plotcheckbox obj18 {values [true] label 
+$Show Color Spectrum$ plots [{id obj8}]}} {plotcheckbox obj19 {values [true] 
+label $Show position vector X(t0)$ plots [{id obj1}]}}] readouts [] functions 
+[X] variables [b a $t0$]}}] 
+"></applet>
+<br>
+</div>
+<br>
+
+
+<br><hr width="50%"><br>
+
+<h2>1.2: Position, Velocity, and Acceleration</h2>
+<br>
+
+<h3>Definition of Velocity Vector, p.14</h3>
+<div style="text-align: center;">
+<img alt="figure38" src="images/figure1-38.png">
+<br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Position and Velocity"> <param name="DATA" value="
+filever 100.0 env {variable $t0= -pi,pi,24$ 0.33333333333333326 interval 
+$t= -pi,pi,96$ function $X(t)=(e^(t/5))*(cos(t),sin(t))$} objects [{controls 
+obj0 {constants [] intervals [t] objects [] readouts [{readout obj1 
+$unit(X(t0))*unit(X'(t0))$}] functions [X] variables [$t0$]}} {frame.2d obj2 
+{canvas {canvas.3d obj7 {tool 0.0 points true graph {graph.3d obj8 {light false 
+graph {plots [{plot.vector obj3 {base $X(t0)$ endstyle 1.0 dir $X'(t0)$ color 
+{coloring.constant obj9 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false basestyle 
+0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 
+0.0} endsize 10.0}} {plot.curve obj6 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj10 {colors [{coloring.expression obj11 
+{expr $(t-pi)/(2*pi)$}}] opacities [1.0] mixings [0.0]}} expr $X(t)$} thick 
+true}} {plot.curve obj4 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj12 {colors [{coloring.expression obj13 {expr 
+$(t-pi)/(2*pi)$}}] opacities [1.0] mixings [0.0]}} expr $X'(t)$} thick false}} 
+{plot.vector obj5 {base $0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group 
+obj14 {colors [{coloring.expression obj15 {expr $(t0-pi)/(2*pi)$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}} 
+{plot.axes obj16 {super {transpt $0$ visible true addedz 0.0} labels [x y]}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 
+0.0 0.0 6.0 0.0 1.0 0.0 -20.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj8} frame {visible true plots [{id obj3} 
+{id obj4} {id obj5} {id obj6}] title $2D Graph$ labels 
+[$ Vector: X'(t0)  starting at X(t0)$ $ Curve: X'(t)$ 
+$ Vector: X(t0)  starting at 0,0$ $ Curve: X(t)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d18.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Example 1.2.4</h3>
+<div style="text-align: center;">
+<img alt="figure37" src="images/figure1-37.png">
+<br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Velocity and Acceleration">
+<param name="DATA"
+ value="filever 100.0 env {function $X(t)=(t*cos(t), t*sin(t))$ variable $t0=0,2*pi,50$ 
+6.283185307179587 interval $t1=t0_min, t0,t0_res*scale(t0)$ interval 
+$t=t0_min,t0_max,t0_res$} objects [{controls obj0 {constants [] intervals [] 
+objects [{plotcheckbox obj1 {values [true true true true true true] label 
+$Show Color Spectrum$ plots [{id obj2} {id obj3} {id obj4} {id obj5} {id obj6} 
+{id obj7}]}} {plotcheckbox obj8 {values [true true] label $Show entire curve$ 
+plots [{id obj9} {id obj10}]}} {plotcheckbox obj11 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj12}]}} {plotcheckbox obj13 {values 
+[true true] label $Show acceleration vector X''(t0)$ plots [{id obj14} {id 
+obj15}]}}] readouts [] functions [X] variables [$t0$]}} {frame.2d obj16 {canvas 
+{canvas.3d obj20 {tool 1.0 points true graph {graph.3d obj21 {light false graph 
+{plots [{plot.curve obj17 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj22 {colors [{coloring.constant obj23 {color [1.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $X'(t1)$} thick true}} 
+{plot.vector obj6 {base $(0,0)$ endstyle 1.0 dir $X'(t0)$ color {coloring.group 
+obj24 {colors [{coloring.expression obj25 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] 
+opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 
+1.0 basesize 10.0 super {transpt $0$ visible true addedz 1.0} endsize 6.0}} 
+{plot.point obj18 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj26 {color [1.0 1.0 1.0 1.0]}} label $X'(t0)$ size 10.0 
+style 3.0 showlabel true dim 2.0 expr $X'(t0)$}} {plot.point obj15 {super 
+{transpt $0$ visible false addedz 0.0} color {coloring.group obj27 {colors 
+[{coloring.constant obj28 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} label $X''(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$X'(t0) + X''(t0)/2$}} {plot.vector obj14 {base $X'(t0)$ endstyle 1.0 dir 
+$X''(t0)$ color {coloring.group obj29 {colors [{coloring.constant obj30 {color 
+[1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false 
+addedz 0.0} endsize 6.0}} {plot.axes obj31 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y]}} {plot.point obj7 {super {transpt $0$ visible true 
+addedz 1.0} color {coloring.group obj32 {colors [{coloring.expression obj33 
+{expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label 
+$X'(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $X'(t0)$}} {plot.curve 
+obj10 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj34 {colors [{coloring.constant obj35 {color [1.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $X'(t)$} thick true}} {plot.vector obj19 {base $0,0$ 
+endstyle 1.0 dir $X'(t0)$ color {coloring.constant obj36 {color [1.0 1.0 1.0 
+1.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 6.0}} {plot.curve obj5 {super 
+{super {transpt $0$ visible true addedz 1.0} color {coloring.group obj37 {colors 
+[{coloring.expression obj38 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X'(t1)$} thick true}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.18556544632863134 0.0 
+0.0 0.0 0.0 0.18556544632863134 0.0 0.0 0.0 0.0 0.18556544632863134 0.0 0.0 0.0 
+0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj21} frame {visible 
+true plots [{id obj17} {id obj14} {id obj18} {id obj10} {id obj19}] title 
+$Velocity Curve and Acceleration$ labels [$ Curve: X'(t1)$ 
+$ Vector: X''(t0)  starting at X'(t0)$ $ Point: X'(t0)$ $ Curve: X'(t)$ 
+$ Vector: X'(t0)  starting at 0,0$]}}} {frame.2d obj39 {canvas {canvas.3d obj43 
+{tool 1.0 points true graph {graph.3d obj44 {light false graph {plots 
+[{plot.point obj45 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj46 {color [1.0 1.0 1.0 1.0]}} label $X'(t0)$ size 10.0 
+style 3.0 showlabel true dim 2.0 expr $X(t0)+X'(t0)/2$}} {plot.axes obj47 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj3 {super 
+{super {transpt $0$ visible true addedz 1.0} color {coloring.group obj48 {colors 
+[{coloring.expression obj49 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t1)$} thick true}} {plot.point obj4 {super 
+{transpt $0$ visible true addedz 1.0} color {coloring.group obj50 {colors 
+[{coloring.expression obj51 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} label $X'(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 
+expr $X(t0) + X'(t0)/2$}} {plot.vector obj12 {base $0,0$ endstyle 1.0 dir 
+$X(t0)$ color {coloring.group obj52 {colors [{coloring.constant obj53 {color 
+[0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false 
+addedz 0.0} endsize 6.0}} {plot.curve obj40 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj54 {color [0.0 1.0 0.0 1.0]}} expr 
+$X(t1)$} thick true}} {plot.vector obj2 {base $X(t0)$ endstyle 1.0 dir $X'(t0)$ 
+color {coloring.group obj55 {colors [{coloring.expression obj56 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 6.0}} {plot.curve obj9 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj57 {color [0.0 1.0 0.0 
+1.0]}} expr $X(t)$} thick true}} {plot.vector obj41 {base $X(t0)$ endstyle 1.0 
+dir $X'(t0)$ color {coloring.constant obj58 {color [1.0 1.0 1.0 1.0]}} dim 2.0 
+thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ 
+visible true addedz 0.0} endsize 6.0}} {plot.point obj42 {super {transpt $0$ 
+visible true addedz 2.0} color {coloring.constant obj59 {color [1.0 1.0 1.0 
+1.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.20589775431689372 0.0 0.0 0.20589775431689372 0.0 0.20589775431689372 0.0 
+-0.20589775431689372 0.0 0.0 0.20589775431689372 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [] drawmode 0.0}} graph {id obj44} frame {visible true plots [{id 
+obj12} {id obj9} {id obj40} {id obj41} {id obj42}] title 
+$Parametric Curve and Velocity$ labels [$ Vector: X(t0)  starting at 0,0$ 
+$ Curve: X(t)$ $ Curve: X(t1)$ $ Vector: X'(t0)  starting at X(t0)$ 
+$ Point: X(t0)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d18.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Example 1.2.5</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure1-16" src="images/figure1-16.png">&nbsp;&nbsp;&nbsp;&nbsp;
+
+<img alt="figure1-17" src="images/figure1-17.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img alt="figure1-18" src="images/figure1-18.png"><br>
+</div>
+<br>
+<div style="text-align: center;"><applet archive="Demo.jar"
+ code="DemoApplet" height="50" width="400"><param name="NAME"
+ value="Speed and Arclength"> <param name="DATA"
+ value="filever 100.0 env {variable $t0=0,1,20$ 1.0 function $X(t)=(t^2, t^3)$ interval 
+$h1= 0,1,1$ interval $t=t0_min,t0_max,t0_res$ interval 
+$t1=t0_min, t0,t0_res*scale(t0)$ function 
+$s(t)=integral(length(X'(x)),x,t_min,t)$} objects [{controls obj0 {constants [] 
+intervals [] objects [{plotcheckbox obj1 {values [true true true true true true 
+true true] label $Show Color Spectrum$ plots [{id obj2} {id obj3} {id obj4} {id 
+obj5} {id obj6} {id obj7} {id obj8} {id obj9}]}} {plotcheckbox obj10 {values 
+[true true true true] label $Show entire curve$ plots [{id obj11} {id obj12} {id 
+obj13} {id obj14}]}}] readouts [] functions [s X] variables [$t0$]}} {frame.2d 
+obj15 {canvas {canvas.3d obj18 {tool 0.0 points true graph {graph.3d obj19 
+{light false graph {plots [{plot.curve obj16 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj20 {colors [{coloring.constant obj21 
+{color [0.5 0.5 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t1,s(t1)$} 
+thick true}} {plot.curve obj8 {super {super {transpt $0$ visible true addedz 
+1.0} color {coloring.group obj22 {colors [{coloring.expression obj23 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$(t1, s(t1))$} thick true}} {plot.point obj17 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj24 {colors [{coloring.constant obj25 {color 
+[0.5 0.5 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} label $t0,s(t0)$ size 6.0 
+style 0.0 showlabel true dim 2.0 expr $t0,s(t0)$}} {plot.axes obj26 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj12 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj27 {colors 
+[{coloring.constant obj28 {color [0.5 0.5 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,s(t)$} thick true}} {plot.point obj9 {super {transpt $0$ visible 
+true addedz 2.0} color {coloring.group obj29 {colors [{coloring.expression obj30 
+{expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label 
+$t0,s(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $t0,s(t0)$}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 
+-55.0 0.0 1.0 0.0 -66.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots 
+[] drawmode 0.0}} graph {id obj19} frame {visible true plots [{id obj16} {id 
+obj12} {id obj17}] title $Graph of arclength s(t)$ labels [$ Curve: t1,s(t1)$ 
+$ Curve: t,s(t)$ $ Point: t0,s(t0)$]}}} {frame.3d obj31 {canvas {canvas.3d obj35 
+{tool 1.0 points true graph {graph.3d obj36 {light false graph {plots 
+[{plot.curve obj13 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj37 {colors [{coloring.constant obj38 {color [0.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $(t, length(X'(t)), 0)$} thick 
+true}} {plot.curve obj34 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj39 {colors [{coloring.constant obj40 {color [0.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $(t1, length(X'(t1)), 0)$} 
+thick true}} {plot.point obj32 {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj41 {colors [{coloring.constant obj42 {color [0.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} label $t0,s'(t0)$ size 6.0 style 0.0 
+showlabel true dim 3.0 expr $(t0, length(X'(t0)), 0)$}} {plot.curve obj2 {super 
+{super {transpt $0$ visible true addedz 1.0} color {coloring.group obj43 {colors 
+[{coloring.expression obj44 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $(t1, length(X'(t1)), 0)$} thick true}} {plot.surface 
+obj33 {intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj45 {colors [{coloring.constant obj46 {color [0.5 0.5 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(1 - h1)*(t1,0,0) + h1*(t1, length(X'(t1)), -1)$} vrtnml true}} {plot.axes 
+obj47 {super {transpt $0$ visible true addedz 0.0} labels [t $s'(t)$ $$]}} 
+{plot.surface obj14 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj48 {colors [{coloring.constant obj49 {color [0.5 
+0.5 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(1 - h1)*(t,0,0) + h1*(t, length(X'(t)), -1)$} vrtnml true}} {plot.surface obj3 
+{intrpl true super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj50 {colors [{coloring.expression obj51 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$(1 - h1)*(t1,0,0) + h1*(t1, length(X'(t1)), -1)$} vrtnml true}} {plot.point 
+obj4 {super {transpt $0$ visible true addedz 2.0} color {coloring.group obj52 
+{colors [{coloring.expression obj53 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] 
+opacities [1.0] mixings [0.0]}} label $t0,s'(t0)$ size 6.0 style 0.0 showlabel 
+true dim 3.0 expr $(t0, length(X'(t0)), 0)$}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [0.46329403094518873 
+3.214748127042191E-16 0.0 -20.364450698200997 -2.5717985016337483E-17 
+0.46329403094518995 0.0 -71.62668866263796 -2.5717985016337483E-17 
+2.2503236889295274E-16 0.46329403094518995 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 1.0}} graph {id obj36} frame {visible true plots [{id 
+obj13} {id obj32} {id obj14} {id obj33} {id obj34}] title 
+$Graph of speed s'(t)$ labels [$ Curve: (t, length(X'(t)), 0)$ 
+$ Point: (t0, length(X'(t0)), 0)$ 
+$ Surface: (1 - h1)*(t,0,0) + h1*(t, length(X'(t)), -1)$ 
+$ Surface: (1 - h1)*(t1,0,0) + h1*(t1, length(X'(t1)), -1)$ 
+$ Curve: (t1, length(X'(t1)), 0)$]}}} {frame.2d obj54 {canvas {canvas.3d obj58 
+{tool 0.0 points true graph {graph.3d obj59 {light false graph {plots 
+[{plot.point obj60 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj61 {color [1.0 1.0 1.0 1.0]}} label $X'(t0)$ size 10.0 
+style 3.0 showlabel true dim 2.0 expr $X(t0)+X'(t0)$}} {plot.point obj56 {super 
+{transpt $0$ visible true addedz 2.0} color {coloring.constant obj62 {color [1.0 
+1.0 1.0 1.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr 
+$X(t0)$}} {plot.vector obj55 {base $X(t0)$ endstyle 1.0 dir $X'(t0)$ color 
+{coloring.constant obj63 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick true basestyle 
+0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 
+0.0} endsize 6.0}} {plot.curve obj57 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj64 {color [0.0 1.0 0.0 1.0]}} expr 
+$X(t1)$} thick true}} {plot.curve obj11 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj65 {color [0.0 1.0 0.0 1.0]}} expr 
+$X(t)$} thick true}} {plot.point obj5 {super {transpt $0$ visible true addedz 
+1.0} color {coloring.group obj66 {colors [{coloring.expression obj67 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label $X'(t0)$ 
+size 10.0 style 3.0 showlabel true dim 2.0 expr $X(t0) + X'(t0)$}} {plot.vector 
+obj6 {base $X(t0)$ endstyle 1.0 dir $X'(t0)$ color {coloring.group obj68 {colors 
+[{coloring.expression obj69 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 1.0} endsize 6.0}} 
+{plot.axes obj70 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.curve obj7 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj71 {colors [{coloring.expression obj72 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} 
+thick true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.4697613746070079 0.0 0.0 -79.95957342964871 0.0 0.4697613746070079 0.0 
+-90.45195613294642 0.0 0.0 0.4697613746070079 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj59} frame {visible true plots [{id 
+obj55} {id obj56} {id obj57} {id obj11}] title $Parametric curve and velocity$ 
+labels [$ Vector: X'(t0)  starting at X(t0)$ $ Point: X(t0)$ $ Curve: X(t1)$ 
+$ Curve: X(t)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d19.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Definition 1.2.7: Unit Tangent Vector</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure1-19" src="images/figure1-19.png">
+<br>
+</div>
+<br>
+<div style="text-align: center;"><applet archive="Demo.jar"
+ code="DemoApplet" height="50" width="400"><param name="NAME"
+ value="Unit Tangent"> <param name="DATA"
+ value="filever 100.0 env {variable $q= 0,1,20$ 0.6000000000000001 variable $n=1,5,4$ 
+3.0 variable $p= 0,1,20$ 1.0 variable $t0=0,2*pi,50$ 6.283185307179587 interval 
+$v=0,2*pi,50$ function $flower(t)=sin(n*t)*(cos(t), sin(t))$ function 
+$cardioid(t)=(p + cos(t))*(cos(t), sin(t))$ function 
+$circle(t)=p*(cos(t), sin(t))$ function $ellipse(t)=(p*cos(t), q*sin(t))$ 
+interval $t=t0_min,t0_max,t0_res$ interval $t1=t0_min, t0,t0_res*scale(t0)$ 
+function $X(t)=circle(t)$} objects [{frame.2d obj0 {canvas {canvas.3d obj6 {tool 
+1.0 points true graph {graph.3d obj7 {light false graph {plots [{plot.vector 
+obj2 {base $X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.constant obj8 
+{color [1.0 1.0 1.0 1.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 6.0}} 
+{plot.curve obj4 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj9 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} 
+{plot.point obj3 {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.constant obj10 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 6.0 style 
+0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.point obj11 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj12 {color [1.0 1.0 1.0 
+1.0]}} label $T(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$X(t0)+T(X)(t0)$}} {plot.vector obj1 {base $0,0$ endstyle 1.0 dir $X(t0)$ color 
+{coloring.group obj13 {colors [{coloring.constant obj14 {color [0.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 
+10.0}} {plot.curve obj5 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick 
+true}} {plot.vector obj16 {base $X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.group obj17 {colors [{coloring.expression obj18 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 6.0}} {plot.axes obj19 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y]}} {plot.point obj20 {super {transpt $0$ visible true 
+addedz 1.0} color {coloring.group obj21 {colors [{coloring.expression obj22 
+{expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label 
+$T(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $X(t0) + T(X)(t0)$}} 
+{plot.curve obj23 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj24 {colors [{coloring.expression obj25 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} 
+thick true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.6783021637238384 0.0 0.0 0.0 0.0 0.6783021637238384 0.0 0.0 0.0 0.0 
+0.6783021637238384 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj7} frame {visible true plots [{id obj1} {id obj2} {id obj3} {id 
+obj4} {id obj5}] title $Curve and Tangent Vector$ labels 
+[$ Vector: X(t0)  starting at 0,0$ $ Vector: T(X)(t0)  starting at X(t0)$ 
+$ Point: X(t0)$ $ Curve: X(t)$ $ Curve: X(t1)$]}}} {controls obj26 {constants [] 
+intervals [] objects [{plotcheckbox obj27 {values [true] label 
+$Show entire curve$ plots [{id obj4}]}} {plotcheckbox obj28 {values [true true 
+true true] label $Show Color Spectrum$ plots [{id obj20} {id obj16} {id obj23} 
+{id obj29}]}} {plotcheckbox obj30 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj1}]}}] readouts [] functions [flower 
+ellipse circle cardioid X] variables [$t0$ q p n]}} {frame.2d obj31 {canvas 
+{canvas.3d obj34 {tool 0.0 points true graph {graph.3d obj35 {light false graph 
+{plots [{plot.vector obj33 {base $0,0$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.constant obj36 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick true basestyle 
+0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 
+0.0} endsize 6.0}} {plot.vector obj29 {base $0,0$ endstyle 1.0 dir $T(X)(t0)$ 
+color {coloring.group obj37 {colors [{coloring.expression obj38 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 6.0}} {plot.curve obj32 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj39 {colors [{coloring.constant 
+obj40 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$circle(v)$} thick false}} {plot.axes obj41 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y]}}]} alpha false scale 100.01271474132783 surfacemode 
+1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 
+0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj35} frame {visible 
+true plots [{id obj32} {id obj33}] title $Unit Tangent T$ labels 
+[$ Curve: circle(v)$ $ Vector: T(X)(t0)  starting at 0,0$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d20.html"
+ onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Example 1.2.10</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure1-39" src="images/figure1-39.png">
+<br>
+</div>
+<br>
+<div style="text-align: center;"><applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Example 1.2.10"> <param name="DATA" value="
+filever 100.0 env {function $X(t)=(t, abs(tan(t)))$ variable $n= 1,5,4$ 3.0 
+function $eight(t)=(cos(t),sin(t)*cos(t))$ variable $q= 0,1,20$ 
+0.6000000000000001 variable $p= 0,2.0,20$ 0.5 variable $t0=-pi/2,pi/2-0.01,100$ 
+0.02631592653589787 interval $w= -pi,pi,10$ function 
+$flower(t)=sin(n*t)*(cos(t), sin(t))$ value 
+$P=(1.9810274153983167 , 1.0464624596381984)$ function 
+$circle(t)=p*(cos(t), sin(t))$ function 
+$cardioid(t)=(p + cos(t))*(cos(t), sin(t))$ function 
+$ellipse(t)=(p*cos(t), q*sin(t))$ interval $t1=t0_min,t0,t0_res*scale(t0)$ 
+interval $t= t0_min,t0_max,t0_res$} objects [{frame.2d obj0 {canvas {canvas.3d 
+obj2 {tool 0.0 points true graph {graph.3d obj3 {light false graph {plots 
+[{plot.axes obj4 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.vector obj1 {base $0,0$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.group 
+obj5 {colors [{coloring.expression obj6 {expr $(t0 + pi/2)/pi$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 
+0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] 
+drawmode 0.0}} graph {id obj3} frame {visible true plots [{id obj1}] title 
+$Graph of T(X)(t0)$ labels [$ Vector: T(X)(t0)  starting at 0,0$]}}} {controls 
+obj7 {constants [] intervals [w] objects [{plotcheckbox obj8 {values [true true] 
+label $Show Color Spectrum$ plots [{id obj9} {id obj10}]}} {plotcheckbox obj11 
+{values [true] label $Show Entire Curve$ plots [{id obj12}]}}] readouts [] 
+functions [flower eight ellipse cardioid circle X] variables [$t0$ q p n]}} 
+{frame.2d obj13 {canvas {canvas.3d obj17 {tool 1.0 points true graph {graph.3d 
+obj18 {light false graph {plots [{plot.vector obj16 {base $X(t0)$ endstyle 1.0 
+dir $T(X)(t0)$ color {coloring.constant obj19 {color [1.0 1.0 1.0 1.0]}} dim 2.0 
+thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ 
+visible true addedz 0.0} endsize 6.0}} {plot.curve obj12 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj20 {colors 
+[{coloring.expression obj21 {expr $(t+pi/2)/(pi)$}}] opacities [1.0] mixings 
+[0.0]}} expr $X(t)$} thick true}} {plot.point obj15 {super {transpt $0$ visible 
+false addedz 3.0} color {coloring.constant obj22 {color [1.0 1.0 1.0 1.0]}} 
+label P size 6.0 style 0.0 showlabel true dim 2.0 expr $P$}} {plot.curve obj14 
+{super {super {transpt $0$ visible false addedz 0.0} color {coloring.constant 
+obj23 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.vector obj10 
+{base $X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.group obj24 {colors 
+[{coloring.expression obj25 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 1.0} endsize 6.0}} 
+{plot.curve obj9 {super {super {transpt $0$ visible false addedz 1.0} color 
+{coloring.group obj26 {colors [{coloring.expression obj27 {expr 
+$t1/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} thick 
+true}} {plot.axes obj28 {super {transpt $0$ visible true addedz 0.0} labels [x 
+y]}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.4117955086337887 0.0 0.0 -38.58819162283692 0.0 0.4117955086337887 0.0 
+1.901666771784785 0.0 0.0 0.4117955086337887 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [{hotspot obj29 {origin $0, 0$ entry P constraint $Point$ cmode 0.0 
+cobjs []}}] drawmode 0.0}} graph {id obj18} frame {visible true plots [{id 
+obj12} {id obj14} {id obj15} {id obj16}] title $Graph of X(t)$ labels 
+[$ Curve: X(t)$ $ Curve: X(t1)$ $ Point: P$ 
+$ Vector: T(X)(t0)  starting at X(t0)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d32.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<br><hr width="50%"><br>
+<h2>1.3:  Curvature</h2>
+<br>
+<h3>Definition 1.3.1: Unit Normal Vector</h3>
+
+<br>
+</div>
+<div style="text-align: center;">
+<img alt="figure1-24" src="images/figure1-24.png"><br>
+<br>
+<applet archive="Demo.jar"
+ code="DemoApplet" height="50" width="400"><param name="NAME"
+ value="Unit Normal"> <param name="DATA"
+ value="filever 100.0 env {variable $p= 0,1,20$ 1.0 variable $n=1,5,4$ 3.0 variable 
+$q= 0,1,20$ 0.6000000000000001 interval $v=0,2*pi,50$ variable $t0=0,2*pi,50$ 
+6.283185307179587 function $circle(t)=p*(cos(t), sin(t))$ function 
+$cardioid(t)=(p + cos(t))*(cos(t), sin(t))$ function 
+$flower(t)=sin(n*t)*(cos(t), sin(t))$ function 
+$ellipse(t)=(p*cos(t), q*sin(t))$ interval $t1=t0_min, t0,t0_res*scale(t0)$ 
+interval $t=t0_min,t0_max,t0_res$ function $X(t)=circle(t)$} objects [{controls 
+obj0 {constants [] intervals [] objects [{plotcheckbox obj1 {values [true] label 
+$Show position vector X(t0)$ plots [{id obj2}]}} {plotcheckbox obj3 {values 
+[true true true true true true true true true] label $Show Color Spectrum$ plots 
+[{id obj4} {id obj5} {id obj6} {id obj7} {id obj8} {id obj9} {id obj10} {id 
+obj11} {id obj12}]}} {plotcheckbox obj13 {values [true] label 
+$Show entire curve$ plots [{id obj14}]}}] readouts [] functions [flower ellipse 
+cardioid circle X] variables [q $t0$ p n]}} {frame.2d obj15 {canvas {canvas.3d 
+obj20 {tool 1.0 points true graph {graph.3d obj21 {light false graph {plots 
+[{plot.vector obj19 {base $X(t0)$ endstyle 1.0 dir $U(X)(t0)$ color 
+{coloring.group obj22 {colors [{coloring.constant obj23 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 
+6.0}} {plot.point obj24 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj25 {color [1.0 1.0 1.0 1.0]}} label $T(t0)$ size 10.0 
+style 3.0 showlabel true dim 2.0 expr $X(t0)+T(X)(t0)$}} {plot.curve obj16 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.constant 
+obj26 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} {plot.vector obj17 
+{base $X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.constant obj27 {color 
+[1.0 1.0 1.0 1.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 6.0}} 
+{plot.point obj28 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj29 {colors [{coloring.constant obj30 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} label $U(t0)$ size 10.0 style 3.0 
+showlabel true dim 2.0 expr $U(X)(t0)+X(t0)$}} {plot.curve obj6 {super {super 
+{transpt $0$ visible true addedz 1.0} color {coloring.group obj31 {colors 
+[{coloring.expression obj32 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t1)$} thick true}} {plot.point obj12 {super 
+{transpt $0$ visible true addedz 1.0} color {coloring.group obj33 {colors 
+[{coloring.expression obj34 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} label $U(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 
+expr $U(X)(t0)+X(t0)$}} {plot.curve obj14 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj35 {color [0.0 1.0 0.0 1.0]}} expr 
+$X(t)$} thick true}} {plot.vector obj9 {base $X(t0)$ endstyle 1.0 dir 
+$U(X)(t0)$ color {coloring.group obj36 {colors [{coloring.expression obj37 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 6.0}} {plot.point obj4 {super {transpt $0$ visible true 
+addedz 1.0} color {coloring.group obj38 {colors [{coloring.expression obj39 
+{expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label 
+$T(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $X(t0) + T(X)(t0)$}} 
+{plot.point obj18 {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.constant obj40 {color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 6.0 style 
+0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.vector obj5 {base $X(t0)$ 
+endstyle 1.0 dir $T(X)(t0)$ color {coloring.group obj41 {colors 
+[{coloring.expression obj42 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 1.0} endsize 6.0}} 
+{plot.vector obj2 {base $0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group 
+obj43 {colors [{coloring.constant obj44 {color [0.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 10.0}} 
+{plot.axes obj45 {super {transpt $0$ visible true addedz 0.0} labels [x y]}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.6783021637238384 0.0 0.0 0.0 0.0 0.6783021637238384 0.0 0.0 0.0 0.0 
+0.6783021637238384 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj21} frame {visible true plots [{id obj14} {id obj2} {id obj16} {id 
+obj17} {id obj18} {id obj19}] title $Curve, T(t0), and U(t0)$ labels 
+[$ Curve: X(t)$ $ Vector: X(t0)  starting at 0,0$ $ Curve: X(t1)$ 
+$ Vector: T(X)(t0)  starting at X(t0)$ $ Point: X(t0)$ 
+$ Vector: U(X)(t0)  starting at X(t0)$]}}} {frame.2d obj46 {canvas {canvas.3d 
+obj50 {tool 0.0 points true graph {graph.3d obj51 {light false graph {plots 
+[{plot.vector obj8 {base $0,0$ endstyle 1.0 dir $U(X)(t0)$ color {coloring.group 
+obj52 {colors [{coloring.expression obj53 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] 
+opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 
+1.0 basesize 10.0 super {transpt $0$ visible true addedz 1.0} endsize 6.0}} 
+{plot.axes obj54 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.vector obj47 {base $0,0$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.constant obj55 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick true basestyle 
+0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 
+0.0} endsize 6.0}} {plot.point obj10 {super {transpt $0$ visible true addedz 
+1.0} color {coloring.group obj56 {colors [{coloring.expression obj57 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label $T(t0)$ 
+size 10.0 style 3.0 showlabel true dim 2.0 expr $T(X)(t0)$}} {plot.point obj58 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj59 {colors 
+[{coloring.constant obj60 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} label $U(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$U(X)(t0)$}} {plot.vector obj7 {base $0,0$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.group obj61 {colors [{coloring.expression obj62 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 6.0}} {plot.curve obj48 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj63 {colors [{coloring.constant 
+obj64 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$circle(v)$} thick false}} {plot.vector obj49 {base $0,0$ endstyle 1.0 dir 
+$U(X)(t0)$ color {coloring.group obj65 {colors [{coloring.constant obj66 {color 
+[1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 6.0}} {plot.point obj67 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj68 {color [1.0 1.0 1.0 1.0]}} label 
+$T(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $T(X)(t0)$}} {plot.point 
+obj11 {super {transpt $0$ visible true addedz 1.0} color {coloring.group obj69 
+{colors [{coloring.expression obj70 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] 
+opacities [1.0] mixings [0.0]}} label $U(t0)$ size 10.0 style 3.0 showlabel true 
+dim 2.0 expr $U(X)(t0)$}}]} alpha false scale 100.01271474132783 surfacemode 1.0 
+drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj51} frame {visible 
+true plots [{id obj47} {id obj48} {id obj49}] title $T(t0) and U(t0)$ labels 
+[$ Vector: T(X)(t0)  starting at 0,0$ $ Curve: circle(v)$ 
+$ Vector: U(X)(t0)  starting at 0,0$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d22.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Definition 1.3.2: Curvature</h3>
+<br>
+
+<div style="text-align: center;">
+<img alt="figure1-26" src="images/figure1-26.png">&nbsp;&nbsp;&nbsp;&nbsp;
+<img alt="figure1-28" src="images/figure1-28.png"><br>
+<br>
+<applet archive="Demo.jar"
+ code="DemoApplet" height="50" width="400"><param name="NAME"
+ value="Plane Curvature"> <param name="DATA"
+ value="filever 100.0 env {variable $q= 0,1,20$ 0.6000000000000001 variable $n=1,5,4$ 
+3.0 variable $p= 0,1,20$ 1.0 variable $t0=0,2*pi,50$ 6.283185307179587 interval 
+$v=0,2*pi,50$ function $flower(t)=sin(n*t)*(cos(t), sin(t))$ function 
+$circle(t)=p*(cos(t), sin(t))$ function $ellipse(t)=(p*cos(t), q*sin(t))$ 
+function $cardioid(t)=(p + cos(t))*(cos(t), sin(t))$ interval 
+$t=t0_min,t0_max,t0_res$ interval $t1=t0_min, t0,t0_res*scale(t0)$ function 
+$X(t)=ellipse(t)$ function $kg(t)=T(X)'(t)*U(X)(t)/length(X'(t))$} objects 
+[{frame.2d obj0 {canvas {canvas.3d obj7 {tool 1.0 points true graph {graph.3d 
+obj8 {light false graph {plots [{plot.point obj9 {super {transpt $0$ visible 
+true addedz 1.0} color {coloring.group obj10 {colors [{coloring.expression obj11 
+{expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label 
+$T(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $X(t0) + T(X)(t0)$}} 
+{plot.vector obj12 {base $X(t0)$ endstyle 1.0 dir $U(X)(t0)$ color 
+{coloring.group obj13 {colors [{coloring.expression obj14 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 6.0}} {plot.point obj15 {super {transpt $0$ visible 
+true addedz 1.0} color {coloring.group obj16 {colors [{coloring.expression obj17 
+{expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label 
+$U(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $U(X)(t0)+X(t0)$}} 
+{plot.point obj18 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj19 {color [1.0 1.0 1.0 1.0]}} label $T(t0)$ size 10.0 
+style 3.0 showlabel true dim 2.0 expr $X(t0)+T(X)(t0)$}} {plot.curve obj3 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj20 
+{color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.vector obj4 {base 
+$X(t0)$ endstyle 1.0 dir $U(X)(t0)$ color {coloring.group obj21 {colors 
+[{coloring.constant obj22 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 6.0}} {plot.axes obj23 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.vector obj1 {base 
+$X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.constant obj24 {color [1.0 
+1.0 1.0 1.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 
+10.0 super {transpt $0$ visible true addedz 0.0} endsize 6.0}} {plot.point obj5 
+{super {transpt $0$ visible true addedz 2.0} color {coloring.constant obj25 
+{color [1.0 1.0 1.0 1.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true dim 
+2.0 expr $X(t0)$}} {plot.point obj26 {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj27 {colors [{coloring.constant obj28 {color [1.0 
+1.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} label $U(t0)$ size 10.0 style 
+3.0 showlabel true dim 2.0 expr $U(X)(t0)+X(t0)$}} {plot.vector obj2 {base 
+$0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group obj29 {colors 
+[{coloring.constant obj30 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible false addedz 0.0} endsize 10.0}} {plot.vector obj31 {base 
+$X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.group obj32 {colors 
+[{coloring.expression obj33 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 1.0} endsize 6.0}} 
+{plot.curve obj6 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj34 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} 
+{plot.curve obj35 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj36 {colors [{coloring.expression obj37 {expr 
+$(t1-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} 
+thick true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.6783021637238384 0.0 0.0 0.0 0.0 0.6783021637238384 0.0 0.0 0.0 0.0 
+0.6783021637238384 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj8} frame {visible true plots [{id obj1} {id obj2} {id obj3} {id 
+obj4} {id obj5} {id obj6}] title $Curve, T(t0), and U(t0)$ labels 
+[$ Vector: T(X)(t0)  starting at X(t0)$ $ Vector: X(t0)  starting at 0,0$ 
+$ Curve: X(t)$ $ Vector: U(X)(t0)  starting at X(t0)$ $ Point: X(t0)$ 
+$ Curve: X(t1)$]}}} {controls obj38 {constants [] intervals [] objects 
+[{plotcheckbox obj40 {values [true true true true true true true true true true] 
+label $Show Color Spectrum$ plots [{id obj9} {id obj31} {id obj35} {id obj41} 
+{id obj42} {id obj12} {id obj43} {id obj44} {id obj15} {id obj45}]}} 
+{plotcheckbox obj46 {values [true] label $Show position vector X(t0)$ plots [{id 
+obj2}]}} {plotcheckbox obj47 {values [true true] label $Show entire curve$ plots 
+[{id obj3} {id obj48}]}}] readouts [{readout obj39 $kg(t0)$}] functions [flower 
+ellipse cardioid circle X] variables [q $t0$ p n]}} {frame.2d obj49 {canvas 
+{canvas.3d obj53 {tool 0.0 points true graph {graph.3d obj54 {light false graph 
+{plots [{plot.vector obj41 {base $0,0$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.group obj55 {colors [{coloring.expression obj56 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 6.0}} {plot.vector obj42 {base $0,0$ endstyle 1.0 dir 
+$U(X)(t0)$ color {coloring.group obj57 {colors [{coloring.expression obj58 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 6.0}} {plot.vector obj50 {base $0,0$ endstyle 1.0 dir 
+$U(X)(t0)$ color {coloring.group obj59 {colors [{coloring.constant obj60 {color 
+[1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 6.0}} {plot.point obj43 {super {transpt $0$ visible true 
+addedz 1.0} color {coloring.group obj61 {colors [{coloring.expression obj62 
+{expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label 
+$T(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $T(X)(t0)$}} 
+{plot.vector obj52 {base $0,0$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.constant obj63 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick true basestyle 
+0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 
+0.0} endsize 6.0}} {plot.point obj64 {super {transpt $0$ visible true addedz 
+0.0} color {coloring.constant obj65 {color [1.0 1.0 1.0 1.0]}} label $T(t0)$ 
+size 10.0 style 3.0 showlabel true dim 2.0 expr $T(X)(t0)$}} {plot.point obj44 
+{super {transpt $0$ visible true addedz 1.0} color {coloring.group obj66 {colors 
+[{coloring.expression obj67 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} label $U(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 
+expr $U(X)(t0)$}} {plot.curve obj51 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj68 {colors [{coloring.constant obj69 {color 
+[1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $circle(v)$} thick 
+false}} {plot.point obj70 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj71 {colors [{coloring.constant obj72 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} label $U(t0)$ size 10.0 style 3.0 
+showlabel true dim 2.0 expr $U(X)(t0)$}} {plot.axes obj73 {super {transpt $0$ 
+visible true addedz 0.0} labels [x y]}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj54} 
+frame {visible true plots [{id obj50} {id obj51} {id obj52}] title 
+$T(t0) and U(t0)$ labels [$ Vector: U(X)(t0)  starting at 0,0$ 
+$ Curve: circle(v)$ $ Vector: T(X)(t0)  starting at 0,0$]}}} {frame.2d obj74 
+{canvas {canvas.3d obj77 {tool 0.0 points true graph {graph.3d obj78 {light 
+false graph {plots [{plot.curve obj48 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj79 {colors [{coloring.constant obj80 {color 
+[1.0 0.8 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,kg(t)$} thick 
+true}} {plot.axes obj81 {super {transpt $0$ visible true addedz 0.0} labels [t 
+kg]}} {plot.point obj75 {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.constant obj82 {color [1.0 1.0 1.0 1.0]}} label $t0,kg(t0)$ size 6.0 
+style 0.0 showlabel true dim 2.0 expr $t0,kg(t0)$}} {plot.curve obj45 {super 
+{super {transpt $0$ visible true addedz 1.0} color {coloring.group obj83 {colors 
+[{coloring.expression obj84 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $t1,kg(t1)$} thick true}} {plot.curve obj76 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj85 {colors 
+[{coloring.constant obj86 {color [1.0 0.8 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t1,kg(t1)$} thick true}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.39776824187745935 0.0 0.0 -116.0 0.0 
+0.39776824187745935 0.0 -21.0 0.0 0.0 0.39776824187745935 0.0 0.0 0.0 0.0 1.0]}} 
+group null hotspots [] drawmode 0.0}} graph {id obj78} frame {visible true plots 
+[{id obj75} {id obj76} {id obj48}] title Curvature labels [$ Point: t0,kg(t0)$ 
+$ Curve: t1,kg(t1)$ $ Curve: t,kg(t)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d23.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Example 1.3.3</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure31a" src="images/figure1-31a.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Angular Velocity"> <param name="DATA" value="
+filever 100.0 env {variable $R= 1,3,2$ 1.0 variable $w= 1,3,20$ 1.0 variable 
+$t0=0,2*pi,48$ 0.0 interval $t=0,2*pi,48$ function 
+$X(t)=(R*cos(w*t), R*sin(w*t))$} objects [{controls obj0 {constants [] intervals 
+[t] objects [] readouts [] functions [X] variables [w R $t0$]}} {frame.2d obj1 
+{canvas {canvas.3d obj4 {tool 0.0 points true graph {graph.3d obj5 {light false 
+graph {plots [{plot.curve obj3 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj6 {colors [{coloring.expression obj7 {expr 
+$t/(2*pi)$}}] opacities [1.0] mixings [0.0]}} expr $X(t)$} thick true}} 
+{plot.axes obj8 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.vector obj2 {base $0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group 
+obj9 {colors [{coloring.expression obj10 {expr $t0/(2*pi)$}}] opacities [1.0] 
+mixings [0.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 
+10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}}]} alpha false 
+scale 100.01271474132783 surfacemode 1.0 drawmode 0.0 transf [1.0 0.0 0.0 -1.0 
+0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] 
+drawmode 0.0}} graph {id obj5} frame {visible true plots [{id obj2} {id obj3}] 
+title $2D Graph$ labels [$ Vector: X(t0)  starting at 0,0$ $ Curve: X(t)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d34.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Problem 1.3.16: Parallel Curve</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure31a" src="images/figure1-31a.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Parallel Curves"> <param name="DATA"
+ value="filever 100.0 env {function $X(t)=(2*cos(t),sin(t))$ variable $r=-4,4,64$ 0.5 
+interval $s=0,1,1$ interval $t=0,2*pi,93$ function $T(t)=unit(X'(t))$ function 
+$sprime(t)=length(X'(t))$ function $U(t)=(-T(t)_2,T(t)_1)$ function 
+$K(t)=(X'(t)_1*X''(t)_2-X'(t)_2*X''(t)_1)/(sprime(t)^3)$ function 
+$Evolute(t)=X(t)+U(t)/K(t)$} objects [{controls obj0 {constants [] intervals [t] 
+objects [] readouts [] functions [X] variables [r]}} {frame.2d obj1 {canvas 
+{canvas.3d obj6 {tool 0.0 points true graph {graph.3d obj7 {light false graph 
+{plots [{plot.curve obj5 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj8 {colors [{coloring.constant obj9 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(t)$} thick true}} 
+{plot.wireframe obj2 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj10 {colors [{coloring.expression obj11 {expr $scale(t)$}} 
+{coloring.base obj12 {coloring {coloring.constant obj13 {color [0.5 0.5 0.5 
+1.0]}}}}] opacities [1.0 1.0] mixings [0.0 0.0]}} expr $X(t)-s*r*U(t)$} connect 
+[true false] intervals [s t] thick false}} {plot.curve obj4 {super {super 
+{transpt $0$ visible false addedz 0.0} color {coloring.group obj14 {colors 
+[{coloring.expression obj15 {expr $scale(t)$}} {coloring.base obj16 {coloring 
+{coloring.constant obj17 {color [0.5 0.5 0.5 1.0]}}}}] opacities [1.0 1.0] 
+mixings [0.0 0.0]}} expr $Evolute(t)$} thick true}} {plot.axes obj18 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.curve obj3 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj19 {colors 
+[{coloring.expression obj20 {expr $scale(t)$}} {coloring.base obj21 {coloring 
+{coloring.constant obj22 {color [0.5 0.5 0.5 1.0]}}}}] opacities [1.0 1.0] 
+mixings [0.0 0.0]}} expr $X(t)-r*U(t)$} thick true}}]} alpha false scale 
+50.01271474132783 surfacemode 3.0 drawmode 1.0 transf [1.0 0.0 0.0 2.0 0.0 1.0 
+0.0 10.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 
+0.0}} graph {id obj7} frame {visible true plots [{id obj2} {id obj3} {id obj4} 
+{id obj5}] title $Parallel Curve$ labels [$ X(t)-s*r*U(t)$ $ X(t)-r*U(t)$ 
+$ Evolute(t)$ $ Curve: X(t)$]}}}] "></applet>
+<big><a href="helpdoc/Lovett1d25.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Problem 1.3.19: Pedal Curves</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure31b" src="images/figure1-31b.png">&nbsp;<br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Pedal Curves"> <param name="DATA"
+ value="filever 100.0 env {function $X(t)=(1.4*cos(t),sin(t))$ variable $t0=0,2*pi,30$ 
+6.283185307179586 value $C=(0.7487497400337885 , 1.629017628432821)$ interval 
+$tstep=t0_min,t0,2*t0_res*scale(t0)$ interval $t=t0_min,t0_max,2*t0_res$ 
+function $Zc(t)=C + ((X(t) - C)*U(X)(t))*U(X)(t)$} objects [{controls obj0 
+{constants [] intervals [] objects [{plotcheckbox obj1 {values [true true true 
+true true true] label $Show Color Spectrum$ plots [{id obj2} {id obj3} {id obj4} 
+{id obj5} {id obj6} {id obj7}]}} {plotcheckbox obj8 {values [true] label 
+$Show Entire Curve$ plots [{id obj9}]}}] readouts [] functions [Zc X] variables 
+[$t0$]}} {frame.2d obj10 {canvas {canvas.3d obj18 {tool 0.0 points true graph 
+{graph.3d obj19 {light false graph {plots [{plot.curve obj2 {super {super 
+{transpt $0$ visible true addedz 1.0} color {coloring.group obj20 {colors 
+[{coloring.expression obj21 {expr $(t-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t)$} thick true}} {plot.curve obj13 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj22 {color [0.0 
+1.0 0.0 1.0]}} expr $X(t)$} thick true}} {plot.curve obj5 {super {super {transpt 
+$0$ visible true addedz 1.0} color {coloring.group obj23 {colors 
+[{coloring.expression obj24 {expr $(tstep-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $Zc(tstep)$} thick true}} {plot.curve obj9 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj25 {colors 
+[{coloring.constant obj26 {color [1.0 0.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $Zc(t)$} thick true}} {plot.axes obj27 {super {transpt $0$ visible 
+true addedz 0.0} labels [x y]}} {plot.point obj3 {super {transpt $0$ visible 
+true addedz 3.0} color {coloring.group obj28 {colors [{coloring.expression obj29 
+{expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} label C 
+size 10.0 style 0.0 showlabel true dim 2.0 expr $C$}} {plot.point obj16 {super 
+{transpt $0$ visible true addedz 2.0} color {coloring.group obj30 {colors 
+[{coloring.constant obj31 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} label $X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}} 
+{plot.vector obj14 {base $C$ endstyle 0.0 dir $Zc(t0)-C$ color {coloring.group 
+obj32 {colors [{coloring.constant obj33 {color [1.0 0.7 0.7 1.0]}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}} 
+{plot.point obj15 {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.constant obj34 {color [1.0 1.0 1.0 1.0]}} label $$ size 6.0 style 0.0 
+showlabel false dim 2.0 expr $Zc(t0)$}} {plot.point obj7 {super {transpt $0$ 
+visible true addedz 3.0} color {coloring.group obj35 {colors 
+[{coloring.expression obj36 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} label $$ size 6.0 style 0.0 showlabel false dim 2.0 expr 
+$Zc(t0)$}} {plot.vector obj11 {base $X(t0)$ endstyle 0.0 dir $Zc(t0)-X(t0)$ 
+color {coloring.group obj37 {colors [{coloring.constant obj38 {color [0.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 
+subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} 
+endsize 10.0}} {plot.curve obj12 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj39 {colors [{coloring.constant obj40 {color [1.0 
+0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $Zc(tstep)$} thick true}} 
+{plot.vector obj4 {base $X(t0)$ endstyle 0.0 dir $Zc(t0)-X(t0)$ color 
+{coloring.group obj41 {colors [{coloring.expression obj42 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 5.0}} {plot.vector obj6 {base $C$ endstyle 0.0 dir 
+$Zc(t0)-C$ color {coloring.group obj43 {colors [{coloring.expression obj44 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+true addedz 1.0} endsize 5.0}} {plot.point obj17 {super {transpt $0$ visible 
+true addedz 2.0} color {coloring.constant obj45 {color [1.0 1.0 1.0 1.0]}} label 
+C size 10.0 style 0.0 showlabel true dim 2.0 expr $C$}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.6241652744508065 0.0 
+0.0 -15.740300851135672 0.0 0.6241652744508065 0.0 -19.6905515604154 0.0 0.0 
+0.6241652744508065 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj46 
+{origin $0, 0$ entry C constraint $Point$ cmode 0.0 cobjs []}}] drawmode 0.0}} 
+graph {id obj19} frame {visible true plots [{id obj11} {id obj12} {id obj13} {id 
+obj9} {id obj14} {id obj15} {id obj16} {id obj17}] title $Pedal Curve$ labels 
+[$ Vector: Zc(t0)-X(t0)  starting at X(t0)$ $ Curve: Zc(tstep)$ $ Curve: X(t)$ 
+$ Curve: Zc(t)$ $ Vector: Zc(t0)-C  starting at C$ $ Point: Zc(t0)$ 
+$ Point: X(t0)$ $ Point: C$]}}}] 
+"></applet>
+
+<big><a href="helpdoc/Lovett1d26.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<br><hr width="50%"><br>
+<h2>1.4 Osculating Circles, Evolutes, and Involutes</h2>
+<br>
+<h3>Definition 1.4.3: Osculating Circle and Definition 1.4.6: Evolute Curve</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure1-32" src="images/figure1-32.png"><br>
+<br>
+<applet archive="Demo.jar"
+ code="DemoApplet" height="50" width="400"><param name="NAME"
+ value="Osculating Circles and Evolute Curves"> <param name="DATA"
+ value="filever 100.0 env {function $X(t)=(1.5*cos(t),sin(t))$ interval $len=0,1,1$ 
+variable $d=-3,1.5,48$ 0.46875 interval $theta=0,2*pi,24$ variable 
+$t0=0,2*pi,48$ 6.283185307179586 function 
+$k(t)=dot(T(X)'(t),U(X)(t))/length(X'(t))$ function 
+$Parallel(t)=X(t)-d*U(X)(t)$ interval $tstep=t0_min,t0,t0_res*scale(t0)$ 
+interval $t=t0_min,t0_max,t0_res$ function $Evol(t)=X(t)+(1/k(t))*U(X)(t)$} 
+objects [{controls obj0 {constants [] intervals [] objects [{plotcheckbox obj1 
+{values [true true] label $Show Entire Curve$ plots [{id obj2} {id obj3}]}} 
+{plotcheckbox obj4 {values [true] label $Show Parallel Curve$ plots [{id 
+obj5}]}} {plotcheckbox obj6 {values [true true true true] label 
+$Show Color Spectrum$ plots [{id obj7} {id obj8} {id obj9} {id obj10}]}}] 
+readouts [] functions [X] variables [$t0$ d]}} {frame.2d obj11 {canvas 
+{canvas.3d obj16 {tool 1.0 points true graph {graph.3d obj17 {light false graph 
+{plots [{plot.curve obj8 {super {super {transpt $0$ visible true addedz 1.0} 
+color {coloring.group obj18 {colors [{coloring.expression obj19 {expr 
+$(t0-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$Evol(t0)+(1/k(t0))*(T(X)(t0)*cos(theta)+U(X)(t0)*sin(theta))$} thick false}} 
+{plot.curve obj5 {super {super {transpt $0$ visible false addedz 0.0} color 
+{coloring.group obj20 {colors [{coloring.constant obj21 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $Parallel(tstep)$} thick true}} 
+{plot.curve obj10 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj22 {colors [{coloring.expression obj23 {expr 
+$(tstep-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$X(tstep)$} thick true}} {plot.axes obj24 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y]}} {plot.curve obj12 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj25 {colors [{coloring.constant obj26 
+{color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(1-len)*X(t0)+len*Evol(t0)$} thick false}} {plot.curve obj15 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj27 {colors 
+[{coloring.constant obj28 {color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $Evol(tstep)$} thick true}} {plot.curve obj7 {super {super {transpt 
+$0$ visible true addedz 1.0} color {coloring.group obj29 {colors 
+[{coloring.expression obj30 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $(1-len)*X(t0)+len*Evol(t0)$} thick false}} 
+{plot.curve obj14 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj31 {color [0.0 1.0 0.0 1.0]}} expr $X(tstep)$} thick 
+true}} {plot.curve obj3 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj32 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick 
+true}} {plot.curve obj2 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj33 {colors [{coloring.constant obj34 {color [0.0 0.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $Evol(t)$} thick true}} 
+{plot.curve obj9 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj35 {colors [{coloring.expression obj36 {expr 
+$(tstep-t0_min)/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$Evol(tstep)$} thick true}} {plot.curve obj13 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj37 {colors [{coloring.constant obj38 
+{color [1.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$Evol(t0)+(1/k(t0))*(T(X)(t0)*cos(theta)+U(X)(t0)*sin(theta))$} thick false}}]} 
+alpha false scale 132.8854753060834 surfacemode 3.0 drawmode 1.0 transf 
+[0.486327473706143 0.0 0.0 0.0 0.0 0.486327473706143 0.0 0.0 0.0 0.0 
+0.486327473706143 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj17} frame {visible true plots [{id obj12} {id obj5} {id obj13} {id 
+obj14} {id obj3} {id obj2} {id obj15}] title $Osculating Circles and Evolutes$ 
+labels [$ Curve: (1-len)*X(t0)+len*Evol(t0)$ $ Curve: Parallel(tstep)$ 
+$ Curve: Evol(t0)+(1/k(t0))*(T(X)(t0)*cos(theta)+U(X)(t0)*sin(theta))$ 
+$ Curve: X(tstep)$ $ Curve: X(t)$ $ Curve: Evol(t)$ $ Curve: Evol(tstep)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d27.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Definition 1.4.9: Involute Curve</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure1-33" src="images/figure1-33.png"><br>
+<br>
+<applet archive="Demo.jar"
+ code="DemoApplet" height="50" width="400"><param name="NAME"
+ value="Involute Curves"> <param name="DATA"
+ value="filever 100.0 env {variable $n=1,5,4$ 3.0 variable $k=0,10,100$ 4.3 variable 
+$p= 0,1,20$ 1.0 variable $q= 0,1,20$ 0.6000000000000001 variable $t0=0,2*pi,50$ 
+6.283185307179587 function $flower(t)=sin(n*t)*(cos(t), sin(t))$ function 
+$circle(t)=p*(cos(t), sin(t))$ function 
+$cardioid(t)=(p + cos(t))*(cos(t), sin(t))$ function 
+$ellipse(t)=(p*cos(t), q*sin(t))$ interval $t1=t0_min, t0,t0_res*scale(t0)$ 
+interval $t=t0_min,t0_max,t0_res$ function $X(t)=ellipse(t)$ function 
+$s(t)=integral(length(X'(x)), x, 0, t)$ function 
+$I(t)=X(t) + (k - s(t))*T(X)(t)$} objects [{controls obj0 {constants [] 
+intervals [] objects [{plotcheckbox obj1 {values [true true] label 
+$Show entire curve$ plots [{id obj2} {id obj3}]}} {plotcheckbox obj4 {values 
+[true] label $Show position vector X(t0)$ plots [{id obj5}]}} {plotcheckbox obj6 
+{values [true true] label String plots [{id obj7} {id obj8}]}} {plotcheckbox 
+obj9 {values [true true true true true] label $Show Color Spectrum$ plots [{id 
+obj10} {id obj11} {id obj12} {id obj13} {id obj14}]}}] readouts [] functions 
+[flower ellipse cardioid circle X] variables [k q $t0$ p n]}} {frame.2d obj15 
+{canvas {canvas.3d obj21 {tool 0.0 points true graph {graph.3d obj22 {light 
+false graph {plots [{plot.curve obj2 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj23 {color [0.0 1.0 0.0 1.0]}} expr 
+$X(t)$} thick true}} {plot.point obj20 {super {transpt $0$ visible true addedz 
+0.0} color {coloring.constant obj24 {color [1.0 1.0 1.0 1.0]}} label $I(t0)$ 
+size 6.0 style 0.0 showlabel true dim 2.0 expr $I(t0)$}} {plot.curve obj3 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj25 {colors 
+[{coloring.constant obj26 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $I(t)$} thick true}} {plot.point obj18 {super {transpt $0$ visible 
+true addedz 2.0} color {coloring.constant obj27 {color [1.0 1.0 1.0 1.0]}} label 
+$X(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 expr $X(t0)$}} {plot.curve 
+obj11 {super {super {transpt $0$ visible true addedz 1.0} color {coloring.group 
+obj28 {colors [{coloring.expression obj29 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] 
+opacities [1.0] mixings [0.0]}} expr $I(t1)$} thick true}} {plot.axes obj30 
+{super {transpt $0$ visible true addedz 0.0} labels [x y]}} {plot.vector obj10 
+{base $X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.group obj31 {colors 
+[{coloring.expression obj32 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 1.0} endsize 6.0}} 
+{plot.vector obj5 {base $0,0$ endstyle 1.0 dir $X(t0)$ color {coloring.group 
+obj33 {colors [{coloring.constant obj34 {color [0.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 6.0}} 
+{plot.vector obj7 {base $X(t0)$ endstyle 0.0 dir $I(t0) - X(t0)$ color 
+{coloring.group obj35 {colors [{coloring.gradient obj36 {colors 
+[{coloring.constant obj37 {color [0.0 0.0 0.0 0.0]}} {coloring.constant obj38 
+{color [1.0 0.0 0.0 1.0]}}] values [$- 1$ $1.0$] expr 
+$if(s(t0)>k) then(-1) else(1)$}}] opacities [1.0] mixings [0.0]}} dim 2.0 thick 
+true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible 
+false addedz 3.0} endsize 10.0}} {plot.curve obj17 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj39 {color [0.0 1.0 0.0 
+1.0]}} expr $X(t1)$} thick true}} {plot.point obj40 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj41 {color [1.0 1.0 1.0 1.0]}} label 
+$T(t0)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $X(t0)+T(X)(t0)$}} 
+{plot.curve obj16 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj42 {colors [{coloring.constant obj43 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $I(t1)$} thick true}} {plot.point 
+obj12 {super {transpt $0$ visible true addedz 1.0} color {coloring.group obj44 
+{colors [{coloring.expression obj45 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] 
+opacities [1.0] mixings [0.0]}} label $T(t0)$ size 10.0 style 3.0 showlabel true 
+dim 2.0 expr $X(t0) + T(X)(t0)$}} {plot.curve obj14 {super {super {transpt $0$ 
+visible true addedz 1.0} color {coloring.group obj46 {colors 
+[{coloring.expression obj47 {expr $(t1-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} expr $X(t1)$} thick true}} {plot.vector obj19 {base 
+$X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.constant obj48 {color [1.0 
+1.0 1.0 1.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 
+10.0 super {transpt $0$ visible true addedz 0.0} endsize 6.0}} {plot.point obj13 
+{super {transpt $0$ visible true addedz 1.0} color {coloring.group obj49 {colors 
+[{coloring.expression obj50 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} label $I(t0)$ size 6.0 style 0.0 showlabel true dim 2.0 
+expr $I(t0)$}} {plot.curve obj8 {super {super {transpt $0$ visible false addedz 
+3.0} color {coloring.group obj51 {colors [{coloring.gradient obj52 {colors 
+[{coloring.constant obj53 {color [0.0 0.0 0.0 0.0]}} {coloring.constant obj54 
+{color [1.0 0.0 0.0 1.0]}}] values [$- 1$ $1.0$] expr 
+$if(s(t1)>k) then (-1) else(1)$}}] opacities [1.0] mixings [0.0]}} expr $X(t1)$} 
+thick true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.38958228983025217 0.0 0.0 19.0 0.0 0.38958228983025217 0.0 -45.0 0.0 
+0.0 0.38958228983025217 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 
+0.0}} graph {id obj22} frame {visible true plots [{id obj16} {id obj7} {id 
+obj17} {id obj3} {id obj2} {id obj18} {id obj19} {id obj8} {id obj5} {id obj20}] 
+title $Involute Curve of X(t)$ labels [$ Curve: I(t1)$ 
+$ Vector: I(t0) - X(t0)  starting at X(t0)$ $ Curve: X(t1)$ $ Curve: I(t)$ 
+$ Curve: X(t)$ $ Point: X(t0)$ $ Vector: T(X)(t0)  starting at X(t0)$ 
+$ Curve: X(t1)$ $ Vector: X(t0)  starting at 0,0$ $ Point: I(t0)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d28.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+
+</div>
+<br>
+
+<br><hr width="50%"><br>
+<h2>1.5: Natural Equations</h2>
+<br>
+<h3>Theorem 1.5.2: Fundamental Theorem of Plane Curves</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure1-34" src="images/figure1-34.png"><br>
+<br>
+<applet archive="Demo.jar"
+ code="DemoApplet" height="50" width="400"><param name="NAME"
+ value="Natural Equations"> <param name="DATA"
+ value="filever 100.0 env {function $f(t)=1$ function $g(t)=t$ variable 
+$t0=-2*pi,2*pi,80$ 6.283185307179586 function $kg(t)=g(t)$ interval 
+$tstep=t0_min,t0,t0_res*(t0-t0_min)/(t0_max-t0_min)$ interval 
+$t=t0_min,t0_max,t0_res$ function $q(t)=integral(kg(u)*f(t),u,0,t, 100)$ 
+function $x(t)=integral(cos(q(u))*f(t),u,0,t, 100)$ function 
+$y(t)=integral(sin(q(u))*f(t),u,0,t, 100)$ function $X(t)=(x(t),y(t))$} objects 
+[{frame.2d obj0 {canvas {canvas.3d obj3 {tool 1.0 points true graph {graph.3d 
+obj4 {light false graph {plots [{plot.axes obj5 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y]}} {plot.point obj2 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj6 {color [1.0 1.0 1.0 1.0]}} label 
+$(t0, g(t0))$ size 10.0 style 0.0 showlabel true dim 2.0 expr $(t0, g(t0))$}} 
+{plot.curve obj1 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj7 {colors [{coloring.gradient obj8 {colors 
+[{coloring.constant obj9 {color [0.0 0.0 1.0 1.0]}} {coloring.constant obj10 
+{color [0.0 1.0 1.0 1.0]}} {coloring.constant obj11 {color [1.0 1.0 1.0 1.0]}} 
+{coloring.constant obj12 {color [1.0 0.7 0.7 1.0]}} {coloring.constant obj13 
+{color [1.0 0.0 0.0 1.0]}}] values [$-2.0$ $-1.0$ $0.0$ $1.0$ $2.0$] expr 
+$g(t)$}}] opacities [1.0] mixings [0.0]}} expr $(t,g(t))$} thick true}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.18556544632863164 0.0 0.0 -4.160547861299727 0.0 0.18556544632863164 0.0 
+-2.961976667699096 0.0 0.0 0.18556544632863164 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj4} frame {visible true plots [{id obj1} 
+{id obj2}] title $g(t)$ labels [$ Curve: (t,g(t))$ $ Point: (t0, g(t0))$]}}} 
+{frame.2d obj14 {canvas {canvas.3d obj17 {tool 1.0 points true graph {graph.3d 
+obj18 {light false graph {plots [{plot.axes obj19 {super {transpt $0$ visible 
+true addedz 0.0} labels [x y]}} {plot.curve obj15 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj20 {colors [{coloring.constant 
+obj21 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,f(t)$} 
+thick true}} {plot.point obj16 {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj22 {color [1.0 1.0 1.0 1.0]}} label $(t0, f(t0))$ 
+size 10.0 style 0.0 showlabel true dim 2.0 expr $(t0, f(t0))$}}]} alpha false 
+scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.22221067029164265 0.0 0.0 -5.625292423444047 0.0 0.22221067029164265 0.0 
+-10.688055604543697 0.0 0.0 0.22221067029164265 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [] drawmode 0.0}} graph {id obj18} frame {visible true plots [{id 
+obj15} {id obj16}] title $f(t)$ labels [$ Curve: t,f(t)$ 
+$ Point: (t0, f(t0))$]}}} {frame.2d obj23 {canvas {canvas.3d obj26 {tool 1.0 
+points true graph {graph.3d obj27 {light false graph {plots [{plot.point obj25 
+{super {transpt $0$ visible true addedz 3.0} color {coloring.constant obj28 
+{color [1.0 1.0 1.0 1.0]}} label $$ size 8.0 style 0.0 showlabel false dim 2.0 
+expr $X(t0)$}} {plot.axes obj29 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y]}} {plot.curve obj24 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj30 {colors [{coloring.gradient obj31 {colors 
+[{coloring.constant obj32 {color [0.0 0.0 1.0 1.0]}} {coloring.constant obj33 
+{color [0.0 1.0 1.0 1.0]}} {coloring.constant obj34 {color [1.0 1.0 1.0 1.0]}} 
+{coloring.constant obj35 {color [1.0 0.7 0.7 1.0]}} {coloring.constant obj36 
+{color [1.0 0.0 0.0 1.0]}}] values [$- 2$ $-1$ $0.0$ $1.0$ $2$] expr 
+$kg(tstep)$}}] opacities [1.0] mixings [0.0]}} expr $X(tstep)$} thick true}}]} 
+alpha false scale 42.6371651044458 surfacemode 3.0 drawmode 1.0 transf 
+[1.042465760841127 0.0 0.0 11.63178013856254 0.0 1.042465760841127 0.0 
+-33.8076015535154 0.0 0.0 1.042465760841127 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj27} frame {visible true plots [{id 
+obj24} {id obj25}] title $Curve: X(t)$ labels [$ Curve: X(tstep)$ 
+$ Point: X(t0)$]}}} {controls obj37 {constants [] intervals [] objects [] 
+readouts [] functions [g f] variables [$t0$]}}] 
+"></applet>
+
+<big><a href="helpdoc/Lovett1d29.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>p.44, Taylor Series of Curves</h3>
+<br>
+<div style="text-align: center;">
+<img alt="figure1-40" src="images/figure1-40.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Taylor Polynomial"> <param name="DATA" value="
+filever 100.0 env {variable $q= 0,1,20$ 0.6000000000000001 variable $n= 1,5,4$ 
+3.0 variable $p= 0,2.0,20$ 1.3 function $eight(t)=(cos(t),sin(t)*cos(t))$ 
+variable $t0=0,2*pi,100$ 6.283185307179587 value 
+$P=(0.8883909453436011 , 0.4880038193880104)$ function 
+$flower(t)=sin(n*t)*(cos(t), sin(t))$ function 
+$ellipse(t)=(p*cos(t), q*sin(t))$ function 
+$cardioid(t)=(p + cos(t))*(cos(t), sin(t))$ function 
+$X(t)=(p + cos(t))*(cos(t), sin(t))$ function $circle(t)=p*(cos(t), sin(t))$ 
+interval $t1=t0_min,t0,t0_res*scale(t0)$ interval $t= t0_min,t0_max,t0_res$ 
+function $X2(t)=X(t0) + (t-t0)*X'(t0) + (t-t0)^2*X''(t0)$ function 
+$X3(t)=X(t0) + (t-t0)*X'(t0) + (1/2)*(t-t0)^2*X''(t0) + (1/6)*(t-t0)^3*X'''(t0)$ 
+function $X1(t)=X(t0) + (t-t0)*X'(t0)$} objects [{controls obj0 {constants [] 
+intervals [] objects [{plotcheckbox obj1 {values [true true true true] label 
+$Show Color Spectrum$ plots [{id obj2} {id obj3} {id obj4} {id obj5}]}} 
+{plotcheckbox obj6 {values [true true] label $Show Entire Curve$ plots [{id 
+obj7} {id obj8}]}}] readouts [] functions [circle $X3$ X ellipse $X2$ $X1$ 
+flower cardioid eight] variables [q $t0$ p]}} {frame.2d obj9 {canvas {canvas.3d 
+obj13 {tool 1.0 points true graph {graph.3d obj14 {light false graph {plots 
+[{plot.curve obj12 {super {super {transpt $0$ visible false addedz 0.0} color 
+{coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $X(t1)$} thick true}} 
+{plot.point obj10 {super {transpt $0$ visible true addedz 3.0} color 
+{coloring.constant obj16 {color [1.0 1.0 1.0 1.0]}} label P size 6.0 style 0.0 
+showlabel true dim 2.0 expr $P$}} {plot.curve obj4 {super {super {transpt $0$ 
+visible false addedz 1.0} color {coloring.group obj17 {colors 
+[{coloring.expression obj18 {expr $t1/(t0_max-t0_min)$}}] opacities [1.0] 
+mixings [0.0]}} expr $X(t1)$} thick true}} {plot.vector obj11 {base $X(t0)$ 
+endstyle 1.0 dir $T(X)(t0)$ color {coloring.constant obj19 {color [1.0 1.0 1.0 
+1.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 6.0}} {plot.vector obj5 {base 
+$X(t0)$ endstyle 1.0 dir $T(X)(t0)$ color {coloring.group obj20 {colors 
+[{coloring.expression obj21 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 1.0} endsize 6.0}} 
+{plot.axes obj22 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.curve obj8 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj23 {colors [{coloring.expression obj24 {expr $t/(2*pi)$}}] 
+opacities [1.0] mixings [0.0]}} expr $X(t)$} thick true}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.4117955086337887 0.0 
+0.0 -38.58819162283692 0.0 0.4117955086337887 0.0 1.901666771784785 0.0 0.0 
+0.4117955086337887 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj25 
+{origin $0, 0$ entry P constraint $Point$ cmode 0.0 cobjs []}}] drawmode 0.0}} 
+graph {id obj14} frame {visible true plots [{id obj10} {id obj8} {id obj11} {id 
+obj12}] title $Curve: X(t)$ labels [$ Point: P$ $ Curve: X(t)$ 
+$ Vector: T(X)(t0)  starting at X(t0)$ $ Curve: X(t1)$]}}} {frame.2d obj26 
+{canvas {canvas.3d obj31 {tool 0.0 points true graph {graph.3d obj32 {light 
+false graph {plots [{plot.axes obj33 {super {transpt $0$ visible true addedz 
+0.0} labels [x y]}} {plot.curve obj29 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj34 {colors [{coloring.constant obj35 {color 
+[1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $X3(t) $} thick true}} 
+{plot.curve obj27 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj36 {colors [{coloring.constant obj37 {color [1.0 0.8 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $X2(t)$} thick true}} {plot.curve 
+obj30 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj38 {colors [{coloring.constant obj39 {color [1.0 0.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $X1(t)$} thick true}} {plot.curve obj28 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj40 {colors 
+[{coloring.constant obj41 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $X(t)$} thick true}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 
+0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj32} 
+frame {visible true plots [{id obj27} {id obj28} {id obj29} {id obj30}] title 
+$2D Graph$ labels [$ Curve: X2(t)$ $ Curve: X(t)$ $ Curve: X3(t) $ 
+$ Curve: X1(t)$]}}} {frame.2d obj42 {canvas {canvas.3d obj46 {tool 1.0 points 
+true graph {graph.3d obj47 {light false graph {plots [{plot.vector obj43 {base 
+$0,0$ endstyle 1.0 dir $(1+.03*t0)*T(X)(t0)$ color {coloring.constant obj48 
+{color [1.0 1.0 1.0 1.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 0.0} endsize 6.0}} 
+{plot.vector obj44 {base $0,0$ endstyle 1.0 dir $T(X)(t0)$ color 
+{coloring.constant obj49 {color [1.0 1.0 1.0 1.0]}} dim 2.0 thick false 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 10.0}} {plot.curve obj3 {super {super {transpt $0$ visible 
+false addedz 1.0} color {coloring.group obj50 {colors [{coloring.expression 
+obj51 {expr $t1/(t0_max-t0_min)$}}] opacities [1.0] mixings [0.0]}} expr 
+$(1+.03*t1)*T(X)(t1)$} thick true}} {plot.vector obj2 {base $0,0$ endstyle 1.0 
+dir $(1+.03*t0)*T(X)(t0)$ color {coloring.group obj52 {colors 
+[{coloring.expression obj53 {expr $(t0-t0_min)/(t0_max-t0_min)$}}] opacities 
+[1.0] mixings [0.0]}} dim 2.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible false addedz 1.0} endsize 6.0}} 
+{plot.curve obj7 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj54 {colors [{coloring.expression obj55 {expr $t/(2*pi)$}}] 
+opacities [1.0] mixings [0.0]}} expr $(1+.03*t)*unit(X(t)-P)$} thick true}} 
+{plot.axes obj56 {super {transpt $0$ visible true addedz 0.0} labels [x y]}} 
+{plot.curve obj45 {super {super {transpt $0$ visible false addedz 0.0} color 
+{coloring.constant obj57 {color [0.0 1.0 0.0 1.0]}} expr $(1+.03*t1)*T(X)(t1)$} 
+thick true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.36856730432277535 0.0 0.0 -4.32826710684297 0.0 0.36856730432277535 
+0.0 9.110047187240488 0.0 0.0 0.36856730432277535 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [] drawmode 0.0}} graph {id obj47} frame {visible true plots [{id 
+obj43} {id obj44} {id obj7} {id obj45}] title $Perturbed Tangential Image$ 
+labels [$ Vector: (1+.03*t0)*T(X)(t0)  starting at 0,0$ 
+$ Vector: T(X)(t0)  starting at 0,0$ $ Curve: (1+.03*t)*unit(X(t)-P)$ 
+$ Curve: (1+.03*t1)*T(X)(t1)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett1d33.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+</td></tr>
+</table>
+</center>
+
+<BR><P><BR>
+Return to <a href="index.html">home page</a> <br>
+Continue to <a href="DiffGeoEd2Chap2.html">Chapter 2</a> <br><br>
+
+</body>
+</html>

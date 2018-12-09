@@ -1,0 +1,1982 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Differential Geometry</title>
+  <link href="dgstyles.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+<!--
+function openwindow(lnk, nme)
+{
+if (! window.focus)return true;
+var href;
+if (typeof(lnk) == 'string')
+href=lnk;
+else
+href=lnk.href;
+window.open(href, nme, 'width=300,height=300,scrollbars=yes');
+return false;
+}
+//-->
+  </script>
+</head>
+<body>
+<p><br><br><br>
+<center>
+<h1>Chapter 8 &bull; The Gauss-Bonnet Theorem and Geometry of Geodesics</h1>
+</center>
+<br>
+<br>
+<center>
+<table width=95% border=0 cellpadding="0" cellspacing="0">
+<tr><td>
+
+<h2>8.1: Natural Frames</h2>
+<br>
+<h3>Page 275: The Darboux Frame</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 280px; height: 239px;" alt="figure1" src="images/figure8-1b.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Darboux Frame"> <param name="DATA" value="
+filever 100.0 env {interval $t=-2,2,24$ function 
+$X(u,v)=((2+cos(v))*cos(u),(2+cos(v))*sin(u),sin(v))/2$ interval $v=0,2*pi,48$ 
+interval $u=0,2*pi,48$ variable $alpha=-pi/2,pi/2,24$ -0.5235987755982989 value 
+$Q=(4.2374849797167435 , 4.843288674284262)$ function 
+$x(t)=Q+t*(cos(alpha),sin(alpha))$ function $gamma(t)=X(x(t))$} objects 
+[{controls obj0 {constants [] intervals [v u t] objects [] readouts [] functions 
+[X] variables [alpha]}} {frame.3d obj1 {canvas {canvas.3d obj8 {tool 100.0 
+points true graph {graph.3d obj9 {light true graph {plots [{plot.vector obj6 
+{base $gamma(0)$ endstyle 1.0 dir $cross(N(X)(Q),T(gamma)(0))$ color 
+{coloring.group obj10 {colors [{coloring.constant obj11 {color [1.0 0.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 
+10.0}} {plot.vector obj2 {base $X(Q)$ endstyle 1.0 dir $N(X)(Q)$ color 
+{coloring.group obj12 {colors [{coloring.constant obj13 {color [0.0 0.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 
+10.0}} {plot.axes obj14 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}} {plot.vector obj4 {base $gamma(0)$ endstyle 1.0 dir $T(gamma)(0)$ color 
+{coloring.group obj15 {colors [{coloring.constant obj16 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 
+10.0}} {plot.curve obj5 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj17 {colors [{coloring.constant obj18 {color [0.0 1.0 
+0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $gamma(t)$} thick true}} 
+{plot.point obj3 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj19 {color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 style 2.0 
+showlabel false dim 3.0 expr $gamma(0)$}} {plot.surface obj7 {intrpl true super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj20 {colors 
+[{coloring.constant obj21 {color [0.375 0.375 0.375 0.5]}}] opacities [1.0] 
+mixings [0.0]}} expr $X(u,v)$} vrtnml true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [0.11142314358713477 
+-0.838670540566617 0.03455765424274159 0.0 -0.583479031137896 
+-0.10244870260520973 -0.605007526866232 0.0 0.6034191969961199 
+0.05579974666707231 -0.5913960474811654 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 1.0}} graph {id obj9} frame {visible true plots [{id obj2} 
+{id obj3} {id obj4} {id obj5} {id obj6} {id obj7}] title $Darboux Frame$ labels 
+[$ Vector: N(X)(Q)  starting at X(Q)$ $ Point: gamma(0)$ 
+$ Vector: T(gamma)(0)  starting at gamma(0)$ $ Curve: gamma(t)$ 
+$ Vector: cross(N(X)(Q),T(gamma)(0))  starting at gamma(0)$ 
+$ Surface: X(u,v)$]}}} {frame.2d obj22 {canvas {canvas.3d obj25 {tool 1.0 points 
+true graph {graph.3d obj26 {light false graph {plots [{plot.point obj23 {super 
+{transpt $0$ visible true addedz 3.0} color {coloring.constant obj27 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 2.0 expr $Q$}} 
+{plot.axes obj28 {super {transpt $0$ visible false addedz 0.0} labels [x y]}} 
+{plot.curve obj24 {super {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.group obj29 {colors [{coloring.constant obj30 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $x(t)$} thick true}} 
+{plot.wireframe obj31 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj32 {colors [{coloring.constant obj33 {color [0.75 0.75 0.75 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v$} connect [true true] 
+intervals [v u] thick false}}]} alpha false scale 100.01271474132783 surfacemode 
+1.0 drawmode 1.0 transf [0.3685673043227761 0.0 0.0 -112.19969947111207 0.0 
+0.3685673043227761 0.0 -113.75802863043313 0.0 0.0 0.3685673043227761 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [{hotspot obj34 {origin $0, 0$ entry Q 
+constraint $Point$ cmode 2.0 cobjs [{id obj31}]}}] drawmode 0.0}} graph {id 
+obj26} frame {visible true plots [{id obj23} {id obj24}] title Domain labels 
+[$ Point: Q$ $ Curve: x(t)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d1.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Page 278: Geodesic Curvature and Page 282: Geodesic Torsion</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 264px; height: 210px;" alt="figure2" src="images/figure8-2a.png"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Geodesic Curvature and Torsion"> <param name="DATA" value="
+filever 100.0 env {function 
+$X(u,v)=((2+cos(v))*cos(u),(2+cos(v))*sin(u),sin(v))/2$ interval $t=-2,2,24$ 
+interval $u=0,2*pi,48$ variable $alpha=-pi/2,pi/2,24$ 0.7853981633974483 
+interval $v=0,2*pi,48$ value $Q=(4.188790204786389 , 4.19724720070611)$ function 
+$x(t)=Q+t*(cos(alpha),sin(alpha))$ function $U(t)=cross(N(X)(x(t)),T(X)(x(t)))$ 
+function $n(t)=N(X)(x(t))$ function $tan(t)=T(X)(x(t))$ function 
+$gamma(t)=X(x(t))$ function 
+$Tg(t)=n'(t)*cross(T(gamma)(t),N(X)(x(t)))/(length(gamma'(t)))$ function 
+$Kg(t)=T(gamma)'(t)*cross(T(gamma)(t),N(X)(x(t)))/length(gamma'(t))$} objects 
+[{controls obj0 {constants [] intervals [v u t] objects [] readouts [{readout 
+obj1 $Kg(0)$} {readout obj2 $Tg(0)$}] functions [n X] variables [alpha]}} 
+{frame.2d obj3 {canvas {canvas.3d obj5 {tool 1.0 points true graph {graph.3d 
+obj6 {light false graph {plots [{plot.point obj7 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj8 {color [1.0 1.0 1.0 1.0]}} label 
+t size 10.0 style 3.0 showlabel true dim 2.0 expr $1,0$}} {plot.curve obj4 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj9 
+{colors [{coloring.constant obj10 {color [1.0 0.8 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $t,Kg(t)$} thick true}} {plot.curve obj11 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj12 {colors 
+[{coloring.constant obj13 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,0$} thick false}} {plot.point obj14 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj15 {color [1.0 1.0 1.0 1.0]}} label 
+$Kg(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $0,1$}} {plot.axes obj16 
+{super {transpt $0$ visible false addedz 0.0} labels [x y]}} {plot.curve obj17 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj18 
+{colors [{coloring.constant obj19 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $0,t/2$} thick false}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.510506062853598 0.0 
+0.0 -2.042024251414392 0.0 0.510506062853598 0.0 0.0 0.0 0.0 0.510506062853598 
+0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj6} 
+frame {visible true plots [{id obj4}] title $Kg(t)$ labels 
+[$ Curve: t,Kg(t)$]}}} {frame.3d obj20 {canvas {canvas.3d obj27 {tool 100.0 
+points true graph {graph.3d obj28 {light true graph {plots [{plot.vector obj24 
+{base $X(Q)$ endstyle 1.0 dir $N(X)(Q)$ color {coloring.group obj29 {colors 
+[{coloring.constant obj30 {color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.axes obj31 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj26 
+{intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj32 {colors [{coloring.constant obj33 {color [0.375 0.375 
+0.375 0.5]}}] opacities [1.0] mixings [0.0]}} expr $X(u,v)$} vrtnml true}} 
+{plot.vector obj23 {base $gamma(0)$ endstyle 1.0 dir 
+$cross(N(X)(Q),T(gamma)(0))$ color {coloring.group obj34 {colors 
+[{coloring.constant obj35 {color [1.0 0.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.curve obj21 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj36 {colors 
+[{coloring.constant obj37 {color [0.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $gamma(t)$} thick true}} {plot.vector obj22 {base $gamma(0)$ 
+endstyle 1.0 dir $T(gamma)(0)$ color {coloring.group obj38 {colors 
+[{coloring.constant obj39 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.point obj25 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj40 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 10.0 style 2.0 showlabel false dim 3.0 expr 
+$gamma(0)$}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 
+transf [-0.29749425014133685 -0.6193443564612165 -0.49486095346103687 0.0 
+-0.19020356649961384 0.5688813410830627 -0.5976405667842897 0.0 
+0.7696086008040426 -0.0988140268133252 -0.3389926454678084 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj28} frame {visible 
+true plots [{id obj21} {id obj22} {id obj23} {id obj24} {id obj25} {id obj26}] 
+title $Darboux Frame$ labels [$ Curve: gamma(t)$ 
+$ Vector: T(gamma)(0)  starting at gamma(0)$ 
+$ Vector: cross(N(X)(Q),T(gamma)(0))  starting at gamma(0)$ 
+$ Vector: N(X)(Q)  starting at X(Q)$ $ Point: gamma(0)$ $ Surface: X(u,v)$]}}} 
+{frame.2d obj41 {canvas {canvas.3d obj44 {tool 1.0 points true graph {graph.3d 
+obj45 {light false graph {plots [{plot.point obj42 {super {transpt $0$ visible 
+true addedz 3.0} color {coloring.constant obj46 {color [1.0 1.0 1.0 1.0]}} label 
+$$ size 10.0 style 0.0 showlabel false dim 2.0 expr $Q$}} {plot.wireframe obj47 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj48 
+{colors [{coloring.constant obj49 {color [0.75 0.75 0.75 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $u,v$} connect [true true] intervals [u v] thick false}} 
+{plot.axes obj50 {super {transpt $0$ visible false addedz 0.0} labels [x y]}} 
+{plot.curve obj43 {super {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.group obj51 {colors [{coloring.constant obj52 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $x(t)$} thick true}}]} alpha false 
+scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.602903913845385 
+0.0 0.0 -183.53673033397465 0.0 0.602903913845385 0.0 -186.08585158861348 0.0 
+0.0 0.602903913845385 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj53 
+{origin $0, 0$ entry Q constraint $Point$ cmode 2.0 cobjs [{id obj47}]}}] 
+drawmode 0.0}} graph {id obj45} frame {visible true plots [{id obj42} {id 
+obj43}] title Domain labels [$ Point: Q$ $ Curve: x(t)$]}}} {frame.2d obj54 
+{canvas {canvas.3d obj56 {tool 1.0 points true graph {graph.3d obj57 {light 
+false graph {plots [{plot.curve obj58 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj59 {colors [{coloring.constant obj60 {color 
+[1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,0$} thick false}} 
+{plot.point obj61 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj62 {color [1.0 1.0 1.0 1.0]}} label $Tg(t)$ size 10.0 
+style 3.0 showlabel true dim 2.0 expr $0,1$}} {plot.curve obj63 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj64 {colors 
+[{coloring.constant obj65 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $0,t/2$} thick false}} {plot.curve obj55 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj66 {colors 
+[{coloring.constant obj67 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,Tg(t)$} thick true}} {plot.axes obj68 {super {transpt $0$ 
+visible false addedz 0.0} labels [x y]}} {plot.point obj69 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj70 {color [1.0 1.0 1.0 
+1.0]}} label t size 10.0 style 3.0 showlabel true dim 2.0 expr $1,0$}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.5509525579383056 0.0 0.0 0.0 0.0 0.5509525579383056 0.0 0.0 0.0 0.0 
+0.5509525579383056 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj57} frame {visible true plots [{id obj55}] title $Tg(t)$ labels 
+[$ Curve: t,Tg(t)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d2.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Problem 8.1.1: Curves on a Sphere</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 268px; height: 239px;" alt="figure3" src="images/figure8-3.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Coordinate Circles on a Sphere">
+<param name="DATA" value="filever 100.0 env {variable $R=.1,2,12$ 1.05 interval $v=0,pi,48$ variable 
+$phi0=0,pi,12$ 1.0471975511965976 interval $u=0,2*pi,48$ variable 
+$t0=0,2*pi,24$ 0.5235987755982988 interval $t=0,2*pi,24$ function 
+$X(u,v)=R*(cos(u)*sin(v),sin(u)*sin(v),cos(v))$ function $x(t)=t,phi0$ function 
+$gamma(t)=X(x(t))$ function 
+$Kn(t)=Curvature(X)(x(t))*dot(P(X)(x(t)),N(X)(x(t)))$ function 
+$n(t)=N(X)(x(t))$ function $U(t)=cross(N(X)(x(t)),T(X)(x(t)))$ value 
+$Q=(3.3785208665519812 , 2.225294796292769)$ constant 
+$TotalKn= integral(Kn(t)*Speed(X)(x(t)),t,0,2*pi)$ function 
+$Kg(t)=Curvature(X)(x(t))*dot(P(X)(x(t)),U(t))$ function 
+$Tg(t)=n'(t)*U(t)/length(X'(x(t)))$ constant 
+$TotalKg= integral(Kg(t)*Speed(X)(x(t)),t,0,2*pi)$ constant 
+$TotalTg= integral(Tg(t)*Speed(X)(x(t)),t,0,2*pi)$} objects [{controls obj0 
+{constants [] intervals [] objects [] readouts [{readout obj1 $TotalKn$} 
+{readout obj2 $Kn(t0)$} {readout obj3 $Kg(t0)$} {readout obj4 $TotalKg$} 
+{readout obj5 $TotalTg$} {readout obj6 $Tg(t0)$}] functions [X] variables 
+[$phi0$ R $t0$]}} {frame.3d obj7 {canvas {canvas.3d obj14 {tool 100.0 points 
+true graph {graph.3d obj15 {light true graph {plots [{plot.point obj10 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj16 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 10.0 style 2.0 showlabel false dim 3.0 expr 
+$gamma(t0)$}} {plot.vector obj13 {base $X(t0,phi0)$ endstyle 1.0 dir 
+$N(X)(t0,phi0)$ color {coloring.group obj17 {colors [{coloring.constant obj18 
+{color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 10.0}} {plot.vector obj12 {base $gamma(t0)$ endstyle 1.0 dir 
+$cross(N(X)(t0,phi0),T(gamma)(t0))$ color {coloring.group obj19 {colors 
+[{coloring.constant obj20 {color [1.0 0.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.axes obj21 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj11 
+{intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj22 {colors [{coloring.constant obj23 {color [0.375 0.375 
+0.375 0.5]}}] opacities [1.0] mixings [0.0]}} expr $X(u,v)$} vrtnml true}} 
+{plot.vector obj9 {base $gamma(t0)$ endstyle 1.0 dir $T(gamma)(t0)$ color 
+{coloring.group obj24 {colors [{coloring.constant obj25 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 
+1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 
+10.0}} {plot.curve obj8 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj26 {colors [{coloring.constant obj27 {color [0.0 1.0 
+0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $gamma(t)$} thick true}}]} 
+alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[0.6690481456560459 -0.48497597906864875 -0.18479854579658125 0.0 
+-0.07722813013370282 0.2051138403830939 -0.8178885941295854 0.0 
+0.5132134241406575 0.6631019802546391 0.11783619593366719 0.0 0.0 0.0 0.0 1.0]}} 
+group null hotspots [] drawmode 1.0}} graph {id obj15} frame {visible true plots 
+[{id obj8} {id obj9} {id obj10} {id obj11} {id obj12} {id obj13}] title 
+$Darboux Frame$ labels [$ Curve: gamma(t)$ 
+$ Vector: T(gamma)(t0)  starting at gamma(t0)$ $ Point: gamma(t0)$ 
+$ Surface: X(u,v)$ 
+$ Vector: cross(N(X)(t0,phi0),T(gamma)(t0))  starting at gamma(t0)$ 
+$ Vector: N(X)(t0,phi0)  starting at X(t0,phi0)$]}}} {frame.2d obj28 {canvas 
+{canvas.3d obj30 {tool 0.0 points true graph {graph.3d obj31 {light false graph 
+{plots [{plot.curve obj29 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj32 {colors [{coloring.constant obj33 {color [1.0 0.7 
+0.7 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,Kn(t)$} thick true}} 
+{plot.axes obj34 {super {transpt $0$ visible false addedz 0.0} labels [x y]}} 
+{plot.point obj35 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj36 {color [1.0 1.0 1.0 1.0]}} label $Kn(t)$ size 10.0 
+style 3.0 showlabel true dim 2.0 expr $0,1$}} {plot.point obj37 {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.constant obj38 {color [1.0 1.0 1.0 
+1.0]}} label t size 10.0 style 3.0 showlabel true dim 2.0 expr $1,0$}} 
+{plot.curve obj39 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj40 {colors [{coloring.constant obj41 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick false}} {plot.curve 
+obj42 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj43 {colors [{coloring.constant obj44 {color [1.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $t,0$} thick false}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.4117955086337868 0.0 
+0.0 -123.37781354318048 0.0 0.4117955086337868 0.0 -38.505095758640806 0.0 0.0 
+0.4117955086337868 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj31} frame {visible true plots [{id obj29}] title $Kn(t)$ labels 
+[$ Curve: t,Kn(t)$]}}} {frame.2d obj45 {canvas {canvas.3d obj47 {tool 0.0 points 
+true graph {graph.3d obj48 {light false graph {plots [{plot.curve obj46 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj49 {colors 
+[{coloring.constant obj50 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,Tg(t)$} thick true}} {plot.curve obj51 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj52 {colors 
+[{coloring.constant obj53 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $0,t/2$} thick false}} {plot.curve obj54 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj55 {colors 
+[{coloring.constant obj56 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,0$} thick false}} {plot.point obj57 {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj58 {color [1.0 1.0 1.0 1.0]}} label 
+t size 10.0 style 3.0 showlabel true dim 2.0 expr $1,0$}} {plot.axes obj59 
+{super {transpt $0$ visible false addedz 0.0} labels [x y]}} {plot.point obj60 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj61 
+{color [1.0 1.0 1.0 1.0]}} label $Tg(t)$ size 10.0 style 3.0 showlabel true dim 
+2.0 expr $0,1$}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 
+1.0 transf [0.43830286065801843 0.0 0.0 -140.99307381848794 0.0 
+0.43830286065801843 0.0 -45.32711776838559 0.0 0.0 0.43830286065801843 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj48} frame 
+{visible true plots [{id obj46}] title $Tg(t)$ labels [$ Curve: t,Tg(t)$]}}} 
+{frame.2d obj62 {canvas {canvas.3d obj64 {tool 0.0 points true graph {graph.3d 
+obj65 {light false graph {plots [{plot.axes obj66 {super {transpt $0$ visible 
+false addedz 0.0} labels [x y]}} {plot.curve obj63 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj67 {colors [{coloring.constant 
+obj68 {color [1.0 0.8 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$t,Kg(t)$} thick true}} {plot.point obj69 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj70 {color [1.0 1.0 1.0 1.0]}} label t 
+size 10.0 style 3.0 showlabel true dim 2.0 expr $1,0$}} {plot.point obj71 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj72 {color [1.0 
+1.0 1.0 1.0]}} label $Kg(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,1$}} {plot.curve obj73 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj74 {colors [{coloring.constant obj75 {color [1.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,0$} thick false}} 
+{plot.curve obj76 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj77 {colors [{coloring.constant obj78 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick false}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.3486859165876025 0.0 0.0 -111.37021748574347 0.0 0.3486859165876025 0.0 
+-40.564900673154575 0.0 0.0 0.3486859165876025 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj65} frame {visible true plots [{id 
+obj63}] title $Kg(t)$ labels [$ Curve: t,Kg(t)$]}}} {frame.2d obj79 {canvas 
+{canvas.3d obj81 {tool 0.0 points true graph {graph.3d obj82 {light false graph 
+{plots [{plot.axes obj83 {super {transpt $0$ visible false addedz 0.0} labels [x 
+y]}} {plot.curve obj80 {super {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.group obj84 {colors [{coloring.constant obj85 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $x(t)$} thick true}} 
+{plot.wireframe obj86 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj87 {colors [{coloring.constant obj88 {color [0.75 0.75 0.75 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v$} connect [true true] 
+intervals [v u] thick false}}]} alpha false scale 100.01271474132783 surfacemode 
+1.0 drawmode 1.0 transf [0.3584888120039579 0.0 0.0 -113.13159278874892 0.0 
+0.3584888120039579 0.0 -55.64730935525937 0.0 0.0 0.3584888120039579 0.0 0.0 0.0 
+0.0 1.0]}} group null hotspots [{hotspot obj89 {origin $0, 0$ entry Q constraint 
+$Point$ cmode 2.0 cobjs [{id obj86}]}}] drawmode 0.0}} graph {id obj82} frame 
+{visible true plots [{id obj80}] title Domain labels [$ Curve: x(t)$]}}}] "></applet>
+<big><a href="helpdoc/Lovett8d3.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 277px; height: 240px;" alt="figure4" src="images/figure8-4.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="General Curves on a Sphere">
+<param name="DATA" value="filever 100.0 env {function $x(t)=t*sin(t)+t, t-.3,t^2$ variable $R=.1,2,12$ 1.0 
+interval $t=0,2*pi,96$ interval $u=0,2*pi,24$ interval $v=0,pi,12$ function 
+$gamma(t)=R*unit(x(t))$ function 
+$X(u,v)=R*(cos(u)*sin(v),sin(u)*sin(v),cos(v))$ variable $t0=t_min,t_max,24$ 0.0 
+function $v1(t)=acos(gamma(t)_3/R)$ function 
+$u1(t)=acos(gamma(t)_1/(R*sin(v1(t))))$ function $n(t)=N(X)(u1(t),v1(t))$ 
+function $Kn(t)=Curvature(gamma)(t) * dot(P(gamma)(t),n(t))$ function 
+$U(t)=cross(n(t),T(gamma)(t))$ constant 
+$TotalKn=integral(Kn(t)*Speed(gamma)(t),t,t_min,t_max)$ function 
+$Kg(t)=Curvature(gamma)(t) * dot(P(gamma)(t), U(t))$ function 
+$Tg(t)=n'(t) * U(t) /Speed(gamma)(t)$ constant 
+$TotalKg=integral(Kg(t)*Speed(gamma)(t),t,t_min,t_max)$ constant 
+$TotalTg=integral(Tg(t)*Speed(gamma)(t),t,t_min,t_max)$} objects [{frame.2d obj0 
+{canvas {canvas.3d obj2 {tool 0.0 points true graph {graph.3d obj3 {light false 
+graph {plots [{plot.axes obj4 {super {transpt $0$ visible false addedz 0.0} 
+labels [x y]}} {plot.point obj5 {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj6 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 style 
+3.0 showlabel true dim 2.0 expr $t_max,0$}} {plot.curve obj1 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj7 {colors 
+[{coloring.constant obj8 {color [1.0 0.7 0.7 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,Kn(t)$} thick true}} {plot.point obj9 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj10 {color [1.0 1.0 1.0 
+1.0]}} label $Kn(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}} {plot.curve obj11 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj12 {colors [{coloring.constant obj13 {color [1.0 
+1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick false}} 
+{plot.curve obj14 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj15 {colors [{coloring.constant obj16 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,0$} thick false}}]} alpha false 
+scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.42928271821887737 0.0 0.0 -142.3219577241954 0.0 0.42928271821887737 0.0 
+-46.85791399413182 0.0 0.0 0.42928271821887737 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj3} frame {visible true plots [{id obj1}] 
+title $Kn(t)$ labels [$ Curve: t,Kn(t)$]}}} {controls obj17 {constants [] 
+intervals [] objects [] readouts [{readout obj18 $TotalTg$} {readout obj19 
+$Tg(t0)$} {readout obj20 $TotalKn$} {readout obj21 $TotalKg$} {readout obj22 
+$Kg(t0)$} {readout obj23 $Kn(t0)$}] functions [x] variables [R $t0$]}} {frame.2d 
+obj24 {canvas {canvas.3d obj26 {tool 0.0 points true graph {graph.3d obj27 
+{light false graph {plots [{plot.curve obj28 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj29 {colors [{coloring.constant obj30 
+{color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,0$} thick 
+false}} {plot.point obj31 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj32 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 style 3.0 
+showlabel true dim 2.0 expr $t_max,0$}} {plot.curve obj33 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj34 {colors 
+[{coloring.constant obj35 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $0,t/2$} thick false}} {plot.curve obj25 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj36 {colors 
+[{coloring.constant obj37 {color [1.0 0.8 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,Kg(t)$} thick true}} {plot.axes obj38 {super {transpt $0$ 
+visible false addedz 0.0} labels [x y]}} {plot.point obj39 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj40 {color [1.0 1.0 1.0 
+1.0]}} label $Kg(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 
+1.0 transf [0.32759835096459117 0.0 0.0 -106.0 0.0 0.32759835096459117 0.0 -1.0 
+0.0 0.0 0.32759835096459117 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] 
+drawmode 0.0}} graph {id obj27} frame {visible true plots [{id obj25}] title 
+$Kg(t)$ labels [$ Curve: t,Kg(t)$]}}} {frame.2d obj41 {canvas {canvas.3d obj43 
+{tool 0.0 points true graph {graph.3d obj44 {light false graph {plots 
+[{plot.curve obj45 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj46 {colors [{coloring.constant obj47 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick false}} {plot.curve 
+obj48 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj49 {colors [{coloring.constant obj50 {color [1.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $t,0$} thick false}} {plot.point obj51 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj52 {color [1.0 
+1.0 1.0 1.0]}} label $Tg(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}} {plot.point obj53 {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj54 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 
+style 3.0 showlabel true dim 2.0 expr $t_max,0$}} {plot.curve obj42 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj55 {colors 
+[{coloring.constant obj56 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,Tg(t)$} thick true}} {plot.axes obj57 {super {transpt $0$ 
+visible false addedz 0.0} labels [x y]}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.3895822898302499 0.0 0.0 
+-125.283867947526 0.0 0.3895822898302499 0.0 -43.43603924205999 0.0 0.0 
+0.3895822898302499 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj44} frame {visible true plots [{id obj42}] title $Tg(t)$ labels 
+[$ Curve: t,Tg(t)$]}}} {frame.3d obj58 {canvas {canvas.3d obj65 {tool 100.0 
+points true graph {graph.3d obj66 {light true graph {plots [{plot.vector obj64 
+{base $gamma(t0)$ endstyle 1.0 dir $T(gamma)(t0)$ color {coloring.group obj67 
+{colors [{coloring.constant obj68 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 
+10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.point 
+obj61 {super {transpt $0$ visible true addedz 0.0} color {coloring.constant 
+obj69 {color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 style 2.0 showlabel false 
+dim 3.0 expr $gamma(t0)$}} {plot.curve obj63 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj70 {color [0.0 1.0 0.0 1.0]}} expr 
+$gamma(t)$} thick true}} {plot.vector obj62 {base $gamma(t0)$ endstyle 1.0 dir 
+$U(t0)$ color {coloring.group obj71 {colors [{coloring.constant obj72 {color 
+[1.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 10.0}} {plot.axes obj73 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y z]}} {plot.vector obj59 {base $gamma(t0)$ endstyle 1.0 
+dir $n(t0)$ color {coloring.group obj74 {colors [{coloring.constant obj75 {color 
+[0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 10.0}} {plot.surface obj60 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj76 {colors 
+[{coloring.constant obj77 {color [0.375 0.375 0.375 0.5]}}] opacities [1.0] 
+mixings [0.0]}} expr $X(u,v)$} vrtnml true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [0.8958291612539944 
+0.18895493504559968 -0.40222648640892855 0.0 0.2638779571079166 
+0.5020930056887866 0.823572120333701 0.0 0.3575731220317202 -0.8439186253190009 
+0.39992851391239087 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 1.0}} 
+graph {id obj66} frame {visible true plots [{id obj59} {id obj60} {id obj61} {id 
+obj62} {id obj63} {id obj64}] title $Curve on a Sphere$ labels 
+[$ Vector: n(t0)  starting at gamma(t0)$ $ Surface: X(u,v)$ $ Point: gamma(t0)$ 
+$ Vector: U(t0)  starting at gamma(t0)$ $ Curve: gamma(t)$ 
+$ Vector: T(gamma)(t0)  starting at gamma(t0)$]}}}] "></applet>
+<big><a href="helpdoc/Lovett8d4.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Problem 8.1.2: Cylinder Intersecting a Plane</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 270px; height: 236px;" alt="figure5" src="images/figure8-5.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Ellipse on a Cylinder">
+<param name="DATA" value="filever 100.0 env {function $X(u,v)=cos(u),sin(u),v$ interval $t=-5,5,12$ 
+interval $s=-5,5,12$ interval $v=-1,1,12$ interval $u=0,2*pi,24$ variable 
+$alpha= 0,pi,12$ 0.0 variable $theta=0,pi,12$ 0.0 value 
+$Q=(2.6179938779914944 , -0.24357694241540154)$ function 
+$l(u)=(cos(Q_1+u),sin(Q_1+u),Q_2+dot((cos(Q_1+u),sin(Q_1+u),Q_2)-X(Q),X_u(Q_1,Q_2))*tan(alpha)-dot((cos(Q_1+u),sin(Q_1+u),Q_2)-X(Q),N(X)(Q))*tan(theta))$ 
+function $x(t)=Q+t*(cos(alpha),sin(alpha))$ function $n(t)=N(X)(x(t))$ function 
+$gamma(t)=X(x(t))$ function $T1(t)=T(gamma)(t)*X_u(x(t))$ function 
+$U(t)=cross(N(X)(x(t)),T(gamma)(t))$ function $T2(t)=T(gamma)(t)*X_v(x(t))$ 
+function $Kn(t)=Curvature(gamma)(t) * dot(P(gamma)(t),n(t))$ function 
+$Tg(t)=dot(n'(t),U(t))/Speed(gamma)(t)$ function 
+$Kg(t)=Curvature(gamma)(t) * dot(P(gamma)(t),U(t))$ constant 
+$alpha1=acos(T1(0)*g11(X)(Q)+T2(0)*g12(X)(Q)/(g11(X)(Q)*(T1(0)^2*g11(X)(Q)+T2(0)^2*g22(X)(Q))))$ 
+constant $TotalKn=integral(Speed(gamma)(t)*Kn(t),t,0,2*pi)$ constant 
+$TotalTg=integral(Speed(gamma)(t)*Tg(t),t,0,2*pi)$ constant 
+$TotalKg= integral(Speed(gamma)(t)*Kg(t),t,0,2*pi)$} objects [{frame.3d obj0 
+{canvas {canvas.3d obj6 {tool 100.0 points true graph {graph.3d obj7 {light true 
+graph {plots [{plot.surface obj4 {intrpl true super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj8 {colors [{coloring.constant obj9 
+{color [0.375 0.375 0.375 0.5]}}] opacities [1.0] mixings [0.0]}} expr 
+$X(Q)+s*(-cos(theta)*N(X)(Q)+sin(theta)*X_v(Q))+t*T(gamma)(0)$} vrtnml true}} 
+{plot.curve obj3 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj10 {colors [{coloring.constant obj11 {color [0.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(cos(Q_1+u),sin(Q_1+u),Q_2+dot((cos(Q_1+u),sin(Q_1+u),Q_2)-X(Q),X_u(Q_1,Q_2))*tan(alpha)-dot((cos(Q_1+u),sin(Q_1+u),Q_2)-X(Q),N(X)(Q))*tan(theta))$} 
+thick true}} {plot.axes obj12 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}} {plot.surface obj2 {intrpl true super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj13 {colors [{coloring.constant 
+obj14 {color [0.75 0.75 0.75 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$X(u,v)$} vrtnml true}} {plot.curve obj5 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj15 {colors [{coloring.constant obj16 {color 
+[1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $gamma(v)$} thick 
+true}} {plot.point obj1 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 style 2.0 
+showlabel false dim 3.0 expr $X(Q)$}}]} alpha true scale 100.01271474132783 
+surfacemode 3.0 drawmode 1.0 transf [0.26071925687461445 -0.9532720992351265 
+0.1526360832650117 0.0 0.2587606455979476 0.22132100493720658 0.9402446176730814 
+0.0 -0.9300905318216905 -0.205643666552897 0.3043719517665793 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj7} frame {visible true 
+plots [{id obj1} {id obj2} {id obj3} {id obj4} {id obj5}] title 
+$Cylinder &amp; Ellipse$ labels [$ Point: X(Q)$ $ Surface: X(u,v)$ 
+$ Curve: (cos(Q_1+u),sin(Q_1+u),Q_2+dot((cos(Q_1+u),sin(Q_1+u),Q_2)-X(Q),X_u(Q_1,Q_2))*tan(alpha)-dot((cos(Q_1+u),sin(Q_1+u),Q_2)-X(Q),N(X)(Q))*tan(theta))$ 
+$ Surface: X(Q)+s*(-cos(theta)*N(X)(Q)+sin(theta)*X_v(Q))+t*T(gamma)(0)$ 
+$ Curve: gamma(v)$]}}} {frame.2d obj18 {canvas {canvas.3d obj21 {tool 0.0 points 
+true graph {graph.3d obj22 {light false graph {plots [{plot.point obj19 {super 
+{transpt $0$ visible true addedz 3.0} color {coloring.constant obj23 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 2.0 expr $Q$}} 
+{plot.curve obj20 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj24 {colors [{coloring.constant obj25 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $x(v)$} thick true}} 
+{plot.wireframe obj26 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj27 {colors [{coloring.constant obj28 {color [0.75 0.75 0.75 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v$} connect [true true] 
+intervals [v u] thick false}} {plot.axes obj29 {super {transpt $0$ visible false 
+addedz 0.0} labels [x y]}}]} alpha false scale 100.01271474132783 surfacemode 
+1.0 drawmode 1.0 transf [0.45375957765858077 0.0 0.0 -139.2572058406996 0.0 
+0.45375957765858077 0.0 5.053942353274403 0.0 0.0 0.45375957765858077 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [{hotspot obj30 {origin $0, 0$ entry Q 
+constraint $Point$ cmode 2.0 cobjs [{id obj26}]}}] drawmode 0.0}} graph {id 
+obj22} frame {visible true plots [{id obj19} {id obj20}] title Domain labels 
+[$ Point: Q$ $ Curve: x(v)$]}}} {controls obj31 {constants [] intervals [] 
+objects [] readouts [{readout obj32 $TotalTg$} {readout obj33 $Kn(0)$} {readout 
+obj34 $TotalKg$} {readout obj35 $Tg(0)$} {readout obj36 $Kg(0)$} {readout obj37 
+$TotalKn$}] functions [X] variables [theta alpha]}}] "></applet>
+<big><a href="helpdoc/Lovett8d5.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Problem 8.1.4: Curves on a Torus</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 298px; height: 238px;" alt="figure6" src="images/figure8-6.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Torus Parallels">
+<param name="DATA" value="filever 100.0 env {function 
+$X(u,v)=((2+cos(u))*cos(v),(2+cos(u))*sin(v),sin(u))/2$ interval $v=0,2*pi,24$ 
+interval $t=0,2*pi,36$ interval $u=0,2*pi,24$ variable $v0=0,2*pi,24$ 
+6.283185307179586 variable $t0=t_min,t_max,t_res$ 0.0 function 
+$gamma(t)=X(t,v0)$ function $n(t)=N(X)(t,v0)$ function 
+$Kn(t)=Curvature(gamma)(t)*dot(P(gamma)(t),n(t))$ function 
+$U(t)=cross(n(t),T(gamma)(t))$ constant 
+$TotalKn=integral(Kn(t)*Speed(gamma)(t),t,0,2*pi)$ function 
+$Kg(t)=Curvature(gamma)(t)*dot(P(gamma)(t),U(t))$ function 
+$Tg(t)=n'(t) * U(t)/Speed(gamma)(t)$ constant 
+$TotalKg=  integral(Kg(t)*Speed(gamma)(t),t,0,2*pi)$ constant 
+$TotalTg=integral(Tg(t)*Speed(gamma)(t),t,0,2*pi)$} objects [{frame.3d obj0 
+{canvas {canvas.3d obj7 {tool 100.0 points true graph {graph.3d obj8 {light true 
+graph {plots [{plot.vector obj2 {base $gamma(t0)$ endstyle 1.0 dir 
+$N(X)(t0,v0)$ color {coloring.group obj9 {colors [{coloring.constant obj10 
+{color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 10.0}} {plot.curve obj6 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.constant obj11 {color [0.0 1.0 0.0 1.0]}} expr 
+$gamma(t)$} thick true}} {plot.vector obj5 {base $gamma(t0)$ endstyle 1.0 dir 
+$U(t0)$ color {coloring.group obj12 {colors [{coloring.constant obj13 {color 
+[1.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true 
+basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true 
+addedz 0.0} endsize 10.0}} {plot.surface obj4 {intrpl true super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj14 {colors 
+[{coloring.constant obj15 {color [0.375 0.375 0.375 0.5]}}] opacities [1.0] 
+mixings [0.0]}} expr $X(u,v)$} vrtnml true}} {plot.vector obj3 {base 
+$gamma(t0)$ endstyle 1.0 dir $T(gamma)(t0)$ color {coloring.group obj16 {colors 
+[{coloring.constant obj17 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.axes obj18 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.point obj1 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj19 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 10.0 style 2.0 showlabel false dim 3.0 expr 
+$gamma(t0)$}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 
+transf [-0.41538149742131275 0.900128174892055 0.131253496583986 0.0 
+-0.2646985934201645 -0.2576536344971614 0.9292735115517858 0.0 
+0.8702832103639649 0.35126040681508464 0.34528721430526094 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj8} frame {visible true 
+plots [{id obj1} {id obj2} {id obj3} {id obj4} {id obj5} {id obj6}] title 
+$Torus Parallels$ labels [$ Point: gamma(t0)$ 
+$ Vector: N(X)(t0,v0)  starting at gamma(t0)$ 
+$ Vector: T(gamma)(t0)  starting at gamma(t0)$ $ Surface: X(u,v)$ 
+$ Vector: U(t0)  starting at gamma(t0)$ $ Curve: gamma(t)$]}}} {controls obj20 
+{constants [] intervals [] objects [] readouts [{readout obj21 $TotalKg$} 
+{readout obj22 $TotalKn$} {readout obj23 $Kn(t0)$} {readout obj24 $Kg(t0)$} 
+{readout obj25 $Tg(t0)$} {readout obj26 $TotalTg$}] functions [gamma X] 
+variables [$v0$ $t0$]}} {frame.2d obj27 {canvas {canvas.3d obj29 {tool 0.0 
+points true graph {graph.3d obj30 {light false graph {plots [{plot.curve obj31 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj32 
+{colors [{coloring.constant obj33 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $t,0$} thick false}} {plot.point obj34 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj35 {color [1.0 1.0 1.0 
+1.0]}} label $Kn(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}} {plot.curve obj36 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj37 {colors [{coloring.constant obj38 {color [1.0 
+1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick false}} 
+{plot.point obj39 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj40 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 style 3.0 
+showlabel true dim 2.0 expr $t_max,0$}} {plot.axes obj41 {super {transpt $0$ 
+visible false addedz 0.0} labels [x y]}} {plot.curve obj28 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj42 {colors 
+[{coloring.constant obj43 {color [1.0 0.7 0.7 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,Kn(t)$} thick true}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.3685673043227759 0.0 0.0 
+-120.62105688655038 0.0 0.3685673043227759 0.0 -62.28974287745641 0.0 0.0 
+0.3685673043227759 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj30} frame {visible true plots [{id obj28}] title $Kn(t)$ labels 
+[$ Curve: t,Kn(t)$]}}} {frame.2d obj44 {canvas {canvas.3d obj46 {tool 0.0 points 
+true graph {graph.3d obj47 {light false graph {plots [{plot.curve obj45 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj48 {colors 
+[{coloring.constant obj49 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,Tg(t)$} thick true}} {plot.point obj50 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj51 {color [1.0 1.0 1.0 
+1.0]}} label $Tg(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}} {plot.point obj52 {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj53 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 
+style 3.0 showlabel true dim 2.0 expr $t_max,0$}} {plot.curve obj54 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj55 {colors 
+[{coloring.constant obj56 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,0$} thick false}} {plot.curve obj57 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj58 {colors [{coloring.constant 
+obj59 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} 
+thick false}} {plot.axes obj60 {super {transpt $0$ visible false addedz 0.0} 
+labels [x y]}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 
+1.0 transf [0.3922920489483762 0.0 0.0 -120.48151079516325 0.0 
+0.3922920489483762 0.0 -60.35964190234705 0.0 0.0 0.3922920489483762 0.0 0.0 0.0 
+0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj47} frame {visible 
+true plots [{id obj45}] title $Tg(t)$ labels [$ Curve: t,Tg(t)$]}}} {frame.2d 
+obj61 {canvas {canvas.3d obj63 {tool 0.0 points true graph {graph.3d obj64 
+{light false graph {plots [{plot.point obj65 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj66 {color [1.0 1.0 1.0 1.0]}} label t 
+size 10.0 style 3.0 showlabel true dim 2.0 expr $t_max,0$}} {plot.curve obj62 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj67 
+{colors [{coloring.constant obj68 {color [1.0 0.8 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $t,Kg(t)$} thick true}} {plot.point obj69 {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.constant obj70 {color [1.0 1.0 1.0 
+1.0]}} label $Kg(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}} {plot.curve obj71 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj72 {colors [{coloring.constant obj73 {color [1.0 
+1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick false}} 
+{plot.axes obj74 {super {transpt $0$ visible false addedz 0.0} labels [x y]}} 
+{plot.curve obj75 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj76 {colors [{coloring.constant obj77 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,0$} thick false}}]} alpha false 
+scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.38156480224014055 0.0 0.0 -118.68068308844171 0.0 0.38156480224014055 0.0 
+-62.83399500384927 0.0 0.0 0.38156480224014055 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj64} frame {visible true plots [{id 
+obj62}] title $Kg(t)$ labels [$ Curve: t,Kg(t)$]}}}] "></applet>
+<big><a href="helpdoc/Lovett8d6.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big><br>
+<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+<img style="width: 292px; height: 234px;" alt="figure7" src="images/figure8-7.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Torus Meridians">
+<param name="DATA" value="filever 100.0 env {function 
+$X(u,v)=((2+cos(u))*cos(v),(2+cos(u))*sin(v),sin(u))/2$ interval $u=0,2*pi,24$ 
+variable $u0=0,2*pi,24$ 1.0471975511965976 interval $t=0,2*pi,36$ interval 
+$v=0,2*pi,24$ function $n(t)=N(X)(u0,t)$ function $gamma(t)=X(u0,t)$ variable 
+$t0=t_min,t_max,t_res$ 0.0 function $U(t)=cross(n(t),T(gamma)(t))$ function 
+$Kn(t)=Curvature(gamma)(t)*dot(P(gamma)(t),n(t))$ function 
+$Tg(t)=n'(t) * U(t)/Speed(gamma)(t)$ function 
+$Kg(t)=Curvature(gamma)(t)*dot(P(gamma)(t),U(t))$ constant 
+$TotalKn=integral(Kn(t)*Speed(gamma)(t),t,0,2*pi)$ constant 
+$TotalTg=integral(Tg(t)*Speed(gamma)(t),t,0,2*pi)$ constant 
+$TotalKg=  integral(Kg(t)*Speed(gamma)(t),t,0,2*pi)$} objects [{frame.3d obj0 
+{canvas {canvas.3d obj7 {tool 100.0 points true graph {graph.3d obj8 {light true 
+graph {plots [{plot.point obj6 {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj9 {color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 
+style 2.0 showlabel false dim 3.0 expr $gamma(t0)$}} {plot.surface obj1 {intrpl 
+true super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj10 {colors [{coloring.constant obj11 {color [0.375 0.375 0.375 0.5]}}] 
+opacities [1.0] mixings [0.0]}} expr $X(u,v)$} vrtnml true}} {plot.vector obj2 
+{base $gamma(t0)$ endstyle 1.0 dir $U(t0)$ color {coloring.group obj12 {colors 
+[{coloring.constant obj13 {color [1.0 0.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.axes obj14 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.vector obj5 {base 
+$gamma(t0)$ endstyle 1.0 dir $T(gamma)(t0)$ color {coloring.group obj15 {colors 
+[{coloring.constant obj16 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.vector obj3 {base 
+$gamma(t0)$ endstyle 1.0 dir $N(X)(u0,t0)$ color {coloring.group obj17 {colors 
+[{coloring.constant obj18 {color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 basesize 10.0 super 
+{transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.curve obj4 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj19 
+{color [0.0 1.0 0.0 1.0]}} expr $gamma(t)$} thick true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [-0.41538149742131275 
+0.900128174892055 0.131253496583986 0.0 -0.2646985934201645 -0.2576536344971614 
+0.9292735115517858 0.0 0.8702832103639649 0.35126040681508464 
+0.34528721430526094 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 1.0}} 
+graph {id obj8} frame {visible true plots [{id obj1} {id obj2} {id obj3} {id 
+obj4} {id obj5} {id obj6}] title $Torus Meridians$ labels [$ Surface: X(u,v)$ 
+$ Vector: U(t0)  starting at gamma(t0)$ 
+$ Vector: N(X)(u0,t0)  starting at gamma(t0)$ $ Curve: gamma(t)$ 
+$ Vector: T(gamma)(t0)  starting at gamma(t0)$ $ Point: gamma(t0)$]}}} {frame.2d 
+obj20 {canvas {canvas.3d obj22 {tool 0.0 points true graph {graph.3d obj23 
+{light false graph {plots [{plot.axes obj24 {super {transpt $0$ visible false 
+addedz 0.0} labels [x y]}} {plot.point obj25 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj26 {color [1.0 1.0 1.0 1.0]}} label t 
+size 10.0 style 3.0 showlabel true dim 2.0 expr $t_max,0$}} {plot.curve obj27 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj28 
+{colors [{coloring.constant obj29 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $t,0$} thick false}} {plot.curve obj30 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj31 {colors 
+[{coloring.constant obj32 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $0,t/2$} thick false}} {plot.curve obj21 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj33 {colors 
+[{coloring.constant obj34 {color [1.0 0.8 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,Kg(t)$} thick true}} {plot.point obj35 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj36 {color [1.0 1.0 1.0 
+1.0]}} label $Kg(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 
+1.0 transf [0.38156480224014055 0.0 0.0 -118.68068308844171 0.0 
+0.38156480224014055 0.0 -62.83399500384927 0.0 0.0 0.38156480224014055 0.0 0.0 
+0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj23} frame 
+{visible true plots [{id obj21}] title $Kg(t)$ labels [$ Curve: t,Kg(t)$]}}} 
+{frame.2d obj37 {canvas {canvas.3d obj39 {tool 0.0 points true graph {graph.3d 
+obj40 {light false graph {plots [{plot.curve obj38 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj41 {colors [{coloring.constant 
+obj42 {color [1.0 0.7 0.7 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$t,Kn(t)$} thick true}} {plot.axes obj43 {super {transpt $0$ visible false 
+addedz 0.0} labels [x y]}} {plot.curve obj44 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj45 {colors [{coloring.constant obj46 
+{color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick 
+false}} {plot.point obj47 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj48 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 style 3.0 
+showlabel true dim 2.0 expr $t_max,0$}} {plot.point obj49 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj50 {color [1.0 1.0 1.0 
+1.0]}} label $Kn(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}} {plot.curve obj51 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj52 {colors [{coloring.constant obj53 {color [1.0 
+1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,0$} thick false}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.3685673043227759 0.0 0.0 -120.62105688655038 0.0 0.3685673043227759 0.0 
+-62.28974287745641 0.0 0.0 0.3685673043227759 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj40} frame {visible true plots [{id 
+obj38}] title $Kn(t)$ labels [$ Curve: t,Kn(t)$]}}} {frame.2d obj54 {canvas 
+{canvas.3d obj56 {tool 0.0 points true graph {graph.3d obj57 {light false graph 
+{plots [{plot.point obj58 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj59 {color [1.0 1.0 1.0 1.0]}} label $Tg(t)$ size 10.0 
+style 3.0 showlabel true dim 2.0 expr $0,t_max/2$}} {plot.point obj60 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj61 {color [1.0 
+1.0 1.0 1.0]}} label t size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$t_max,0$}} {plot.axes obj62 {super {transpt $0$ visible false addedz 0.0} 
+labels [x y]}} {plot.curve obj63 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj64 {colors [{coloring.constant obj65 {color [1.0 
+1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick false}} 
+{plot.curve obj55 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj66 {colors [{coloring.constant obj67 {color [0.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,Tg(t)$} thick true}} {plot.curve 
+obj68 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj69 {colors [{coloring.constant obj70 {color [1.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $t,0$} thick false}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.3922920489483762 0.0 
+0.0 -120.48151079516325 0.0 0.3922920489483762 0.0 -60.35964190234705 0.0 0.0 
+0.3922920489483762 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj57} frame {visible true plots [{id obj55}] title $Tg(t)$ labels 
+[$ Curve: t,Tg(t)$]}}} {controls obj71 {constants [] intervals [] objects [] 
+readouts [{readout obj72 $TotalTg$} {readout obj73 $Tg(t0)$} {readout obj74 
+$TotalKg$} {readout obj75 $Kg(t0)$} {readout obj76 $TotalKn$} {readout obj77 
+$Kn(t0)$}] functions [gamma X] variables [$t0$ $u0$]}}] "></applet>
+<big><a href="helpdoc/Lovett8d7.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<div style="text-align: center;"> 
+<img style="width: 294px; height: 243px;" alt="figure8" src="images/figure8-8.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Torus Knots">
+<param name="DATA" value="filever 100.0 env {function 
+$X(u,v)=((2+cos(u))*cos(v),(2+cos(u))*sin(v),sin(u))/2$ variable $p=1,4,3$ 2.0 
+variable $q=1,5,4$ 3.0 interval $u=0,2*pi,24$ interval $v=0,2*pi,24$ interval 
+$t=0,2*pi*p,36*p$ function $n(t)=N(X)(q*t/p,t)$ function 
+$gamma(t)=((2+cos(q*t/p))*cos(t),(2+cos(q*t/p))*sin(t), sin(q*t/p))/2$ variable 
+$t0=t_min,t_max,t_res$ 0.0 function $U(t)=cross(n(t),T(gamma)(t))$ function 
+$Kn(t)=Curvature(gamma)(t)*dot(P(gamma)(t),n(t))$ function 
+$Tg(t)=n'(t) * U(t)/Speed(gamma)(t)$ function 
+$Kg(t)=Curvature(gamma)(t)*dot(P(gamma)(t),U(t))$ constant 
+$TotalKn=integral(Kn(t)*Speed(gamma)(t),t,0,2*pi)$ constant 
+$TotalTg=integral(Tg(t)*Speed(gamma)(t),t,0,2*pi)$ constant 
+$TotalKg=  integral(Kg(t)*Speed(gamma)(t),t,0,2*pi)$} objects [{frame.2d obj0 
+{canvas {canvas.3d obj2 {tool 0.0 points true graph {graph.3d obj3 {light false 
+graph {plots [{plot.point obj4 {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj5 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 style 
+3.0 showlabel true dim 2.0 expr $t_max,0$}} {plot.curve obj6 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj7 {colors 
+[{coloring.constant obj8 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,0$} thick false}} {plot.curve obj1 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj9 {colors [{coloring.constant 
+obj10 {color [1.0 0.8 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$t,Kg(t)$} thick true}} {plot.axes obj11 {super {transpt $0$ visible false 
+addedz 0.0} labels [x y]}} {plot.point obj12 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj13 {color [1.0 1.0 1.0 1.0]}} label 
+$Kg(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr $0,t_max/2$}} 
+{plot.curve obj14 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj15 {colors [{coloring.constant obj16 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} thick false}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.21315872294198945 0.0 0.0 -131.5686854264122 0.0 0.21315872294198945 0.0 
+-36.89502507092797 0.0 0.0 0.21315872294198945 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj3} frame {visible true plots [{id obj1}] 
+title $Kg(t)$ labels [$ Curve: t,Kg(t)$]}}} {frame.2d obj17 {canvas {canvas.3d 
+obj19 {tool 0.0 points true graph {graph.3d obj20 {light false graph {plots 
+[{plot.point obj21 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj22 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 style 3.0 
+showlabel true dim 2.0 expr $t_max,0$}} {plot.curve obj23 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj24 {colors 
+[{coloring.constant obj25 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $t,0$} thick false}} {plot.curve obj26 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj27 {colors [{coloring.constant 
+obj28 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} 
+thick false}} {plot.point obj29 {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj30 {color [1.0 1.0 1.0 1.0]}} label $Tg(t)$ size 
+10.0 style 3.0 showlabel true dim 2.0 expr $0,t_max/2$}} {plot.curve obj18 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj31 
+{colors [{coloring.constant obj32 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $t,Tg(t)$} thick true}} {plot.axes obj33 {super {transpt 
+$0$ visible false addedz 0.0} labels [x y]}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.1975103279658446 0.0 
+0.0 -125.95885163964286 0.0 0.1975103279658446 0.0 -51.48016035723953 0.0 0.0 
+0.1975103279658446 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 0.0}} 
+graph {id obj20} frame {visible true plots [{id obj18}] title $Tg(t)$ labels 
+[$ Curve: t,Tg(t)$]}}} {controls obj34 {constants [] intervals [] objects [] 
+readouts [{readout obj35 $Tg(t0)$} {readout obj36 $Kg(t0)$} {readout obj37 
+$TotalKn$} {readout obj38 $Kn(t0)$} {readout obj39 $TotalKg$} {readout obj40 
+$TotalTg$}] functions [gamma X] variables [$t0$ q p]}} {frame.3d obj41 {canvas 
+{canvas.3d obj48 {tool 100.0 points true graph {graph.3d obj49 {light true graph 
+{plots [{plot.curve obj45 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj50 {color [0.0 1.0 0.0 1.0]}} expr $gamma(t)$} thick 
+true}} {plot.vector obj42 {base $gamma(t0)$ endstyle 1.0 dir $T(gamma)(t0)$ 
+color {coloring.group obj51 {colors [{coloring.constant obj52 {color [1.0 0.0 
+0.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true basestyle 0.0 
+subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} 
+endsize 10.0}} {plot.axes obj53 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}} {plot.vector obj44 {base $gamma(t0)$ endstyle 1.0 dir $U(t0)$ 
+color {coloring.group obj54 {colors [{coloring.constant obj55 {color [1.0 0.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} dim 3.0 thick true basestyle 0.0 
+subdivs 1.0 len 1.0 basesize 10.0 super {transpt $0$ visible true addedz 0.0} 
+endsize 10.0}} {plot.surface obj47 {intrpl true super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj56 {colors [{coloring.constant 
+obj57 {color [0.375 0.375 0.375 0.5]}}] opacities [1.0] mixings [0.0]}} expr 
+$X(u,v)$} vrtnml true}} {plot.point obj43 {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.constant obj58 {color [1.0 1.0 1.0 1.0]}} label $$ 
+size 10.0 style 2.0 showlabel false dim 3.0 expr $gamma(t0)$}} {plot.vector 
+obj46 {base $gamma(t0)$ endstyle 1.0 dir $N(X)(q*t0/p,t0)$ color {coloring.group 
+obj59 {colors [{coloring.constant obj60 {color [0.0 0.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} dim 3.0 thick true basestyle 0.0 subdivs 1.0 len 1.0 
+basesize 10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}}]} alpha 
+true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.34094016955561834 0.9290739882114477 0.14346192948743713 0.0 
+-0.2539239798269114 -0.23794481538237175 0.9374992678938523 0.0 
+0.9051422060937407 0.28320273526490136 0.31703911034165716 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj49} frame {visible 
+true plots [{id obj42} {id obj43} {id obj44} {id obj45} {id obj46} {id obj47}] 
+title $Torus Knot$ labels [$ Vector: T(gamma)(t0)  starting at gamma(t0)$ 
+$ Point: gamma(t0)$ $ Vector: U(t0)  starting at gamma(t0)$ $ Curve: gamma(t)$ 
+$ Vector: N(X)(q*t0/p,t0)  starting at gamma(t0)$ $ Surface: X(u,v)$]}}} 
+{frame.2d obj61 {canvas {canvas.3d obj63 {tool 1.0 points true graph {graph.3d 
+obj64 {light false graph {plots [{plot.curve obj65 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj66 {colors [{coloring.constant 
+obj67 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $0,t/2$} 
+thick false}} {plot.curve obj68 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj69 {colors [{coloring.constant obj70 {color [1.0 
+1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,0$} thick false}} 
+{plot.axes obj71 {super {transpt $0$ visible false addedz 0.0} labels [x y]}} 
+{plot.point obj72 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj73 {color [1.0 1.0 1.0 1.0]}} label t size 10.0 style 3.0 
+showlabel true dim 2.0 expr $t_max,0$}} {plot.point obj74 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj75 {color [1.0 1.0 1.0 
+1.0]}} label $Kn(t)$ size 10.0 style 3.0 showlabel true dim 2.0 expr 
+$0,t_max/2$}} {plot.curve obj62 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj76 {colors [{coloring.constant obj77 {color [1.0 
+0.7 0.7 1.0]}}] opacities [1.0] mixings [0.0]}} expr $t,Kn(t)$} thick true}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.2030630990890591 0.0 0.0 -128.85392895316423 0.0 0.2030630990890591 0.0 
+-32.34622776266718 0.0 0.0 0.2030630990890591 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj64} frame {visible true plots [{id 
+obj62}] title $Kn(t)$ labels [$ Curve: t,Kn(t)$]}}}] "></applet>
+<big><a href="helpdoc/Lovett8d8.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Problem 8.1.5: Curvature of Level Curves</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 276px; height: 234px;" alt="figure9" src="images/figure8-9.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Curvature of Level Curves">
+<param name="DATA" value="filever 100.0 env {function $X(u,v)=u,v,u^2-v^2$ variable $c=-1,1,12$ 
+-0.33333333333333337 interval $v=-1,1,48$ interval $u=-1,1,12$ variable 
+$v0=-1 ,1,24$ 1.0 function $n1(v)=N(X)((c+v^2)^.5,v)$ function 
+$n2(v)=N(X)((c+v^2)^.5,v)$ function $x2(v)=X(-(c+v^2)^.5,v)$ function 
+$x1(v)=X((c+v^2)^.5,v)$ constant 
+$KnP2= Curvature(x2)(v0) * dot(P(x2)(v0),N(X)(-(c+v0^2)^.5,v0))$ function 
+$U2(v)=cross(N(X)(-(c+v^2)^.5,v),T(x2)(v))$ constant 
+$KnP1= Curvature(x1)(v0) * dot(P(x1)(v0),N(X)((c+v0^2)^.5,v0))$ function 
+$U1(v)=cross(N(X)((c+v^2)^.5,v),T(x1)(v))$ constant 
+$KgP2= Curvature(x2)(v0)* dot(P(x2)(v0),U2(v0))$ constant 
+$TgP2=dot(n2'(v0),U2(v0))/Speed(x2)(v0)$ constant 
+$KgP1= Curvature(x1)(v0)* dot(P(x1)(v0),U1(v0))$ constant 
+$TgP1=dot(n1'(v0),U1(v0))/Speed(x1)(v0)$} objects [{frame.3d obj0 {canvas 
+{canvas.3d obj5 {tool 100.0 points true graph {graph.3d obj6 {light true graph 
+{plots [{plot.point obj4 {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj7 {color [1.0 1.0 1.0 1.0]}} label $P1$ size 10.0 style 
+2.0 showlabel true dim 3.0 expr $X((c+v0^2)^.5,v0)$}} {plot.levelset obj2 
+{coloring {coloring.constant obj8 {color [1.0 0.0 0.0 1.0]}} nml $0,0,1$ thick 
+true plot {id obj3} super {transpt $0$ visible true addedz 0.0} transf $Point$ 
+cmode 0.0 fil $true$ pt $0,0,c$}} {plot.surface obj3 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj9 {colors 
+[{coloring.constant obj10 {color [0.75 0.75 0.75 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $X(u,v)$} vrtnml true}} {plot.point obj1 {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj11 {color [1.0 1.0 1.0 
+1.0]}} label $P2$ size 10.0 style 2.0 showlabel true dim 3.0 expr 
+$X(-(c+v0^2)^.5,v0)$}} {plot.axes obj12 {super {transpt $0$ visible true addedz 
+0.0} labels [x y z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 
+drawmode 1.0 transf [0.293056190850756 0.9265817208966491 0.23572098655877569 
+0.0 -0.32175543235256676 -0.13658706228867268 0.936919108657177 0.0 
+0.9003285571143759 -0.35041445306315 0.2581050180232717 0.0 0.0 0.0 0.0 1.0]}} 
+group null hotspots [] drawmode 1.0}} graph {id obj6} frame {visible true plots 
+[{id obj1} {id obj2} {id obj3} {id obj4}] title $Level Curves$ labels 
+[$ Point: X(-(c+v0^2)^.5,v0)$ 
+$ Level Set: Surface: X(u,v) in plane 0,0,c ; 0,0,1$ $ Surface: X(u,v)$ 
+$ Point: X((c+v0^2)^.5,v0)$]}}} {frame.2d obj13 {canvas {canvas.3d obj18 {tool 
+0.0 points true graph {graph.3d obj19 {light false graph {plots [{plot.curve 
+obj14 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj20 {color [0.0 1.0 0.0 1.0]}} expr $-(c+v^2)^.5,v$} thick 
+true}} {plot.curve obj15 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj21 {color [0.0 1.0 0.0 1.0]}} expr $(c+v^2)^.5,v$} 
+thick true}} {plot.point obj16 {super {transpt $0$ visible true addedz 1.0} 
+color {coloring.constant obj22 {color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 
+style 0.0 showlabel false dim 2.0 expr $-(c+v0^2)^.5,v0$}} {plot.point obj17 
+{super {transpt $0$ visible true addedz 1.0} color {coloring.constant obj23 
+{color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 2.0 
+expr $(c+v0^2)^.5,v0$}} {plot.axes obj24 {super {transpt $0$ visible true addedz 
+0.0} labels [x y]}}]} alpha false scale 100.01271474132783 surfacemode 1.0 
+drawmode 1.0 transf [1.0 0.0 0.0 -3.0 0.0 1.0 0.0 10.0 0.0 0.0 1.0 0.0 0.0 0.0 
+0.0 1.0]}} group null hotspots [] drawmode 0.0}} graph {id obj19} frame {visible 
+true plots [{id obj14} {id obj15} {id obj16} {id obj17}] title Domain labels 
+[$ Curve: -(c+v^2)^.5,v$ $ Curve: (c+v^2)^.5,v$ $ Point: -(c+v0^2)^.5,v0$ 
+$ Point: (c+v0^2)^.5,v0$]}}} {controls obj25 {constants [] intervals [] objects 
+[] readouts [{readout obj26 $KgP2$} {readout obj27 $KgP1$} {readout obj28 
+$TgP1$} {readout obj29 $TgP2$} {readout obj30 $KnP2$} {readout obj31 $KnP1$}] 
+functions [] variables [$v0$ c]}}] "></applet>
+<big><a href="helpdoc/Lovett8d9.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Problem 8.1.9: Tube of a Curve on a Surface</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 339px; height: 314px;" alt="Tube of a Curve on a Surface" src="images/figure8-65.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Tube of a Curve on a Surface"> <param name="DATA" value="
+filever 100.0 env {function 
+$X(u,v)=((2+cos(v))*cos(u),(2+cos(v))*sin(u),sin(v))$ function 
+$perturbTubeMap(t,a)=0$ function 
+$nN(X)=func(u,v){ unit(cross(500*(X(u+0.001, v) - X(u-0.001,v)), 500*(X(u,v+0.001) - X(u,v-0.001)))) }$ 
+variable $R= 0,2,12$ 0.5 function $perturbCap1(s,t)=0.02$ function 
+$perturbCap2(s,t)=0.02$ function $nT(X)=func(t){unit(X(t+0.001) - X(t-0.001))}$ 
+interval $s=1e-10,1,5$ interval $a=0,2*pi,24$ interval $v=-pi,pi,30$ interval 
+$t= -pi,pi,48$ interval $u= -pi,pi,30$ function 
+$nK(X)=func(u,v){  dot(cross(500*(nN(X)(u+0.001,v) - nN(X)(u-0.001,v)), 500*(nN(X)(u,v+0.001)-nN(X)(u,v-0.001))), nN(X)(u,v))  }$ 
+value $pHS=(-0.40132723871555154 , 1.230736865394358)$ function 
+$Y(X,c)=func(t,a){ cos(a)*cross(nN(X)(c(t)), nT(X(c))(t)) + sin(a)*nN(X)(c(t)) }$ 
+constant $p= pHS$ function 
+$nKTube(X,c)=func(t,a){  -dot(cross(Y(X,c)(t+0.001,a) - Y(X,c)(t-0.001,a), Y(X,c)(t,a+0.001) - Y(X,c)(t,a-0.001)), Y(X,c)(t,a))  }$ 
+value $rHS=(-1.5250435071190958 , 0.0)$ constant $r= rHS_1$ function 
+$patch(s,t)=p + r * s*(cos(t),sin(t))$ function 
+$bdypatch(t)=p + r*(cos(t),sin(t))$ function 
+$nskg(X,c)=func(t,a){sign(nKTube(X,bdypatch)(t,a))}$} objects [{frame.3d obj0 
+{canvas {canvas.3d obj5 {tool 100.0 points true graph {graph.3d obj6 {light true 
+graph {plots [{plot.surface obj2 {super {super {transpt $0$ visible false addedz 
+0.0} color {coloring.group obj7 {colors [{coloring.gradient obj8 {colors 
+[{coloring.constant obj9 {color [0.0 0.0 1.0 1.0]}} {coloring.constant obj10 
+{color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $1.0$] expr 
+$sign(nK(X)(patch(s,t)))$}} {coloring.constant obj11 {color [1.0 0.0 1.0 1.0]}}] 
+opacities [0.5 1.0] mixings [0.0 0.0]}} expr 
+$X(patch(s,t)) - R*N(X)(patch(s,t))$}}} {plot.surface obj3 {super {super 
+{transpt $0$ visible false addedz 0.0} color {coloring.group obj12 {colors 
+[{coloring.gradient obj13 {colors [{coloring.constant obj14 {color [0.0 0.0 1.0 
+1.0]}} {coloring.constant obj15 {color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $1.0$] 
+expr $sign(nK(X)(patch(s,t)))$}} {coloring.constant obj16 {color [1.0 0.0 1.0 
+1.0]}}] opacities [0.5 1.0] mixings [0.0 0.0]}} expr 
+$X(patch(s,t)) + R*N(X)(patch(s,t))$}}} {plot.wireframe obj4 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj17 {colors 
+[{coloring.constant obj18 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $X(u,v)$} connect [false false] intervals [v u] thick false}} 
+{plot.surface obj1 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj19 {colors [{coloring.gradient obj20 {colors 
+[{coloring.constant obj21 {color [0.0 0.5 0.0 1.0]}} {coloring.constant obj22 
+{color [0.0 1.0 0.0 1.0]}}] values [$- 1$ $1.0$] expr $nskg(X,bdypatch)(t,a)$}}] 
+opacities [1.0] mixings [0.0]}} expr $X(bdypatch(t)) + R*Y(X,bdypatch)(t,a)$}}} 
+{plot.axes obj23 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} 
+alpha false scale 66.67514316088521 surfacemode 3.0 drawmode 1.0 transf 
+[0.5676303632041105 0.20204380568403565 -0.02161482675804332 0.0 
+-0.19305573737471884 0.5562491382175239 0.12965148585854566 0.0 
+0.06339071204544594 -0.11514480510283824 0.5884015812403794 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [] drawmode 1.0}} graph {id obj6} frame {visible true 
+plots [{id obj1} {id obj2} {id obj3} {id obj4}] title Surface labels 
+[$ Surface: X(bdypatch(t)) + R*Y(X,bdypatch)(t,a)$ 
+$ Surface: X(patch(s,t)) - R*N(X)(patch(s,t))$ 
+$ Surface: X(patch(s,t)) + R*N(X)(patch(s,t))$ $ Wireframe: X(u,v)$]}}} 
+{controls obj24 {constants [] intervals [a v u t s] objects [{plotcheckbox obj25 
+{values [] label $Show Negative Tube (dark green)$ plots []}} {plotcheckbox 
+obj26 {values [] label $Show Caps (purple)$ plots []}} {plotcheckbox obj27 
+{values [] label $Show Positive Tube (light green)$ plots []}}] readouts [] 
+functions [X] variables [R]}} {frame.2d obj28 {canvas {canvas.3d obj34 {tool 
+110.0 points true graph {graph.3d obj35 {light false graph {plots [{plot.point 
+obj30 {super {transpt $0$ visible true addedz 2.0} color {coloring.group obj36 
+{colors [{coloring.constant obj37 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} label $$ size 10.0 style 0.0 showlabel false dim 2.0 expr $p$}} 
+{plot.curve obj32 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj38 {colors [{coloring.constant obj39 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $bdypatch(t)$} thick true}} 
+{plot.wireframe obj33 {super {super {transpt $0$ visible true addedz -2.0} color 
+{coloring.group obj40 {colors [{coloring.constant obj41 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v$} connect [false false] 
+intervals [v u] thick false}} {plot.point obj29 {super {transpt $0$ visible true 
+addedz 2.0} color {coloring.group obj42 {colors [{coloring.constant obj43 {color 
+[1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} label $$ size 10.0 style 
+0.0 showlabel false dim 2.0 expr $rHS + p$}} {plot.axes obj44 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y]}} {plot.wireframe obj31 {super {super 
+{transpt $0$ visible false addedz 1.0} color {coloring.group obj45 {colors 
+[{coloring.constant obj46 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $patch(s,t)$} connect [true true] intervals [s t] thick false}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.3737123121587358 0.0 0.0 0.0 0.0 0.3737123121587358 0.0 0.0 0.0 0.0 
+0.3737123121587358 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj47 
+{origin $0, 0$ entry pHS constraint $Point$ cmode 0.0 cobjs []}} {hotspot obj48 
+{origin $pHS$ entry rHS constraint $Point_1,0$ cmode 1.0 cobjs []}}] drawmode 
+0.0}} graph {id obj35} frame {visible true plots [{id obj29} {id obj30} {id 
+obj31} {id obj32} {id obj33}] title Domain labels [$ Point: rHS + p$ 
+$ Point: p$ $ Wireframe: patch(s,t)$ $ Curve: bdypatch(t)$ 
+$ Wireframe: u,v$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d9.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<br><hr width="50%"><br>
+<h2>8.2: Gauss-Bonnet Theorem, Local Form</h2>
+<br>
+
+<h3>Example 8.2.1: The Moldy Potato Chip</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 302px; height: 213px;" alt="figure13" src="images/figure8-13.jpg">
+<br>
+<applet archive="Demo.jar" code="DemoApplet.class" width=302 height=35>
+<param name="NAME" value="Closed Parallel Surfaces "The Moldy Potato Chip"">
+<param name="DATA" value="filever 100.0 env {function $perturbTubeMap(t,a)=0$ function 
+$nT(X)=func(t){unit(X(t+0.001) - X(t-0.001))}$ function $perturbCap2(s,t)=0.02$ 
+function $perturbCap1(s,t)=0.02$ function 
+$nN(X)=func(u,v){ unit(cross(500*(X(u+0.001, v) - X(u-0.001,v)), 500*(X(u,v+0.001) - X(u,v-0.001)))) }$ 
+function $X(u,v)=((2+cos(v))*cos(u),(2+cos(v))*sin(u),sin(v))$ variable 
+$R= 0,2,12$ 0.5 interval $s=1e-10,1,5$ interval $a=pi/2,3*pi/2,10$ interval 
+$u= -pi,pi,30$ interval $t= -pi,pi,16$ interval $v=-pi,pi,30$ function 
+$nK(X)=func(u,v){  dot(cross(500*(nN(X)(u+0.001,v) - nN(X)(u-0.001,v)), 500*(nN(X)(u,v+0.001)-nN(X)(u,v-0.001))), nN(X)(u,v))  }$ 
+function 
+$Y(X,c)=func(t,a){ cos(a)*cross(nN(X)(c(t)), nT(X(c))(t)) + sin(a)*nN(X)(c(t)) }$ 
+value $pHS=(-0.6688787311925859 , 0.34781694022014464)$ function 
+$nKTube(X,c)=func(t,a){  -dot(cross(Y(X,c)(t+0.001,a) - Y(X,c)(t-0.001,a), Y(X,c)(t,a+0.001) - Y(X,c)(t,a-0.001)), Y(X,c)(t,a))  }$ 
+constant $p= pHS$ value $rHS=(1.3110023131374686 , 0.0)$ constant $r= rHS_1$ 
+function $bdypatch(t)=p + r*(cos(t),sin(t))$ function 
+$patch(s,t)=p + r * s*(cos(t),sin(t))$ function 
+$nskg(X,c)=func(t,a){sign(nKTube(X,bdypatch)(t,a))}$} objects [{frame.3d obj0 
+{canvas {canvas.3d obj5 {tool 100.0 points true graph {graph.3d obj6 {light true 
+graph {plots [{plot.surface obj1 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj7 {colors [{coloring.gradient obj8 {colors 
+[{coloring.constant obj9 {color [0.0 0.5 0.0 1.0]}} {coloring.constant obj10 
+{color [0.0 1.0 0.0 1.0]}}] values [$- 1$ $1.0$] expr $nskg(X,bdypatch)(t,a)$}}] 
+opacities [1.0] mixings [0.0]}} expr $X(bdypatch(t)) + R*Y(X,bdypatch)(t,a)$}}} 
+{plot.surface obj2 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj11 {colors [{coloring.gradient obj12 {colors 
+[{coloring.constant obj13 {color [0.0 0.0 1.0 1.0]}} {coloring.constant obj14 
+{color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $1.0$] expr 
+$sign(nK(X)(patch(s,t)))$}} {coloring.constant obj15 {color [1.0 0.0 1.0 1.0]}}] 
+opacities [0.5 1.0] mixings [0.0 0.0]}} expr 
+$X(patch(s,t)) + R*N(X)(patch(s,t))$}}} {plot.wireframe obj3 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj16 {colors 
+[{coloring.constant obj17 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $X(u,v)$} connect [false false] intervals [u v] thick false}} 
+{plot.axes obj18 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}} 
+{plot.surface obj4 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj19 {colors [{coloring.gradient obj20 {colors 
+[{coloring.constant obj21 {color [0.0 0.0 1.0 1.0]}} {coloring.constant obj22 
+{color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $1.0$] expr 
+$sign(nK(X)(patch(s,t)))$}} {coloring.constant obj23 {color [1.0 0.0 1.0 1.0]}}] 
+opacities [0.5 1.0] mixings [0.0 0.0]}} expr 
+$X(patch(s,t)) - R*N(X)(patch(s,t))$}}}]} alpha false scale 66.67514316088521 
+surfacemode 3.0 drawmode 1.0 transf [0.415563753697538 0.24346725642419917 
+-0.36266181353242816 0.0 -0.4239545680161599 0.3453424344019233 
+-0.25395719430310076 0.0 0.10517804052751469 0.4300644456076685 
+0.4092374393849635 0.0 0.0 0.0 0.0 1.0]}} group {group obj24 {graphs [{id obj25} 
+{id obj6}] canvases [{id obj26} {id obj5}]}} hotspots [] drawmode 1.0}} graph 
+{id obj6} frame {visible true plots [{id obj1} {id obj2} {id obj3} {id obj4}] 
+title Surface labels [$ Surface: X(bdypatch(t)) + R*Y(X,bdypatch)(t,a)$ 
+$ Surface: X(patch(s,t)) + R*N(X)(patch(s,t))$ $ Wireframe: X(u,v)$ 
+$ Surface: X(patch(s,t)) - R*N(X)(patch(s,t))$]}}} {frame.3d obj27 {canvas 
+{canvas.3d obj26 {tool 100.0 points true graph {graph.3d obj25 {light true graph 
+{plots [{plot.surface obj31 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj32 {colors [{coloring.gradient obj33 {colors 
+[{coloring.constant obj34 {color [0.0 0.0 0.0 0.0]}} {coloring.constant obj35 
+{color [0.0 1.0 0.0 1.0]}}] values [$0.0$ $1.0$] expr $nskg(X,bdypatch)(t,a)$}}] 
+opacities [1.0] mixings [0.0]}} expr 
+$Y(X,bdypatch)(t,a)*(1+perturbTubeMap(t,a))$}}} {plot.axes obj36 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj30 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj37 {colors 
+[{coloring.gradient obj38 {colors [{coloring.constant obj39 {color [0.0 0.0 1.0 
+1.0]}} {coloring.constant obj40 {color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $1.0$] 
+expr $sign(nK(X)(patch(s,t)))$}} {coloring.constant obj41 {color [1.0 0.0 1.0 
+1.0]}}] opacities [0.5 0.7] mixings [1.0 0.0]}} expr 
+$N(X)(patch(s,t))*(1+perturbCap1(s,t))$}}} {plot.surface obj29 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj42 {colors 
+[{coloring.gradient obj43 {colors [{coloring.constant obj44 {color [0.0 0.0 1.0 
+1.0]}} {coloring.constant obj45 {color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $1.0$] 
+expr $sign(nK(X)(patch(s,t)))$}} {coloring.constant obj46 {color [1.0 0.0 1.0 
+1.0]}}] opacities [0.5 0.71] mixings [1.0 0.0]}} expr 
+$-N(X)(patch(s,t))*(1+perturbCap2(s,t))$}}} {plot.surface obj28 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj47 {colors 
+[{coloring.gradient obj48 {colors [{coloring.constant obj49 {color [0.0 0.45 0.0 
+1.0]}} {coloring.constant obj50 {color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $0$] 
+expr $nskg(X,bdypatch)(t,a)$}}] opacities [1.0] mixings [0.0]}} expr 
+$Y(X,bdypatch)(t,a)*(1+perturbTubeMap(t,a))$}}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [0.5223691963713649 
+0.3060415975050739 -0.45587075007813765 0.0 -0.5329165621747554 
+0.4341000589575103 -0.3192275897739889 0.0 0.13221020361812905 
+0.5405967599867185 0.5144169346442463 0.0 0.0 0.0 0.0 1.0]}} group {id obj24} 
+hotspots [] drawmode 1.0}} graph {id obj25} frame {visible true plots [{id 
+obj28} {id obj29} {id obj30} {id obj31}] title $Guass Map$ labels 
+[$ Surface: Y(X,bdypatch)(t,a)*(1+perturbTubeMap(t,a))$ 
+$ Surface: -N(X)(patch(s,t))*(1+perturbCap2(s,t))$ 
+$ Surface: N(X)(patch(s,t))*(1+perturbCap1(s,t))$ 
+$ Surface: Y(X,bdypatch)(t,a)*(1+perturbTubeMap(t,a))$]}}} {frame.2d obj51 
+{canvas {canvas.3d obj57 {tool 110.0 points true graph {graph.3d obj58 {light 
+false graph {plots [{plot.point obj54 {super {transpt $0$ visible true addedz 
+2.0} color {coloring.group obj59 {colors [{coloring.constant obj60 {color [1.0 
+0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} label $$ size 10.0 style 0.0 
+showlabel false dim 2.0 expr $p$}} {plot.wireframe obj55 {super {super {transpt 
+$0$ visible true addedz 1.0} color {coloring.group obj61 {colors 
+[{coloring.constant obj62 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $patch(s,t)$} connect [true true] intervals [s t] thick false}} 
+{plot.curve obj53 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj63 {colors [{coloring.constant obj64 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $bdypatch(t)$} thick true}} 
+{plot.wireframe obj56 {super {super {transpt $0$ visible true addedz -2.0} color 
+{coloring.group obj65 {colors [{coloring.constant obj66 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v$} connect [false false] 
+intervals [u v] thick false}} {plot.axes obj67 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y]}} {plot.point obj52 {super {transpt $0$ visible true 
+addedz 2.0} color {coloring.group obj68 {colors [{coloring.constant obj69 {color 
+[1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} label $$ size 10.0 style 
+0.0 showlabel false dim 2.0 expr $rHS + p$}}]} alpha false scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [0.3737123121587358 0.0 
+0.0 0.0 0.0 0.3737123121587358 0.0 0.0 0.0 0.0 0.3737123121587358 0.0 0.0 0.0 
+0.0 1.0]}} group null hotspots [{hotspot obj70 {origin $0, 0$ entry pHS 
+constraint $Point$ cmode 0.0 cobjs []}} {hotspot obj71 {origin $pHS$ entry rHS 
+constraint $Point_1,0$ cmode 1.0 cobjs []}}] drawmode 0.0}} graph {id obj58} 
+frame {visible true plots [{id obj52} {id obj53} {id obj54} {id obj55} {id 
+obj56}] title Domain labels [$ Point: rHS + p$ $ Curve: bdypatch(t)$ 
+$ Point: p$ $ Wireframe: patch(s,t)$ $ Wireframe: u,v$]}}} {controls obj72 
+{constants [] intervals [a v u t s] objects [{plotcheckbox obj73 {values [true] 
+label $Show Positive Tube (light green)$ plots [{id obj31}]}} {plotcheckbox 
+obj74 {values [true] label $Show Negative Tube (dark green)$ plots [{id 
+obj28}]}} {plotcheckbox obj75 {values [true true] label $Show Caps (purple)$ 
+plots [{id obj30} {id obj29}]}}] readouts [] functions [X] variables [R]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d13.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Example 8.2.6: The Moldy Patch</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 326px; height: 261px;" alt="figure11" src="images/figure8-11.png"><br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet.class" width=302 height=35> <param name="NAME" value="Polygons onto Surfaces "The Moldy Patch""> <param name="DATA" value="
+filever 100.0 env {function $nT(X)=func(t){unit(X(t+0.001) - X(t-0.001))}$ 
+function 
+$nN(X)=func(u,v){  unit(cross(X(u+0.001,v)-X(u-0.001,v), X(u,v+0.001)-X(u,v-0.001)))  }$ 
+variable $R= 0,2,12$ 0.5 function 
+$X(u,v)=((2+cos(v))*cos(u),(2+cos(v))*sin(u),sin(v))$ interval $su=0,1,5$ 
+function $incr(i)=if (i = 4) then 1 else (i+1)$ interval $i=1,4,3$ interval 
+$st= -1,1,7$ interval $a=pi/2,3*pi/2,10$ interval $u= -pi,pi,30$ interval 
+$v=-pi,pi,30$ function 
+$nK(X)=func(u,v){  dot(cross((nN(X)(u+0.001,v) - nN(X)(u-0.001,v)), (nN(X)(u,v+0.001)-nN(X)(u,v-0.001))), nN(X)(u,v))  }$ 
+function 
+$Y(X,c)=func(t,a){ cos(a)*cross(nN(X)(c(t)), nT(X(c))(t)) + sin(a)*nN(X)(c(t)) }$ 
+value $pHS=(-1.42752141814992 , 1.0097102713743338)$ constant $stmin=st_min$ 
+constant $stmax=st_max$ constant $stres= st_res$ interval 
+$sv=pi/2 + 1e-10,3*pi/2 - 1e-10,a_res$ function 
+$nsKTubeX(c)=func(t,a){ let[F = Y(X,c)]{ -sign(dot(cross(F(t+0.001,a) - F(t-0.001,a), F(t,a+0.001) - F(t,a-0.001)), F(t,a))) } }$ 
+constant $p= pHS$ function $unscalest(st)=st*(stmax-stmin) + stmin$ interval 
+$t=stmin,stmax,stres$ interval $s=stmin,stmax,stres$ value 
+$rHS=(0.6615343157280117 , 0.0)$ constant $r= rHS_1$ function 
+$patch(s,t)=p + r*(s,t)$ function $bdypatch1(t)=patch(stmax,unscalest(t))$ 
+function $bdypatch2(s)=patch(unscalest(1-s),stmax)$ function 
+$bdypatch4(s)=patch(unscalest(s),stmin)$ function 
+$bdypatch3(t)=patch(stmin,unscalest(1-t))$ function 
+$U1(X)=func(t){ cross(nN(X)(bdypatch1(t)), nT(X(bdypatch1))(t))  }$ function 
+$U2(X)=func(t){ cross(nN(X)(bdypatch2(t)), nT(X(bdypatch2))(t))  }$ function 
+$U4(X)=func(t){ cross(nN(X)(bdypatch4(t)), nT(X(bdypatch4))(t))  }$ function 
+$bdypatch(i)=func(t){ if (i=1) then (bdypatch1(t)) else (if (i=2) then (bdypatch2(t)) else (if (i=3) then (bdypatch3(t)) else (bdypatch4(t)))) }$ 
+function $U3(X)=func(t){ cross(nN(X)(bdypatch3(t)), nT(X(bdypatch3))(t))  }$ 
+function 
+$S1(X)=func(u,v){  cos(u)*cos(v)*nT(X(bdypatch1))(1) + sin(u)*cos(v)*U1(X)(1)+ sin(v)*nN(X)(bdypatch1(1)) }$ 
+function 
+$S2(X)=func(u,v){  cos(u)*cos(v)*nT(X(bdypatch2))(1) + sin(u)*cos(v)*U2(X)(1)+ sin(v)*nN(X)(bdypatch2(1)) }$ 
+function 
+$S4(X)=func(u,v){  cos(u)*cos(v)*nT(X(bdypatch4))(1) + sin(u)*cos(v)*U4(X)(1)+ sin(v)*nN(X)(bdypatch4(1)) }$ 
+function 
+$Ui(X)=func(i){ func(t){ cross(N(X)(bdypatch(i)(t)), T(X(bdypatch(i)))(t))  } }$ 
+function 
+$nsKTube(i)=func(t,a){  -sign(dot(cross(Y(X,bdypatch(i))(t+0.001,a) - Y(X,bdypatch(i))(t-0.001,a), Y(X,bdypatch(i))(t,a+0.001) - Y(X,bdypatch(i))(t,a-0.001)), Y(X,bdypatch(i))(t,a)))  }$ 
+function 
+$S3(X)=func(u,v){  cos(u)*cos(v)*nT(X(bdypatch3))(1) + sin(u)*cos(v)*U3(X)(1)+ sin(v)*nN(X)(bdypatch3(1)) }$ 
+function 
+$S(X)=func(i){func(u,v){  cos(u)*cos(v)*nT(X(bdypatch(i)))(1) + sin(u)*cos(v)*Ui(X)(i)(1)+ sin(v)*nN(X)(bdypatch(i)(1)) } }$ 
+function $angle(X)=func(i){  acos(dot(Ui(X)(i)(1), Ui(X)(incr(i))(0)))  }$} 
+objects [{frame.3d obj0 {canvas {canvas.3d obj12 {tool 100.0 points true graph 
+{graph.3d obj13 {light true graph {plots [{plot.surface obj10 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj14 {colors 
+[{coloring.constant obj15 {color [1.0 0.67 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr 
+$R*S2(X)(su*acos(dot(U2(X)(1), U3(X)(0)))+pi/2,sv) + X(bdypatch2(1))$}}} 
+{plot.surface obj5 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj16 {colors [{coloring.gradient obj17 {colors 
+[{coloring.constant obj18 {color [0.0 0.5 0.0 1.0]}} {coloring.constant obj19 
+{color [0.0 1.0 0.0 1.0]}}] values [$- 1$ $1.0$] expr 
+$nsKTubeX(bdypatch4)(scale(t),a)$}}] opacities [1.0] mixings [0.0]}} expr 
+$X(bdypatch4(scale(t))) + R*Y(X,bdypatch4)(scale(t),a)$}}} {plot.surface obj9 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj20 
+{colors [{coloring.constant obj21 {color [1.0 0.67 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr 
+$R*S3(X)(su*acos(dot(U3(X)(1), U4(X)(0)))+pi/2,sv) + X(bdypatch3(1))$}}} 
+{plot.surface obj2 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj22 {colors [{coloring.gradient obj23 {colors 
+[{coloring.constant obj24 {color [0.0 0.0 1.0 1.0]}} {coloring.constant obj25 
+{color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $1.0$] expr $sign(nK(X)(s,t))$}} 
+{coloring.constant obj26 {color [1.0 0.0 1.0 1.0]}}] opacities [0.5 1.0] mixings 
+[0.0 0.0]}} expr $X(patch(s,t)) + R*nN(X)(patch(s,t))$}}} {plot.surface obj3 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj27 
+{colors [{coloring.gradient obj28 {colors [{coloring.constant obj29 {color [0.0 
+0.5 0.0 1.0]}} {coloring.constant obj30 {color [0.0 1.0 0.0 1.0]}}] values 
+[$- 1$ $1.0$] expr $nsKTubeX(bdypatch1)(scale(t),a)$}}] opacities [1.0] mixings 
+[0.0]}} expr $X(bdypatch1(scale(t))) + R*Y(X,bdypatch1)(scale(t),a)$}}} 
+{plot.surface obj7 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj31 {colors [{coloring.gradient obj32 {colors 
+[{coloring.constant obj33 {color [0.0 0.5 0.0 1.0]}} {coloring.constant obj34 
+{color [0.0 1.0 0.0 1.0]}}] values [$- 1$ $1.0$] expr 
+$nsKTubeX(bdypatch3)(scale(t),a)$}}] opacities [1.0] mixings [0.0]}} expr 
+$X(bdypatch3(scale(t))) + R*Y(X,bdypatch3)(scale(t),a)$}}} {plot.surface obj11 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj35 
+{colors [{coloring.gradient obj36 {colors [{coloring.constant obj37 {color [0.0 
+0.5 0.0 1.0]}} {coloring.constant obj38 {color [0.0 1.0 0.0 1.0]}}] values 
+[$- 1$ $1.0$] expr $nsKTubeX(bdypatch2)(scale(t),a)$}}] opacities [1.0] mixings 
+[0.0]}} expr $X(bdypatch2(scale(t))) + R*Y(X,bdypatch2)(scale(t),a)$}}} 
+{plot.surface obj1 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj39 {colors [{coloring.gradient obj40 {colors 
+[{coloring.constant obj41 {color [0.0 0.0 1.0 1.0]}} {coloring.constant obj42 
+{color [0.0 0.0 0.0 0.0]}}] values [$- 1$ $1.0$] expr $sign(nK(X)(s,t))$}} 
+{coloring.constant obj43 {color [1.0 0.0 1.0 1.0]}}] opacities [0.5 1.0] mixings 
+[0.0 0.0]}} expr $X(patch(s,t)) - R*nN(X)(patch(s,t))$}}} {plot.axes obj44 
+{super {transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj6 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj45 
+{colors [{coloring.constant obj46 {color [1.0 0.67 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr 
+$R*S4(X)(su*acos(dot(U4(X)(1), U1(X)(0)))+pi/2,sv) + X(bdypatch4(1))$}}} 
+{plot.wireframe obj8 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj47 {colors [{coloring.constant obj48 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(u,v)$} connect [false false] 
+intervals [u v] thick false}} {plot.surface obj4 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj49 {colors [{coloring.constant 
+obj50 {color [1.0 0.67 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$R*S1(X)(su*acos(dot(U1(X)(1), U2(X)(0)))+pi/2,sv) + X(bdypatch1(1))$}}}]} alpha 
+false scale 66.67514316088521 surfacemode 3.0 drawmode 1.0 transf 
+[-0.5610423352255118 0.0381069886129618 0.21742236507143026 -16.604288251723105 
+0.13388890723918973 0.5308851656373402 0.25244371799625265 61.72341025257671 
+-0.17549469488585723 0.2831994485431477 -0.5024866304102529 0.34449620348308085 
+0.0 0.0 0.0 1.0]}} group {group obj51 {graphs [{id obj52} {id obj13}] canvases 
+[{id obj53} {id obj12}]}} hotspots [] drawmode 1.0}} graph {id obj13} frame 
+{visible true plots [{id obj1} {id obj2} {id obj3} {id obj4} {id obj5} {id obj6} 
+{id obj7} {id obj8} {id obj9} {id obj10} {id obj11}] title $3D Graph$ labels 
+[$ Surface: X(patch(s,t)) - R*nN(X)(patch(s,t))$ 
+$ Surface: X(patch(s,t)) + R*nN(X)(patch(s,t))$ 
+$ Surface: X(bdypatch1(scale(t))) + R*Y(X,bdypatch1)(scale(t),a)$ 
+$ Surface: R*S1(X)(su*acos(dot(U1(X)(1), U2(X)(0)))+pi/2,sv) + X(bdypatch1(1))$ 
+$ Surface: X(bdypatch4(scale(t))) + R*Y(X,bdypatch4)(scale(t),a)$ 
+$ Surface: R*S4(X)(su*acos(dot(U4(X)(1), U1(X)(0)))+pi/2,sv) + X(bdypatch4(1))$ 
+$ Surface: X(bdypatch3(scale(t))) + R*Y(X,bdypatch3)(scale(t),a)$ 
+$ Wireframe: X(u,v)$ 
+$ Surface: R*S3(X)(su*acos(dot(U3(X)(1), U4(X)(0)))+pi/2,sv) + X(bdypatch3(1))$ 
+$ Surface: R*S2(X)(su*acos(dot(U2(X)(1), U3(X)(0)))+pi/2,sv) + X(bdypatch2(1))$ 
+$ Surface: X(bdypatch2(scale(t))) + R*Y(X,bdypatch2)(scale(t),a)$]}}} {frame.2d 
+obj54 {canvas {canvas.3d obj59 {tool 110.0 points true graph {graph.3d obj60 
+{light false graph {plots [{plot.axes obj61 {super {transpt $0$ visible true 
+addedz 0.0} labels [x y]}} {plot.point obj56 {super {transpt $0$ visible true 
+addedz 2.0} color {coloring.group obj62 {colors [{coloring.constant obj63 {color 
+[1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} label $$ size 10.0 style 
+0.0 showlabel false dim 2.0 expr $p$}} {plot.wireframe obj57 {super {super 
+{transpt $0$ visible true addedz 1.0} color {coloring.group obj64 {colors 
+[{coloring.constant obj65 {color [1.0 0.8 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $patch(s,t)$} connect [true true] intervals [t s] thick false}} 
+{plot.point obj55 {super {transpt $0$ visible true addedz 2.0} color 
+{coloring.group obj66 {colors [{coloring.constant obj67 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} label $$ size 10.0 style 0.0 showlabel 
+false dim 2.0 expr $rHS + p$}} {plot.wireframe obj58 {super {super {transpt $0$ 
+visible true addedz -2.0} color {coloring.group obj68 {colors 
+[{coloring.constant obj69 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $u,v$} connect [false false] intervals [u v] thick false}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf 
+[0.28717458874926005 0.0 0.0 0.0 0.0 0.28717458874926005 0.0 0.0 0.0 0.0 
+0.28717458874926005 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj70 
+{origin $pHS$ entry rHS constraint $Point_1,0$ cmode 1.0 cobjs []}} {hotspot 
+obj71 {origin $0, 0$ entry pHS constraint $Point$ cmode 0.0 cobjs []}}] drawmode 
+0.0}} graph {id obj60} frame {visible true plots [{id obj55} {id obj56} {id 
+obj57} {id obj58}] title Domain labels [$ Point: rHS + p$ $ Point: p$ 
+$ Wireframe: patch(s,t)$ $ Wireframe: u,v$]}}} {frame.3d obj72 {canvas 
+{canvas.3d obj53 {tool 100.0 points true graph {graph.3d obj52 {light true graph 
+{plots [{plot.surface obj75 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj83 {colors [{coloring.gradient obj84 {colors 
+[{coloring.constant obj85 {color [0.0 0.5 0.0 1.0]}} {coloring.constant obj86 
+{color [0.0 1.0 0.0 1.0]}}] values [$- 1$ $1.0$] expr 
+$nsKTubeX(bdypatch4)(scale(t),a)$}}] opacities [1.0] mixings [0.0]}} expr 
+$Y(X,bdypatch4)(scale(t),a)$}}} {plot.axes obj87 {super {transpt $0$ visible 
+true addedz 0.0} labels [x y z]}} {plot.surface obj80 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj88 {colors 
+[{coloring.constant obj89 {color [1.0 0.67 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $S3(X)(su*acos(dot(U3(X)(1), U4(X)(0)))+pi/2,sv)$}}} {plot.surface 
+obj81 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj90 {colors [{coloring.constant obj91 {color [1.0 0.67 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $S2(X)(su*acos(dot(U2(X)(1), U3(X)(0)))+pi/2,sv)$}}} 
+{plot.surface obj78 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj92 {colors [{coloring.constant obj93 {color [1.0 0.67 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$S1(X)(su*acos(dot(U1(X)(1), U2(X)(0)))+pi/2,sv)$}}} {plot.surface obj76 {super 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.group obj94 {colors 
+[{coloring.constant obj95 {color [1.0 0.67 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $S4(X)(su*acos(dot(U4(X)(1), U1(X)(0)))+pi/2,sv)$}}} {plot.surface 
+obj73 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj96 {colors [{coloring.gradient obj97 {colors [{coloring.constant obj98 {color 
+[0.0 0.5 0.0 1.0]}} {coloring.constant obj99 {color [0.0 1.0 0.0 1.0]}}] values 
+[$- 1$ $1.0$] expr $nsKTubeX(bdypatch3)(scale(t),a)$}}] opacities [1.0] mixings 
+[0.0]}} expr $Y(X,bdypatch3)(scale(t),a)$}}} {plot.surface obj77 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj100 {colors 
+[{coloring.gradient obj101 {colors [{coloring.constant obj102 {color [0.0 0.5 
+0.0 1.0]}} {coloring.constant obj103 {color [0.0 1.0 0.0 1.0]}}] values [$- 1$ 
+$1.0$] expr $nsKTubeX(bdypatch2)(scale(t),a)$}}] opacities [1.0] mixings [0.0]}} 
+expr $Y(X,bdypatch2)(scale(t),a)$}}} {plot.surface obj74 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj104 {colors 
+[{coloring.gradient obj105 {colors [{coloring.constant obj106 {color [0.0 0.0 
+1.0 1.0]}} {coloring.constant obj107 {color [0.0 0.0 0.0 0.0]}}] values [$- 1$ 
+$1.0$] expr $sign(nK(X)(s,t))$}} {coloring.constant obj108 {color [1.0 0.0 1.0 
+1.0]}}] opacities [0.5 1.0] mixings [0.0 0.0]}} expr $nN(X)(patch(s,t))$}}} 
+{plot.surface obj82 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj109 {colors [{coloring.gradient obj110 {colors 
+[{coloring.constant obj111 {color [0.0 0.5 0.0 1.0]}} {coloring.constant obj112 
+{color [0.0 1.0 0.0 1.0]}}] values [$- 1$ $1.0$] expr 
+$nsKTubeX(bdypatch1)(scale(t),a)$}}] opacities [1.0] mixings [0.0]}} expr 
+$Y(X,bdypatch1)(scale(t),a)$}}} {plot.surface obj79 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj113 {colors 
+[{coloring.gradient obj114 {colors [{coloring.constant obj115 {color [0.0 0.0 
+1.0 1.0]}} {coloring.constant obj116 {color [0.0 0.0 0.0 0.0]}}] values [$- 1$ 
+$1.0$] expr $sign(nK(X)(s,t))$}} {coloring.constant obj117 {color [1.0 0.0 1.0 
+1.0]}}] opacities [0.5 1.0] mixings [0.0 0.0]}} expr $-nN(X)(patch(s,t))$}}}]} 
+alpha false scale 150.01907211199173 surfacemode 3.0 drawmode 1.0 transf 
+[-0.5419311736591517 0.03680892469164619 0.2100161611432772 
+-3.4996518556749235E-14 0.12932815954242233 0.5128012679753383 
+0.2438445582213943 2.755932531080789E-14 -0.16951670132380978 0.273552635680688 
+-0.4853700911123133 -3.795099543104317E-14 0.0 0.0 0.0 1.0]}} group {id obj51} 
+hotspots [] drawmode 1.0}} graph {id obj52} frame {visible true plots [{id 
+obj73} {id obj74} {id obj75} {id obj76} {id obj77} {id obj78} {id obj79} {id 
+obj80} {id obj81} {id obj82}] title $Guass Map$ labels 
+[$ Surface: Y(X,bdypatch3)(scale(t),a)$ $ Surface: nN(X)(patch(s,t))$ 
+$ Surface: Y(X,bdypatch4)(scale(t),a)$ 
+$ Surface: S4(X)(su*acos(dot(U4(X)(1), U1(X)(0)))+pi/2,sv)$ 
+$ Surface: Y(X,bdypatch2)(scale(t),a)$ 
+$ Surface: S1(X)(su*acos(dot(U1(X)(1), U2(X)(0)))+pi/2,sv)$ 
+$ Surface: -nN(X)(patch(s,t))$ 
+$ Surface: S3(X)(su*acos(dot(U3(X)(1), U4(X)(0)))+pi/2,sv)$ 
+$ Surface: S2(X)(su*acos(dot(U2(X)(1), U3(X)(0)))+pi/2,sv)$ 
+$ Surface: Y(X,bdypatch1)(scale(t),a)$]}}} {controls obj118 {constants [] 
+intervals [st] objects [{plotcheckbox obj119 {values [true true true true] label 
+$Show Corners (orange)$ plots [{id obj80} {id obj76} {id obj78} {id obj81}]}} 
+{plotcheckbox obj120 {values [true true true true] label $Show Tube (green)$ 
+plots [{id obj77} {id obj73} {id obj75} {id obj82}]}} {plotcheckbox obj121 
+{values [true true] label $Show Offset Surfaces (purple)$ plots [{id obj79} {id 
+obj74}]}}] readouts [] functions [X patch] variables [R]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d11.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+<h3>Page 297: Triangulations and Euler Characteristic</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 289px; height: 243px;" alt="figure12" src="images/figure8-12.png">
+<br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet.class" width=302 height=35> <param name="NAME" value="Euler Characteristic Illustration"> <param name="DATA" value="
+filever 100.0 env {value $RHS=(0.3399567753753846 , -0.3399567753753846)$ value 
+$C=(0.009998728687511312 , -0.029996186062533934)$ function 
+$patchcolor(u,v)=if (u < -1/u_res) then { if (v < -1/v_res) then 0 else 1 } else { if (v < -1/v_res) then 2 else 3 }$ 
+constant $Steps2=4$ function 
+$X(u,v)=(2-cos(u))*cos(v),(2-cos(u))*sin(v), sin(u)$ constant $Steps1= 4$ 
+interval $cv=-1,1,10$ interval $cu=-1,1,10$ interval $u=-pi,pi,30$ interval 
+$v=-pi,pi,30$ constant $Faces= Steps1*Steps2$ constant 
+$Vertices= Steps1*Steps2 + (2 - Steps2)*(pi - u_max)*2/pi$ interval 
+$y= u_min, u_max,Steps1$ interval $z= v_min, v_max,Steps2$ constant 
+$Triangles= Faces*2 - 2*Steps2*(pi-u_max)*2/pi$ constant 
+$Edges= (3/2)*Triangles$ constant 
+$EulerCharacteristic= Vertices - Edges + Triangles$} objects [{controls obj0 
+{constants [$Steps1$ $Steps2$] intervals [v u] objects [] readouts [{readout 
+obj1 $Edges$} {readout obj2 $Triangles$} {readout obj3 $EulerCharacteristic$} 
+{readout obj4 $Vertices$}] functions [X] variables []}} {frame.3d obj5 {canvas 
+{canvas.3d obj7 {tool 100.0 points true graph {graph.3d obj8 {light true graph 
+{plots [{plot.axes obj9 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}} {plot.surface obj6 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj10 {colors [{coloring.checker obj11 {color2 
+{coloring.constant obj13 {color [1.0 1.0 1.0 1.0]}} color1 {coloring.constant 
+obj12 {color [0.0 0.0 0.0 1.0]}} intervals [u v]}} {coloring.constant obj14 
+{color [0.75 0.75 0.75 1.0]}}] opacities [0.5 1.0] mixings [0.0 0.0]}} expr 
+$X(u,v)$}}}]} alpha false scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 
+transf [-0.36838898889924776 -0.208548655003028 -0.006435631634279988 0.0 
+-0.18827673961566072 0.3378913493826164 -0.17212121117174972 0.0 
+0.08992123319601113 -0.14690575383839585 -0.38675221694547834 0.0 0.0 0.0 0.0 
+1.0]}} group {group obj15 {graphs [{id obj16} {id obj8}] canvases [{id obj17} 
+{id obj7}]}} hotspots [] drawmode 1.0}} graph {id obj8} frame {visible true 
+plots [{id obj6}] title Surface labels [$ Surface: X(u,v)$]}}} {frame.3d obj18 
+{canvas {canvas.3d obj17 {tool 100.0 points true graph {graph.3d obj16 {light 
+true graph {plots [{plot.axes obj20 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}} {plot.surface obj19 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj21 {colors [{coloring.checker obj22 {color2 
+{coloring.constant obj24 {color [1.0 0.8 0.0 1.0]}} color1 {coloring.constant 
+obj23 {color [0.0 1.0 1.0 1.0]}} intervals [y z]}}] opacities [1.0] mixings 
+[0.0]}} expr $X(y,z)$}}}]} alpha true scale 100.01271474132783 surfacemode 2.0 
+drawmode 1.0 transf [-0.43506469244138074 -0.24629443111443117 
+-0.0076004337316638824 -6.065538838132304E-16 -0.22235344780407335 
+0.3990472039787115 -0.20327388727137416 -1.0226547078365885E-15 
+0.1061963165111286 -0.17349461720409423 -0.45675153000365415 
+4.049586954404092E-16 0.0 0.0 0.0 1.0]}} group {id obj15} hotspots [] drawmode 
+1.0}} graph {id obj16} frame {visible true plots [{id obj19}] title 
+Triangulation labels [$ Surface: X(y,z)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d12.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<br><hr width="50%"><br>
+<h2>8.4: Geodesics</h2>
+<br>
+<h3>Example 8.4.7: Cylinder</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 269px; height: 240px;" alt="figure10" src="images/figure8-10.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400">
+<param name="NAME" value="Cylinder Geodesic"> <param name="DATA" value="
+filever 100.0 env {variable $a= 1/2,1,5$ 1.0 function $Y(u,v)=(0,u,v)$ function 
+$X(u,v)=(cos(u),sin(u), v)$ variable $d= -1,1,4$ 0.0 interval $t= -2,2,24$ 
+variable $b= 0,1,4$ 0.0 variable $c= -1/2,3,7$ 0.5 interval $v= -1, 1, 12$ 
+interval $u= -pi,pi,24$} objects [{frame.3d obj0 {canvas {canvas.3d obj3 {tool 
+100.0 points true graph {graph.3d obj4 {light true graph {plots [{plot.curve 
+obj1 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj5 {colors [{coloring.constant obj6 {color [1.0 0.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $X(a*t+b,c*t+d)$} thick true}} {plot.axes obj7 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj2 
+{intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj8 {colors [{coloring.constant obj9 {color [0.75 0.75 0.75 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(u,v)$} vrtnml true}}]} alpha 
+true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[5.298886329718755E-14 0.9999999999987051 -1.3429383039637033E-11 0.0 
+4.0534242629064465E-13 -1.0547205470112786E-13 0.999999999999498 0.0 
+1.0000000000018292 6.07937311603024E-13 -1.4369699874450248E-11 0.0 0.0 0.0 0.0 
+1.0]}} group {group obj10 {graphs [{id obj4} {id obj11}] canvases [{id obj3} {id 
+obj12}]}} hotspots [] drawmode 1.0}} graph {id obj4} frame {visible true plots 
+[{id obj1} {id obj2}] title $3D Graph$ labels [$ Curve: X(a*t+b,c*t+d)$ 
+$ Surface: X(u,v)$]}}} {frame.3d obj13 {canvas {canvas.3d obj12 {tool 100.0 
+points true graph {graph.3d obj11 {light true graph {plots [{plot.curve obj15 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj16 
+{colors [{coloring.constant obj17 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $Y(a*t+b,c*t+d)$} thick true}} {plot.axes obj18 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj14 
+{intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj19 {colors [{coloring.constant obj20 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $Y(u,v)$} vrtnml true}}]} alpha 
+true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[5.551115123125783E-17 0.9999999999999999 -1.734723475976807E-17 0.0 
+-8.326672684688674E-17 -1.9142673557404066E-15 0.9999999999999999 0.0 
+1.0000000000000002 3.049643870767227E-15 9.71445146547012E-16 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj10} hotspots [] drawmode 1.0}} graph {id obj11} frame 
+{visible true plots [{id obj14} {id obj15}] title $3D Graph$ labels 
+[$ Surface: Y(u,v)$ $ Curve: Y(a*t+b,c*t+d)$]}}} {controls obj21 {constants [] 
+intervals [v u t] objects [] readouts [] functions [Y X] variables [b a d c]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d10.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<br><hr width="50%"><br>
+<h2>8.6: Applications to Plane, Spherical, and Elliptical Geometry</h2>
+<br>
+<h3>p.337: Sum of Angles of a Triangle on a Sphere</h3>
+<br>
+<div style="text-align: center;"> 
+<img alt="figure8-61" src="images/figure8-61.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet.class" width=302 height=35>
+<param name="NAME" value="Harriot-Giraud Thm."> <param name="DATA" value="
+filever 100.0 env {constant $ShowBlue=true$ constant $ShowGreen= true$ function 
+$TRI(a,b,c)=func(u,v){  unit( a + u*(b-a) + v*u*(c-b) ) }$ interval $u=0,1,16$ 
+function $boolean(x)=if x then true else false$ function 
+$GCC(a,b)=func(t){  cos(t)*a + sin(t)*(unit(b-dot(dot(b,a),a)))  }$ interval 
+$w=0,1,16$ function $GC(a,b)=func(t){  unit(t*a + (1-t)*b)  }$ constant 
+$ShowRed= true$ interval $v=0,1,16$ interval $sv= 0,pi,10$ interval 
+$ww= 0,2*pi,30$ interval $su= 0+0.001,2*pi-0.001,20$ value 
+$rHS=(0.21107358689630146 , -0.4680923697337962 , -0.85810108630145)$ value 
+$qHS=(-0.17887945241804962 , -0.9608493410975618 , 0.21159084388271546)$ 
+constant $showp= boolean(ShowBlue)$ constant $showg=boolean(ShowGreen)$ value 
+$pHS=(0.961898492859024 , -0.16739712124671668 , 0.21617005628405214)$ constant 
+$showo= boolean(ShowRed)$ constant $r=rHS$ constant $q=qHS$ constant $p=pHS$} 
+objects [{controls obj0 {constants [ShowRed ShowGreen ShowBlue] intervals [] 
+objects [] readouts [] functions [] variables []}} {frame.3d obj1 {canvas 
+{canvas.3d obj17 {tool 100.0 points true graph {graph.3d obj18 {light true graph 
+{plots [{plot.curve obj5 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj19 {colors [{coloring.constant obj20 {color [1.0 1.0 
+0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $GCC(p,q)(ww)$} thick true}} 
+{plot.curve obj14 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj21 {colors [{coloring.constant obj22 {color [0.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $GCC(p,r)(ww)$} thick true}} 
+{plot.surface obj11 {super {super {transpt $0$ visible false addedz -6.0} color 
+{coloring.group obj23 {colors [{coloring.constant obj24 {color [0.75 0.75 0.75 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $Sphere(1)(su,sv)$}}} {plot.point 
+obj3 {super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj25 
+{color [1.0 1.0 1.0 1.0]}} label p size 10.0 style 0.0 showlabel true dim 3.0 
+expr $p$}} {plot.surface obj9 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj26 {colors [{coloring.gradient obj27 {colors 
+[{coloring.constant obj28 {color [0.0 0.0 0.0 0.0]}} {coloring.constant obj29 
+{color [1.0 0.0 0.0 1.0]}}] values [$0$ $1.0$] expr $showo$}}] opacities [1.0] 
+mixings [0.0]}} expr $TRI(-p,-r,q)(u,v)$}}} {plot.surface obj2 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj30 {colors 
+[{coloring.gradient obj31 {colors [{coloring.constant obj32 {color [0.0 0.0 0.0 
+0.0]}} {coloring.constant obj33 {color [0.0 1.0 0.0 1.0]}}] values [$0$ $1.0$] 
+expr $showg$}} {coloring.gradient obj34 {colors [{coloring.constant obj35 {color 
+[0.0 0.0 0.0 0.0]}} {coloring.constant obj36 {color [1.0 0.0 0.0 1.0]}}] values 
+[$0$ $1.0$] expr $showo$}} {coloring.gradient obj37 {colors [{coloring.constant 
+obj38 {color [0.0 0.0 0.0 0.0]}} {coloring.constant obj39 {color [0.0 0.0 1.0 
+1.0]}}] values [$0$ $1.0$] expr $showp$}} {coloring.constant obj40 {color [0.75 
+0.75 0.75 1.0]}}] opacities [1.0 1.0 1.0 1.0] mixings [1.0 1.0 1.0 0.0]}} expr 
+$TRI(p,q,r)(u,v)$}}} {plot.surface obj15 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj41 {colors [{coloring.gradient obj42 
+{colors [{coloring.constant obj43 {color [0.0 0.0 0.0 0.0]}} {coloring.constant 
+obj44 {color [0.0 1.0 0.0 1.0]}}] values [$0$ $1.0$] expr $showg$}}] opacities 
+[1.0] mixings [0.0]}} expr $TRI(-r,p,-q)(u,v)$}}} {plot.point obj10 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj45 {color [1.0 
+1.0 1.0 1.0]}} label q size 10.0 style 0.0 showlabel true dim 3.0 expr $q$}} 
+{plot.curve obj12 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj46 {colors [{coloring.constant obj47 {color [1.0 0.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $GCC(q,r)(ww)$} thick true}} 
+{plot.surface obj7 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj48 {colors [{coloring.gradient obj49 {colors 
+[{coloring.constant obj50 {color [0.0 0.0 0.0 0.0]}} {coloring.constant obj51 
+{color [0.0 1.0 0.0 1.0]}}] values [$0$ $1.0$] expr $showg$}}] opacities [1.0] 
+mixings [0.0]}} expr $TRI(r,-p,q)(u,v)$}}} {plot.surface obj6 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj52 {colors 
+[{coloring.gradient obj53 {colors [{coloring.constant obj54 {color [0.0 0.0 0.0 
+0.0]}} {coloring.constant obj55 {color [0.0 0.0 1.0 1.0]}}] values [$0$ $1.0$] 
+expr $showp$}}] opacities [1.0] mixings [0.0]}} expr $TRI(-p,-q,r)(u,v)$}}} 
+{plot.surface obj8 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj56 {colors [{coloring.gradient obj57 {colors 
+[{coloring.constant obj58 {color [0.0 0.0 0.0 0.0]}} {coloring.constant obj59 
+{color [0.0 1.0 0.0 1.0]}}] values [$0$ $1.0$] expr $showg$}} {coloring.gradient 
+obj60 {colors [{coloring.constant obj61 {color [0.0 0.0 0.0 0.0]}} 
+{coloring.constant obj62 {color [1.0 0.0 0.0 1.0]}}] values [$0$ $1.0$] expr 
+$showo$}} {coloring.gradient obj63 {colors [{coloring.constant obj64 {color [0.0 
+0.0 0.0 0.0]}} {coloring.constant obj65 {color [0.0 0.0 1.0 1.0]}}] values [$0$ 
+$1.0$] expr $showp$}} {coloring.constant obj66 {color [0.75 0.75 0.75 1.0]}}] 
+opacities [1.0 1.0 1.0 1.0] mixings [1.0 1.0 1.0 0.0]}} expr 
+$TRI(-p,-q,-r)(u,v)$}}} {plot.surface obj16 {super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj67 {colors [{coloring.gradient obj68 
+{colors [{coloring.constant obj69 {color [0.0 0.0 0.0 0.0]}} {coloring.constant 
+obj70 {color [0.0 0.0 1.0 1.0]}}] values [$0$ $1.0$] expr $showp$}}] opacities 
+[1.0] mixings [0.0]}} expr $TRI(p,q,-r)(u,v)$}}} {plot.point obj4 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj71 {color [1.0 
+1.0 1.0 1.0]}} label r size 10.0 style 0.0 showlabel true dim 3.0 expr $r$}} 
+{plot.surface obj13 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj72 {colors [{coloring.gradient obj73 {colors 
+[{coloring.constant obj74 {color [0.0 0.0 0.0 0.0]}} {coloring.constant obj75 
+{color [1.0 0.0 0.0 1.0]}}] values [$0$ $1.0$] expr $showo$}}] opacities [1.0] 
+mixings [0.0]}} expr $TRI(p,r,-q)(u,v)$}}} {plot.axes obj76 {super {transpt $0$ 
+visible false addedz 0.0} labels [x y z]}}]} alpha true scale 100.01271474132783 
+surfacemode 3.0 drawmode 1.0 transf [0.4041786836404411 -0.24354576306450443 
+0.9134238301825757 0.0 0.4651712200056343 0.9160557094521626 0.03841502075965631 
+0.0 -0.8229662012078914 0.3981776475831166 0.47031822545594115 0.0 0.0 0.0 0.0 
+1.0]}} group null hotspots [{hotspot obj77 {origin $0, 0, 0$ entry pHS 
+constraint $unit(Point)$ cmode 1.0 cobjs []}} {hotspot obj78 {origin $0, 0, 0$ 
+entry rHS constraint $unit(Point)$ cmode 1.0 cobjs []}} {hotspot obj79 {origin 
+$0, 0, 0$ entry qHS constraint $unit(Point)$ cmode 1.0 cobjs []}}] drawmode 
+1.0}} graph {id obj18} frame {visible true plots [{id obj2} {id obj3} {id obj4} 
+{id obj5} {id obj6} {id obj7} {id obj8} {id obj9} {id obj10} {id obj11} {id 
+obj12} {id obj13} {id obj14} {id obj15} {id obj16}] title $3D Graph$ labels 
+[$ Surface: TRI(p,q,r)(u,v)$ $ Point: p$ $ Point: r$ $ Curve: GCC(p,q)(ww)$ 
+$ Surface: TRI(-p,-q,r)(u,v)$ $ Surface: TRI(r,-p,q)(u,v)$ 
+$ Surface: TRI(-p,-q,-r)(u,v)$ $ Surface: TRI(-p,-r,q)(u,v)$ $ Point: q$ 
+$ Surface: Sphere(1)(su,sv)$ $ Curve: GCC(q,r)(ww)$ 
+$ Surface: TRI(p,r,-q)(u,v)$ $ Curve: GCC(p,r)(ww)$ 
+$ Surface: TRI(-r,p,-q)(u,v)$ $ Surface: TRI(p,q,-r)(u,v)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d27.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<br><hr width="50%"><br>
+<h2>8.7: Hyperbolic Geometry</h2>
+<br>
+<h3>Subsection 8.7.2: Poincar&eacute; Half-Plane</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 351px; height: 224px;" alt="figure14" src="images/figure8-14.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet.class" width=302 height=35> 
+<param name="NAME" value="Hyperbolic Triangle"> <param name="DATA" value="
+filever 100.0 env {function 
+$EUTRIBDY(a,b,c)=func(t){  if (t<1/3) then {a*(1-t*3)+b*(t*3)} else {if (t<2/3) then {b*(2-t*3)+c*(t*3-1)} else {c*(3-t*3)+a*(t*3-2)}}  }$ 
+constant $AreaEuTriSubdivs= 300$ function $cross2d(a,b)=a_1*b_2 - b_1*a_2$ 
+constant $LineIntSubdivs= 450$ function 
+$uhp2disc(x,y)=(2*x, x^2+y^2-1) / ((y+1,x)*(y+1,x))$ constant $N=100$ function 
+$Center(a,b)=((b_2^2-a_2^2) + (b_1^2-a_1^2))/(2*(b_1-a_1)), 0$ function 
+$sprimeUHP(X)=length(X')/X_2$ variable $h=1,4,6$ 4.0 interval $w= -1,1,1$ 
+interval $t=0,1,30$ interval $s=0,1,30$ function 
+$GS(a,b)=let[c=Center(a,b)][aang = arg(a-c)][bang = arg(b-c)][totang = bang-aang] { func(t){  if (a_1=b_1) then {t*a + (1-t)*b} else {c + (cos(totang*t+aang),sin(totang*t+aang))*length(a-Center(a,b))}  } }$ 
+function 
+$G(a,b)=func(t){  if (a_1=b_1) then {a_1, t*10} else {Center(a,b) + (cos(pi*t),sin(pi*t))*length(a-Center(a,b))}  }$ 
+function 
+$kgUHP(X)=let[u=X_1][v=X_2]{ (2*u'*v'^2 + u'^3 - u'*v'^2 + v*cross2d(X',X''))/(v*sprimeUHP(X))^3 }$ 
+function 
+$clampUHP(x)=if (x_2 < 0) then (x_1, 0) else (if (x_2 > h) then (x_1,h) else (x))$ 
+function $TRISURF(a,b,c)=func(s,t){  GS(GS(a,b)(s), GS(a,c)(s))(t)  }$ function 
+$TRIBDY(a,b,c)=func(t){  if (t<1/3) then {GS(a,b)(t*3)} else {if (t<2/3) then {GS(b,c)(t*3-1)} else {GS(c,a)(t*3-2)}}  }$ 
+function 
+$LineInt(X,t0,t1)=integral(kgUHP(X)(t)*sprimeUHP(X)(t),t,t0,t1, LineIntSubdivs)$ 
+value $AHS=(-2.6090423202090354 , 1.7861974809432535)$ value 
+$BHS=(-7.327131902171165 , 4.0)$ value 
+$CHS=(4.530500645088155 , 3.858162747095935)$ function 
+$TRI(a,b,c)=TRIBDY(a,b,c)$ constant $A= AHS$ constant $B=BHS$ constant $C=CHS$ 
+constant $Rab=length(A-Center(A,B))$ interval $x1=A_1,B_1,30$ constant 
+$RedArea= abs(arg(A-Center(A,B))-arg(B-Center(A,B)))$ function 
+$X(t)=TRIBDY(A,B,C)(t)$ constant $Rbc= length(B-Center(B,C))$ constant 
+$YellowArea= abs(arg(C-Center(B,C))-arg(B-Center(B,C)))$ constant 
+$AreaEuTri=let [Integ(p,q) = if (p_1 = q_1) then { 0 } else {let[v(u) = (p_2-q_2)/(p_1-q_1) * (u-p_1)+p_2]{integral(integral(1/y^2, y, v(u), N, AreaEuTriSubdivs), u, p_1,q_1)}}] {  abs(Integ(A,B) + Integ(B,C) + Integ(C,A))  }$ 
+interval $x2=B_1,C_1,30$ interval $x3=C_1,A_1,30$ constant 
+$Rca=length(C-Center(C,A))$ constant 
+$BlueArea= abs(arg(A-Center(A,C))-arg(C-Center(A,C)))$ interval 
+$y1=Center(A,B)_2 + length(A-Center(A,B))*sin(acos((x1-Center(A,B)_1)/Rab)),h,h_res*scale(h)*9$ 
+interval 
+$y2=Center(B,C)_2 + length(B-Center(B,C))*sin(acos((x2-Center(B,C)_1)/Rbc)),h,h_res*scale(h)*9$ 
+interval 
+$y3=Center(C,A)_2 + length(C-Center(C,A))*sin(acos((x3-Center(C,A)_1)/Rca)),h,h_res*scale(h)*9$ 
+constant 
+$TriangleArea=abs(RedArea+BlueArea+YellowArea-2*max(RedArea,BlueArea,YellowArea))$} 
+objects [{frame.2d obj0 {canvas {canvas.3d obj11 {tool 0.0 points true graph 
+{graph.3d obj12 {light false graph {plots [{plot.point obj8 {super {transpt $0$ 
+visible true addedz 6.0} color {coloring.constant obj13 {color [1.0 1.0 1.0 
+1.0]}} label A size 10.0 style 0.0 showlabel true dim 2.0 expr $AHS$}} 
+{plot.curve obj2 {super {super {transpt $0$ visible true addedz 4.0} color 
+{coloring.group obj14 {colors [{coloring.constant obj15 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $GS(B,C)(t)$} thick true}} 
+{plot.curve obj3 {super {super {transpt $0$ visible false addedz 0.0} color 
+{coloring.constant obj16 {color [0.0 1.0 0.0 1.0]}} expr $X(t)$} thick true}} 
+{plot.axes obj10 {super {transpt $0$ visible false addedz 0.0} labels [$$ $$]}} 
+{plot.curve obj4 {super {super {transpt $0$ visible false addedz 0.0} color 
+{coloring.group obj17 {colors [{coloring.constant obj18 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $(s-0.5)*100, 0.5$} thick true}} 
+{plot.curve obj1 {super {super {transpt $0$ visible true addedz 4.0} color 
+{coloring.group obj19 {colors [{coloring.constant obj20 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $GS(A,B)(t)$} thick true}} 
+{plot.point obj7 {super {transpt $0$ visible true addedz 6.0} color 
+{coloring.constant obj21 {color [1.0 1.0 1.0 1.0]}} label C size 10.0 style 0.0 
+showlabel true dim 2.0 expr $CHS$}} {plot.curve obj9 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj22 {colors [{coloring.constant 
+obj23 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(20*w,0)$} thick false}} {plot.curve obj6 {super {super {transpt $0$ visible 
+true addedz 4.0} color {coloring.group obj24 {colors [{coloring.constant obj25 
+{color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $GS(C,A)(t)$} 
+thick true}} {plot.point obj5 {super {transpt $0$ visible true addedz 6.0} color 
+{coloring.constant obj26 {color [1.0 1.0 1.0 1.0]}} label B size 10.0 style 0.0 
+showlabel true dim 2.0 expr $BHS$}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.4005349387948112 0.0 0.0 
+53.51454766876991 0.0 0.4005349387948112 0.0 -139.55254643509323 0.0 0.0 
+0.4005349387948112 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj27 
+{origin $0, 0$ entry AHS constraint $clampUHP(Point)$ cmode 1.0 cobjs []}} 
+{hotspot obj28 {origin $0, 0$ entry CHS constraint $clampUHP(Point)$ cmode 1.0 
+cobjs []}} {hotspot obj29 {origin $0, 0$ entry BHS constraint $clampUHP(Point)$ 
+cmode 1.0 cobjs []}}] drawmode 0.0}} graph {id obj12} frame {visible true plots 
+[{id obj1} {id obj2} {id obj3} {id obj4} {id obj5} {id obj6} {id obj7} {id obj8} 
+{id obj9} {id obj10}] title $2D Graph$ labels [$ Curve: GS(A,B)(t)$ 
+$ Curve: GS(B,C)(t)$ $ Curve: X(t)$ $ Curve: (s-0.5)*100, 0.5$ $ Point: BHS$ 
+$ Curve: GS(C,A)(t)$ $ Point: CHS$ $ Point: AHS$ $ Curve: (20*w,0)$ 
+$ Axes: , $]}}} {controls obj30 {constants [] intervals [] objects [] readouts 
+[] functions [] variables []}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d14.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>p.346: Sum of Angles of a Triangle (in the Poincar&eacute; Half-Plane)</h3>
+<br>
+<div style="text-align: center;"> 
+<img alt="figure8-62" src="images/figure8-62.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet.class" width=302 height=35> 
+<param name="NAME" value="Hyperbolic Triangle Area"> <param name="DATA" value="
+filever 100.0 env {constant $LineIntSubdivs= 450$ function 
+$Center(a,b)=((b_2^2-a_2^2) + (b_1^2-a_1^2))/(2*(b_1-a_1)), 0$ function 
+$sprimeUHP(X)=length(X')/X_2$ interval $w= -1,1,1$ interval $t=0,1,30$ constant 
+$AreaEuTriSubdivs= 300$ function $cross2d(a,b)=a_1*b_2 - b_1*a_2$ function 
+$uhp2disc(x,y)=(2*x, x^2+y^2-1) / ((y+1,x)*(y+1,x))$ function 
+$EUTRIBDY(a,b,c)=func(t){  if (t<1/3) then {a*(1-t*3)+b*(t*3)} else {if (t<2/3) then {b*(2-t*3)+c*(t*3-1)} else {c*(3-t*3)+a*(t*3-2)}}  }$ 
+interval $s=0,1,30$ variable $h= 1,8,7$ 8.0 constant $N=100$ function 
+$G(a,b)=func(t){  if (a_1=b_1) then {a_1, t*10} else {Center(a,b) + (cos(pi*t),sin(pi*t))*length(a-Center(a,b))}  }$ 
+function 
+$GS(a,b)=let[c=Center(a,b)][aang = arg(a-c)][bang = arg(b-c)][totang = bang-aang] { func(t){  if (a_1=b_1) then {t*a + (1-t)*b} else {c + (cos(totang*t+aang),sin(totang*t+aang))*length(a-Center(a,b))}  } }$ 
+function 
+$kgUHP(X)=let[u=X_1][v=X_2]{ (2*u'*v'^2 + u'^3 - u'*v'^2 + v*cross2d(X',X''))/(v*sprimeUHP(X))^3 }$ 
+function 
+$clampUHP(x)=if (x_2 < 0) then (x_1, 0) else (if (x_2 > h) then (x_1,h) else (x))$ 
+function $TRISURF(a,b,c)=func(s,t){  GS(GS(a,b)(s), GS(a,c)(s))(t)  }$ function 
+$TRIBDY(a,b,c)=func(t){  if (t<1/3) then {GS(a,b)(t*3)} else {if (t<2/3) then {GS(b,c)(t*3-1)} else {GS(c,a)(t*3-2)}}  }$ 
+function 
+$LineInt(X,t0,t1)=integral(kgUHP(X)(t)*sprimeUHP(X)(t),t,t0,t1, LineIntSubdivs)$ 
+value $BHS=(-7.701583456295144 , 3.1841499496727734)$ value 
+$CHS=(3.7566340998985996 , 4.0)$ value 
+$AHS=(-1.4607242208955014 , 1.5115996745856692)$ function 
+$TRI(a,b,c)=TRIBDY(a,b,c)$ constant $B=BHS$ constant $C=CHS$ constant $A= AHS$ 
+interval $x2=B_1,C_1,30$ constant 
+$YellowArea= abs(arg(C-Center(B,C))-arg(B-Center(B,C)))$ constant 
+$Rbc= length(B-Center(B,C))$ constant $Rab=length(A-Center(A,B))$ constant 
+$AreaEuTri=let [Integ(p,q) = if (p_1 = q_1) then { 0 } else {let[v(u) = (p_2-q_2)/(p_1-q_1) * (u-p_1)+p_2]{integral(integral(1/y^2, y, v(u), N, AreaEuTriSubdivs), u, p_1,q_1)}}] {  abs(Integ(A,B) + Integ(B,C) + Integ(C,A))  }$ 
+interval $x1=A_1,B_1,30$ constant $Rca=length(C-Center(C,A))$ constant 
+$BlueArea= abs(arg(A-Center(A,C))-arg(C-Center(A,C)))$ function 
+$X(t)=TRIBDY(A,B,C)(t)$ constant 
+$RedArea= abs(arg(A-Center(A,B))-arg(B-Center(A,B)))$ interval $x3=C_1,A_1,30$ 
+interval 
+$y2=Center(B,C)_2 + length(B-Center(B,C))*sin(acos((x2-Center(B,C)_1)/Rbc)),h,h_res*scale(h)*9$ 
+interval 
+$y1=Center(A,B)_2 + length(A-Center(A,B))*sin(acos((x1-Center(A,B)_1)/Rab)),h,h_res*scale(h)*9$ 
+constant 
+$TriangleArea=abs(RedArea+BlueArea+YellowArea-2*max(RedArea,BlueArea,YellowArea))$ 
+interval 
+$y3=Center(C,A)_2 + length(C-Center(C,A))*sin(acos((x3-Center(C,A)_1)/Rca)),h,h_res*scale(h)*9$} 
+objects [{frame.2d obj0 {canvas {canvas.3d obj15 {tool 0.0 points true graph 
+{graph.3d obj16 {light false graph {plots [{plot.point obj5 {super {transpt $0$ 
+visible true addedz 6.0} color {coloring.constant obj17 {color [1.0 1.0 1.0 
+1.0]}} label C size 10.0 style 0.0 showlabel true dim 2.0 expr $CHS$}} 
+{plot.curve obj6 {super {super {transpt $0$ visible false addedz 0.0} color 
+{coloring.group obj18 {colors [{coloring.constant obj19 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $(s-0.5)*100, 0.5$} thick true}} 
+{plot.curve obj9 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj20 {colors [{coloring.constant obj21 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $(20*w,0)$} thick false}} 
+{plot.point obj7 {super {transpt $0$ visible true addedz 6.0} color 
+{coloring.constant obj22 {color [1.0 1.0 1.0 1.0]}} label A size 10.0 style 0.0 
+showlabel true dim 2.0 expr $AHS$}} {plot.curve obj11 {super {super {transpt 
+$0$ visible true addedz 4.0} color {coloring.group obj23 {colors 
+[{coloring.constant obj24 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $GS(B,C)(t)$} thick true}} {plot.curve obj12 {super {super {transpt 
+$0$ visible false addedz 0.0} color {coloring.constant obj25 {color [0.0 1.0 0.0 
+1.0]}} expr $X(t)$} thick true}} {plot.curve obj2 {super {super {transpt $0$ 
+visible true addedz 4.0} color {coloring.group obj26 {colors [{coloring.constant 
+obj27 {color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$GS(C,A)(t)$} thick true}} {plot.point obj8 {super {transpt $0$ visible true 
+addedz 6.0} color {coloring.constant obj28 {color [1.0 1.0 1.0 1.0]}} label B 
+size 10.0 style 0.0 showlabel true dim 2.0 expr $BHS$}} {plot.axes obj14 {super 
+{transpt $0$ visible false addedz 0.0} labels [$$ $$]}} {plot.wireframe obj1 
+{super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj29 
+{colors [{coloring.constant obj30 {color [1.0 1.0 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $x2,y2$} connect [true true] intervals [$x2$ $y2$] thick 
+false}} {plot.polygon obj10 {super {transpt $0$ visible true addedz 0.0} subdivs 
+1.0 color {coloring.group obj31 {colors [{coloring.constant obj32 {color [1.0 
+1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} vertices [$A$ $A_1,h$ $C_1,h$ 
+$C$ $C_1,h$ $B_1,h$ $B$] dim 2.0 title Polygon thick false}} {plot.wireframe 
+obj3 {super {super {transpt $0$ visible true addedz 2.0} color {coloring.group 
+obj33 {colors [{coloring.constant obj34 {color [1.0 0.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $x1,y1$} connect [true true] intervals [$x1$ $y1$] 
+thick false}} {plot.curve obj13 {super {super {transpt $0$ visible true addedz 
+4.0} color {coloring.group obj35 {colors [{coloring.constant obj36 {color [1.0 
+0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $GS(A,B)(t)$} thick true}} 
+{plot.wireframe obj4 {super {super {transpt $0$ visible true addedz 1.0} color 
+{coloring.group obj37 {colors [{coloring.constant obj38 {color [0.0 0.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $x3,y3$} connect [true true] 
+intervals [$x3$ $y3$] thick false}}]} alpha false scale 100.01271474132783 
+surfacemode 1.0 drawmode 1.0 transf [0.4005349387948112 0.0 0.0 
+80.51454766876992 0.0 0.4005349387948112 0.0 -128.55254643509323 0.0 0.0 
+0.4005349387948112 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [{hotspot obj39 
+{origin $0, 0$ entry CHS constraint $clampUHP(Point)$ cmode 1.0 cobjs []}} 
+{hotspot obj40 {origin $0, 0$ entry AHS constraint $clampUHP(Point)$ cmode 1.0 
+cobjs []}} {hotspot obj41 {origin $0, 0$ entry BHS constraint $clampUHP(Point)$ 
+cmode 1.0 cobjs []}}] drawmode 0.0}} graph {id obj16} frame {visible true plots 
+[{id obj1} {id obj2} {id obj3} {id obj4} {id obj5} {id obj6} {id obj7} {id obj8} 
+{id obj9} {id obj10} {id obj11} {id obj12} {id obj13} {id obj14}] title 
+$2D Graph$ labels [$ Wireframe: x2,y2$ $ Curve: GS(C,A)(t)$ $ Wireframe: x1,y1$ 
+$ Wireframe: x3,y3$ $ Point: CHS$ $ Curve: (s-0.5)*100, 0.5$ $ Point: AHS$ 
+$ Point: BHS$ $ Curve: (20*w,0)$ $ Polygon$ $ Curve: GS(B,C)(t)$ $ Curve: X(t)$ 
+$ Curve: GS(A,B)(t)$ $ Axes: , $]}}} {controls obj42 {constants [] intervals [] 
+objects [] readouts [{readout obj43 $RedArea$} {readout obj44 $TriangleArea$} 
+{readout obj45 $RedArea + BlueArea - YellowArea$} {readout obj46 $BlueArea$} 
+{readout obj47 $YellowArea$}] functions [] variables [h]}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d28.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Subsection 8.7.3: Poincar&eacute; Disk</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 437px; height: 413px;" alt="figure64" src="images/figure8-64.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet.class" width=302 height=35> <param name="NAME" value="The Poincare Disk">
+<param name="DATA" value="
+filever 100.0 env {function $X(u,v)=(cos(u)*cos(v),sin(u)*cos(v), sin(v))$ 
+interval $s= 0,1,12$ interval $w= 0,2, 12$ variable $b=-1,1,24$ 0.0 interval 
+$u= -pi, pi, 24$ interval $t= -pi,0,24$ variable $c= 0, 2*pi,24$ 
+5.497787143782138 variable $t0= -pi,0,24$ 0.0 interval $v=-pi/2,0, 24$ variable 
+$a= -pi/2,pi/2, 24$ -0.7853981633974483 function 
+$Rot(x,y,z)=(cos(c)*x + sin(c)*y, -sin(c)*x + cos(c)*y,z)$ function 
+$Y(t)=(cos(t)*cos(a), sin(a), sin(t)*cos(a))$ function 
+$Z(t)=(2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),-1)$ 
+function $W(t)=Rot(Y(t))$} objects [{frame.3d obj0 {canvas {canvas.3d obj4 {tool 
+100.0 points true graph {graph.3d obj5 {light true graph {plots [{plot.curve 
+obj2 {super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj6 {colors [{coloring.constant obj7 {color [0.0 1.0 0.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr 
+$Rot(2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),0.01)$} 
+thick true}} {plot.surface obj3 {intrpl true super {super {transpt $0$ visible 
+true addedz 0.0} color {coloring.group obj8 {colors [{coloring.constant obj9 
+{color [0.75 0.75 0.75 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(w*cos(u),w*sin(u), 0)$} vrtnml true}} {plot.curve obj1 {super {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.group obj10 {colors 
+[{coloring.constant obj11 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr 
+$(2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),0.01)$} 
+thick true}} {plot.axes obj12 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 
+1.0 transf [0.9999999999999998 6.938893903907228E-16 0.0 0.0 
+-5.551115123125783E-17 1.0000000000000002 0.0 0.0 -5.551115123125783E-17 
+4.85722573273506E-16 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 
+1.0}} graph {id obj5} frame {visible true plots [{id obj1} {id obj2} {id obj3}] 
+title $3D Graph$ labels 
+[$ Curve: (2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),0.01)$ 
+$ Curve: Rot(2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),0.01)$ 
+$ Surface: (w*cos(u),w*sin(u), 0)$]}}} {controls obj13 {constants [] intervals 
+[w v u t s] objects [] readouts [] functions [W Rot Z Y X] variables [b a $t0$ 
+c]}} {frame.3d obj14 {canvas {canvas.3d obj22 {tool 100.0 points true graph 
+{graph.3d obj23 {light true graph {plots [{plot.curve obj19 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj24 {color [0.0 
+1.0 0.0 1.0]}} expr 
+$Rot(2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),-1)$} 
+thick true}} {plot.curve obj20 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj25 {colors [{coloring.constant obj26 {color [0.0 
+1.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $Y(t)$} thick true}} 
+{plot.curve obj16 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj27 {colors [{coloring.constant obj28 {color [0.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),-1)$} thick 
+true}} {plot.surface obj15 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj29 {colors [{coloring.constant obj30 {color 
+[0.75 0.75 0.75 1.0]}}] opacities [0.38] mixings [0.0]}} expr $X(u,v) $} vrtnml 
+true}} {plot.curve obj21 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj31 {color [0.0 1.0 0.0 1.0]}} expr $W(t)$} thick 
+true}} {plot.axes obj32 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}} {plot.surface obj18 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj33 {colors [{coloring.constant obj34 {color 
+[0.75 0.75 0.75 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$(w*cos(u), w*sin(u),-1)$} vrtnml true}} {plot.curve obj17 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj35 {colors 
+[{coloring.constant obj36 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $ s*Y(t0) + (1-s)*Z(t0)$} thick true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [0.9244092488540188 
+0.38022748703723447 -0.029909843436781342 0.0 -0.04981091863100007 
+0.19810469490513774 0.9789143998540347 0.0 0.37813544268978494 
+-0.9034276882837894 0.20206929262980552 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 1.0}} graph {id obj23} frame {visible true plots [{id 
+obj15} {id obj16} {id obj17} {id obj18} {id obj19} {id obj20} {id obj21}] title 
+$Hemisphere to Poincaré Disc$ labels [$ Surface: X(u,v) $ 
+$ Curve: (2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),-1)$ 
+$ Curve:  s*Y(t0) + (1-s)*Z(t0)$ $ Surface: (w*cos(u), w*sin(u),-1)$ 
+$ Curve: Rot(2*cos(t)*cos(a)/(1 - sin(t)*cos(a)), 2*sin(a)/(1 - sin(t)*cos(a)),-1)$ 
+$ Curve: Y(t)$ $ Curve: W(t)$]}}}] 
+"></applet>
+<big><a href="helpdoc/Lovett8d29.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+
+<h3>Problem 8.7.8: Poincar&eacute; Half-Plane and the Pseudosphere</h3>
+<br>
+<div style="text-align: center;"> 
+<img alt="figure8-63" src="images/figure8-63.png">
+<br>
+<applet archive="Demo.jar" code="DemoApplet.class" width=302 height=35> 
+<param name="NAME" value="Pseudosphere"> <param name="DATA" value="
+filever 100.0 env {value $P=(0.8398293244522804 , 0.41516138805102937)$ function 
+$X(u,v)=(cos(u)*sin(v), sin(u)*sin(v), cos(v))$ interval $y= -8,3,48$ function 
+$Z(x,y)=(e^(-y)*cos(x), e^(-y)*sin(x), ln(1 + ( 1 - e^(-2*y))^(1/2))  + y   - ( 1 - e^(-2*y))^(1/2) ) $ 
+interval $x= -pi,pi,24$ variable $t0=-pi,pi,50$ 3.141592653589794} objects 
+[{controls obj0 {constants [] intervals [x y] objects [{plotcheckbox obj1 
+{values [] label $Show Entire Curve$ plots []}}] readouts [] functions [Z] 
+variables []}} {frame.3d obj2 {canvas {canvas.3d obj4 {tool 100.0 points true 
+graph {graph.3d obj5 {light true graph {plots [{plot.surface obj3 {intrpl true 
+super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj6 
+{colors [{coloring.expression obj7 {expr $(x + pi)/(2*pi)$}}] opacities [1.0] 
+mixings [0.0]}} expr $Z(x,y)$} vrtnml true}} {plot.axes obj8 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y z]}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [-1.460387012713698 
+0.26365258530467595 -0.039589381310151085 0.0 -0.09157286342342352 
+-0.28901325244567583 1.4532363821307295 0.0 0.25038852915977705 
+1.4320505877678167 0.3005776610000694 0.0 0.0 0.0 0.0 1.0]}} group null hotspots 
+[] drawmode 1.0}} graph {id obj5} frame {visible true plots [{id obj3}] title 
+$3D Graph$ labels [$ Surface: Z(x,y)$]}}}] 
+"></applet>
+<br>
+</div>
+<br>
+
+</td></tr>
+</table>
+</center>
+
+<BR><P><BR>
+Return to <a href="index.html">home page</a> <br>
+Continue to <a href="DiffGeoEd2Chap9.html">Chapter 9</a> <br><br>
+</body>
+</html>

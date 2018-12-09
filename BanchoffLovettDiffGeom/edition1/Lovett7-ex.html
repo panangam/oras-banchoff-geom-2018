@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Differential Geometry</title>
+  <link href="dgstyles.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+<!--
+function openwindow(lnk, nme)
+{
+if (! window.focus)return true;
+var href;
+if (typeof(lnk) == 'string')
+href=lnk;
+else
+href=lnk.href;
+window.open(href, nme, 'width=300,height=300,scrollbars=yes');
+return false;
+}
+//-->
+  </script>
+</head>
+<body>
+<p><br><br><br>
+<center>
+<h1>Chapter 7 &bull; The Fundamental Equations of Surfaces</h1>
+</center>
+<br>
+<br>
+<center>
+<table width=95% border=0 cellpadding="0" cellspacing="0">
+<tr><td>
+
+<h2>7.2: Gauss' Equations and the Christoffel Symbols</h2>
+<br>
+<h3>Definition 7.2.3: Christoffel Symbols</h3>
+<br>
+<div style="text-align: center;"> 
+<img style="width: 289px; height: 243px;" alt="figure1" src="figure7-1.png">
+<br>
+<br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"> <param name="NAME"
+ value="Christoffel Symbols"> <param name="DATA"
+ value="filever 100.0 env {value $C=(0.4166666666666667 , 0.04999364343755656)$ function 
+$X(u,v)=u,v,u^2-v^2$ interval $v=-1,1,24$ interval $u=-1,1,24$ function 
+$G22(u,v)=g22(X)(u,v)$ function $G11(u,v)=g11(X)(u,v)$ function 
+$G12(u,v)=g12(X)(u,v)$ function $G21(u,v)=g21(X)(u,v)$ function 
+$C1222(u,v)=(G22_v(u,v))/2$ function $C1122(u,v)=(G22_u(u,v))/2$ function 
+$C1212(u,v)=(G22_u(u,v))/2$ function $C1121(u,v)=(G11_v(u,v))/2$ function 
+$C1111(u,v)=(G11_u(u,v))/2$ function $C1211(u,v)=(G11_v(u,v))/2$ function 
+$GU21(u,v)=-G12(u,v)/(G11(u,v)*G22(u,v) - G12(u,v)^2)$ function 
+$GU11(u,v)=G22(u,v)/(G11(u,v)*G22(u,v) - G12(u,v)^2)$ function 
+$GU12(u,v)=-G12(u,v)/(G11(u,v)*G22(u,v) - G12(u,v)^2)$ function 
+$GU22(u,v)=G11(u,v)/(G11(u,v)*G22(u,v) - G12(u,v)^2)$ function 
+$C1112(u,v)=(2*G12_u(u,v) - G11_v(u,v))/2$ function 
+$C1221(u,v)=(2*G12_v(u,v) -G22_u(u,v))/2$ function 
+$C2121(u,v)=GU11(u,v)*C1211(u,v) + GU12(u,v)*C1212(u,v)$ function 
+$C2112(u,v)=GU11(u,v)*C1211(u,v) + GU12(u,v)*C1212(u,v)$ function 
+$C2221(u,v)=GU12(u,v)*C1121(u,v)+GU22(u,v)*C1122(u,v)$ function 
+$C2212(u,v)=GU12(u,v)*C1121(u,v)+GU22(u,v)*C1122(u,v)$ function 
+$C2211(u,v)=GU12(u,v)*C1111(u,v) + GU22(u,v)*C1112(u,v)$ function 
+$C2111(u,v)=GU11(u,v)*C1111(u,v) + GU12(u,v)*C1112(u,v)$ function 
+$C2222(u,v)=GU12(u,v)*C1221(u,v) + GU22(u,v)*C1222(u,v)$ function 
+$C2122(u,v)=GU11(u,v)*C1221(u,v) + GU12(u,v)*C1222(u,v)$} objects [{frame.3d 
+obj0 {canvas {canvas.3d obj4 {tool 100.0 points true graph {graph.3d obj5 {light 
+true graph {plots [{plot.axes obj6 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}} {plot.surface obj2 {intrpl true super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj7 {color [0.0 1.0 0.0 
+1.0]}} expr $u,v,C1122(u,v)$} vrtnml true}} {plot.surface obj3 {intrpl true 
+super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj8 
+{colors [{coloring.constant obj9 {color [0.0 0.0 1.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $u,v,C1112(u,v)$} vrtnml true}} {plot.surface obj1 {intrpl 
+true super {super {transpt $0$ visible true addedz 0.0} color {coloring.group 
+obj10 {colors [{coloring.constant obj11 {color [0.0 1.0 1.0 1.0]}}] opacities 
+[1.0] mixings [0.0]}} expr $u,v,C1222(u,v)$} vrtnml true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [0.32350337522318584 
+0.8839395970067494 0.3376334625933364 0.0 -0.20805072629332444 
+-0.2816410614441274 0.936692696564599 0.0 0.9230712115043118 
+-0.37326813599900416 0.09279244117807789 0.0 0.0 0.0 0.0 1.0]}} group {group 
+obj12 {graphs [{id obj13} {id obj14} {id obj5} {id obj15} {id obj16} {id obj17}] 
+canvases [{id obj18} {id obj19} {id obj4} {id obj20} {id obj21} {id obj22}]}} 
+hotspots [] drawmode 1.0}} graph {id obj5} frame {visible true plots [{id obj1} 
+{id obj2} {id obj3}] title $Projection onto X_v$ labels 
+[$ Surface: u,v,C1222(u,v)$ $ Surface: u,v,C1122(u,v)$ 
+$ Surface: u,v,C1112(u,v)$]}}} {frame.3d obj23 {canvas {canvas.3d obj20 {tool 
+100.0 points true graph {graph.3d obj15 {light true graph {plots [{plot.surface 
+obj25 {intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj26 {colors [{coloring.constant obj27 {color [1.0 0.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v,C2111(u,v)$} vrtnml true}} 
+{plot.axes obj28 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}} 
+{plot.surface obj24 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj29 {colors [{coloring.constant obj30 {color [1.0 
+0.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v,C2211(u,v)$} vrtnml 
+true}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[0.32350337522318595 0.8839395970067586 0.3376334625933289 0.0 
+-0.20805072629332758 -0.28164106144410894 0.9366926965645969 0.0 
+0.9230712115043089 -0.3732681359989917 0.0927924411780686 0.0 0.0 0.0 0.0 1.0]}} 
+group {id obj12} hotspots [] drawmode 1.0}} graph {id obj15} frame {visible true 
+plots [{id obj24} {id obj25}] title $X_uu Coefficients$ labels 
+[$ Surface: u,v,C2211(u,v)$ $ Surface: u,v,C2111(u,v)$]}}} {frame.3d obj31 
+{canvas {canvas.3d obj22 {tool 100.0 points true graph {graph.3d obj17 {light 
+true graph {plots [{plot.axes obj34 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}} {plot.surface obj32 {intrpl true super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj35 {colors [{coloring.constant 
+obj36 {color [1.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$u,v,C2112(u,v)$} vrtnml true}} {plot.surface obj33 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj37 {colors 
+[{coloring.constant obj38 {color [1.0 0.0 0.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $u,v,C2212(u,v)$} vrtnml true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [0.3235033752231832 
+0.8839395970067473 0.337633462593336 0.0 -0.20805072629332608 
+-0.28164106144411805 0.9366926965645931 0.0 0.923071211504312 
+-0.3732681359990204 0.0927924411780738 0.0 0.0 0.0 0.0 1.0]}} group {id obj12} 
+hotspots [] drawmode 1.0}} graph {id obj17} frame {visible true plots [{id 
+obj32} {id obj33}] title $X_uv Coefficients$ labels [$ Surface: u,v,C2112(u,v)$ 
+$ Surface: u,v,C2212(u,v)$]}}} {frame.3d obj39 {canvas {canvas.3d obj21 {tool 
+100.0 points true graph {graph.3d obj16 {light true graph {plots [{plot.surface 
+obj41 {intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj42 {colors [{coloring.constant obj43 {color [1.0 0.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v,C2222(u,v)$} vrtnml true}} 
+{plot.surface obj40 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj44 {colors [{coloring.constant obj45 {color [1.0 
+0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $u,v,C2122(u,v)$} vrtnml 
+true}} {plot.axes obj46 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[0.3235033752231816 0.8839395970067377 0.33763346259333826 0.0 
+-0.20805072629332466 -0.2816410614441187 0.9366926965645948 0.0 
+0.9230712115043085 -0.3732681359990438 0.09279244117807553 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj12} hotspots [] drawmode 1.0}} graph {id obj16} frame 
+{visible true plots [{id obj40} {id obj41}] title $X_vv Coefficients$ labels 
+[$ Surface: u,v,C2122(u,v)$ $ Surface: u,v,C2222(u,v)$]}}} {frame.3d obj47 
+{canvas {canvas.3d obj18 {tool 100.0 points true graph {graph.3d obj13 {light 
+true graph {plots [{plot.surface obj49 {intrpl true super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.group obj51 {colors [{coloring.constant 
+obj52 {color [0.0 0.0 1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$u,v,C1111(u,v)$} vrtnml true}} {plot.axes obj53 {super {transpt $0$ visible 
+true addedz 0.0} labels [x y z]}} {plot.surface obj48 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj54 {colors 
+[{coloring.constant obj55 {color [0.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $u,v,C1221(u,v)$} vrtnml true}} {plot.surface obj50 {intrpl true 
+super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj56 
+{colors [{coloring.constant obj57 {color [0.0 1.0 0.0 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $u,v,C1121(u,v)$} vrtnml true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [0.3235033752231792 
+0.8839395970067407 0.33763346259334137 0.0 -0.20805072629332616 
+-0.28164106144412115 0.9366926965645956 0.0 0.9230712115043167 
+-0.3732681359990235 0.09279244117808451 0.0 0.0 0.0 0.0 1.0]}} group {id obj12} 
+hotspots [] drawmode 1.0}} graph {id obj13} frame {visible true plots [{id 
+obj48} {id obj49} {id obj50}] title $Projection onto X_u$ labels 
+[$ Surface: u,v,C1221(u,v)$ $ Surface: u,v,C1111(u,v)$ 
+$ Surface: u,v,C1121(u,v)$]}}} {controls obj58 {constants [] intervals [] 
+objects [] readouts [] functions [X] variables []}} {frame.3d obj59 {canvas 
+{canvas.3d obj19 {tool 100.0 points true graph {graph.3d obj14 {light true graph 
+{plots [{plot.surface obj60 {intrpl true super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj61 {colors [{coloring.constant obj62 {color 
+[0.75 0.75 0.75 1.0]}}] opacities [1.0] mixings [0.0]}} expr $X(u,v)$} vrtnml 
+true}} {plot.axes obj63 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[0.3235033752231832 0.8839395970067461 0.33763346259333593 0.0 
+-0.2080507262933268 -0.2816410614441256 0.9366926965645924 0.0 
+0.9230712115043096 -0.37326813599901504 0.09279244117807689 0.0 0.0 0.0 0.0 
+1.0]}} group {id obj12} hotspots [] drawmode 1.0}} graph {id obj14} frame 
+{visible true plots [{id obj60}] title Surface labels [$ Surface: X(u,v)$]}}}] "></applet>
+<big><a href="Lovett7d1.html" onclick="return openwindow(this, 'Demo Help')" TARGET="_blank">[Help]</a></big>
+<br>
+</div>
+<br>
+
+</td></tr>
+</table>
+</center>
+
+<BR><P><BR>
+Return to <a href="index1.html">home page</a> <br>
+Continue to <a href="Lovett8-ex.html">Chapter 8</a> <br><br>
+</body>
+</html>

@@ -1,0 +1,8 @@
+The projective plane that is used to form the Cartan surface is given by the following faces:
+
+      124 125 134 136 156
+      235 236 246 345 456
+
+These are invariant under the symmetries (123)(456), (23)(56) and (13562).
+
+A copy of this is used in D+ and a corresponding copy in D-.  The slices of the 5-simplices that are formed by a triangle in one of the D's and an edge on the other are what form the polyhedral model of the Cartan surface.

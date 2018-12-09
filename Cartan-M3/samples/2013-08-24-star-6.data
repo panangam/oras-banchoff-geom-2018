@@ -1,0 +1,33 @@
+catch {::object::Cartan-M3/6D TypeIn MM Set {} 0}
+catch {::object::Cartan-M3/6D Slider s Set {0.00} 0}
+catch {::object::Cartan-M3/6D CheckBox schematic Set {1} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn FV Set {{3 246} {1 236} {5 136} {4 156} {2 456}
+
+{31 26} {15 36} {45 16} {42 56} {23 46}} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn outline Set {1/2} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox colored Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p1 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p2 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p3 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p4 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p5 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m6 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox light Set {0} 0}
+catch {::object::Cartan-M3/Panels/Info TypeIn Info Set {This shows the star of -6 broken up so that one face is in each of the five tetrahedra for the other numbers (joined by quadrilaterals where the triangles are split appart).
+
+Each red triangle has a vertex on the black tetrahedron corresponding to -6 (the star of -6 has been "exploded" so that its triangles are in the other tetrahedra).  
+
+The figure has two boundary curves:  one the boundary of the star, and one that should be filled in with a disk (filling in the exploded center).  The boundaries are linked.} 0}
+after idle {catch {
+  ::cs::GUI Display Cartan-M3
+  ::object::Cartan-M3 Update
+}}

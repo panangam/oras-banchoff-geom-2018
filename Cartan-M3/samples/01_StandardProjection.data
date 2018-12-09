@@ -1,0 +1,31 @@
+catch {::object::Cartan-M3/6D TypeIn MM Set {} 0}
+catch {::object::Cartan-M3/6D Slider s Set {0.00} 0}
+catch {::object::Cartan-M3/6D CheckBox schematic Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn FV Set {} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn outline Set {1/2} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox colored Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p1 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p2 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p3 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p5 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p6 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m1 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m2 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m3 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m4 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m6 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox light Set {1} 0}
+catch {::object::Cartan-M3/Panels/Info TypeIn Info Set {This is the standard projection of the slice of the cube-dual in six space.  It is an orthographic projection of 6-space to 3-space after rotating the object so that (1,1,1,1,1,1) is aligned with (0,0,0,0,0,1).
+
+Two 4-simplices are turned off, here, since they overlap ones already showing.  Specifically, 4 and 5 are projected to the same place, as are -4 and -5.
+
+Note that many of the 4-simplices are projected to tetrahedra, (i.e., the 5th vertex is hidden).  One can add rotations to try to separate these out.} 0}
+after idle {catch {
+  ::cs::GUI Display Cartan-M3
+  ::object::Cartan-M3 Update
+}}

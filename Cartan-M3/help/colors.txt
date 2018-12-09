@@ -1,0 +1,7 @@
+The colors of the simplices associated with the various vertices are set up so that you can use the colors to quickly identify the prisms and faces that you are interested in.  If you check the "Lighten negatives" box, then the simplices for the negative vertices will be colored using lighter (whiter) versions of their colors, so it will be easier to distinguish the positive from the negative simplices.
+
+So if you want a prism that goes between the white and red simplices (+1 and +2), and that has edges formed by the light green, light blue and light yellow simplices, (-3, -4, and -5), then you want {12 345}.  Remember that by default, not all the vertices have their simplices showing, so you might need to turn some on or off to find the numbers you are looking for.
+
+Note that if a prism is formed from an RP2 triangle in D+ it will be colored cyan, and if it is formed from an RP2 triangle in D- it will be violet.  If it is formed by a triangle that is NOT from RP2, it will be colored grey.  Clicking the "multi-colored" checkbox will cause the faces to be colored each a different color (and you will not be able to tell where they came from).
+
+If you request just a single square face (not a full prism), it will be colored grey (unless you select "multi-colored"), as it is not clear whether it is part of one of the RP2s or not.  Single triangles can be colored cyan or violet depending on the status of the triangle in D+ or D-.

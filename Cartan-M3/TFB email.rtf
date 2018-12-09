@@ -1,0 +1,110 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fswiss\fcharset77 Helvetica;\f1\fswiss\fcharset77 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww12680\viewh12660\viewkind0
+\deftab160
+\pard\tqr\tx2380\tx2400\pardeftab160\li2400\fi-2400\ql\qnatural
+
+\f0\fs28 \cf0 	
+\f1\b From: 
+\f0\b0 	  tfb@cs.brown.edu\
+\pard\tqr\tx2380\tx2480\pardeftab100\li2480\fi-2480\ql\qnatural
+\cf0 	
+\f1\b Subject: 
+\f0\b0 	
+\f1\b Cartan's M3\
+
+\f0\b0 	
+\f1\b Date: 
+\f0\b0 	June 16, 2004 11:04:11 PM EDT\
+\pard\tqr\tx2380\tx2400\pardeftab160\li2400\fi-2400\ql\qnatural
+\cf0 	
+\f1\b To: 
+\f0\b0 	  dpvc@union.edu\
+\pard\tqr\tx2380\tx2480\pardeftab100\li2480\fi-2480\ql\qnatural
+\cf0 	
+\f1\b X-Spambouncer: 
+\f0\b0 	1.9 (5/13/04)\
+	
+\f1\b X-Sbclass: 
+\f0\b0 	OK\
+	
+\f1\b X-Folder: 
+\f0\b0 	Default\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab160\ql\qnatural
+\cf0 Dear Davide,\
+	For a while I have been working on an example that Wolfgang\
+suggested last fall, most recently in conjunction with Linda Gruendken and\
+Mark Howison, two of the students working with me this summer.  The time\
+has come for some serious modeling and unfortunately David Eigen's\
+polyhedral software leaves something to be desired when it comes to\
+objects in higher dimensional space and/or with a high degree of symmetry.\
+	The object of study is a 3-manifold M constructed from 60\
+triangular prisms.  It sits naturally in the 4-sphere S4 obtained by\
+intersecting the boundary of the 6-dimensional cube dual CD6 spanned by Ei\
+and -Ei for i from 1 to 6 with the hyperplane H through the origin\
+perpendicular to (1,1,1,1,1,1), where Ei is the vector with 1 in the i\
+place and 0 otherwise.  The cells in S4 will be the intersections of H\
+with simplexes in CD6 which are the joins of non-empty simplexes in D+ and\
+disjoint simplexes in D-, the 5-simplex antipodal to D+.  For example\
+there are sixty vertices in S4 of the form (1/2)(Ei-Ej) with i and j\
+distinct.  We can denote this vertex by ij'.  We will get 120 edges of the\
+form ijk' or ij'k' with i, j, and k distinct.  There are 210 2-cells, of\
+three types: ijkl', ijk'l', and ij'k'l', 180 3-cells of the form ijklm'.\
+ijkl'm', ijk'l'm', and ij'k'l'm', and 62 4-cells of the form ijklmn',\
+ijklm'n', ijkl'm'n',ijk'l'm'n', and ij'k'l'm'n'.  It should be easy to\
+form the 1-skeleton of this object and project it into various\
+3-dimensional subspaces that can be manipulated on the screen.\
+	In fact it should be straightforward to project a slighly more\
+general example where the vertices are of the form (1-u)Ei + u(-Ej) = Ei\
+-u(Ei+Ej) with u going from 0 to 1.  All of these vertices have the sum of\
+the coordinates equal to 1 - 2u, so we go from D+ to D- as u goes from 0\
+to 1.\
+	The rule for constructing M is to start with a six-vertex\
+triangulation of RP2 given by 456; 134,215,326; 124,235,316; 156,264,345,\
+invariant under the action of the permutations (123)(456) and (23)(56)\
+which generate the automorphism group that sends the face 456 to itself.\
+The additional cycle (13562), together with (23)(56), generates the\
+subgroup that fixed the vertex 4, and the three permutations generate a\
+subgroup with 60 elements, of index 2 in the icosahedral group.  The\
+3-manifold M should have the same symmetry group so it should be easy to\
+construct if we have a system like StageTools that will make it possible\
+to group objects and apply transformations to all of them simultaneously,\
+a feature not apparent in David Eigen's setup.\
+	There is a natural embedding of this triangulation of RP2 into D+,\
+the 5-simplex in CD6 spanned by the six Ei.  The cells in S4 will be the\
+intersections of H with simplexes in CD6 which are the joins of non-empty\
+simplexes in D+ and disjoint simplexes in D-, the 5-simplex antipodal\
+to D+.  We can denote a cell in M\
+\
+\
+----\
+	Dear Davide,\
+	It was good to talk with you this afternoon, and to have a chance\
+to chat briefly with Kim.\
+	The above description was cut short by some interruption or other,\
+and I want to get it off to you this evening even though it requires more\
+work.  There is enough information in any case to construct the vertex set\
+and the full set of edges.  What I was about to point out is that the\
+2-cells in M are all the rectangular 2-cells of S4 but only the triangles\
+ijkl' where ijk is one of the ten triangles in RP2 and ij'k'l' where jkl\
+is a triangle in PR2.  The 3-cells in M are of the form ijkl'm' and\
+ijk'l'm', again where ijk and klm are triangles in RP2.\
+	It will be good to color the edges red that are of the form ijk'\
+and blue when they are of the form ij'k'.  The picture should be quite\
+interesting as u goes from 0 (will all fifteen edges red) to 1 (with all\
+edges blue).  Shading in the rectangles, each with two blue and two red\
+edges, will also be instructive I expect.  Showing the 3-prisms with red\
+triangles and blue heights as one group and those with red heights and\
+blue triangles should also be helpful.\
+	I think it will also be good to show those vertices and associated\
+edges that are below a certain height in a given direction lying in the\
+hyperplane with the sum of the coordinates equal to zero.  Other masking\
+techniques might also be useful, but those will have to be discovered.\
+	Thanks for your help, and for your suggestions.\
+\
+	Tom\
+\
+\
+}

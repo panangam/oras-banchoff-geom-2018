@@ -1,0 +1,29 @@
+catch {::object::Cartan-M3/6D TypeIn MM Set {} 0}
+catch {::object::Cartan-M3/6D Slider s Set {0.00} 0}
+catch {::object::Cartan-M3/6D CheckBox schematic Set {1} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn FV Set {} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn outline Set {1/2} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox colored Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p1 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p2 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p3 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p4 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p5 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m2 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m3 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m4 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m5 Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox light Set {0} 0}
+catch {::object::Cartan-M3/Panels/Info TypeIn Info Set {The standard Schematic representation of the central slice of the cube-dual in six space.
+
+Here, three 4-simplices have been turned off.  One is made from the outermost four vertices (plus the origin), another is made from the centers of the four large tetrahedra (and the origin), and the third is formed from the centers of the small tetrahedra.} 0}
+after idle {catch {
+  ::cs::GUI Display Cartan-M3
+  ::object::Cartan-M3 Update
+}}

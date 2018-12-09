@@ -1,0 +1,21 @@
+The edges and faces shown in the Geomview window are projections into three-space of the actual edges in 6-space.  The projection used is the orthographic projection that takes (x,y,z,u,v,w) to (x,y,z).  Before the projection is made, however, the object is rotated so that (1,1,1,1,1,1), the vector along the long diagonal, which is perpendicular to the slicing hyperplane, is parallel to (0,0,0,0,0,1).  This effectively means we are projecting along the long diagonal.
+
+Considerable overlapping occurs in this projection, as seen by the fact that many of the 4-simplicies project as tetrahedra (i.e., two vertices project to the same point).  Moreover, even when the simplex is projected generically, two distinct simplices may be projected to the same image.  This occurs, for example, with the ones that correspond to +4 and +5 and to -4 and -5 (this is why only one of each of these is shown by default).
+
+You can change the projection using the "Rotate" type-in area near the bottom of the Controls window.  Here, you can type a collection of rotations that you want to perform before the final projection.  For example, entering
+
+    XU(pi/6) YV(pi/6)
+
+would first apply a rotation that takes the y-axis toward the v-axis by an angle of pi/6 and then apply a rotation that takes the x-axis toward the u-axis by the same angle.  Rotation commands like this exist for all pairs of axes (e.g, XY, XW and UV).
+
+The special matrix "D()" can be used to "undo" the initial rotation that takes the long-diagonal to the vertical direction. 
+For example:
+
+    XU(pi/4) YV(pi/4) ZW(pi/4) D()
+
+first undoes the standard rotation and then applies the three new rotations.
+
+The D() command can also take an angle, which rotates the long diagonal toward the w-axis by the given angle.
+
+Finally, you can give an arbitrary rotation using R(v1,v2,a)
+where v1 and v2 are vectors in 6-space.  The vector v1 is rotated toward v2 by the angle a.

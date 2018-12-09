@@ -1,0 +1,40 @@
+The Cartan surface is made up of 120 triangular prisms (half the 240 that are part of the 4-sphere).  These come from slicing the 5-simplices that are formed from an edge in D+ and a triangle of RP2 in D-, or vice versa.  The square faces of these prisms come from slicing the tetrahedra formed by an edge in D+ and an edge in D-, and the triangles from slicing those formed by a vertex in one D and a triangle of RP2 in the other.
+
+You can view any or all of these prisms or faces by entering the desired 4-simplices in the "Show Faces Formed by" type-in area.  You do this by entering pairs of cells, one in D+ and one in D-, enclosed in braces.  For example, entering
+
+    {12 456}
+
+and pressing the "Enter" key on the keyboard (not "Return", but "Enter" on the keypad) would display the prism that stretches between the +1 and +2 simplices (white and red), whose triangles are between the -4, -5 and -6 simplices (blue, yellow and black).
+
+You can enter as many pairs as you wish.  For example,
+
+    {12 456} {123 45}
+
+gets you a second prism.
+
+You can get just a triangle, if you want, by making a pair that is just a vertex and a triangle, or a square by using a pair made from two edges.  You can get the three prisms that form a torus by giving a triangle in each D (since one will be in RP2 and the other not, you get a solid triangle cross a hollow triangle, i.e., a triangular torus).
+
+If you wish to pair the same cell in D+ with more than one cell in D-, you can do so by making the second item a list of cells enclosed in brackets.  For example:
+
+    {123 {4 5 6}} {246 {13 15}}
+
+would produce three triangles and two prisms.  Similarly, you can use a list as the first item, and can even do a list for both, in which case all pairs of one from the left with one from the right are used.
+
+Finally, if you give just a single triangle, not a pair, then the second element is taken to be its complement.  That is,
+
+    123
+
+is the same as
+
+    {123 456}
+
+and
+
+    123 124
+
+is the same as
+
+    {123 456} {124 356}
+
+
+Note that the faces of the prisms are shown with their centers removed.  You can control how much is shown using the "Portion to show" type-in near the bottom of the Controls window.  A value of 0 would show nothing, and a value of 1 would show all of the face (nothing removed).

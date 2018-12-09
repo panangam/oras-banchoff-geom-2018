@@ -1,0 +1,30 @@
+catch {::object::Cartan-M3/6D TypeIn MM Set {} 0}
+catch {::object::Cartan-M3/6D Slider s Set {0.00} 0}
+catch {::object::Cartan-M3/6D CheckBox schematic Set {1} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn FV Set {{234 156} /* red    */
+{23 456} /* green  */
+{24 136} /* blue   */
+{34 125} /* purple */} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn outline Set {1/3} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox colored Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox light Set {0} 0}
+catch {::object::Cartan-M3/Panels/Info TypeIn Info Set {This shows the "tower" torus together with the three prims from neighboring towers that attach to it (these are the large triangular ones in your cardboard model).  Note that they move around the torus in a spiral (green attaches on an inner face of the original torus,blue attaches to one of the outside faces, and purple to the other), just as in your model.} 0}
+after idle {catch {
+  ::cs::GUI Display Cartan-M3
+  ::object::Cartan-M3 Update
+}}

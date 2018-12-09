@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Lovett4d15</title>
+</head>
+<body>
+This demo displays a sphere and a curve on the sphere. <br><br>
+The length of the curve is given in a readout in the control
+window.<p>
+Changin the value of t0 moves the point P on the curve, and point Q is a distance
+from P along the curve determined by u0.  This distance from Q to P along the curve is given by the second readout.
+The distance from P to Q along the curve is given by the third readout.
+A midpoint between P and Q, M, is displayed on the sphere,
+as well as a red equator for which M is the north pole.
+<p>
+The checkbox X(u) displays the curve from Q to P, and the variable alpha will rotate the curve from 
+P to Q about the vector determined by M.
+<p>
+According to Horn's Lemma, if the length of the curve is less than 2&pi;, we can find a hemisphere
+such that the curve lies entirely within that.
+<p>
+This demo illustrates the idea of the proof in the following way.  For any t0, we can find a u0
+such that P and Q are exactly half way around the curve from each other.  Thus, with X(u) turned off,
+we are looking at a curve of at most lenght &pi;.  If any portion of the curve intersects the red equator,
+when changing the value of alpha to 0 to rotate the other half curve, the other half curve will intersect
+the equator at an antipodal point.  The distance between any two antipodal points is at least &pi;, thus 
+the lenght of the entire curve must be at least 2&pi;.  Therefore the curve of lenght less than 2&pi; will
+not intersect the equator.
+</body>
+
+</html>

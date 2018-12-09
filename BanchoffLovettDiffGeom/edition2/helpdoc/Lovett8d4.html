@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>curve on sphered</title>
+</head>
+<body>
+<p>One way to get a curve on a sphere of radius 1 is to take an arbitrary curve Y(t) in three-space not passing through the origin and define X(t) = unit(Y(t)). The curve X(t) then lies on the unit sphere and the normal to that sphere is N(t). We then get X(t)*X(t) = 1 so 2X'(t)*X(t) = 0 and 2X''(t)*X(t) + 2X'(t)*X'(t) but X''(t) = s''(t)T(t) + s'(t)2(kg(t)U(t) + kN(t)N(t)) so X''(t)*N(t) = s'(t)2kN(t) + s'(t)2 = 0 so kN(t) = -1 for all t. Moreover N'(t) = X'(t) = s'(t)T(t) so N'(t)*U(t) = 0 = ?g(t)s'(t) and ?g(t) = 0. 
+<ul>
+  <li>A sphere is specified in the control window, and its radius may
+be changed by changing the variable R.<br>
+  </li>
+  <li>A curve is displayed on the circle, and the curve is the
+projection of the curve x(t) onto the sphere.&nbsp; This projected
+curve is specified in the control window.<br>
+  </li>
+  <li>A point along this image curve is a white sphere specified by
+changing the value of t0.<br>
+  </li>
+  <li>The tangent vector at this point T is displayed in red.&nbsp; The
+normal vector N is displayed in blue.&nbsp; The U vector is displayed in magenta.</li>
+  <li>Readouts in the control window display the values of geodesic
+curvature, geodesic torsion, and normal curvature at the white point
+specified by t0.</li>
+  <li>Readouts in the control window display the total geodesic
+curvature, geodesic torsion, and normal curvature along the whole image
+curve.</li>
+  <li>The normal curvature along the whole curve is displayed in pink
+in the "Kn(t)" window.</li>
+  <li>The geodesic curvature along the whole curve is displayed in
+orange in the "Kg(t)" window.</li>
+  <li>The geodesic torsion along the whole curve is displayed in cyan
+in the "Tg(t)" window.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,97 @@
+filever 100.0 env {function $SP(x,y,u,v)=(x,y,u)/(1-v)$ function 
+$Z(alpha,beta,gamma)=(cos(alpha)*sin(gamma), sin(alpha)*sin(gamma), cos(beta)*cos(gamma), sin(beta)*cos(gamma))$ 
+function 
+$Sphere(theta,phi)=(cos(theta)*sin(phi), sin(theta)*sin(phi), cos(phi))$ 
+function $Circle(r,theta)=r*(cos(theta), sin(theta))$ function 
+$phiFunc(theta)=theta/2$ interval $zeroToOne=0,1,60$ interval $psi= 0,2*pi,40$ 
+interval $theta=0,2*pi,120$ variable $a= 0, 2*pi, 20$ 0.0 interval 
+$h= 0, 2*pi, 2$ interval $phi=0,pi,10$ function 
+$ReverseHopf(theta,phi,psi)=Z(theta+psi,psi,phi/2)$ function 
+$A(t)=integral(1-cos(phiFunc(theta)), theta, 0, t, 20)$ function 
+$L(t)=integral(sqrt(sin(phiFunc(theta))^2 + phiFunc_theta(theta)^2), theta, 0, t, 20)$ 
+function $rotate3xv(x,y,u,v)=(sin(a)*x+cos(a)*v, y, u, -sin(a)*v+cos(a)*x)$ 
+value $q2=(0.1907266378583551 , 0.0)$ function 
+$HopfTorus(theta,phi)=SP(rotate3xv(Z(theta+psi,psi,phi/2)))$ constant 
+$q2Y= q2*(0,1)$ constant $q2X= q2*(1,0)$ constant 
+$selTheta= atan(q2Y/q2X) + pi*(1-abs(q2X)/q2X)/2$ constant 
+$selPhi= sqrt(q2X^2 + q2Y^2)$} objects [{frame.3d obj0 {canvas {canvas.3d obj4 
+{tool 100.0 points true graph {graph.3d obj5 {light true graph {plots 
+[{plot.curve obj2 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj6 {colors [{coloring.constant obj7 {color [1.0 1.0 1.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $HopfTorus(selTheta, selPhi)$} 
+thick true}} {plot.surface obj3 {intrpl true super {super {transpt $0$ visible 
+false addedz 0.0} color {coloring.group obj8 {colors [{coloring.expression obj9 
+{expr $theta/2/pi$}}] opacities [1.0] mixings [0.0]}} expr 
+$HopfTorus(theta, phiFunc(theta))$} vrtnml true}} {plot.axes obj10 {super 
+{transpt $0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj1 
+{intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj11 {colors [{coloring.expression obj12 {expr $zeroToOne$}}] 
+opacities [1.0] mixings [0.0]}} expr $HopfTorus(0, zeroToOne*pi)$} vrtnml 
+true}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.14690099930114647 0.01564905100933941 0.26277078593205866 0.0 
+-0.17680186226257702 -0.22880769178321586 -0.08521398954304274 0.0 
+0.19502430678592228 -0.1956410736932906 0.1206787983836698 0.0 0.0 0.0 0.0 
+1.0]}} group {group obj13 {graphs [{id obj14} {id obj5}] canvases [{id obj15} 
+{id obj4}] rotonly false}} hotspots [] drawmode 1.0}} graph {id obj5} frame 
+{visible true plots [{id obj1} {id obj2} {id obj3}] title Surface labels 
+[$ Surface: HopfTorus(0, zeroToOne*pi)$ $ Curve: HopfTorus(selTheta, selPhi)$ 
+$ Surface: HopfTorus(theta, phiFunc(theta))$]}}} {frame.3d obj16 {canvas 
+{canvas.3d obj15 {tool 100.0 points true graph {graph.3d obj14 {light true graph 
+{plots [{plot.axes obj19 {super {transpt $0$ visible true addedz 0.0} labels [x 
+y z]}} {plot.field obj18 {super {transpt $0$ visible true addedz 0.0} intervals 
+[zeroToOne] plots [{plot.curve obj20 {super {super {transpt $0$ visible true 
+addedz 0.0} color {coloring.group obj21 {colors [{coloring.expression obj22 
+{expr $zeroToOne$}}] opacities [1.0] mixings [0.0]}} expr 
+$HopfTorus(0, zeroToOne*pi)$} thick false}}]}} {plot.curve obj17 {super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.group obj23 {colors 
+[{coloring.constant obj24 {color [1.0 1.0 1.0 1.0]}}] opacities [1.0] mixings 
+[0.0]}} expr $HopfTorus(selTheta, selPhi)$} thick true}}]} alpha true scale 
+100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [-0.14690099930114692 
+0.01564905100933956 0.2627707859320585 0.0 -0.17680186226257746 
+-0.22880769178321603 -0.08521398954304221 0.0 0.19502430678592234 
+-0.19564107369329098 0.12067879838367139 0.0 0.0 0.0 0.0 1.0]}} group {id obj13} 
+hotspots [] drawmode 1.0}} graph {id obj14} frame {visible true plots [{id 
+obj17} {id obj18}] title Circles labels [$ Curve: HopfTorus(selTheta, selPhi)$ 
+$ Field of Curve: HopfTorus(0, zeroToOne...$]}}} {frame.3d obj25 {canvas 
+{canvas.3d obj29 {tool 100.0 points true graph {graph.3d obj30 {light true graph 
+{plots [{plot.curve obj27 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj31 {colors [{coloring.constant obj32 {color [1.0 1.0 
+0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $Sphere(0, zeroToOne*pi)$} 
+thick true}} {plot.axes obj33 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y z]}} {plot.surface obj28 {intrpl true super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj34 {color [0.0 1.0 0.0 
+1.0]}} expr $Sphere(theta, phi)$} vrtnml true}} {plot.point obj26 {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj35 {color [1.0 
+1.0 1.0 1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 3.0 expr 
+$Sphere(selTheta, selPhi)$}}]} alpha true scale 100.01271474132783 surfacemode 
+3.0 drawmode 1.0 transf [-0.9938313147096597 -0.10662221045240487 
+0.03051265541880388 0.0 0.11083566080763388 -0.9644377594486387 
+0.23994846205596432 0.0 0.0038437216078788293 0.24185018583397844 
+0.9703059895807434 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] drawmode 1.0}} 
+graph {id obj30} frame {visible true plots [{id obj26} {id obj27} {id obj28}] 
+title $2Sphere$ labels [$ Point: Sphere(selTheta, selPhi)$ 
+$ Curve: Sphere(0, zeroToOne*pi)$ $ Surface: Sphere(theta, phi)$]}}} {frame.2d 
+obj36 {canvas {canvas.3d obj41 {tool 0.0 points true graph {graph.3d obj42 
+{light false graph {plots [{plot.wireframe obj37 {super {super {transpt $0$ 
+visible true addedz 0.0} color {coloring.constant obj43 {color [0.0 1.0 0.0 
+1.0]}} expr $Circle(phi, theta)$} connect [true true] intervals [phi theta] 
+thick false}} {plot.curve obj40 {super {super {transpt $0$ visible false addedz 
+0.0} color {coloring.group obj44 {colors [{coloring.constant obj45 {color [1.0 
+1.0 0.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr 
+$Circle(phiFunc(theta), theta)$} thick true}} {plot.axes obj46 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y]}} {plot.point obj38 {super {transpt 
+$0$ visible true addedz 0.0} color {coloring.constant obj47 {color [1.0 1.0 1.0 
+1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 2.0 expr $q2$}} 
+{plot.curve obj39 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj48 {colors [{coloring.constant obj49 {color [1.0 1.0 0.0 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $zeroToOne*pi*(1, 0)$} thick 
+true}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [0.3634931293300778 0.0 0.0 5.0663362704970325 0.0 0.3634931293300778 0.0 
+1.8951459939066666 0.0 0.0 0.3634931293300778 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [{hotspot obj50 {origin $0, 0$ entry $q2$ constraint $Point$ cmode 2.0 
+cobjs [{id obj39}]}}] drawmode 0.0}} graph {id obj42} frame {visible true plots 
+[{id obj37} {id obj38} {id obj39} {id obj40}] title $0,0 = North Pole$ labels 
+[$ Wireframe: Circle(phi, theta)$ $ Point: q2$ $ Curve: zeroToOne*pi*(1, 0)$ 
+$ Curve: Circle(phiFunc(theta), theta)$]}}} {controls obj51 {constants [selTheta 
+selPhi $q2Y$ $q2X$] intervals [h zeroToOne] objects [] readouts [] functions [L 
+A phiFunc Circle] variables [a]}}] 

@@ -1,0 +1,33 @@
+catch {::object::Cartan-M3/6D TypeIn MM Set {} 0}
+catch {::object::Cartan-M3/6D Slider s Set {0.00} 0}
+catch {::object::Cartan-M3/6D CheckBox schematic Set {1} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn FV Set {{234 156}  /* red    */
+
+{346 125}  /* green  */
+{236 145}  /* blue   */
+{246 135}  /* purple */} 0}
+catch {::object::Cartan-M3/6D/Prisms TypeIn outline Set {1/3} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox g3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Prisms CheckBox colored Set {1} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox p6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m1 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m2 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m3 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m4 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m5 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox m6 Set {0} 0}
+catch {::object::Cartan-M3/6D/Edges CheckBox light Set {0} 0}
+catch {::object::Cartan-M3/Panels/Info TypeIn Info Set {This is the original red tower torus with the three tori formed on the final three sides.  (Along the {34 15}, {23 15} and {24 15} faces.)
+
+Again, the symmetry is not exact, since the blue and purple tori are attached along their small triangular ends, while the green one has that as its "hole".} 0}
+after idle {catch {
+  ::cs::GUI Display Cartan-M3
+  ::object::Cartan-M3 Update
+}}

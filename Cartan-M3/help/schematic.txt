@@ -1,0 +1,10 @@
+Because it is difficult to find a projection that adequately separates the various 4-simplices that make up the object we are viewing, an alternative, more schematic, view is also provided.  You can obtain it by selecting "Schematic layout" below the vertex checkboxes, and then pressing the "Standard" button to select the appropriate vertices for this view.
+
+The schematic view is not a projection, but is an attempt to make more of the object viewable without overlaps (though it is not entirely successful at this).  The layout is as follows.  At the center is the white 4-simplex for vertex +1 shown as a regular tetrahedron with a vertex at the center.  On its four sides, but separated from it, are the simplices for +2, +3, +4, and +5 (the tetrahedral prisms connecting these would lie in between).  The simplex for +6 will be discussed in a moment.
+(You can turn off all the vertices and add them in one by one to make this clearer.)
+
+Now we can position several of the simplices for negative vertices.  For example, -2, -3, -4 and -5 are formed by joining the appropriate vertices of the simplices for the positive vertices.  Together, these form a collection of terahedra touching at their vertices, and accounts for all but +6, -1 and -6.
+
+To form the simplex associated with -6, we join the centers of all the tetrahedra from the positive vertices.  (Check the box for -6 to see this.)
+
+The simplex for -1 should join the outermost vertices of the large simplices (the ones for +2, +3, +4 and +5), and we should put its fifth vertex at the center if we want a symmetric picture.  This represents the only overlapping of vertices within this view.  (Alternatively, we could put that vertex "at infinity", but that is not easy to do in CenterStage.)  Finally, the simplex for +6 has its vertices at the centers of the five negative simplices.  Check the boxes for these two vertices to see the final picture.  Note that some edges overlap in this view.  (Moving the centers of -1/+6 to one side, breaking the symmetry, would separate these edges.)

@@ -1,0 +1,490 @@
+<HTML>
+<HEAD>
+<TITLE>Applets Tutorial</TITLE>
+<LINK href="dgstyles.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+<!--
+function openwindow(lnk, nme)
+{
+if (! window.focus)return true;
+var href;
+if (typeof(lnk) == 'string')
+href=lnk;
+else
+href=lnk.href;
+window.open(href, nme, 'width=300,height=300,scrollbars=yes');
+return false;
+}
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+<p><br><br><br>
+<center>
+<h1>Applets Tutorial</h1>
+</center>
+<br>
+<br>
+<center>
+<table width=95% border=0 cellpadding="0" cellspacing="0">
+<tr><td>
+
+<h2>Basic Functionality for One Variable</h2>
+
+This section is divided into three lessons.<br>
+<br>
+
+<h3>Lesson 1: Viewing a 2D Graph</h3><br>
+
+<img style="width: 302px; height: 213px;" alt="Figure1" src="mvcfigure1-0-1.jpg"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lesson 1: Using a 2D Graph"> <param name="DATA"
+ value="filever 100.0 env {function $f(x)=x^2$ interval $x= -1,1,20$} objects [{frame.2d 
+obj0 {canvas {canvas.3d obj2 {tool 0.0 points true graph {graph.3d obj3 {light 
+false graph {plots [{plot.axes obj4 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y]}} {plot.curve obj1 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj5 {colors [{coloring.constant obj6 {color [1.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $x, f(x)$} thick true}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 
+0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] 
+drawmode 0.0}} graph {id obj3} frame {visible true plots [{id obj1}] title 
+$2D Graph$ labels [$ Curve: x, f(x)$]}}} {controls obj7 {constants [] intervals 
+[] objects [] readouts [] functions [f] variables []}}] "></applet>
+<br>
+<p>This demo includes two windows: a control window (which contains the
+equation for <tt>f(x, y)</tt> in this case) and a 2D Graph window. You
+may find it useful to adjust the size of the graph window.
+</p>
+<p>Once you are comfortable with the window size, you can translate or
+zoom in or out to change your view of the 2D graph.
+</p>
+<p>To translate, select <b>Translate</b> from the <b>Tools</b> menu
+or hold down Alt. Click and drag in the direction you want to translate
+the graph.
+</p>
+<p>To zoom, select <b>Zoom</b> from the <b>Tools</b> menu or hold
+down Shift. Click and drag upward to zoom in or drag downward to zoom
+out.
+</p>
+When you are finished using the demo, you can exit by closing the
+control window or by selecting <b>Exit Demo</b> from the <b>Demo</b>
+menu in the control window.</p>
+
+<br>
+<p>
+<br>
+<h3>Lesson 2: Using the Control Window</h3><br>
+<img style="width: 471px; height: 179px;" alt="Figure2" src="mvcfigure1-0-2.jpg"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lesson 2: Using the Control Window"> <param
+ name="DATA"
+ value="filever 100.0 env {function $f(x)=x^2$ interval $x= -1,1,20$} objects [{frame.2d 
+obj0 {canvas {canvas.3d obj2 {tool 0.0 points true graph {graph.3d obj3 {light 
+false graph {plots [{plot.axes obj4 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y]}} {plot.curve obj1 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj5 {colors [{coloring.constant obj6 {color [1.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $x, f(x)$} thick true}}]} alpha 
+false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 0.0 0.0 
+0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null hotspots [] 
+drawmode 0.0}} graph {id obj3} frame {visible true plots [{id obj1}] title 
+$2D Graph$ labels [$ Curve: x, f(x)$]}}} {controls obj7 {constants [] intervals 
+[x] objects [] readouts [] functions [f] variables []}}] "></applet>
+
+<p>The control window in this demo includes two elements: the interval <tt>x</tt> and the function <tt>f(x)</tt>. </p> <p>Each time you change the information in a text box in the control window, you must press Enter for the change to take effect. </p> <p>For example, suppose you wanted to view the graph from <tt>x</tt> =
+&#8211;1 to 2 instead of &#8211;1 to 1. To do this, you would type in "2" in the
+text box for the upper bound of <tt>x</tt> and press Enter. </p> <p>In this demo, you have the option of changing the bounds on <tt>x</tt>, the resolution for <tt>x</tt>, and the expression for the function <tt>f(x)</tt>. (See the <a href="#builtin">table below</a> for a list of some useful built-in functions.) </p> To save the altered demo (don't worry, this won't overwrite the old one), select <b>Show Applet Tag</b> from the <b>Demo</b> menu in the control window. Copy the HTML code that appears, and paste it in your response to a homework assignment or discussion. This will create a button in your response that leads to your version of the demo.</p>
+<br>
+<p>
+<br>
+<h3>Lesson 3: Variables and Expressions</h3><br>
+<img style="width: 302px; height: 213px;" alt="Figure3" src="mvcfigure1-0-3.jpg"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lesson 3: Variables and Expressions"> <param
+ name="DATA"
+ value="filever 100.0 env {variable $c= -1, 1, 20$ -1.0 constant $a= 1$ interval 
+$x= -1,1,20$ function $f(x)=a*x^2$} objects [{controls obj0 {constants [a] 
+intervals [x] objects [] readouts [] functions [f] variables [c]}} {frame.2d 
+obj1 {canvas {canvas.3d obj4 {tool 0.0 points true graph {graph.3d obj5 {light 
+false graph {plots [{plot.axes obj6 {super {transpt $0$ visible true addedz 0.0} 
+labels [x y]}} {plot.curve obj3 {super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj7 {colors [{coloring.constant obj8 {color [1.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $x, f(x)$} thick true}} 
+{plot.curve obj2 {super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.constant obj9 {color [0.0 1.0 0.0 1.0]}} expr $x, c$} thick true}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 
+0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj5} frame {visible true plots [{id obj2} 
+{id obj3}] title $2D Graph$ labels [$ Curve: x, c$ $ Curve: x, f(x)$]}}}] "></applet>
+
+
+<p>In these demos, an expression can be assigned a constant or variable value and can then be used in any formula or plot in the demo. Here, the constant is called <tt>a</tt>, and it represents the magnitude of a vertical stretch of the graph. Try changing its value. You can change it to any number or to any expression involving <tt>c</tt>, the only variable used in this demo. </p> 
+<p>Variables in the demos, like intervals, are given minimum and maximum values. Instead of having resolution, however, variables have "steps." If you start a variable at its minimum value, the amount of times you would have to press the "&gt;" button to get to the maximum value would be equal to the number of steps for the variable.</p>
+<p>Just as the "&gt;" button increases the variable value by one step,
+the "&lt;" button decreases the value by one step.</p>
+<p>To see an animation in which the variable value keeps increasing
+or keeps decreasing until it reaches its upper or lower bound, use the
+"&gt;&gt;" or "&lt;&lt;" button, respectively.</p>In this example, the variable <tt>c</tt> represents the altitude of the green line in the 2D Graph window.
+<p><br>
+<hr width="60%">
+<p><br>
+
+
+
+
+<h2>Basic Functionality for Two Variables</h2>
+
+This section is divided into three lessons.<br>
+<br>
+
+<h3>Lesson 1: Viewing a 3D Graph</h3><br>
+
+<img style="width: 302px; height: 214px;" alt="Figure1"  src="mvcfigure2-0-1.jpg"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lesson 1: Using a 3D Graph"> <param name="DATA"
+ value="filever 100.0 env {function $f(x,y)=x^2 - y^2$ interval $x= -1, 1, 20$ interval 
+$y= -1, 1, 20$} objects [{controls obj0 {constants [] intervals [] objects [] 
+readouts [] functions [f] variables []}} {frame.3d obj1 {canvas {canvas.3d obj3 
+{tool 100.0 points true graph {graph.3d obj4 {light true graph {plots 
+[{plot.surface obj2 {intrpl true super {super {transpt $0$ visible true addedz 
+0.0} color {coloring.group obj5 {colors [{coloring.constant obj6 {color [0.75 
+0.75 0.75 1.0]}}] opacities [1.0] mixings [0.0]}} expr $x, y, f(x, y)$} vrtnml 
+true}} {plot.axes obj7 {super {transpt $0$ visible true addedz 0.0} labels [x y 
+z]}}]} alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.22720209469308705 0.9738476308781951 2.0816681711721685E-17 0.0 
+-0.5261721205277138 -0.12275781566074648 0.8414709848078965 0.0 
+0.8194645250079117 0.1911839703718094 0.5403023058681397 0.0 0.0 0.0 0.0 1.0]}} 
+group null hotspots [] drawmode 1.0}} graph {id obj4} frame {visible true plots 
+[{id obj2}] title $3D Graph$ labels [$ Surface: x, y, f(x, y)$]}}}] "></applet>
+<p>
+This demo includes two windows: a control window (which contains the
+equation for <tt>f(x, y)</tt> in this case) and a 3D Graph window. You may find it useful to adjust the size of the graph window.</p> 
+<p>Once you are comfortable with the window size, you can rotate,
+translate, or zoom in or out to change your view of the 3D graph.</p> 
+<p>To rotate, select <b>Rotate</b> from the <b>Tools</b> menu or hold down Control (hold
+down [Apple] if you are using a Mac). Now, click and drag the mouse in the direction you want the part of the graph closest to you to move.</p> 
+<p>To translate, select <b>Translate</b> from the <b>Tools</b> menu or hold down Alt.
+Click and drag in the direction you want to translate the graph.</p> 
+<p>To zoom, select <b>Zoom</b> from the <b>Tools</b> menu or hold down Shift. Click and
+drag upward to zoom in or drag downward to zoom out.<br>
+<br>
+To return to the default view, press [space bar] or select <b>Default</b> from the <b>View</b> menu.</p> 
+<p>There are six other preset viewing angles under the <b>View</b> menu, each from some position on one of the axes. The shortcut keys for these views are x, y, z, Shift + x, Shift + y, and Shift + z. The shift button
+gives you a view from a point on the negative-valued part of the axis. Otherwise, the view will be from a positive-valued point.</p> 
+<p>When you are finished using the demo, you can exit by closing the control window or by selecting <b>Exit Demo</b> from the <b>Demo</b> menu in the control window.</p>
+<br>
+<p>
+<br>
+<h3>Lesson 2: Using the Control Window</h3><br>
+<img style="width: 302px; height: 206px;" alt="Figure2" src="mvcfigure2-0-2.jpg"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lesson 2: Using the Control Window"> <param
+ name="DATA"
+ value="filever 100.0 env {interval $x= -1, 1, 20$ function $f(x,y)=x^2 - y^2$ interval 
+$y= -1, 1, 20$} objects [{frame.3d obj0 {canvas {canvas.3d obj2 {tool 100.0 
+points true graph {graph.3d obj3 {light true graph {plots [{plot.surface obj1 
+{intrpl true super {super {transpt $0$ visible true addedz 0.0} color 
+{coloring.group obj4 {colors [{coloring.constant obj5 {color [0.75 0.75 0.75 
+1.0]}}] opacities [1.0] mixings [0.0]}} expr $x, y, f(x, y)$} vrtnml true}} 
+{plot.axes obj6 {super {transpt $0$ visible true addedz 0.0} labels [x y z]}}]} 
+alpha true scale 100.01271474132783 surfacemode 3.0 drawmode 1.0 transf 
+[-0.22720209469308705 0.9738476308781951 2.0816681711721685E-17 0.0 
+-0.5261721205277138 -0.12275781566074648 0.8414709848078965 0.0 
+0.8194645250079117 0.1911839703718094 0.5403023058681397 0.0 0.0 0.0 0.0 1.0]}} 
+group null hotspots [] drawmode 1.0}} graph {id obj3} frame {visible true plots 
+[{id obj1}] title $3D Graph$ labels [$ Surface: x, y, f(x, y)$]}}} {controls 
+obj7 {constants [] intervals [x y] objects [] readouts [] functions [f] 
+variables []}}] "></applet>
+<p>
+The control window in this demo includes three elements: the intervals <tt>x</tt> and <tt>y</tt> and the function <tt>f(x, y)</tt>.</p> 
+<p>Each time you change the information in a text box in the control
+window, you must press Enter for the change to take effect.<br>
+<br>
+For example, suppose you wanted to view the graph from x = &#8211;1 to 2 instead of &#8211;1 to 1. To do this, you would type in "2" in the text box for the upper bound of <tt>x</tt> and press Enter.</p> 
+<p>In this demo, you have the option of changing the bounds on <tt>x</tt>  and <tt>y</tt>, the resolution for <tt>x</tt> and <tt>y</tt>, and the expression for the function <tt>f(x, y)</tt>. (See the <a href="#builtin">table below</a> for a list of some useful built-in functions.)</p> 
+<p>To save the altered demo (don't worry, this won't overwrite the old
+one), select <b>Show Applet Tag</b> from the <b>Demo</b> menu in the Ccontrol window. Copy the HTML code that appears, and paste it in your response to a homework assignment or discussion. This will create a button in your response that leads to your version of the demo.</p>
+<br>
+<p>
+<br>
+<h3>Lesson 3: Variables and Expressions</h3><br>
+<img style="width: 302px; height: 213px;" alt="Figure3" src="mvcfigure2-0-3.jpg"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lesson 3: Variables and Expressions"> <param
+ name="DATA"
+ value="filever 100.0 env {interval $x= -1, 1, 20$ variable $c= -1, 1, 20$ -1.0 interval 
+$y= -1, 1, 20$ constant $a=1$ function $f(x,y)=a*x^2 - a*y^2$} objects 
+[{frame.3d obj0 {canvas {canvas.3d obj3 {tool 100.0 points true graph {graph.3d 
+obj4 {light true graph {plots [{plot.surface obj2 {intrpl true super {super 
+{transpt $0$ visible true addedz 0.0} color {coloring.constant obj5 {color [0.0 
+1.0 0.0 1.0]}} expr $x, y, c$} vrtnml true}} {plot.axes obj6 {super {transpt 
+$0$ visible true addedz 0.0} labels [x y z]}} {plot.surface obj1 {intrpl true 
+super {super {transpt $0$ visible true addedz 0.0} color {coloring.group obj7 
+{colors [{coloring.constant obj8 {color [0.75 0.75 0.75 1.0]}}] opacities [1.0] 
+mixings [0.0]}} expr $x, y, f(x, y)$} vrtnml true}}]} alpha true scale 
+100.01271474132783 surfacemode 3.0 drawmode 1.0 transf [-0.22720209469308703 
+0.973847630878195 6.938893903907228E-18 0.0 -0.5261721205277138 
+-0.12275781566074659 0.8414709848078964 0.0 0.8194645250079117 
+0.19118397037180923 0.5403023058681398 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 1.0}} graph {id obj4} frame {visible true plots [{id obj1} 
+{id obj2}] title $3D Graph$ labels [$ Surface: x, y, f(x, y)$ 
+$ Surface: x, y, c$]}}} {controls obj9 {constants [a] intervals [x y] objects [] 
+readouts [] functions [f] variables [c]}}] "></applet>
+<p>
+In these demos, an expression can be assigned a constant or variable value and can then be used in any formula or plot in the demo. Here, the constant is called <tt>a</tt>, and it represents the magnitude of a vertical stretch of the graph (along the z-axis). Try changing its value. You can change it to any number or to any expression involving <tt>c</tt>, the only variable used in this demo.</p> 
+<p>Variables in these demos, like intervals, are given minimum and maximum
+values. Instead of having resolution, however, variables have "steps." If you started a variable at its minimum value, the amount of times you would have to press the "&gt;" button to get to the maximum value would
+be equal to the number of steps for the variable.</p> 
+<p>Just as the "&gt;" button increases the variable value by one step, the
+"&lt;" button decreases the value by one step.</p> 
+<p>To see an animation in which the variable value keeps increasing or keeps decreasing until it reaches its upper or lower bound, use the "&gt;&gt;" or "&lt;&lt;" button, respectively.</p> 
+<p>In this example, the variable <tt>c</tt> represents the altitude of the green plane in the 3D Graph window.</p>
+<p><br>
+<hr width="60%">
+<p><br>
+<a name="builtin"></a>
+<h2>Built-in Functions and Constants for Demo Software</h2>
+<center>
+<table width="60%" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <th>Notation</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">pi <br></td>
+      <td style="vertical-align: top;">&#960; = 3.14159265 <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">e <br></td>
+      <td style="vertical-align: top;">2.71828183 <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">+ - * / <br></td>
+      <td style="vertical-align: top;">Standard arithmetic functions. Warning: Always put a * in between two values you want mulitplied.<p>Always remember your order of operations and use parentheses as
+necessary. </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">x^n <br></td>
+      <td style="vertical-align: top;">x<sup>n</sup> <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">ln(x) <br></td>
+      <td style="vertical-align: top;">Natural log (log base e) of x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">a^x <br></td>
+      <td style="vertical-align: top;">a<sup>x</sup> <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sin(x) <br></td>
+      <td style="vertical-align: top;">Sine of x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">cos(x) <br></td>
+      <td style="vertical-align: top;">Cosine of x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">tan(x) <br></td>
+      <td style="vertical-align: top;">Tangent of x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">asin(x) <br></td>
+      <td style="vertical-align: top;">Arcsine or inverse sine of x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">acos(x) <br></td>
+      <td style="vertical-align: top;">Arccosine or inverse cosine of x</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">atan(x) <br></td>
+      <td style="vertical-align: top;">Arctangent or inverse tangent of <tt>x</tt> <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sinh(x) <br></td>
+      <td style="vertical-align: top;">Hyperbolic sine of x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">cosh(x) <br></td>
+      <td style="vertical-align: top;">Hyperbolic cosine of x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">tanh(x) <br></td>
+      <td style="vertical-align: top;">Hyperbolic tangent of x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sqrt(x) <br></td>
+      <td style="vertical-align: top;">&#8730;x <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">abs(x) <br></td>
+      <td style="vertical-align: top;">|x| <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">f'(x) <br></td>
+      <td style="vertical-align: top;">The first derivative of f(x)<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">f''(x)<br></td>
+      <td style="vertical-align: top;">The second derivative of f(x)<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">integral(integrand, variable,lower, upper, [resolution]) <br></td>
+      <td style="vertical-align: top;">The integral of integrand with respect to variable from lower to upper bound: e.g., for <tt>&#8747;<sub>0</sub><sup>1</sup>x<sup>2</sup>dx</tt>, type integral(x^2, x, 0, 1)<p>The resolution is an optional input that can be used to increase the accuracy of the integral approximation. <br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">t_max<br></td>
+      <td style="vertical-align: top;">The maximum value of the variable or interval t<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">t_min<br></td>
+      <td style="vertical-align: top;">The minimum value of the variable or interval t<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">t_res<br></td>
+      <td style="vertical-align: top;">The number of steps of the variable or interval t<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">scale(t)<br></td>
+      <td style="vertical-align: top;">Converts the value of t to a point in the 0&#8211;1 range<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">ipart(x)<br></td>
+      <td style="vertical-align: top;">The integer part of x<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">fpart(x)<br></td>
+      <td style="vertical-align: top;">The fractional part of x<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">max(a,b,...,h)<br></td>
+      <td style="vertical-align: top;">The maximal element of the set<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">min(a,b,....,h)<br></td>
+      <td style="vertical-align: top;">The minimal element of the set<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">random<br></td>
+      <td style="vertical-align: top;">A random number (Note that this takes no argument)<br></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">and, or, &lt;, &gt;, =, true, false<br></td>
+      <td style="vertical-align: top;">Logical operators that return 1 if true and 0 if false<br></td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<p><br>
+<hr width="60%">
+<p><br>
+
+
+
+
+<h2>Extending an Applet's Functionality</h2>
+
+This tutorial is divided into two lessons.
+
+<br>
+<p>
+<br>
+<h3>Lesson 1: Adding Elements to a Demo</h3><br>
+
+<img style="width: 302px; height: 238px;" alt="Figure4" src="mvcfigure1-0-4.jpg"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lesson 1: Adding Elements to a Demo"> <param
+ name="DATA"
+ value="filever 100.0 env {} objects [{controls obj0 {constants [] intervals [] objects 
+[] readouts [] functions [] variables []}}] "></applet>
+
+<p>
+The ability to add and remove features of a given demo is a particularly nice feature of these demos.  We show how to add features by starting with a ''blank'' demo, which has no predefined elements.
+<p>Suppose that we wish to plot the graph of a function <tt>f(t) = t<sup>3</sup></I></tt> for <tt>t</tt> in the interval <tt>[0,3]</tt>.  We would take the following steps:
+  <ol>
+  <li>Under the <b>Controls</b> menu, select  <b>Add New Interval</b>.  In the new window that pops up, type in <tt>t=0,3,20</tt>, where we have chosen 20 as a number of subintervals for the resolution.  (This controls how smoothly values are sampled from the interval.)  Click <b>OK</b>.
+  <li>Next, under the <b>Controls</b> menu,  select  <b>Add New Function</b>. For the proposed function,  type <tt>f(t)=t^3</tt> in the text area.  Click <b>OK</b>.
+  <li>Under the <b>Controls</b> menu,  select  <b>New 2D Graph</b>.  Immediately another window appears, but it is empty, except for the axes.
+  <li>In this new window, select <b>Plot</b> &rarr; <b>Add Plot</b> &rarr; <b>Curve</b>.
+  <li>In the first panel, following the and type in a parametric curve.  For our example, type in <tt>(t,f(t))</tt>.
+  <li>The second panel contains options for defining the color of the curve, including coloring by a gradient of some other function. We leave the interested reader to explore these options. Click <b>OK</b>.
+  </ol>
+<p>Now that the demo has been created (modified), one can change the interval for <tt>t</tt> or the function <tt>f(t)</tt> in the control window.</p>
+
+
+<br>
+<p>
+<br>
+<h3>Lesson 2: Using Hotspots</h3><br>
+<img style="width: 302px; height: 213px;" alt="Figure5" src="mvcfigure1-0-5.jpg"><br>
+<applet archive="Demo.jar" code="DemoApplet" height="50" width="400"><param
+ name="NAME" value="Lesson 2: Using Hotspots"> <param
+ name="DATA"
+ value="filever 100.0 env {constant $a= 1$ interval $x= -1,1,20$ value $C=(0.0 , 0.0)$ 
+function $f(x)=a*x^2$} objects [{frame.2d obj0 {canvas {canvas.3d obj3 {tool 0.0 
+points true graph {graph.3d obj4 {light false graph {plots [{plot.vector obj2 
+{base $0,-1$ endstyle 0.0 dir $0,2$ color {coloring.constant obj5 {color [1.0 
+1.0 1.0 1.0]}} dim 2.0 thick false basestyle 0.0 subdivs 1.0 len 1.0 basesize 
+10.0 super {transpt $0$ visible true addedz 0.0} endsize 10.0}} {plot.axes obj6 
+{super {transpt $0$ visible false addedz 0.0} labels [x y]}} {plot.point obj1 
+{super {transpt $0$ visible true addedz 0.0} color {coloring.constant obj7 
+{color [1.0 1.0 1.0 1.0]}} label $$ size 10.0 style 0.0 showlabel false dim 2.0 
+expr $C$}}]} alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 
+transf [1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group 
+null hotspots [{hotspot obj8 {origin $0, 0$ entry C constraint $Point$ cmode 2.0 
+cobjs [{id obj2}]}}] drawmode 0.0}} graph {id obj4} frame {visible true plots 
+[{id obj1} {id obj2}] title $Altitude of Line$ labels [$ Point: C$ 
+$ Vector: 0,2  starting at 0,-1$]}}} {controls obj9 {constants [a] intervals [x] 
+objects [] readouts [] functions [f] variables []}} {frame.2d obj10 {canvas 
+{canvas.3d obj13 {tool 0.0 points true graph {graph.3d obj14 {light false graph 
+{plots [{plot.curve obj11 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.constant obj15 {color [0.0 1.0 0.0 1.0]}} expr $x, C_2$} thick 
+true}} {plot.curve obj12 {super {super {transpt $0$ visible true addedz 0.0} 
+color {coloring.group obj16 {colors [{coloring.constant obj17 {color [1.0 1.0 
+1.0 1.0]}}] opacities [1.0] mixings [0.0]}} expr $x, f(x)$} thick true}} 
+{plot.axes obj18 {super {transpt $0$ visible true addedz 0.0} labels [x y]}}]} 
+alpha false scale 100.01271474132783 surfacemode 1.0 drawmode 1.0 transf [1.0 
+0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0]}} group null 
+hotspots [] drawmode 0.0}} graph {id obj14} frame {visible true plots [{id 
+obj11} {id obj12}] title $Function Graph$ labels [$ Curve: x, C_2$ 
+$ Curve: x, f(x)$]}}}] "></applet>
+<p>
+This demo  shows a feature that is to available to all demos: the hotspot.
+<p>In the Altitude of Line window, one can click on and drag the white (heavy) dot.  The user can move this so-called hotspot up and down, and if it is connected to other pieces of the demo, then it will modify the other pieces according to its definition.</p>
+<br>
+<br>
+<center>
+<table border="1" cellpadding="5" cellspacing="0" width="80%">
+  <tbody>
+    <tr>
+      <td>
+      The reader is encouraged to try the following extensions to a demo.
+        <ol>
+  <li> Create a new demo by following these steps:
+        <ul style="list-style-type: lower-alpha;">
+          <li>Add an interval <tt>x</tt> that goes from &#8211;1 to 1 in 20 steps.</li>
+          <li>Add a variable <tt>a</tt> that goes from &#8211;1 to 1 in 10 steps.</li>
+          <li>Add a function <tt>f(x)</tt>, and type in any expression for it.</li>
+          <li>Add a 2D graph window that shows the function graph of <tt>f(x)</tt> and plots the point <tt>(a, f(a))</tt>.</li>
+        </ul>
+      </li>
+      <li> Create a demo that shows a graph of the function <tt>f(x)</tt> and also graphs the tangent line to <tt>f(x)</tt> at some point, <tt>x0</tt>.</li>
+      <li> Create a demo based on your favorite calculus topic </li>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+</td></tr>
+</table>
+</center>
+
+<BR><P><BR>
+Return to <a href="index.html">home page</a> <br>
+Continue to <a href="Lovett1-ex.html">Chapter 1</a> <br>
+</BODY>
+</HTML>
